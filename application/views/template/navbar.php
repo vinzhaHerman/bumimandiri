@@ -27,3 +27,5 @@
     <a href="#"><img src="<?php echo base_url();?>assets/img/tentangkami.png">Tentang Kami</a>
     <img src="<?php echo base_url();?>assets/logos/mixed.png" class="logo-sidebar">
 </div>
+
+<!--git test-->
