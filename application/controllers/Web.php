@@ -12,28 +12,30 @@ class Web extends CI_Controller {
 	public function index()
 	{
 		$this->load->view('template/head');
-		$this->load->view('template/content');
+		$this->load->view('pages/home');
 		$this->load->view('template/navbar');
+		$this->load->view('template/sidebar');
 		$this->load->view('template/footer');
 	}
 
 	public function kegiatan()
 	{
-		$this->load->view('kegiatan/head');
+		$this->load->view('template/head');
+		$this->load->view('pages/kegiatan');
 		$this->load->view('template/navbar');
-		$this->load->view('kegiatan/isikegiatan');
+		$this->load->view('template/sidebar');
 		$this->load->view('template/footer');
 	}
 	public function fasilitas()
 	{
-		$this->load->view('fasilitas/head');
+		$this->load->view('template/head');
 		$this->load->view('template/navbar');
 		$this->load->view('fasilitas/fasilitaskegiatan');
 		$this->load->view('template/footer');
 	}
 	public function daftarpaket()
 	{
-		$this->load->view('daftarpaket/head');
+		$this->load->view('template/head');
 		$this->load->view('template/navbar');
 		$this->load->view('daftarpaket/daftarpaket');
 		$this->load->view('template/footer');

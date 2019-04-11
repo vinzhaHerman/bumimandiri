@@ -12,77 +12,7 @@ body{
   margin-left: auto;
 }
 
-/* ----------------------------------------    navbar   ---------------------------------------------*/
-.navbar1{
-    background-color: #3b5998;
-    height: 60px;
-    top:0px;
-    position: fixed;
-    width: 100%;
-    z-index: 4;
-        
-}
-img.navbar1 {
-    padding-top: 0px;
-    padding-right:15px;
-    margin-top: -5px;
-    width: 35px;
-}
-.logo {
-    padding-top: 10px;
-    padding-right: 10px;
-    width: 35px;
-    height: 14px;
-    position: relative;
-    background-image: white;    
-
-}
-.navbar1 p{
-
-    padding-bottom: 5px;
-    display: inline-block;
-    padding-bottom: 0px;
-    font-size: 20px;
-    margin-top: 5px;
-}
-
-.navbar1 a{
-    float: left;
-    display: inline-block;
-    color:#f2f2f2;
-    text-align: center;
-    text-decoration: none;
-    font-size: 17px;
-}
-
-.navbar-nav1 ul{
-    margin: 0px 0 0 0;
-    list-style: none;
-    position: relative;
-    float: right;
-    display: inline-flex;
-    margin-top: 0px; 
-}
-.logo a img{
-    width: 55px;
-    height: 55px;
-    margin-top: -70px;
-    position: fixed;
-    float: right;
-    display: inline-block;
-    left: 48%;
-    
-}
-.logo a.img-link img:hover{
-    background: transparent;
-}
-.navbar1 a:hover{
-    background-color: transparent;
-    color: #000;
-}
-
-
-/* --                   side nav                    --*/
+/* ----------------------------------------    sidebar   ---------------------------------------------*/
 .side-nav{
     height: 100%;
     width:0;
@@ -134,7 +64,7 @@ img.navbar1 {
 
     padding-right: 10px;
 }
-  /* ----------------------------------------  END NAVBAR   ---------------------------------------------*/
+  /* ----------------------------------------  END SIDEBAR   ---------------------------------------------*/
 
 
 
@@ -313,6 +243,13 @@ nav ul li a{
 
 
 
+.main-content-wrapper{
+    background-color: white;
+}
+
+
+
+
 /* -----------------------------------box buat artikel dan promosi------------------------------------------*/
 .box-slider-container{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -360,6 +297,63 @@ nav ul li a{
     padding: 70px 0 50px 0;
 }    
 /* ----------------------------------------END judul tengah----------------------------------------------*/
+
+
+
+
+/*---*/
+.box-slider-container{
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
+    text-align: left;
+    padding-bottom: 50px;
+    margin-top: 100px;
+    /* border: 2px solid green; */
+}
+
+
+.box-container{
+    display: inline;
+    width: 325px;
+    text-align: left;
+    height: 300px;
+    margin: 10px;
+    /* border: 2px dashed red; */
+}
+.box-img{
+    width: 325px;
+    height: 200px;
+    vertical-align: top;
+    float: left;
+    clear: left;
+    padding-right: 20px;
+}
+
+
+.box-content{
+    margin: 5px 0;
+}
+
+
+
+
+
+
+
+
+.box-title{
+    font-size: 20px;
+    color: #3b5998;
+    font-weight: bold;
+    display: inline;
+    margin-left: -20px;
+}
+.box-text{
+    display: inline;
+    align-content: center;
+    padding-left: 10px;
+}
 
 
 
