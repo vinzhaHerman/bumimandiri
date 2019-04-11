@@ -1,0 +1,387 @@
+*{margin: 0; padding: 0;}
+
+body{
+    background:url('../../assets/img/homepagepict.jpg');
+    background-attachment:fixed;
+    background-size:cover;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 100%;
+  padding-right: 0px;
+  padding-left: 0px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* ----------------------------------------    sidebar   ---------------------------------------------*/
+.side-nav{
+    height: 100%;
+    width:0;
+    position: fixed;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    background-color: white;
+    opacity: 1;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+}
+.side-nav a{
+    padding: 10px 10px 10px 30px;
+    text-decoration: none;
+    font-size: 15px;
+    color: #000;
+    display: block;
+    transition: 0.3s;
+    margin-top: 15px;
+}
+.side-nav a.pesan-side{
+    border-top: 1.3px solid black;
+    border-bottom: 1.3px solid black;
+}
+.side-nav img.logo-sidebar{
+    width: 150px;
+    height: 110px;
+    position: center;
+    margin-left: 50px;
+    padding-top: 20px;
+}
+.side-nav a:hover{
+    color: #555;
+
+}
+.side-nav .btn-close{
+    position: absolute;
+    top:-5px;
+    left: 0px;
+    padding-right: 10px;
+    font-size: 18px;
+    margin-left: 0px;
+    border-bottom: 1.5px solid black;   
+    width: 100%; 
+}
+.side-nav img{
+
+    padding-right: 10px;
+}
+  /* ----------------------------------------  END SIDEBAR   ---------------------------------------------*/
+
+
+
+
+
+/* ----------------------------------------navbar atas---------------------------------------------*/
+nav ul li{
+    list-style-type: none;
+    display: inline;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+nav ul li a{
+    text-decoration: none;
+    color: white;
+}
+.right{
+    float: right;
+}
+.border-button{
+    margin: 2px 2px;
+    font-size: 12px;
+    color: white;
+    padding: 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #72B537;
+    border-radius: 50px;
+}
+.fill-button{
+    margin: 2px 2px;
+    font-size: 12px;
+    color: white;
+    background-color: #72B537;
+    padding: ;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #72B537;
+    border-radius: 50px;
+}
+.lng-button{
+    margin-top: 5px;
+}
+
+.top-logo-container{
+    position:fixed;
+    z-index: 999;
+    top: 0;
+    text-align: center;
+    width: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.top-logo{
+    width: 70px;
+    height: 70px;
+}
+.open-slide{
+    float: left;
+    font-size: 28px;
+    margin: 17px 5px;
+}
+
+.navbar{
+    position: fixed;
+    width: 100%;
+    height: 70px;;
+    top: 0;
+    background-color: #3b5998;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+}
+nav ul li{
+    list-style-type: none;
+    display: inline;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+nav ul li a{
+    text-decoration: none;
+    padding: 22.5px 16px;
+    color: white;
+}
+.right{
+    float: right;
+}
+.border-button{
+    margin: 12px 5px;
+    font-size: 14px;
+    color: white;
+    padding: 10px 20px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #72B537;
+    border-radius: 50px;
+}
+.fill-button{
+    margin: 12px 5px;
+    font-size: 14px;
+    color: white;
+    background-color: #72B537;
+    padding: 10px 20px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #72B537;
+    border-radius: 50px;
+}
+
+
+@media only screen and (max-width: 600px) {
+
+    .border-button, .fill-button{visibility: hidden;}
+    .navbar-menu-text{visibility: hidden;}
+    body {overflow-x: hidden;}
+  }
+/* --------------------------------------END navbar atas-------------------------------------------*/
+
+
+
+
+
+
+
+
+/* -------------------------------properti beranda fullscreen with blue overlay------------------------------------*/
+.fullscreen-overlay{
+    width: 100%;
+    height: 100vh;
+    background-color: #48659C;
+    opacity: 0.65;
+    z-index: -1;
+}
+.home-middle-text-container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 768px;
+    height: 252px;
+    text-align: center;
+    color: white;
+    /* background-color: red; */
+}
+.home-middle-text-title{
+    font-weight: bold;
+    font-size: 36px;
+}
+.home-middle-text-subtitle{
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 35px;
+}
+.home-middle-button{
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 35px;
+    color: white;
+    text-decoration: none;
+}
+/* -----------------------------END properti beranda fullscreen with blue overlay----------------------------------*/
+
+
+
+
+
+/* --------------------------------container utama home konten web---------------------------------------*/
+.home-content-wrapper{
+    background-color: white;
+
+}
+/* --------------------------------END container utama home konten web-------------------------------------*/
+
+
+
+
+
+/* ----------------------------------container utama konten web---------------------------------------*/
+.main-content-wrapper{
+    background-color: white;
+    margin-top: 70px;
+}
+/* --------------------------------END container utama konten web-------------------------------------*/
+
+
+
+
+
+/* -----------------------------------box buat artikel dan promosi------------------------------------------*/
+.box-slider-container{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
+    text-align: center;
+    padding-bottom: 50px;
+    /* border: 2px solid green; */
+}
+.box-container{
+    display: inline-block;
+    width: 325px;
+    text-align: left;
+    height: 300px;
+    margin: 10px;
+    /* border: 2px dashed red; */
+}
+.box-content{
+    margin: 5px 0;
+}
+.box-img{
+    width: 325px;
+    height: 200px;
+}
+.box-title{
+    font-size: 20px;
+    color: #3b5998;
+    font-weight: bold;
+}
+/* ----------------------------------END box buat artikel dan promosi----------------------------------------*/
+
+
+
+
+
+/* -----------------------------------box buat artikel dan promosi------------------------------------------*/
+.list-container{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
+    padding-bottom: 50px;
+    background-color: red;
+    /* border: 2px solid green; */
+}
+.list-box-container{
+    width: 100%;
+    text-align: left;
+    height: 300px;
+    margin:20px 0;
+    background-color: orange;
+    /* border: 2px dashed red; */
+}
+.list-box-content{
+    float: left;
+    background-color: yellow;
+}
+.list-box-img{
+    width: 30%;
+    height: 200px;
+    background-color: green;
+}
+.list-box-text{
+    width: 70%;
+}
+.list-box-title{
+    font-size: 20px;
+    color: #3b5998;
+    font-weight: bold;
+}
+/* ----------------------------------END box buat artikel dan promosi----------------------------------------*/
+
+
+
+
+
+
+/* ----------------------------------------judul tengah-------------------------------------------------*/
+.middle-title{
+    font-size: 28px;
+    color: #3b5998;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    margin: auto;
+    padding: 70px 0 50px 0;
+}    
+/* ----------------------------------------END judul tengah----------------------------------------------*/
+
+
+
+
+
+/*-*/
+
+
+
+
+
+/* -----------------------------------grid buat footer------------------------------------------*/
+.footer{
+    margin-top: 0px;
+}
+.footer-grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color: #72B537;
+    padding: 10px;
+}
+.grid-item {
+    /* background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8); */
+    padding: 20px;
+    font-size: 15px;
+    text-align: center;
+}
+.grid-item-content{
+    text-align: left;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+}
+.grid-item-content ul li{
+    list-style-type: none;
+}
+.grid-item-content ul li a{
+    text-decoration: none;
+    list-style-type: none;
+    color: white;
+}
+/* -----------------------------------END grid buat footer------------------------------------------*/

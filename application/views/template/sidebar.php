@@ -1,5 +1,5 @@
 <div id="side-menu" class="side-nav">
-    <a href="#side-menu" class="btn-close" onclick="closeSlideMenu()"><img src="<?php echo base_url();?>assets/img/icons8-menu-16.png">MENU</a>
+    <a class="btn-close" onclick="closeSlideMenu()"><img src="<?php echo base_url();?>assets/img/icons8-menu-16.png">MENU</a>
     <a href="http://localhost/PBumiMandiri"><img src="<?php echo base_url();?>assets/img/beranda.png">Beranda</a>
     <a href="http://localhost/PBumiMandiri/web/kegiatan"><img src="<?php echo base_url();?>assets/img/kegiatanwisata.png">Kegiatan Wisata</a>
     <a href="http://localhost/PBumiMandiri/web/fasilitas"><img src="<?php echo base_url(); ?>assets/img/fasilitas.png">Fasilitas Penginapan</a>

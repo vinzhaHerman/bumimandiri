@@ -15,7 +15,7 @@
     </div>
     <!-- ---------------------------END fullscreen blue overlay---------------------------------------------- -->
 
-    <div class="main-content-wrapper">
+    <div class="home-content-wrapper">
 
         <!-- --------------------------box buat artikel/promosi--------------------------------------------- -->
 
