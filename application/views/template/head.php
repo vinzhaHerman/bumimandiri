@@ -10,5 +10,3 @@
 	crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" media="screen" href="<?php echo base_url();?>assets/css/main.css">
 </head>
-	
-<!--git-hub_test_2-->

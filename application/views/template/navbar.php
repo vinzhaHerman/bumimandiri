@@ -11,14 +11,34 @@
             <li class="right lng-button"><a href="#">IDN</a></li>
         </ul>
         <div class="logo">
-            <a href="http://localhost/PBumiMandiri/web" ><img src="<?php echo base_url();?>assets/logos/white.png"></a>
+            <a href="http://localhost/PBumiMandiri" ><img src="<?php echo base_url();?>assets/logos/white.png"></a>
         </div>
     </div>
 </div>
 
+
+
+
+
+
+<!--     <div class="top-logo-container"><a href="http://localhost/PBumiMandiri" ><img class="top-logo" src="<?php echo base_url();?>assets/logos/white.png"></a></div>
+
+    <nav class="navbar">
+        <ul>
+            <li class="open-slide"><a href="#side-menu" onclick="openSlideMenu()"><i class="fas fa-bars"></i><a>MENU</a></a></li>
+            <li><a href="#" class="right lang-button">IDN</a></li>
+            <li><a href="http://localhost/PBumiMandiri/register" class="right border-button">Sign Up</a></li>
+            <li><a href="http://localhost/PBumiMandiri/login" class="right fill-button">Login</a></li>
+        </ul>
+    </nav> -->
+
+
+
+
+
 <div id="side-menu" class="side-nav">
     <a href="#side-menu" class="btn-close" onclick="closeSlideMenu()"><img src="<?php echo base_url();?>assets/img/icons8-menu-16.png">MENU</a>
-    <a href="http://localhost/PBumiMandiri/web"><img src="<?php echo base_url();?>assets/img/beranda.png">Beranda</a>
+    <a href="http://localhost/PBumiMandiri"><img src="<?php echo base_url();?>assets/img/beranda.png">Beranda</a>
     <a href="http://localhost/PBumiMandiri/web/kegiatan"><img src="<?php echo base_url();?>assets/img/kegiatanwisata.png">Kegiatan Wisata</a>
     <a href="http://localhost/PBumiMandiri/web/fasilitas"><img src="<?php echo base_url(); ?>assets/img/fasilitas.png">Fasilitas Penginapan</a>
     <a href="http://localhost/PBumiMandiri/web/daftarpaket"><img src="<?php echo base_url();?>assets/img/daftarpaket.png">Daftar Paket</a>
@@ -27,8 +47,3 @@
     <a href="#"><img src="<?php echo base_url();?>assets/img/tentangkami.png">Tentang Kami</a>
     <img src="<?php echo base_url();?>assets/logos/mixed.png" class="logo-sidebar">
 </div>
-
-<!--git test-->
-
-
-<!--git test-3-->
