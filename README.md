@@ -1,3 +1,4 @@
 # bumi-mandiri
 PROYEK BUMI MANDIRI 2k19
-Github
+
+buat sementara pake branch "BUMIMANDIRI-REMASTER"
