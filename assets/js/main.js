@@ -75,14 +75,14 @@ jQuery( document ).ready(function( $ ) {
 
 
 
-$(document).ready(function(){
-	$('.menu-open').click(function(){
-		$('#side-menu').fadeToggle("fast");
-	});
-	$('.btn-close').click(function(){
-		$('#side-menu').fadeToggle("slow");
-	});
-});
+// $(document).ready(function(){
+// 	$('.menu-open').click(function(){
+// 		$('#side-menu').fadeToggle("fast");
+// 	});
+// 	$('.btn-close').click(function(){
+// 		$('#side-menu').fadeToggle("slow");
+// 	});
+// });
 
 
 // function openSlideMenu(){
