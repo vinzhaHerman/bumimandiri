@@ -16,6 +16,7 @@ body{
 .side-nav{
     height: 100%;
     width:250px;
+    display: none;
     position: fixed;
     top: 0;
     left: -250px;
@@ -58,6 +59,7 @@ body{
     font-size: 28px;
     border-bottom: 2px solid black;   
     width: 100%; 
+    cursor: pointer;
 }
 .inner-menu-text{
     margin-left: 21px;

@@ -67,11 +67,28 @@ jQuery( document ).ready(function( $ ) {
 		$(this).addClass('active');
 	});
 	$('#name').trigger('click').trigger('focus');
+
+
+	
 });
 
 
 
 
+$(document).ready(function(){
+	$('.menu-open').click(function(){
+		$('#side-menu').fadeToggle("fast");
+	});
+	$('.btn-close').click(function(){
+		$('#side-menu').fadeToggle("slow");
+	});
+});
+
+
+// function openSlideMenu(){
+//    document.getElementById('side-menu').style.width='250px';
+//    document.getElementById('main1').style.marginLeft='0px';
+// }
 
 function openSlideMenu(){
    document.getElementById('side-menu').style.left='0';
@@ -79,3 +96,7 @@ function openSlideMenu(){
 function closeSlideMenu(){
    document.getElementById('side-menu').style.left='-250px';
 }
+// function closeSlideMenu(){
+//    document.getElementById('side-menu').style.width='0px';
+//    document.getElementById('main').style.marginLeft='0px';
+// }
