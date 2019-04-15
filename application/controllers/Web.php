@@ -47,5 +47,11 @@ class Web extends CI_Controller {
 		$this->load->view('bantuan/bantuan');
 		$this->load->view('template/footer');
 	}
+
+	public function booking()
+	{
+		$this->load->view('template/head');
+		$this->load->view('pages/booking');
+	}
 	
 }

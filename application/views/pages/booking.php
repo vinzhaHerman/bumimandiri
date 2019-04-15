@@ -10,7 +10,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <title>Booking</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="<?php echo base_url();?>assets/css/normalize.css">
+    <link rel="stylesheet" href="<?php echo base_url();?>assets/css/normalize/normalize.css">
     <link rel="stylesheet" href="<?php echo base_url();?>assets/css/booking.css">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,500' rel='stylesheet' type='text/css'>
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
