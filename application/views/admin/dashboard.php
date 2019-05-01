@@ -5,7 +5,7 @@
 
 <body class="">
   <div class="wrapper ">
-    <div class="sidebar" data-color="purple" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
+    <div class="sidebar" data-color="azure" data-background-color="white" data-image="<?php echo base_url();?>/assets/img/sidebar-1.jpg">
       <!--
         Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
@@ -13,7 +13,7 @@
     -->
       <div class="logo">
         <a href="http://www.creative-tim.com" class="simple-text logo-normal">
-          Creative Tim
+          NAVIGATION
         </a>
       </div>
       <div class="sidebar-wrapper">
@@ -587,8 +587,8 @@
             &copy;
             <script>
               document.write(new Date().getFullYear())
-            </script>, made with <i class="material-icons">favorite</i> by
-            <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> for a better web.
+            </script>
+            <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a>
           </div>
         </div>
       </footer>
