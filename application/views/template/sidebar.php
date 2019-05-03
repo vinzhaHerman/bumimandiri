@@ -1,7 +1,7 @@
 <div id="side-menu" class="side-nav">
     <a class="btn-close" onclick="closeSlideMenu()"><i class="fas fa-bars"></i><span class="inner-menu-text">MENU</span></a>
     <a href="http://localhost/PBumiMandiri"><i class="fas fa-home"></i>Beranda</a>
-    <a href="http://localhost/PBumiMandiri"><i class="fas fa-search"></i>Kegiatan Wisata</a>
+    <a href="http://localhost/PBumiMandiri/Web/kegiatan"><i class="fas fa-search"></i>Kegiatan Wisata</a>
     <a href=""><i class="fas fa-bed"></i>Fasilitas Penginapan</a>
     <a href=""><i class="fas fa-list-ul"></i>Daftar Paket</a>
     <a href="http://localhost/PBumiMandiri/Web/booking"><div class="fill-button-blue">Pesan Sekarang<i class="fas fa-external-link-alt"></i></div></a>

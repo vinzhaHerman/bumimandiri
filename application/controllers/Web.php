@@ -50,7 +50,7 @@ class Web extends CI_Controller {
 
 	public function booking()
 	{
-		$this->load->view('template/head');
+	
 		$this->load->view('pages/booking');
 	}
 	
