@@ -1,12 +1,42 @@
 <div id="side-menu" class="side-nav">
-    <a class="btn-close" onclick="closeSlideMenu()"><i class="fas fa-bars"></i><span class="inner-menu-text">MENU</span></a>
-    <a href="http://localhost/PBumiMandiri"><i class="fas fa-home"></i>Beranda</a>
-    <a href="http://localhost/PBumiMandiri/Web/kegiatan"><i class="fas fa-search"></i>Kegiatan Wisata</a>
-    <a href=""><i class="fas fa-bed"></i>Fasilitas Penginapan</a>
-    <a href=""><i class="fas fa-list-ul"></i>Daftar Paket</a>
-    <a href="http://localhost/PBumiMandiri/Web/booking"><div class="fill-button-blue">Pesan Sekarang<i class="fas fa-external-link-alt"></i></div></a>
-    <a href=""><i class="fas fa-exclamation-circle"></i>Bantuan</a>
-    <a href=""><i class="far fa-smile"></i>Tentang Kami</a>
+	<div class="sidebar-top">
+		<a class="btn-close" onclick="closeSlideMenu()"><i class="fas fa-bars"></i><span class="inner-menu-text">MENU</span></a>
+	</div>
+    <a href="http://localhost/PBumiMandiri">
+    	<div class="sidebar-item">
+    		<i class="fas fa-home"></i><span class="sidebar-item-text">Beranda</span>
+    	</div>
+    </a>
+    <a href="http://localhost/PBumiMandiri/Web/kegiatan">
+    	<div class="sidebar-item">
+    		<i class="fas fa-search"></i><span class="sidebar-item-text">Kegiatan Wisata</span></a>
+    	</div>
+    </a>
+    <a href="">
+    	<div class="sidebar-item">
+    		<i class="fas fa-bed"></i><span class="sidebar-item-text">Fasilitas</span>
+    	</div>
+    </a>
+    <a href="">
+    	<div class="sidebar-item">
+    		<i class="fas fa-list-ul"></i><span class="sidebar-item-text">Daftar Paket</span>
+    	</div>
+    </a>
+    <a href="http://localhost/PBumiMandiri/Web/booking">
+    	<div class="sidebar-item border-top-bot">
+    		<div class="fill-button-blue">Pesan Sekarang<i class="fas fa-external-link-alt"></i></div>
+    	</div>
+    </a>
+    <a href="">
+    	<div class="sidebar-item">
+    		<i class="fas fa-exclamation-circle"></i><span class="sidebar-item-text">Bantuan</span>
+    	</div>
+    </a>
+    <a href="">
+    	<div class="sidebar-item">
+    		<i class="far fa-smile"></i><span class="sidebar-item-text">Tentang Kami</span>
+    	</div>
+    </a>
 </div>
 
 
