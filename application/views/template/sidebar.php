@@ -9,7 +9,7 @@
     </a>
     <a href="http://localhost/PBumiMandiri/Web/kegiatan">
     	<div class="sidebar-item">
-    		<i class="fas fa-search"></i><span class="sidebar-item-text">Kegiatan Wisata</span></a>
+    		<i class="fas fa-search"></i><span class="sidebar-item-text">Kegiatan Wisata</span>
     	</div>
     </a>
     <a href="">
