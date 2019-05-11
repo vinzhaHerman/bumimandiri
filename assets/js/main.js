@@ -84,19 +84,16 @@ jQuery( document ).ready(function( $ ) {
 // 	});
 // });
 
-
-// function openSlideMenu(){
-//    document.getElementById('side-menu').style.width='250px';
-//    document.getElementById('main1').style.marginLeft='0px';
-// }
-
+var slidemenu = document.getElementById('side-menu');
 function openSlideMenu(){
-   document.getElementById('side-menu').style.left='0';
+   slidemenu.style.left='0';
 }
 function closeSlideMenu(){
-   document.getElementById('side-menu').style.left='-250px';
+   slidemenu.style.left='-250px';
 }
-// function closeSlideMenu(){
-//    document.getElementById('side-menu').style.width='0px';
-//    document.getElementById('main').style.marginLeft='0px';
-// }
+
+window.onclick = function(event) {
+  if (event.target == slidemenu) {
+   slidemenu.style.left = '-250px';
+  }
+}
