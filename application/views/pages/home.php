@@ -1,4 +1,4 @@
-
+<div class="home-main-wrap">
 <body>
     <!-- -----------------------------fullscreen blue overlay------------------------------------------------ -->
     <div class="fullscreen-bg-container">
@@ -69,5 +69,32 @@
             </div>
         </div>
         <!-- ------------------------END box buat artikel/promosi------------------------------------------- -->
+
+
+
+
+
+        <div class="cutomer-reviews-container">
+            <section class="center slider">
+        <div>
+        <img src="http://placehold.it/350x300?text=1">
+        </div>
+        <div>
+        <img src="http://placehold.it/350x300?text=2">
+        </div>
+        <div>
+        <img src="http://placehold.it/350x300?text=3">
+        </div>
+        <div>
+        <img src="http://placehold.it/350x300?text=4">
+        </div>
+        <div>
+        <img src="http://placehold.it/350x300?text=5">
+        </div>
+        <div>
+        <img src="http://placehold.it/350x300?text=6">
+        </div>
+    </section>
+        </div>
     </div>
-</body>
+</div>

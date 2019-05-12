@@ -97,3 +97,14 @@ window.onclick = function(event) {
    slidemenu.style.left = '-250px';
   }
 }
+
+
+
+
+$(".center").slick({
+        dots: true,
+        infinite: true,
+        centerMode: true,
+        slidesToShow: 3,
+        slidesToScroll: 3
+      });
