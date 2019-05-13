@@ -22,11 +22,9 @@
     		<i class="fas fa-list-ul"></i><span class="sidebar-item-text">Daftar Paket</span>
     	</div>
     </a>
-    <a href="http://localhost/PBumiMandiri/Web/booking">
     	<div class="sidebar-item border-top-bot">
-    		<div class="fill-button-blue">Pesan Sekarang<i class="fas fa-external-link-alt"></i></div>
+    		<a href="http://localhost/PBumiMandiri/Web/booking"><div class="fill-button-blue"><span class="sidebar-button-text">Pesan Sekarang</span><i class="fas fa-external-link-alt"></i></div></a>
     	</div>
-    </a>
     <a href="">
     	<div class="sidebar-item">
     		<i class="fas fa-exclamation-circle"></i><span class="sidebar-item-text">Bantuan</span>
