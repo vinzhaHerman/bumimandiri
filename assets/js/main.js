@@ -102,7 +102,6 @@ window.onclick = function(event) {
 
 
 $(".center").slick({
-        dots: true,
         infinite: true,
         centerMode: true,
         slidesToShow: 3,

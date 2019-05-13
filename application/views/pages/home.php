@@ -76,25 +76,37 @@
 
         <div class="cutomer-reviews-container">
             <section class="center slider">
-        <div>
-        <img src="http://placehold.it/350x300?text=1">
-        </div>
-        <div>
-        <img src="http://placehold.it/350x300?text=2">
-        </div>
-        <div>
-        <img src="http://placehold.it/350x300?text=3">
-        </div>
-        <div>
-        <img src="http://placehold.it/350x300?text=4">
-        </div>
-        <div>
-        <img src="http://placehold.it/350x300?text=5">
-        </div>
-        <div>
-        <img src="http://placehold.it/350x300?text=6">
-        </div>
-    </section>
+                <div class="slider-panel">
+                    <div class="ball"></div>
+                    <div class="customer-slider-name">Reviewer name here</div>
+                    <div class="slider-text">Lorem ipsum dolor sit amet, conse adipiscing elitsed do eiusmod Lorem ipsum dolor sit amet, conse adipiscing elitsed do eiusmod</div>
+                </div>
+                <div class="slider-panel">
+                    <div class="ball"></div>
+                    <div class="customer-slider-name">Reviewer name here</div>
+                    <div class="slider-text">Lorem ipsum dolor sit amet, conse adipiscing elitsed do eiusmod Lorem ipsum dolor sit amet, conse adipiscing elitsed do eiusmod</div>
+                </div>
+                <div class="slider-panel">
+                    <div class="ball"></div>
+                    <div class="customer-slider-name">Reviewer name here</div>
+                    <div class="slider-text">Lorem ipsum dolor sit amet, conse adipiscing elitsed do eiusmod Lorem ipsum dolor sit amet, conse adipiscing elitsed do eiusmod</div>
+                </div>
+                <div class="slider-panel">
+                    <div class="ball"></div>
+                    <div class="customer-slider-name">Reviewer name here</div>
+                    <div class="slider-text">Lorem ipsum dolor sit amet, conse adipiscing elitsed do eiusmod Lorem ipsum dolor sit amet, conse adipiscing elitsed do eiusmod</div>
+                </div>
+                <div class="slider-panel">
+                    <div class="ball"></div>
+                    <div class="customer-slider-name">Reviewer name here</div>
+                    <div class="slider-text">Lorem ipsum dolor sit amet, conse adipiscing elitsed do eiusmod Lorem ipsum dolor sit amet, conse adipiscing elitsed do eiusmod</div>
+                </div>
+                <div class="slider-panel">
+                    <div class="ball"></div>
+                    <div class="customer-slider-name">Reviewer name here</div>
+                    <div class="slider-text">Lorem ipsum dolor sit amet, conse adipiscing elitsed do eiusmod Lorem ipsum dolor sit amet, conse adipiscing elitsed do eiusmod</div>
+                </div>
+            </section>
         </div>
     </div>
 </div>

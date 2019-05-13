@@ -345,7 +345,7 @@ nav ul li a{
 
 /* -----------------------------------grid buat footer------------------------------------------*/
 .footer{
-    margin-top: 0px;
+    margin-top: 50px;
 }
 .footer-grid-container {
     display: grid;
@@ -377,35 +377,71 @@ nav ul li a{
 
 
 
+.cutomer-reviews-container{
+    width: 100%;
+    height: 600px;
+    background-color: rgb(232, 232, 232);
+}
+
+.slider-container{
+
+}
 
 .slider {
-        width: 80%;
-        margin: 100px auto;
-    }
+    width: 86%;
+    margin: auto;
+    bottom: 0;
+}
 
-    .slick-slide {
-      margin: 0px 20px;
-    }
+.slider-panel{
+    width: 320px;
+    height: 480px;
+    border: 0px;
+    border-radius: 10px;
+    background-color: white;
+}
 
-    .slick-slide img {
-      width: 100%;
-    }
+.slick-slide {
+    margin: 55px 20px;
+}
 
-    .slick-prev:before,
-    .slick-next:before {
-      color: black;
-    }
+.slick-prev:before,
+.slick-next:before {
+    color: red;
+}
 
 
-    .slick-slide {
-      transition: all ease-in-out .3s;
-      opacity: .2;
-    }
+.slick-slide {
+    transition: all ease-in-out .3s;
+    opacity: .2;
+}
     
-    .slick-active {
-      opacity: .5;
-    }
+.slick-active {
+    opacity: .5;
+}
 
-    .slick-current {
-      opacity: 1;
-    }
+.slick-current {
+    opacity: 1;
+}
+.ball{
+    width: 120px;
+    height: 120px;
+    border: 0px;
+    border-radius: 100px;
+    background-color: #48659C;
+    margin: 32px auto;
+}
+.customer-slider-name{
+    font-size: 16px;
+    font-weight: bold;
+    color: #48659c;
+    text-align: center;
+    margin: 12px 20px;
+}
+.slider-text{
+    max-width: 80%;
+    color: grey;
+    font-size: 16px;
+    text-align: center;
+    margin: 20px auto;
+}
