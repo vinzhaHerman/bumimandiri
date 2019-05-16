@@ -75,16 +75,24 @@ jQuery( document ).ready(function( $ ) {
 
 
 
-// $(document).ready(function(){
-// 	$('.menu-open').click(function(){
-// 		$('#side-menu').fadeToggle("fast");
-// 	});
-// 	$('.btn-close').click(function(){
-// 		$('#side-menu').fadeToggle("slow");
-// 	});
-// });
+$(document).ready(function(){
+	// $('.menu-open').click(function(){
+	// 	$('#side-menu').fadeToggle("fast");
+	// });
+	// $('.btn-close').click(function(){
+	// 	$('#side-menu').fadeToggle("slow");
+	// });
+	$('#side-menu').css({"box-shadow":"0px 1px 5px 1px #555"});
+	$('.fullscreen-bg-container').click(function(){
+		$('#side-menu').css({"left":"-250px"});
+	});
+	$('.home-content-wrapper').click(function(){
+		$('#side-menu').css({"left":"-250px"});
+	});
+});
 
 var slidemenu = document.getElementById('side-menu');
+
 function openSlideMenu(){
    slidemenu.style.left='0';
 }
