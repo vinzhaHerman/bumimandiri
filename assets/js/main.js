@@ -86,7 +86,7 @@ $(document).ready(function(){
 	$('.fullscreen-bg-container').click(function(){
 		$('#side-menu').css({"left":"-250px"});
 	});
-	$('.home-content-wrapper').click(function(){
+	$('.main-wrapper').click(function(){
 		$('#side-menu').css({"left":"-250px"});
 	});
 });

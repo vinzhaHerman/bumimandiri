@@ -1,73 +1,90 @@
+*{padding: 0; margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
 
-form {
-  border: 3px solid #f1f1f1;
+body{
+  background-color: #e3e3e3;
 }
 
+.main-wrapper{
+  width: 400px;
+  height: 600px;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 0px;
+  border-radius: 20px;
+}
 
+.container{
+  /*padding: 16px 0;*/
+}
+
+.form-container{
+  margin: 30px;
+}
+
+.imgcontainer{
+  width: 100px;
+  margin: 30px auto;
+}
+.avatar{
+  width: 100px;
+  height: auto;
+}
+
+label{
+  display: block;
+  color: #3b5998;
+
+}
 input[type=text], input[type=password] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
+  display: block;
+  padding: 10px;
+  width: 90%;
   border: 1px solid #ccc;
-  box-sizing: border-box;
+  border-radius: 4px;
+  resize: vertical;
+  margin: 5px auto;
 }
 
-
-button {
-  background-color: #4CAF50;
+.positive-button{
+  background-color: #72B537;
+  font-weight: bold;
+  display: block;
+  width: 82%;
   color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
+  padding: 12px 20px;
+  margin: 12px auto;
   border: none;
+  border-radius: 4px;
   cursor: pointer;
-  width: 100%;
+}
+
+.negative-button{
+  background-color: #3b5998;
+  display: block;
+  width: 82%;
+  color: white;
+  padding: 8px 20px;
+  margin: 12px auto;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.bottom-text{
+  margin: 30px;
 }
 
 
-button:hover {
-  opacity: 0.8;
-}
 
 
-.cancelbtn {
-  width: auto;
-  padding: 10px 18px;
-  background-color: #f44336;
-}
-.cancelbtn a{
-  text-decoration: none;
-}
 
-.imgcontainer {
-  text-align: center;
-  margin: 24px 0 12px 0;
- 
-}
-
-
-img.avatar {
-  width: 20%;
-  border-radius: 0%;
-}
-
-
-.container {
-  padding: 16px;
-}
-
-span.psw {
-  float: right;
-  padding-top: 16px;
-}
-
-
-@media screen and (max-width: 300px) {
-  span.psw {
-    display: block;
-    float: none;
-  }
-  .cancelbtn {
+@media only screen and (max-width: 600px){
+  .main-wrapper{
     width: 100%;
+    height: 100%;
+    border-radius: 0px;
   }
 }

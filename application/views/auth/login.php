@@ -8,30 +8,32 @@
   <title></title>
 </head>
 <body>
+<div class="main-wrapper">
   <form action="action_page.php">
   <div class="imgcontainer">
     <img src="<?php echo base_url();?>assets/logos/mixed.png" alt="Avatar" class="avatar">
-    <h3>Welcome To Bumi Mandiri</h3>
   </div>
 
   <div class="container">
-    <label for="username"><b>Username</b></label>
+    <div class="form-container">
+    <label for="username">Username</label>
     <input type="text" placeholder="Enter Username" name="username" required>
+    </div>
 
-    <label for="password"><b>Password</b></label>
+    <div class="form-container">
+    <label for="password">Password</label>
     <input type="password" placeholder="Enter Password" name="password" required>
+    </div>
 
-    <button type="submit">Login</button>
-    <label>
-      <input type="checkbox" checked="checked" name="remember"> Remember me
-    </label>
+    <button class="positive-button" type="submit">Login</button>
   </div>
 
-  <div class="container" style="background-color:#f1f1f1">
-    <a href="http://localhost/PBumiMandiri/web"><button type="button" class="cancelbtn">Kembali</button></a>
-    <span class="psw">Forgot <a href="#">password?</a></span>
+  <div class="container">
+    <a href="http://localhost/PBumiMandiri/web"><button type="button" class="negative-button">Kembali</button></a>
+    <p class="bottom-text">Forgot Password?</p>
   </div>
-</form>
+  </form>
+</div>
 </body>
 </html>
 

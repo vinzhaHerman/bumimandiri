@@ -1,3 +1,4 @@
+<div class="main-wrapper">
 <div class="main-content-wrapper">
     <div class="list-container">
         <div class="list-box-container">
@@ -22,4 +23,5 @@
             </div>
         </div>
     </div>
+</div>
 </div>

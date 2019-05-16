@@ -1,3 +1,4 @@
+<div class="main-wrapper">
 <div class="home-main-wrap">
 <body>
     <!-- -----------------------------fullscreen blue overlay------------------------------------------------ -->
@@ -108,5 +109,12 @@
                 </div>
             </section>
         </div>
+
+
+
+
+
+        
     </div>
+</div>
 </div>
