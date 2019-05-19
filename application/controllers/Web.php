@@ -40,6 +40,14 @@ class Web extends CI_Controller {
 		$this->load->view('daftarpaket/daftarpaket');
 		$this->load->view('template/footer');
 	}
+	public function about_us()
+	{
+		$this->load->view('template/head');
+		$this->load->view('pages/about_us');
+		$this->load->view('template/navbar');
+		$this->load->view('template/sidebar');
+		$this->load->view('template/footer');
+	}
 	public function bantuan()
 	{
 		$this->load->view('bantuan/head');

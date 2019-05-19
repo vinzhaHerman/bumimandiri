@@ -22,6 +22,11 @@
     		<i class="fas fa-list-ul"></i><span class="sidebar-item-text">Daftar Paket</span>
     	</div>
     </a>
+    <a href="">
+        <div class="sidebar-item">
+            <i class="far fa-images"></i><span class="sidebar-item-text">Gallery</span>
+        </div>
+    </a>
     	<div class="sidebar-item border-top-bot">
     		<a href="http://localhost/PBumiMandiri/Web/booking"><div class="fill-button-blue"><span class="sidebar-button-text">Pesan Sekarang</span><i class="fas fa-external-link-alt"></i></div></a>
     	</div>
@@ -30,7 +35,7 @@
     		<i class="fas fa-exclamation-circle"></i><span class="sidebar-item-text">Bantuan</span>
     	</div>
     </a>
-    <a href="">
+    <a href="http://localhost/PBumiMandiri/Web/about_us">
     	<div class="sidebar-item">
     		<i class="far fa-smile"></i><span class="sidebar-item-text">Tentang Kami</span>
     	</div>

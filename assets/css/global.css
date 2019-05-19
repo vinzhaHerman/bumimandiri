@@ -1,8 +1,5 @@
 *{margin: 0; padding: 0;}
 
-body{
-    
-}
 .home-main-wrap{
     background:url('../../assets/img/homepagepict.jpg');
     background-attachment:fixed;
@@ -30,17 +27,21 @@ body{
     font-weight: bold;
     color: #3b5998;
 }
+
 .sidebar-top{
     padding: 16px 10px 16px 30px;
     border-bottom: 1px solid #3b5998;
 }
+
 .sidebar-top .btn-close{
     font-size: 28px;
 }
+
 .sidebar-item{
     padding: 20px 10px 20px 30px;
     margin: 5px 0;
 } .sidebar-item:hover{background-color: #3b5998; color: white;}
+
 .sidebar-item-text{
     margin-left: 30px;
 }
@@ -157,7 +158,7 @@ nav ul li a{
     border-style: solid;
     border-width: 0px;
     border-radius: 50px;
-}
+}.fill-button-blue:hover{background-color: #72B537;}
 
 
 @media only screen and (max-width: 600px) {

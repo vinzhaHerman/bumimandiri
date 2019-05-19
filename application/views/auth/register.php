@@ -6,45 +6,39 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/register.css">
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/auth.css">
   <title>Register</title>
 </head>
 <body>
- <form action="action_page.php" style="border:1px solid #ccc">
-  <div class="container">
-    <h1>Sign Up Form</h1>
-    <p></p>
-    <hr>
-    <label for="name"><b>Nama</b></label>
-    <input type="text" placeholder="Input Name" name="name" required>
+  <div class="main-wrapper">
+    <div class="form-wrapper">
+    <form action="action_page.php">
+      <div class="container">
+        <div class="imgcontainer-register">
+          <img src="<?php echo base_url();?>assets/logos/mixed.png" alt="Avatar" class="avatar-register">
+        </div>
+      <h1 class="form-title">Sign Up</h1>
+      <input type="text" placeholder="Nama Lengkap" name="name" required>
 
-    <label for="user"><b>Username</b></label>
-    <input type="text" placeholder="Username" name="user" required>
+      <input type="text" placeholder="Masukan username anda" name="user" required>
 
-    <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Email" name="email" required>
+      <input type="text" placeholder="Email address" name="email" required>
 
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Password" name="psw" required>
+      <input type="password" placeholder="Password" name="psw" required>
 
-    <label for="psw-repeat"><b>Repeat Password</b></label>
-    <input type="password" placeholder="Ketik Ulang Password" name="psw-repeat" required>
+      <input type="password" placeholder="Ketik Ulang Password" name="psw-repeat" required>
 
-    <label for="no_telp"><b>Telepon</b></label>
-    <input type="text" placeholder="Nomor Telepon" name="no_telp" required>
+      <input type="text" placeholder="Nomor Telepon" name="no_telp" required>
 
-    <label>
-      <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
-    </label>
+      <p class="agreement">Saya menyetujui <a href="#" style="color:dodgerblue">Syarat dan Ketentuan</a> yang berlaku.</p>
 
-    <p>Dengan anda membuat akun, berarti ada setuju dengan segala kesepakatan yang sudah dibuat oleh Bumi Mandiri<br>
-    Untuk informasi lebih lanjut, tolong kunjungi <a href="#" style="color:dodgerblue">Tentang Kami</a>.</p>
-
-    <div class="clearfix">
-      <a href="http://localhost/PBumiMandiri/"><button type="button" class="cancelbtn">Cancel</button></a>
-      <button type="submit" class="signupbtn">Sign Up</button>
+      <div class="clearfix">
+        <button type="submit" class="positive-button">Sign Up</button>
+        <a href="http://localhost/PBumiMandiri/"><button type="button" class="negative-button">Cancel</button></a>
+      </div>
     </div>
+  </form>
   </div>
-</form>
+</div>
 </body>
 </html>
