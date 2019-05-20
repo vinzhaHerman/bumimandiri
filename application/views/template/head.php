@@ -9,6 +9,7 @@
 	integrity="sha384-Mmxa0mLqhmOeaE8vgOSbKacftZcsNYDjQzuCOm6D02luYSzBG8vpaOykv9lFQ51Y" 
 	crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/global.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/profile.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/slick/slick.css">
   	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/slick/slick-theme.css">
 </head>
