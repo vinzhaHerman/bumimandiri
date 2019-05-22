@@ -2,6 +2,7 @@
 	<div class="filler"></div>
 	<div class="profile-main-wrapper">
 		<div class="section">
+			<div class="overlay"></div>
 			<div class="para-container">
 				<h1 class="text">BUMI MANDIRI</h1>
 				<h4 class="text">Learning Center, Agriculture, Outbound & Adventure</h4>
@@ -24,6 +25,11 @@
 						<p>Lokasi</p>
 					</div>
 				</div>
+			</div>
+		</div>
+		<div class="section">
+			<div class="path">
+				<div class="para-container"></div>
 			</div>
 		</div>
 	</div>
