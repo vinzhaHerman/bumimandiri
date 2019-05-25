@@ -14,6 +14,7 @@
 	width: 100%;
 	height: 100vh;
 	background-color: yellow;
+	position: relative;
 }
 .section:nth-child(1){
 	background: url('../../assets/img/petriso.jpg');
@@ -23,7 +24,25 @@
 .section:nth-child(2){
 	background: url('../../assets/img/mountains_res.jpg');
 }
+.section:nth-child(3){
+	background: url('../../assets/img/walp_blue.jpg');
+	background-size: cover;
+}
+.section:nth-child(4){
+	background-color: white;
+}
 
+
+
+
+
+.container{
+	width: 90%;
+	height: 100%;
+	margin: auto;
+	background-color: rgb(255, 2555, 255, 0.7);
+	position: relative;
+}
 
 
 
@@ -125,12 +144,34 @@
 
 .path{
 	width: 70%;
-	height: 100%;
+	height: 100vh;
 
 	-webkit-clip-path: polygon(0 0, 100% 0, 75% 100%, 0% 100%);
 	clip-path: polygon(0 0, 100% 0, 75% 100%, 0% 100%);
 
 	background-color: white;
+}
+
+
+
+
+
+.visi-container{
+	position: absolute;
+	width: 40%;
+	height: auto;
+	top: 60px;
+	left: 32px;
+	background-color: red;
+}
+
+.misi-container{
+	position: absolute;
+	width: 40%;
+	height: auto;
+	top: 60px;
+	right: 32px;
+	background-color: red;
 }
 
 
@@ -142,6 +183,7 @@
 	height: 320px;
 	float: right;
 	margin: 21vh 8vw;
+	background-color: #3b5998;
 }
 
 
