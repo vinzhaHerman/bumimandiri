@@ -393,7 +393,7 @@ input[readonly].datetime-picker {
   box-sizing: border-box;
 }
 body {
-  background: #333333 url(./img/bg.jpg) no-repeat center bottom fixed;
+  background: #333333 url(../img/bg.jpg) no-repeat center bottom fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -469,14 +469,11 @@ body {
 .booking-form .group > div {
   padding: 0 15px;
 }
-.booking-form .group >
- div.addon-right {
+.booking-form .group > div.addon-right {
   position: relative;
   padding-right: 50px;
 }
-.booking-form .group > 
-
-div.addon-right > i {
+.booking-form .group > div.addon-right > i {
   position: absolute;
   right: 25px;
   top: 9px;

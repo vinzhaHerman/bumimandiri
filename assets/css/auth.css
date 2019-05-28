@@ -112,6 +112,45 @@ input[type=text]:focus, input[type=password]:focus {
   outline: none;
 }
 
+h1 {
+  font-family: 'Salsa', cursive;
+}
+
+h2 {
+  font-family: 'Salsa', cursive;
+  font-size: 28px;
+  font-weight: 400;
+  color: #794621;
+  margin: 0 auto;
+  text-align: center;
+  text-shadow: 1px 1px 0px #D2ACA5;
+}
+ol, ul {
+    list-style: none outside none;
+}
+
+.middle-content {
+    height: auto;
+    margin: 60px auto 0 auto;
+}
+.sub-title {
+    display: block;
+    line-height: 30px;
+    margin: 50px auto 25px auto;
+    text-align: center;
+}
+/*Static Page*/
+#static-page{width:960px;margin:auto;}  
+
+.syarat-dan-ketentuan #static-page .description p{margin-bottom:40px;}
+.pp{position:relative;background:#fff;border:2px solid #93AE82;border-radius:8px;-moz-border-radius:8px;padding:50px;margin-bottom: 100px;}
+.pp p, .pp ol, .pp ol li {font-size:13px;line-height:24px;}
+.pp ol, .pp ol li{margin:0;}
+.pp ol li{list-style: decimal;}
+.featured{width: 960px;margin: 20px auto;text-align: center;}
+.featured .title{margin-bottom: 10px;font-family:salsa;font-weight: normal;}
+.featured img {margin: 0 10px}
+.featured .banner{margin: 35px auto 0 auto;padding-bottom:20px;} 
 
 
 
