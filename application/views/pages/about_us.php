@@ -40,11 +40,11 @@
 		<div class="section">
 			<div class="container">
 				<div class="visi-container">
-					<h2 class="visi">VISI</h2>
+					<h2 class="title visi">VISI</h2>
 					<p class="visi-para">Terciptanya kader-kader pemimpin yang amanah, mumpuni dan handal, yang dilandasi oleh cita – cita mewujudkan rahmat bagi alam semesta beserta seluruh isinya.</p>
 				</div>
 				<div class="misi-container">
-					<h2 class="misi">MISI</h2>
+					<h2 class="title misi">MISI</h2>
 						<p>1. Menyediakan, mengelola dan mengembangkan wahana pendidikan dan pelatihan ( Diklat ):</p>
 						<p>1.1. Kepemimpinan</p>
 						<p>1.2. Community Development</p>
@@ -54,10 +54,10 @@
 						<p>1.6. Vokasional atau keterampilan lain-lain<p>
 						<p>1.7. Etika dan Moral Keagamaan</p>
 						<br>
-						<p>2. Membangun, mengelola dan mengembangkan sarana dan prasarana Diklat sebagaimana    butir 1.</p>
-						<p>3. Memanfaatkan, mengembangkan dan mendayagunakan secara optimal multiplayer effect dari kegiatan butir 1 dan 2 bagi kemaslahatan yang seluas-luasnya.</p>
-						<p>4. Membentuk tim sumber daya insani yang amanah, profesional dan harmonis.</p>
-						<p>5. Mengembangkan comunity development disekitar BMC sehingga BMC bisa tumbuh dan berkembang bersama masyarakat sekitar.</p>
+						<p>2. Membangun, mengelola dan mengembangkan sarana dan prasarana Diklat sebagaimana    butir 1.</p><br>
+						<p>3. Memanfaatkan, mengembangkan dan mendayagunakan secara optimal multiplayer effect dari kegiatan butir 1 dan 2 bagi kemaslahatan yang seluas-luasnya.</p><br>
+						<p>4. Membentuk tim sumber daya insani yang amanah, profesional dan harmonis.</p><br>
+						<p>5. Mengembangkan comunity development disekitar BMC sehingga BMC bisa tumbuh dan berkembang bersama masyarakat sekitar.</p><br>
 				</div>
 			</div>
 		</div>
