@@ -44,7 +44,7 @@
         <div class="grid-item">
             <div class="grid-item-content">
                 <ul>
-                    <li><a href="#">Visitor Information</a></li>
+                    <li class="mini-title"><b>Bumi Mandiri</b></li>
                     <li><a href="#">Getting Here</a></li>
                     <li><a href="#">Contact Us</a></li>
                     <li><a href="#">FAQ</a></li>
@@ -55,22 +55,22 @@
         <div class="grid-item">
             <div class="grid-item-content">
                 <ul>
-                    <li><a href="#">Visitor Information</a></li>
-                    <li><a href="#">Getting Here</a></li>
+                    <li class="mini-title">External Links</li>
                     <li><a href="#">Contact Us</a></li>
                     <li><a href="#">FAQ</a></li>
-                    <li><a href="#">FeedBac</a></li>
+                    <li><a href="#">Feedback</a></li>
                 </ul>
             </div>
         </div> 
         <div class="grid-item">
             <div class="grid-item-content">
                 <ul>
-                    <li><a href="#">Visitor Information</a></li>
-                    <li><a href="#">Getting Here</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">FeedBac</a></li>
+                    <li class="mini-title">Follow Us On:</li>
+                    <li class="line-up-icons"><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+                    <li class="line-up-icons"><a href="#"><i class="fab fa-twitter-square"></i></a></li>
+                    <li class="line-up-icons"><a href="#"><i class="fab fa-youtube"></i></a></li>
+                    <li class="line-up-icons"><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    <li class="line-up-icons"><a href="#"><i class="fab fa-google-plus"></i></a></li>
                 </ul>
             </div>
         </div> 

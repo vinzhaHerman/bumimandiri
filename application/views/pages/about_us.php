@@ -9,19 +9,15 @@
 				<p class="text para-right">Bumi Mandiri Center (BMC) adalah  pusat pelatihan yang menyatu terpadu dengan kegiatan wisata alam. Terletak di kaki Gunung Gede - Pangrango di kawasan Situgunung Cisaat Sukabumi Jawabarat, BMC dibangun di suatu area yang berlatar bukit dan lembah dengan tiga sungai di dalamnya.</p>
 				<div class="symbols-container">
 					<div class="symbol">
-						<i class="far fa-images round"></i>
+						<i class="far fa-images"></i>
 						<p>Gallery</p>
 					</div>
 					<div class="symbol">
-						<i class="fas fa-exclamation round"></i>
+						<i class="fas fa-exclamation"></i>
 						<p>Visi & Misi</p>
 					</div>
 					<div class="symbol">
-						<i class="far fa-images round"></i>
-						<p>Gallery</p>
-					</div>
-					<div class="symbol">
-						<i class="fas fa-map-marker-alt round"></i>
+						<i class="fas fa-map-marker-alt"></i>
 						<p>Lokasi</p>
 					</div>
 				</div>

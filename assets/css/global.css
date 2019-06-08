@@ -347,49 +347,6 @@ nav ul li a{
 
 
 
-/*-*/
-
-
-
-
-
-/* -----------------------------------grid buat footer------------------------------------------*/
-.footer{
-    margin-top: 50px;
-    background-color: #1DAFFB;
-    width: auto;
-    height: 250px;
-}
-.footer-grid-container {
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    /*background-color: #72B537;*/
-    padding: 10px;
-    margin: 32px 36px;
-}
-.grid-item {
-    /* background-color: rgba(255, 255, 255, 0.8);
-    border: 1px solid rgba(0, 0, 0, 0.8); */
-    padding: 20px;
-    font-size: 15px;
-    text-align: center;
-}
-.grid-item-content{
-    text-align: left;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 15px;
-}
-.grid-item-content ul li{
-    list-style-type: none;
-}
-.grid-item-content ul li a{
-    text-decoration: none;
-    list-style-type: none;
-    color: white;
-}
-/* -----------------------------------END grid buat footer------------------------------------------*/
-
-
 
 .cutomer-reviews-container{
     width: 100%;
@@ -470,3 +427,55 @@ nav ul li a{
     background-color: #72B537;
     padding: 10px;
 }
+
+
+
+
+
+/* -----------------------------------grid buat footer------------------------------------------*/
+.footer{
+    margin-top: 50px;
+    background-color: #1DAFFB;
+    width: auto;
+    height: 250px;
+    border-bottom: 12px solid #35EF48;
+}
+.footer-grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    /*background-color: #72B537;*/
+    padding: 10px;
+    margin: 32px 36px;
+}
+.grid-item {
+    /* background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8); */
+    padding: 20px;
+    font-size: 15px;
+    text-align: center;
+}
+.grid-item-content{
+    text-align: left;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+}
+.grid-item-content ul li{
+    list-style-type: none;
+    margin: 5px;
+}
+.grid-item-content ul li a{
+    text-decoration: none;
+    list-style-type: none;
+    color: white;
+}
+.mini-title{
+    padding-bottom: 15px;
+    color: white;
+    font-weight: bold;
+}
+.line-up-icons{
+    float: left;
+    font-size: 32px;
+}
+
+/* -----------------------------------END grid buat footer------------------------------------------*/
