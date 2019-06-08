@@ -1,6 +1,6 @@
 
 <!-- --------------------------grid footer--------------------------------------------- --> 
-<div class="footer">
+<!-- <div class="footer">
     <div class="footer-grid-container">
         <div class="grid-item">
             <div class="grid-item-content">
@@ -26,28 +26,59 @@
             </div>
         </div>
         <div class="grid-item">
-           <style>
-           .google-maps {
-            position: relative;
-            padding-bottom: 75%;
-            height: 0;
-            overflow: hidden;
-        }
-        .google-maps iframe {
-          position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100% ;
-        }
-            </style>
 
-    <div class="google-maps">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d7098.94326104394!2d78.0430654485247!3d27.172909818538997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1385710909804" width="600" height="450" frameborder="0" style="border:0"></iframe>
+        </div> 
     </div>
-</div>
-</div> 
+</div> -->
+<!-- --------------------------END grid footer--------------------------------------------- --> 
+<!-- --------------------------grid footer--------------------------------------------- --> 
+<div class="footer">
+    <div class="footer-grid-container">
+        <div class="grid-item">
+            <div class="grid-item-content">
+                <ul>
+                    <img style="width: 120px; height: 120px;" src="<?php echo base_url(); ?>assets/logos/white.png">
+                </ul>
+            </div>
+        </div>
+        <div class="grid-item">
+            <div class="grid-item-content">
+                <ul>
+                    <li class="mini-title"><b>Bumi Mandiri</b></li>
+                    <li><a href="#">Getting Here</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">FeedBac</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="grid-item">
+            <div class="grid-item-content">
+                <ul>
+                    <li class="mini-title">External Links</li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Feedback</a></li>
+                </ul>
+            </div>
+        </div> 
+        <div class="grid-item">
+            <div class="grid-item-content">
+                <ul>
+                    <li class="mini-title">Follow Us On:</li>
+                    <li class="line-up-icons"><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+                    <li class="line-up-icons"><a href="#"><i class="fab fa-twitter-square"></i></a></li>
+                    <li class="line-up-icons"><a href="#"><i class="fab fa-youtube"></i></a></li>
+                    <li class="line-up-icons"><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    <li class="line-up-icons"><a href="#"><i class="fab fa-google-plus"></i></a></li>
+                </ul>
+            </div>
+        </div> 
+    </div>
 </div>
 <!-- --------------------------END grid footer--------------------------------------------- --> 
 </html>
-<script src="<?php echo base_url()?>assets/js/mainjs.js"></script>
+<script src="<?php echo base_url()?>assets/js/jquery.min.js"></script>
+<script src="<?php echo base_url()?>assets/slick/slick.js"></script>
+<script src="<?php echo base_url()?>assets/js/main.js"></script>
+</body>

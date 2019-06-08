@@ -1,0 +1,234 @@
+*{padding: 0; margin: 0;}
+
+
+
+
+.filler{
+	height: 70px;
+	background-color: transparent;
+}
+.profile-main-wrapper{
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.section{
+	width: 100%;
+	height: 100vh;
+	background-color: yellow;
+	position: relative;
+}
+.section:nth-child(1){
+	background: url('../../assets/img/petriso.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.section:nth-child(2){
+	background: url('../../assets/img/mountains_res.jpg');
+}
+.section:nth-child(3){
+	background: url('../../assets/img/walp_blue.jpg');
+	background-size: cover;
+}
+.section:nth-child(4){
+	background-color: white;
+}
+
+
+
+
+
+.container{
+	width: 90%;
+	height: 100%;
+	margin: auto;
+	/*background-color: rgb(255, 2555, 255, 0.7);*/
+	position: relative;
+}
+
+
+
+
+
+.overlay{
+	width: 100%;
+	height: 100vh;
+	background-color: white;
+	opacity: 0.72;
+}
+
+
+
+
+
+.para-container{
+	width: 740px;
+	height: 520px;
+	background-color: transparent;
+	position: absolute;
+	margin: 30px 0 0 0;
+	top: 50%;
+	right: 0;
+	transform: translateY(-50%);
+}
+.para-container-left{
+	display: block;
+	width: 650px;
+	height: 520px;
+	/*background-color: red;*/
+	position: absolute;
+	margin: 42px 0 0 0;
+	left: 0;
+}
+.text{
+	margin: 24px;
+	color: #3b5998;
+}
+.title{
+	font-size: 60px;
+}
+.title-right{
+	margin: 32px 0 0 24px;
+	font-size: 60px;
+}
+.text-right{
+	margin: 0 24px;
+	font-size: 24px;
+	font-weight: normal;
+}
+.para-right{
+	text-align: justify;
+	font-size: 18px;
+	margin-top: 60px;
+}
+.para-left{
+	display: block;
+}
+.title-left-cont{
+	width: 100%;
+	height: 280px;
+}
+.title-left{
+	margin: 32px 0 0 24px;
+	font-size: 60px;
+	font-weight: normal;
+	color: #333;
+	float: right;
+}
+.highlight{
+	float: right;
+	color: #3b5998;
+	font-weight: bold;
+}
+.para{
+	font-size: 18px;
+}
+.symbols-container{
+	margin: 24px;
+}
+.symbol{
+	float: left;
+	margin: 0 14px;
+}
+.round{
+	width: 25px;
+	height: 25px;
+	border: 2px solid black;
+	border-radius: 50px;
+	font-size: 24px;
+	padding: 5px;
+	margin: 0 auto;
+}
+
+
+
+
+
+.path{
+	width: 70%;
+	height: 100vh;
+
+	-webkit-clip-path: polygon(0 0, 100% 0, 75% 100%, 0% 100%);
+	clip-path: polygon(0 0, 100% 0, 75% 100%, 0% 100%);
+
+	background-color: white;
+}
+
+
+
+
+
+.visi-container{
+	position: absolute;
+	width: 40%;
+	height: auto;
+	top: 60px;
+	left: 32px;
+	color: white;
+}
+
+.misi-container{
+	position: absolute;
+	width: 40%;
+	height: auto;
+	top: 60px;
+	right: 32px;
+	color: white;
+}
+.misi{
+	text-align: right;
+}
+
+
+
+
+.map-container{
+	display: block;
+	width: 480px;
+	height: 320px;
+	float: right;
+	margin: 21vh 8vw;
+	background-color: #3b5998;
+}
+
+/*.google-maps {
+    position: relative;
+    padding-bottom: 65%; // This is the aspect ratio
+    height: 0;
+    overflow: hidden;
+}
+.google-maps iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 600px;
+    height: 400px;
+}*/
+
+
+
+
+
+@media only screen and (max-width: 600px){
+	.para-container, .para-container-left{
+		width: 100%;
+		height: auto;
+		text-align: center;
+	}
+	.path{
+		-webkit-clip-path: none;
+		clip-path: none;
+		width: 100%
+	}
+	.highlight{
+		float: none;
+	}
+	.symbols-container{
+		display: none;
+	}
+	.map-container{
+		margin: 0;
+		bottom: 0;
+		float: none;
+		width: 100vw;
+		height: auto;
+	}
+}

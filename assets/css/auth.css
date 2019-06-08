@@ -1,0 +1,164 @@
+*{padding: 0; margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+
+body{
+  background-color: #e3e3e3;
+}
+
+.main-wrapper{
+  width: 400px;
+  height: 600px;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 0px;
+  border-radius: 20px;
+}
+
+.form-wrapper{
+  width: 90%;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.form-container{
+  margin: 30px;
+}
+
+.form-title{
+  font-size: 24px;
+  color: #3b5998;
+  text-align: center;
+  margin-top: -12px;
+  margin-bottom: 12px;
+}
+
+.imgcontainer{
+  width: 150px;
+  margin: 30px auto;
+}
+.imgcontainer-register{
+  width: 100px;
+  margin: 12px auto;
+}
+
+.avatar{
+  width: 150px;
+  height: auto;
+}
+.avatar-register{
+  width: 100px;
+  height: auto;
+}
+
+label{
+  display: block;
+  color: #3b5998;
+
+}
+input[type=text], input[type=password] {
+  display: block;
+  padding: 10px;
+  width: 90%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+  margin: 5px auto;
+}
+
+.positive-button{
+  background-color: #72B537;
+  font-weight: bold;
+  display: block;
+  width: 82%;
+  color: white;
+  padding: 12px 20px;
+  margin: 12px auto;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.negative-button{
+  background-color: #3b5998;
+  display: block;
+  width: 82%;
+  color: white;
+  padding: 8px 20px;
+  margin: 12px auto;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.bottom-text{
+  margin: 35px;
+  text-align: right;
+  font-size: 14px;
+}.bottom-text a{text-decoration: none;color: #72B537;}
+
+.agreement{
+  margin: 20px 12px;
+  font-size: 14px;
+  text-align: justify;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+h1 {
+  font-family: 'Salsa', cursive;
+}
+
+h2 {
+  font-family: 'Salsa', cursive;
+  font-size: 28px;
+  font-weight: 400;
+  color: #794621;
+  margin: 0 auto;
+  text-align: center;
+  text-shadow: 1px 1px 0px #D2ACA5;
+}
+ol, ul {
+    list-style: none outside none;
+}
+
+.middle-content {
+    height: auto;
+    margin: 60px auto 0 auto;
+}
+.sub-title {
+    display: block;
+    line-height: 30px;
+    margin: 50px auto 25px auto;
+    text-align: center;
+}
+/*Static Page*/
+#static-page{width:960px;margin:auto;}  
+
+.syarat-dan-ketentuan #static-page .description p{margin-bottom:40px;}
+.pp{position:relative;background:#fff;border:2px solid #93AE82;border-radius:8px;-moz-border-radius:8px;padding:50px;margin-bottom: 100px;}
+.pp p, .pp ol, .pp ol li {font-size:13px;line-height:24px;}
+.pp ol, .pp ol li{margin:0;}
+.pp ol li{list-style: decimal;}
+.featured{width: 960px;margin: 20px auto;text-align: center;}
+.featured .title{margin-bottom: 10px;font-family:salsa;font-weight: normal;}
+.featured img {margin: 0 10px}
+.featured .banner{margin: 35px auto 0 auto;padding-bottom:20px;} 
+
+
+
+
+@media only screen and (max-width: 600px){
+  .main-wrapper{
+    width: 100%;
+    height: 100%;
+    border-radius: 0px;
+  }
+}

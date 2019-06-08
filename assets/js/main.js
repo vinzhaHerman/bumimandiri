@@ -67,4 +67,51 @@ jQuery( document ).ready(function( $ ) {
 		$(this).addClass('active');
 	});
 	$('#name').trigger('click').trigger('focus');
+
+
+	
 });
+
+
+
+
+$(document).ready(function(){
+	// $('.menu-open').click(function(){
+	// 	$('#side-menu').fadeToggle("fast");
+	// });
+	// $('.btn-close').click(function(){
+	// 	$('#side-menu').fadeToggle("slow");
+	// });
+	$('#side-menu').css({"box-shadow":"0px 1px 5px 1px #555"});
+	$('.fullscreen-bg-container').click(function(){
+		$('#side-menu').css({"left":"-250px"});
+	});
+	$('.main-wrapper').click(function(){
+		$('#side-menu').css({"left":"-250px"});
+	});
+});
+
+var slidemenu = document.getElementById('side-menu');
+
+function openSlideMenu(){
+   slidemenu.style.left='0';
+}
+function closeSlideMenu(){
+   slidemenu.style.left='-250px';
+}
+
+window.onclick = function(event) {
+  if (event.target == slidemenu) {
+   slidemenu.style.left = '-250px';
+  }
+}
+
+
+
+
+$(".center").slick({
+        infinite: true,
+        centerMode: true,
+        slidesToShow: 3,
+        slidesToScroll: 3
+      });
