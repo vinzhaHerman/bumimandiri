@@ -126,7 +126,18 @@
 }
 .symbol{
 	float: left;
-	margin: 0 14px;
+	margin: 0 12px;
+	padding: 0 12px;
+	text-align: center;
+	color: #3b5998;
+}
+.symbol:nth-child(2){
+	border-left: 2px solid #3b5998;
+	border-right: 2px solid #3b5998;
+}
+.symbol .fas, .far{
+	font-size: 32px;
+	margin-bottom: 12px;
 }
 .round{
 	width: 25px;
