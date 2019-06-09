@@ -26,6 +26,7 @@
     <input type="password" placeholder="Enter Password" name="password" required>
     </div>
 
+    <p class="mid-text">Belum punya akun? <a href="http://localhost/PBumiMandiri/register">daftar sekarang</a></p>
     <button class="positive-button" type="submit">Login</button>
   </div>
 

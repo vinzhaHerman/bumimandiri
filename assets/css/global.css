@@ -290,39 +290,64 @@ nav ul li a{
 
 
 /* -----------------------------------box buat artikel dan promosi------------------------------------------*/
-.list-container{
+.list-featured{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    width: 90%;
+    position: absolute;
+    top: 20%;
+    right: 0;
+    width: 34%;
+    height: 120px;
     margin: auto;
     overflow: hidden;
     padding-bottom: 50px;
-    background-color: red;
+    background-color: white;
     /* border: 2px solid green; */
+}
+
+
+
+
+
+.list-container{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 88%;
+    margin: auto;
+    overflow: hidden;
+    padding-bottom: 50px;
+    background-color: grey;
+    /* border: 2px solid green; */
+}
+.list-row{
+    width: 65%;
+    height: auto;
+    background-color: white;
 }
 .list-box-container{
     width: 100%;
     text-align: left;
-    height: 300px;
+    min-height: 160px;
     margin:20px 0;
-    background-color: orange;
     /* border: 2px dashed red; */
 }
 .list-box-content{
     float: left;
-    background-color: yellow;
 }
 .list-box-img{
-    width: 30%;
-    height: 200px;
-    background-color: green;
+    width: 32%;
+    height: 160px;
+    background-color: #3b5998;
 }
 .list-box-text{
-    width: 70%;
+    width: 62%;
+    margin: 12px 12px;
 }
 .list-box-title{
     font-size: 20px;
     color: #3b5998;
     font-weight: bold;
+}
+.content-atr{
+    margin-top: 12px;
 }
 /* ----------------------------------END box buat artikel dan promosi----------------------------------------*/
 

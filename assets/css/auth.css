@@ -95,6 +95,12 @@ input[type=text], input[type=password] {
   cursor: pointer;
 }
 
+.mid-text{
+  margin: 35px 35px 0 35px;
+  text-align: center;
+  font-size: 14px;
+}.mid-text a{text-decoration: none;color: #72B537;}
+
 .bottom-text{
   margin: 35px;
   text-align: right;
