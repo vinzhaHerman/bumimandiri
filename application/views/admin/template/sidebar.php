@@ -13,8 +13,8 @@
       </div>
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li class="nav-item active  ">
-            <a class="nav-link" href="./dashboard.html">
+          <li class="nav-item ">
+            <a class="nav-link" href="http://localhost/PBumiMandiri/Admin">
               <i class="material-icons">dashboard</i>
               <p>Dashboard</p>
             </a>
@@ -26,7 +26,7 @@
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./tables.html">
+            <a class="nav-link" href="http://localhost/PBumiMandiri/Admin/kelola_blog">
               <i class="material-icons">content_paste</i>
               <p>Kegiatan Wisata</p>
             </a>

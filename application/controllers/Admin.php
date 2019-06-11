@@ -16,5 +16,13 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/dashboard');
 		$this->load->view('admin/template/foot');
 	}
+
+	public function kelola_blog()
+	{
+		$this->load->view('admin/template/head');
+		$this->load->view('admin/template/sidebar');
+		$this->load->view('admin/blog');
+		$this->load->view('admin/template/foot');
+	}
 	
 }
