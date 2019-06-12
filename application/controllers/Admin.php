@@ -24,5 +24,12 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/blog');
 		$this->load->view('admin/template/foot');
 	}
+	public function tambah_blog()
+	{
+		$this->load->view('admin/template/head');
+		$this->load->view('admin/template/sidebar');
+		$this->load->view('admin/tambah-blog');
+		$this->load->view('admin/template/foot');
+	}
 	
 }
