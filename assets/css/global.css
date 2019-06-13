@@ -242,6 +242,7 @@ nav ul li a{
 .main-content-wrapper{
     background-color: white;
     margin-top: 70px;
+    min-height: 100vh; 
 }
 /* --------------------------------END container utama konten web-------------------------------------*/
 
@@ -255,7 +256,8 @@ nav ul li a{
     font-size: 36px;
     font-weight: lighter;
     color: #3b5998;
-    margin: 36px 0;
+    margin: auto auto;
+    width: 88%;
 }
 .box-slider-container{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;

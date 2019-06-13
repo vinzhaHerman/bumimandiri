@@ -22,9 +22,9 @@
     		<i class="fas fa-list-ul"></i><span class="sidebar-item-text">Daftar Paket</span>
     	</div>
     </a>
-    <a href="">
+    <a href="http://localhost/PBumiMandiri/Web/galery">
         <div class="sidebar-item">
-            <i class="far fa-images"></i><span class="sidebar-item-text">Gallery</span>
+            <i class="far fa-images"></i><span class="sidebar-item-text">Galery</span>
         </div>
     </a>
     	<div class="sidebar-item border-top-bot">

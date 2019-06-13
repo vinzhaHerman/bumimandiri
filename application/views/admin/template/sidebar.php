@@ -16,7 +16,7 @@
           <li class="nav-item ">
             <a class="nav-link" href="http://localhost/PBumiMandiri/Admin">
               <i class="material-icons">dashboard</i>
-              <p>Dashboard</p>
+              <p>Beranda</p>
             </a>
           </li>
           <li class="nav-item ">
@@ -45,8 +45,8 @@
           </li>
           <li class="nav-item ">
             <a class="nav-link" href="./notifications.html">
-              <i class="material-icons">notifications</i>
-              <p>Notifications</p>
+              <i class="material-icons">perm_media</i>
+              <p>Gallery</p>
             </a>
           </li>
         </ul>

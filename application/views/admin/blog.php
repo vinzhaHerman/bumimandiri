@@ -106,19 +106,19 @@
                       <ul class="nav nav-tabs" data-tabs="tabs">
                         <li class="nav-item">
                           <a class="nav-link active" href="#profile" data-toggle="tab">
-                            <i class="material-icons">bug_report</i> Blog
+                            Blog
                             <div class="ripple-container"></div>
                           </a>
                         </li>
                         <li class="nav-item">
                           <a class="nav-link" href="#messages" data-toggle="tab">
-                            <i class="material-icons">code</i> Artikel
+                            Artikel
                             <div class="ripple-container"></div>
                           </a>
                         </li>
                         <li class="nav-item">
                           <a class="nav-link" href="#settings" data-toggle="tab">
-                            <i class="material-icons">cloud</i> Events
+                            Events
                             <div class="ripple-container"></div>
                           </a>
                         </li>
@@ -135,18 +135,11 @@
                             <td>
                               <!-- some content -->
                             </td>
-                            <td><a href="#"><b>+ TAMBAH BLOG BARU</b></a></td>
+                            <td><a href="http://localhost/PBumiMandiri/Admin/tambah_blog"><b>+ TAMBAH BLOG BARU</b></a></td>
                           </tr>
                           <tr>
                             <td>
-                              <div class="form-check">
-                                <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" value="" checked>
-                                  <span class="form-check-sign">
-                                    <span class="check"></span>
-                                  </span>
-                                </label>
-                              </div>
+                              1
                             </td>
                             <td>Sign contract for "What are conference organizers afraid of?"</td>
                             <td class="td-actions text-right">
@@ -160,14 +153,7 @@
                           </tr>
                           <tr>
                             <td>
-                              <div class="form-check">
-                                <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" value="">
-                                  <span class="form-check-sign">
-                                    <span class="check"></span>
-                                  </span>
-                                </label>
-                              </div>
+                              2
                             </td>
                             <td>Lines From Great Russian Literature? Or E-mails From My Boss?</td>
                             <td class="td-actions text-right">
@@ -181,14 +167,7 @@
                           </tr>
                           <tr>
                             <td>
-                              <div class="form-check">
-                                <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" value="">
-                                  <span class="form-check-sign">
-                                    <span class="check"></span>
-                                  </span>
-                                </label>
-                              </div>
+                              3
                             </td>
                             <td>Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit
                             </td>
@@ -203,14 +182,7 @@
                           </tr>
                           <tr>
                             <td>
-                              <div class="form-check">
-                                <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" value="" checked>
-                                  <span class="form-check-sign">
-                                    <span class="check"></span>
-                                  </span>
-                                </label>
-                              </div>
+                              4
                             </td>
                             <td>Create 4 Invisible User Experiences you Never Knew About</td>
                             <td class="td-actions text-right">
@@ -230,14 +202,7 @@
                         <tbody>
                           <tr>
                             <td>
-                              <div class="form-check">
-                                <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" value="" checked>
-                                  <span class="form-check-sign">
-                                    <span class="check"></span>
-                                  </span>
-                                </label>
-                              </div>
+                              1
                             </td>
                             <td>Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit
                             </td>
@@ -252,14 +217,7 @@
                           </tr>
                           <tr>
                             <td>
-                              <div class="form-check">
-                                <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" value="">
-                                  <span class="form-check-sign">
-                                    <span class="check"></span>
-                                  </span>
-                                </label>
-                              </div>
+                              2
                             </td>
                             <td>Sign contract for "What are conference organizers afraid of?"</td>
                             <td class="td-actions text-right">
@@ -279,14 +237,7 @@
                         <tbody>
                           <tr>
                             <td>
-                              <div class="form-check">
-                                <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" value="">
-                                  <span class="form-check-sign">
-                                    <span class="check"></span>
-                                  </span>
-                                </label>
-                              </div>
+                              1
                             </td>
                             <td>Lines From Great Russian Literature? Or E-mails From My Boss?</td>
                             <td class="td-actions text-right">
@@ -300,14 +251,7 @@
                           </tr>
                           <tr>
                             <td>
-                              <div class="form-check">
-                                <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" value="" checked>
-                                  <span class="form-check-sign">
-                                    <span class="check"></span>
-                                  </span>
-                                </label>
-                              </div>
+                              2
                             </td>
                             <td>Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit
                             </td>
@@ -322,14 +266,7 @@
                           </tr>
                           <tr>
                             <td>
-                              <div class="form-check">
-                                <label class="form-check-label">
-                                  <input class="form-check-input" type="checkbox" value="" checked>
-                                  <span class="form-check-sign">
-                                    <span class="check"></span>
-                                  </span>
-                                </label>
-                              </div>
+                              3
                             </td>
                             <td>Sign contract for "What are conference organizers afraid of?"</td>
                             <td class="td-actions text-right">

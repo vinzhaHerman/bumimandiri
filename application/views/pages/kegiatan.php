@@ -1,5 +1,8 @@
 <div class="main-wrapper">
 <div class="main-content-wrapper">
+
+    <div class="filler"></div>
+    <div class="section-title">ARTIKEL</div>
     <div class="list-container">
 
 
@@ -29,7 +32,6 @@
 
 
         <div class="list-row">
-        <div class="section-title">ARTIKEL</div>
         <div class="list-box-container">
             <div class="list-box-content list-box-img"></div>
             <div class="list-box-content list-box-text">

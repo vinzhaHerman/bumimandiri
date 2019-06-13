@@ -55,6 +55,14 @@ class Web extends CI_Controller {
 		$this->load->view('bantuan/bantuan');
 		$this->load->view('template/footer');
 	}
+	public function galery()
+	{
+		$this->load->view('template/head');
+		$this->load->view('pages/galery');
+		$this->load->view('template/navbar');
+		$this->load->view('template/sidebar');
+		$this->load->view('template/footer');
+	}
 
 	public function booking()
 	{
