@@ -1,0 +1,19 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+class Booking extends CI_Controller {
+	
+	function __construct(){
+		parent::__construct();
+		$this->load->helper('url');
+	}
+
+
+	public function index()
+	{
+		$this->load->view('template/head');
+		$this->load->view('pages/book');
+		$this->load->view('template/footer');
+	}
+	
+}
