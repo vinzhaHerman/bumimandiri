@@ -10,7 +10,9 @@
 	crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet"> 
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/book.css">
-	<link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
 <body>
 
@@ -33,8 +35,20 @@
 		<div class="container">
 			<h1 class="main-title">FORM <b>PEMESANAN</b></h1>
 			<div class="row">
-				<input id="datepicker">
+				<label for="initDate" class="labels">Untuk tanggal:</label>
+				<input id="initDate" type="text" class="datepicker" placeholder="pilih tanggal pemesanan anda.">
+				<button type="submit" class="y-button">CARI</button>
 			</div>
+			<!-- <div class="row">
+				<div class="item-container">
+					<div class="item imgs"></div>
+					<div class="item desc">
+						<div class="item-name"></div>
+						<div class="item-desc"></div>
+						
+					</div>
+				</div>
+			</div> -->
 		</div>
 
 
@@ -44,12 +58,10 @@
 	</div>
 
 <script>
-	 $('#datepicker').datepicker({
-            showOtherMonths: true
-        });
+	$(document).ready(function(){
+    $('.datepicker').datepicker();
+  	});
 </script>
 
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js"></script>
 </body>
 </html>

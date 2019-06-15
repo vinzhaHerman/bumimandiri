@@ -26,11 +26,33 @@
 .container{
 	position: absolute;
 	width: 80%;
-	height: 1200px;
+	height: auto;
+	/*height: 1200px;*/
 	top: 12%;
 	left: 50%;
 	transform: translateX(-50%);
 	background-color: white;
+}
+
+.row{
+	width: 100%;
+	height: auto;
+	padding: 24px;
+}
+
+.labels{
+	color: rgb(3, 169, 244);
+	font-size: 18px;
+}
+.y-button{
+	float: right;
+	padding: 12px 32px;
+	margin: 12px 0;
+	color: white;
+	font-weight: bold;
+	background-color: rgb(3, 169, 244);
+	border: 0px;
+	border-radius: 5px;
 }
 
 

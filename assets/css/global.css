@@ -117,6 +117,7 @@
     background-color: #3b5998;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: bold;
+    box-shadow: 0px 0px 8px #000000;
 }
 nav ul li{
     list-style-type: none;
@@ -137,22 +138,24 @@ nav ul li a{
     margin: 12px 5px;
     font-size: 14px;
     color: white;
+    background-color: #334a7a;
     padding: 10px 20px;
-    border-style: solid;
-    border-width: 2px;
-    border-color: #72B537;
-    border-radius: 50px;
+    border: 2px solid #334a7a;
+    border-radius: 5px;
+}
+.lang-button{
+    margin: 0 12px;
 }
 .fill-button{
     margin: 12px 5px;
     font-size: 14px;
     color: white;
     background-color: #72B537;
-    padding: 10px 20px;
+    padding: 10px 30px;
     border-style: solid;
     border-width: 2px;
     border-color: #72B537;
-    border-radius: 50px;
+    border-radius: 5px;
 }
 .fill-button-blue{
     margin-left: -5px;
