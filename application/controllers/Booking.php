@@ -11,9 +11,7 @@ class Booking extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('template/head');
 		$this->load->view('pages/book');
-		$this->load->view('template/footer');
 	}
 	
 }
