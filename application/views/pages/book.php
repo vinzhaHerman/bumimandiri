@@ -33,22 +33,55 @@
 
 
 		<div class="container">
-			<h1 class="main-title">FORM <b>PEMESANAN</b></h1>
+			<h1 class="main-title"><b>FORM PEMESANAN</b></h1>
 			<div class="row">
 				<label for="initDate" class="labels">Untuk tanggal:</label>
 				<input id="initDate" type="text" class="datepicker" placeholder="pilih tanggal pemesanan anda.">
-				<button type="submit" class="y-button">CARI</button>
+				<button type="submit" class="x-space y-button">CARI</button>
+				<button type="submit" class="x-space n-button">BATAL</button>
 			</div>
-			<!-- <div class="row">
+			<div class="row">
+				<div class="labels">Pilih paket:</div>
 				<div class="item-container">
+					<div class="item-centering">
 					<div class="item imgs"></div>
 					<div class="item desc">
-						<div class="item-name"></div>
-						<div class="item-desc"></div>
-						
+						<div class="para item-name labels"><b>PAKET SEKOLAH</b></div>
+						<div class=" para item-desc">Item Desc....</div>
+						<div class="button-group">
+							<button class="x-space y-button">PILIH</button>
+							<button class="x-space n-button">DETAIL</button>
+						</div>
+					</div>
 					</div>
 				</div>
-			</div> -->
+				<div class="item-container">
+					<div class="item-centering">
+					<div class="item imgs"></div>
+					<div class="item desc">
+						<div class="para item-name labels"><b>PAKET SEKOLAH</b></div>
+						<div class=" para item-desc">Item Desc....</div>
+						<div class="button-group">
+							<button class="x-space y-button">PILIH</button>
+							<button class="x-space n-button">DETAIL</button>
+						</div>
+					</div>
+					</div>
+				</div>
+				<div class="item-container">
+					<div class="item-centering">
+					<div class="item imgs"></div>
+					<div class="item desc">
+						<div class="para item-name labels"><b>PAKET SEKOLAH</b></div>
+						<div class=" para item-desc">Item Desc....</div>
+						<div class="button-group">
+							<button class="x-space y-button">PILIH</button>
+							<button class="x-space n-button">DETAIL</button>
+						</div>
+					</div>
+					</div>
+				</div>
+			</div>
 		</div>
 
 
