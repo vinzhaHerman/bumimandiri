@@ -50,10 +50,7 @@ class Web extends CI_Controller {
 	}
 	public function bantuan()
 	{
-		$this->load->view('bantuan/head');
-		$this->load->view('template/navbar');
-		$this->load->view('bantuan/bantuan');
-		$this->load->view('template/footer');
+		$this->load->view('pages/bantuan');
 	}
 	public function galery()
 	{

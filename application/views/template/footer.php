@@ -66,7 +66,7 @@
             <div class="grid-item-content">
                 <ul>
                     <li class="mini-title">Follow Us On:</li>
-                    <li class="line-up-icons"><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+                    <li class="line-up-icons"><a href="#/"><i class="fab fa-facebook-square"></i></a></li>
                     <li class="line-up-icons"><a href="#"><i class="fab fa-twitter-square"></i></a></li>
                     <li class="line-up-icons"><a href="#"><i class="fab fa-youtube"></i></a></li>
                     <li class="line-up-icons"><a href="#"><i class="fab fa-instagram"></i></a></li>

@@ -30,7 +30,7 @@
     	<div class="sidebar-item border-top-bot">
     		<a href="http://localhost/PBumiMandiri/Web/booking"><div class="fill-button-blue"><span class="sidebar-button-text">Pesan Sekarang</span><i class="fas fa-external-link-alt"></i></div></a>
     	</div>
-    <a href="">
+    <a href="http://localhost/PBumiMandiri/Web/bantuan">
     	<div class="sidebar-item">
     		<i class="fas fa-exclamation-circle"></i><span class="sidebar-item-text">Bantuan</span>
     	</div>

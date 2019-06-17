@@ -29,7 +29,7 @@
 					<div class="title-left-cont"><h1 class="text title title-left">WHY YOU SHOULD<br><span class="highlight">VISIT US</span></h1></div>
 					<h4 class="text">Learning Center, Agriculture, Outbound & Adventure</h4>
 					<p class="text para-left">Bumi Mandiri Center (BMC) adalah  pusat pelatihan yang menyatu terpadu dengan kegiatan wisata alam. Terletak di kaki Gunung Gede - Pangrango di kawasan Situgunung Cisaat Sukabumi Jawabarat, BMC dibangun di suatu area yang berlatar bukit dan lembah dengan tiga sungai di dalamnya.</p>
-					<button class="fill-button-blue" style="float: right; margin-top: 32px;"> Lihat Gallery</button>
+					<a href="http://localhost/PBumiMandiri/Web/galery" class="fill-button-blue"  style="float: right; margin-top: 32px;">Lihat Gallery</i></a>
 				</div>
 			</div>
 		</div>
