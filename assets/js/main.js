@@ -75,6 +75,9 @@ jQuery( document ).ready(function( $ ) {
 
 
 
+
+//----------------------------------------- sidebar configuration -------------------------------------------------
+
 $(document).ready(function(){
 	// $('.menu-open').click(function(){
 	// 	$('#side-menu').fadeToggle("fast");
@@ -106,12 +109,30 @@ window.onclick = function(event) {
   }
 }
 
+//----------------------------------------- sidebar configuration -------------------------------------------------
 
 
+
+
+
+//----------------------------------------- carousel configuration -------------------------------------------------
 
 $(".center").slick({
         infinite: true,
         centerMode: true,
         slidesToShow: 3,
-        slidesToScroll: 3
+        slidesToScroll: 3,
+        responsive: [{
+        breakpoint: 640,
+        settings: {
+            slidesToShow: 1
+        }
+    	}, {
+        breakpoint: 320,
+        settings: {
+            infinite: true
+        }
+    	}]
       });
+
+//----------------------------------------- carousel configuration -------------------------------------------------

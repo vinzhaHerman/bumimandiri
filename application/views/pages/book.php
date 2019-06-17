@@ -50,11 +50,20 @@
 						<div class=" para item-desc">Item Desc....</div>
 						<div class="button-group">
 							<button class="x-space y-button">PILIH</button>
-							<button class="x-space n-button">DETAIL</button>
+							<button class="x-space n-button exp-button">DETAIL</button>
 						</div>
 					</div>
 					</div>
 				</div>
+
+				<div class="collapsible">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+				</div>
+
+
+
+
+
 				<div class="item-container">
 					<div class="item-centering">
 					<div class="item imgs"></div>
@@ -63,11 +72,20 @@
 						<div class=" para item-desc">Item Desc....</div>
 						<div class="button-group">
 							<button class="x-space y-button">PILIH</button>
-							<button class="x-space n-button">DETAIL</button>
+							<button class="x-space n-button exp-button">DETAIL</button>
 						</div>
 					</div>
 					</div>
 				</div>
+
+				<div class="collapsible">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+				</div>
+
+
+
+
+
 				<div class="item-container">
 					<div class="item-centering">
 					<div class="item imgs"></div>
@@ -76,10 +94,14 @@
 						<div class=" para item-desc">Item Desc....</div>
 						<div class="button-group">
 							<button class="x-space y-button">PILIH</button>
-							<button class="x-space n-button">DETAIL</button>
+							<button class="x-space n-button exp-button">DETAIL</button>
 						</div>
 					</div>
 					</div>
+				</div>
+
+				<div class="collapsible">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 				</div>
 			</div>
 		</div>
@@ -94,6 +116,23 @@
 	$(document).ready(function(){
     $('.datepicker').datepicker();
   	});
+
+
+
+
+
+	// $('.exp-button').click(function() {
+ //    $('.collapsible').css({
+ //        'display': 'block'
+ //    });
+	// });
+
+
+
+
+	$('.exp-button').click(function(){
+    $('.collapsible').slideToggle('fast');
+	});
 </script>
 
 </body>
