@@ -113,20 +113,20 @@
 	</div>
 
 <script>
-	$(document).ready(function(){
-    $('.datepicker').datepicker();
-  	});
+	// $(document).ready(function(){
+ //    $('.datepicker').datepicker();
+ //  	});
+// var today = new Date().getDate();
 
+var nextDay = new Date(new Date().getTime()+(7*24*60*60*1000));
 
-
-
-
-	// $('.exp-button').click(function() {
- //    $('.collapsible').css({
- //        'display': 'block'
- //    });
-	// });
-
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.datepicker');
+    var instances = M.Datepicker.init(elems,{
+    	format:'dd-mm-yyyy',
+    	minDate:nextDay
+    });
+  });
 
 
 
