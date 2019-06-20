@@ -11,7 +11,7 @@
                 magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
                 aliquip ex ea commodo consequat.
             </div>
-            <a href="#" class="home-middle-button"><br>Learn More</a>
+            <a href="#" class="home-middle-button"><br>Learn More <i class="fas fa-arrow-circle-right"></i></a>
         </div>
     </div>
     <!-- ---------------------------END fullscreen blue overlay---------------------------------------------- -->

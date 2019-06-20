@@ -31,7 +31,7 @@
   </div>
 
   <div class="button-container">
-    <a href="http://localhost/PBumiMandiri/web"><button type="button" class="negative-button">Kembali</button></a>
+    <a class="links" href="http://localhost/PBumiMandiri/web"><button type="button" class="negative-button">Kembali</button></a>
     <p class="bottom-text"><a href="http://localhost/PBumiMandiri/lupapass">Forgot Password?</a></p>
   </div>
   </form>

@@ -1,30 +1,39 @@
-*{padding: 0; margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+*{padding: 0; margin: 0;}
 
 body{
-  background-color: #e3e3e3;
+	font-family: 'Roboto', sans-serif;
+	background: url(../../assets/img/petriso.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.overlay{
+	width: 100%;
+	height: 100vh;
+	background-color: rgba(66, 134, 244, 0.6);
 }
 
-.main-wrapper{
-  width: 400px;
-  height: 600px;
-  background-color: white;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border: 0px;
-  border-radius: 20px;
-  box-shadow: 0px 0px 8px grey;
-}
+
+
+
+
+
 
 .form-wrapper{
-  width: 90%;
+  width: 400px;
   height: auto;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  background-color: white;
+  border: 0px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 8px aqua;
 }
+
+
+
+
 
 .form-container{
   margin: 30px;
@@ -72,7 +81,7 @@ input[type=text], input[type=password] {
 }
 
 .positive-button{
-  background-color: #72B537;
+  background-color: #48659C;
   font-weight: bold;
   display: block;
   width: 82%;
@@ -85,7 +94,7 @@ input[type=text], input[type=password] {
 }
 
 .negative-button{
-  background-color: #3b5998;
+  background-color: #707070;
   display: block;
   width: 82%;
   color: white;
@@ -110,7 +119,7 @@ input[type=text], input[type=password] {
   margin: 35px;
   text-align: right;
   font-size: 14px;
-}.bottom-text a{text-decoration: none;color: #72B537;}
+}.bottom-text a{text-decoration: none;color: #707070;}
 
 .agreement{
   margin: 20px 12px;
@@ -149,27 +158,4 @@ ol, ul {
     line-height: 30px;
     margin: 50px auto 25px auto;
     text-align: center;
-}
-/*Static Page*/
-#static-page{width:960px;margin:auto;}  
-
-.syarat-dan-ketentuan #static-page .description p{margin-bottom:40px;}
-.pp{position:relative;background:#fff;border:2px solid #93AE82;border-radius:8px;-moz-border-radius:8px;padding:50px;margin-bottom: 100px;}
-.pp p, .pp ol, .pp ol li {font-size:13px;line-height:24px;}
-.pp ol, .pp ol li{margin:0;}
-.pp ol li{list-style: decimal;}
-.featured{width: 960px;margin: 20px auto;text-align: center;}
-.featured .title{margin-bottom: 10px;font-family:salsa;font-weight: normal;}
-.featured img {margin: 0 10px}
-.featured .banner{margin: 35px auto 0 auto;padding-bottom:20px;} 
-
-
-
-
-@media only screen and (max-width: 600px){
-  .main-wrapper{
-    width: 100%;
-    height: 100%;
-    border-radius: 0px;
-  }
 }
