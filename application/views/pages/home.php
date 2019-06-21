@@ -24,17 +24,17 @@
         <div class="middle-title">ARTIKEL</div>
         <div class="box-slider-container">
             <div class="box-container">
-                <img class="box-content box-img" src="<?php echo base_url();?>assets/img/homepagepict.jpg" alt="">
+                <img class="box-content box-img" src="<?php echo base_url();?>assets/img/dive.jpg" alt="">
                 <div class="box-content box-title">BLOCK TITLE</div>
                 <div class="box-content box-text">Lorem ipsum dolor sit amet, consectetur elait. Iusto eveniet fugiat harum quidem quibusdam esse</div>
             </div>
             <div class="box-container">
-                <img class="box-content box-img" src="<?php echo base_url();?>assets/img/homepagepict.jpg" alt="">
+                <img class="box-content box-img" src="<?php echo base_url();?>assets/img/run.jpg" alt="">
                 <div class="box-content box-title">BLOCK TITLE</div>
                 <div class="box-content box-text">Lorem ipsum dolor sit amet, consectetur elait. Iusto eveniet fugiat harum quidem quibusdam esse</div>
             </div>
             <div class="box-container">
-                <img class="box-content box-img" src="<?php echo base_url();?>assets/img/homepagepict.jpg" alt="">
+                <img class="box-content box-img" src="<?php echo base_url();?>assets/img/kids.jpg" alt="">
                 <div class="box-content box-title">BLOCK TITLE</div>
                 <div class="box-content box-text">Lorem ipsum dolor sit amet, consectetur elait. Iusto eveniet fugiat harum quidem quibusdam esse</div>
             </div>
@@ -59,12 +59,12 @@
                 <div class="box-content box-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto eveniet fugiat harum quidem quibusdam esse</div>
             </div>
             <div class="box-container">
-                <img class="box-content box-img" src="<?php echo base_url();?>assets/img/homepagepict.jpg" alt="">
+                <img class="box-content box-img" src="<?php echo base_url();?>assets/img/lake.jpg" alt="">
                 <div class="box-content box-title">BLOCK TITLE</div>
                 <div class="box-content box-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto eveniet fugiat harum quidem quibusdam esse</div>
             </div>
             <div class="box-container">
-                <img class="box-content box-img" src="<?php echo base_url();?>assets/img/homepagepict.jpg" alt="">
+                <img class="box-content box-img" src="<?php echo base_url();?>assets/img/people.jpg" alt="">
                 <div class="box-content box-title">BLOCK TITLE</div>
                 <div class="box-content box-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto eveniet fugiat harum quidem quibusdam esse</div>
             </div>
