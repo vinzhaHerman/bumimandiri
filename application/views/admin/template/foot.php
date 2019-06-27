@@ -22,7 +22,7 @@
   <script src="<?php echo base_url();?>/assets/js/plugins/jquery.datatables.min.js"></script>
 
   <!--	Plugin for Tags, full documentation here: https://github.com/bootstrap-tagsinput/bootstrap-tagsinputs  -->
-  <script src="<?php echo base_url();?>/assets/js/plugins/bootstrap-tagsinput.js"></script>
+  <!-- <script src="/assets/js/plugins/bootstrap-tagsinput.js"></script> -->
 
   <!-- Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput -->
   <script src="<?php echo base_url();?>/assets/js/plugins/jasny-bootstrap.min.js"></script>
@@ -31,7 +31,7 @@
   <script src="<?php echo base_url();?>/assets/js/plugins/fullcalendar.min.js"></script>
 
   <!-- Vector Map plugin, full documentation here: http://jvectormap.com/documentation/ -->
-  <script src="<?php echo base_url();?>/assets/js/plugins/jquery-jvectormap.js"></script>
+  <!-- <script src="/assets/js/plugins/jquery-jvectormap.js"></script> -->
 
   <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
   <script src="<?php echo base_url();?>/assets/js/plugins/nouislider.min.js" ></script>
@@ -42,7 +42,7 @@
   <!-- Library for adding dinamically elements -->
   <script src="<?php echo base_url();?>/assets/js/plugins/arrive.min.js"></script>
 <!--  Google Maps Plugin    -->
-<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+<!-- <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script> -->
 <!-- Chartist JS -->
 <script src="<?php echo base_url();?>/assets/js/plugins/chartist.min.js"></script>
 <!--  Notifications Plugin    -->
