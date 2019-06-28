@@ -22,6 +22,14 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/login');
 	}
 
+	public function data_paket()
+	{
+		$this->load->view('admin/template/head');
+		$this->load->view('admin/template/sidebar');
+		$this->load->view('admin/paket');
+		$this->load->view('admin/template/foot');
+	}
+
 	public function kelola_blog()
 	{
 		$this->load->view('admin/template/head');

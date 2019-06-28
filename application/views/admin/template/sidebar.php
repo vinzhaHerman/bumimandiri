@@ -13,16 +13,16 @@
       </div>
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li class="nav-item ">
+          <li class="nav-item active">
             <a class="nav-link" href="http://localhost/PBumiMandiri/Admin">
               <i class="material-icons">dashboard</i>
               <p>Beranda</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./user.html">
+            <a class="nav-link" href="http://localhost/PBumiMandiri/Admin/data_paket">
               <i class="material-icons">person</i>
-              <p>User Profile</p>
+              <p>Reservasi</p>
             </a>
           </li>
           <li class="nav-item ">
@@ -34,7 +34,7 @@
           <li class="nav-item ">
             <a class="nav-link" href="./typography.html">
               <i class="material-icons">library_books</i>
-              <p>Fasilitas Penginapan</p>
+              <p>on - progress</p>
             </a>
           </li>
           <li class="nav-item ">
