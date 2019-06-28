@@ -96,7 +96,7 @@
                   <p class="card-category">+ Tambah paket</p>
                 </div>
                 <div class="card-body table-responsive">
-                  <table class="table table-hover">
+                  <table id="myTable" class="table table-hover  table-striped">
                     <thead class="text-info">
                       <th>ID</th>
                       <th>Name</th>

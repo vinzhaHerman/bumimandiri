@@ -25,6 +25,17 @@
               <p>Reservasi</p>
             </a>
           </li>
+
+
+
+
+
+          
+
+
+
+
+
           <li class="nav-item ">
             <a class="nav-link" href="http://localhost/PBumiMandiri/Admin/kelola_blog">
               <i class="material-icons">content_paste</i>
@@ -49,6 +60,71 @@
               <p>Gallery</p>
             </a>
           </li>
+
+
+
+
+
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="#submenu1" data-toggle="collapse" data-target="#submenu1">
+              <i class="fa fa-fw fa-bar-chart"></i>
+              Laporan
+            </a>
+            <div class="collapse" id="submenu1" aria-expanded="false">
+                <ul class="flex-column pl-2 nav">
+                    <li class="nav-item"><a class="nav-link py-0" href="#">Orders</a></li>
+                    <li class="nav-item"><a class="nav-link py-0" href="#">Data</a></li>
+                </ul>
+            </div>
+          </li>
+
+
+
+
+
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="#submenu2" data-toggle="collapse" data-target="#submenu2">
+              <i class="fa fa-fw fa-compass"></i>
+               Settings
+            </a>
+            <div class="collapse" id="submenu2" aria-expanded="false">
+                <ul class="flex-column pl-2 nav">
+                    <li class="nav-item"><a class="nav-link py-0" href="#">Orders</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link collapsed py-1" href="#submenu1sub1" data-toggle="collapse" data-target="#submenu1sub1">Customers</a>
+                        <div class="collapse" id="submenu1sub1" aria-expanded="false">
+                            <ul class="flex-column nav pl-4">
+                                <li class="nav-item">
+                                    <a class="nav-link p-1" href="#">
+                                        <i class="fa fa-fw fa-clock-o"></i> Daily
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link p-1" href="#">
+                                        <i class="fa fa-fw fa-dashboard"></i> Dashboard
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link p-1" href="#">
+                                        <i class="fa fa-fw fa-bar-chart"></i> Charts
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link p-1" href="#">
+                                        <i class="fa fa-fw fa-compass"></i> Areas
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+          </li>
+
+
+
+
+
         </ul>
       </div>
     </div>

@@ -6,6 +6,7 @@ class Admin extends CI_Controller {
 	function __construct(){
 		parent::__construct();
 		$this->load->helper('url');
+		$this->load->model('Paket_model');
 	}
 
 
@@ -24,9 +25,12 @@ class Admin extends CI_Controller {
 
 	public function data_paket()
 	{
+		$data=array(
+			'res'=>$this->Paket_model->get_paket()
+		);
 		$this->load->view('admin/template/head');
 		$this->load->view('admin/template/sidebar');
-		$this->load->view('admin/paket');
+		$this->load->view('admin/paket', $data, FALSE);
 		$this->load->view('admin/template/foot');
 	}
 
