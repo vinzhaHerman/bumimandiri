@@ -20,7 +20,7 @@
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="http://localhost/bumimandiri/Admin/data_paket">
+            <a class="nav-link" href="">
               <i class="material-icons">calendar_today</i>
               <p>Reservasi</p>
             </a>
@@ -45,7 +45,7 @@
           </li>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./icons.html">
+            <a class="nav-link" href="http://localhost/bumimandiri/Admin/data_paket">
               <i class="material-icons">list</i>
               <p>Data Paket</p>
             </a>

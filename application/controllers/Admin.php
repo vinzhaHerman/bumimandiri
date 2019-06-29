@@ -25,12 +25,10 @@ class Admin extends CI_Controller {
 
 	public function data_paket()
 	{
-		$data=array(
-			'res'=>$this->Paket_model->get_paket()
-		);
+		$data=array('res'=>$this->Paket_model->get_paket_detailed());
 		$this->load->view('admin/template/head');
 		$this->load->view('admin/template/sidebar');
-		$this->load->view('admin/paket');
+		$this->load->view('admin/paket', $data);
 		$this->load->view('admin/template/foot');
 	}
 

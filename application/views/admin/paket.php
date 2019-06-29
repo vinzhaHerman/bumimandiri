@@ -8,7 +8,7 @@
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
         <div class="container-fluid">
           <div class="navbar-wrapper">
-            <a class="navbar-brand" href="#pablo">Artikel & Blog</a>
+            <a class="navbar-brand" href="#pablo">DATA PAKET</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="sr-only">Toggle navigation</span>
@@ -98,18 +98,20 @@
                 <div class="card-body table-responsive">
                   <table id="myTable" class="table table-hover  table-striped">
                     <thead class="text-info">
-                      <th>ID</th>
-                      <th>Name</th>
-                      <th>Salary</th>
-                      <th>Country</th>
+                      <th>No.</th>
+                      <th>Jenis Paket</th>
+                      <th>Durasi</th>
+                      <th>Deskripsi</th>
+                      <th>Paket</th>
                       <th></th>
                     </thead>
-                    <tbody>
+                    <tbody><?php $no=1; ?><?php foreach ($res->result() as $post): ?>
                       <tr>
-                        <td>1</td>
-                        <td>Dakota Rice</td>
-                        <td>$36,738</td>
-                        <td>Niger</td>
+                        <td><?php echo $no++; ?></td>
+                        <td><?php echo $post->deskripsi  ?></td>
+                        <td><?php echo $post->durasi  ?></td>
+                        <td><?php echo $post->deskripsi  ?></td>
+                        <td><?php echo $post->nama_paket  ?></td>
                         <td class="td-actions text-right">
                               <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
                                 <i class="material-icons">edit</i>
@@ -119,46 +121,7 @@
                               </button>
                             </td>
                       </tr>
-                      <tr>
-                        <td>2</td>
-                        <td>Minerva Hooper</td>
-                        <td>$23,789</td>
-                        <td>Curaçao</td><td class="td-actions text-right">
-                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
-                                <i class="material-icons">edit</i>
-                              </button>
-                              <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
-                                <i class="material-icons">close</i>
-                              </button>
-                            </td>
-                      </tr>
-                      <tr>
-                        <td>3</td>
-                        <td>Sage Rodriguez</td>
-                        <td>$56,142</td>
-                        <td>Netherlands</td><td class="td-actions text-right">
-                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
-                                <i class="material-icons">edit</i>
-                              </button>
-                              <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
-                                <i class="material-icons">close</i>
-                              </button>
-                            </td>
-                      </tr>
-                      <tr>
-                        <td>4</td>
-                        <td>Philip Chaney</td>
-                        <td>$38,735</td>
-                        <td>Korea, South</td><td class="td-actions text-right">
-                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
-                                <i class="material-icons">edit</i>
-                              </button>
-                              <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
-                                <i class="material-icons">close</i>
-                              </button>
-                            </td>
-                      </tr>
-                    </tbody>
+                    <?php endforeach; ?></tbody>
                   </table>
                 </div>
               </div>
