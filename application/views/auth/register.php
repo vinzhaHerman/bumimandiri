@@ -30,11 +30,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
       <input type="text" placeholder="Nomor Telepon" name="no_telp" required>
 
-      <p class="agreement">Saya menyetujui <a href="http://localhost/PBumiMandiri/syaratdanketentuan" style="color:dodgerblue">Syarat dan Ketentuan</a> yang berlaku.</p>
+      <p class="agreement">Saya menyetujui <a href="http://localhost/bumimandiri/syaratdanketentuan" style="color:dodgerblue">Syarat dan Ketentuan</a> yang berlaku.</p>
 
       <div class="clearfix">
         <button type="submit" class="positive-button">Sign Up</button>
-        <a href="http://localhost/PBumiMandiri/"><button type="button" class="negative-button">Cancel</button></a>
+        <a href="http://localhost/bumimandiri/"><button type="button" class="negative-button">Cancel</button></a>
       </div>
     </div>
   </form>

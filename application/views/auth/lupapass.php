@@ -25,7 +25,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
       <div class="clearfix">
         <button type="submit" class="positive-button">Submit</button>
-        <a href="http://localhost/PBumiMandiri/login"><button type="button" class="negative-button">Cancel</button></a>
+        <a href="http://localhost/bumimandiri/login"><button type="button" class="negative-button">Cancel</button></a>
       </div>
     </div>
   </form>
