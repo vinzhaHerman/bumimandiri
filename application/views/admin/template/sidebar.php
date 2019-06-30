@@ -25,6 +25,12 @@
               <p>Reservasi</p>
             </a>
           </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="http://localhost/bumimandiri/Admin/reservasi">
+              <i class="material-icons">calendar_today</i>
+              <p>Konfirmasi Pembayaran</p>
+            </a>
+          </li>
 
 
 

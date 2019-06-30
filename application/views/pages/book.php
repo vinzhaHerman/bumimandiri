@@ -119,6 +119,13 @@
 // var today = new Date().getDate();
 
 var nextDay = new Date(new Date().getTime()+(7*24*60*60*1000));
+// var dateOut = new Date(new Date().getTime()+(3*24*60*60*1000));
+
+<?php 
+	$tgl1 = "2013-01-23";// pendefinisian tanggal awal
+	$tgl2 = date('Y-m-d', strtotime('+6 days', strtotime($tgl1))); //operasi penjumlahan tanggal sebanyak 6 hari
+	echo $tgl2; //print tanggal
+?>
 
 document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.datepicker');
@@ -127,6 +134,11 @@ document.addEventListener('DOMContentLoaded', function() {
     	minDate:nextDay
     });
   });
+
+
+
+
+
 
 
 
