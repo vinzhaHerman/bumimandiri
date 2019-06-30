@@ -92,8 +92,8 @@
           <div class="">
               <div class="card">
                 <div class="card-header card-header-info">
-                  <h4 class="card-title">Data Paket</h4>
-                  <p class="card-category">+ Tambah paket</p>
+                  <h3 class="card-title">Data Paket</h3>
+                  <button type="button" class="btn btn-success btn-sm">+ Tambah Paket</button>
                 </div>
                 <div class="card-body table-responsive">
                   <table id="myTable" class="table table-hover  table-striped">
@@ -108,7 +108,7 @@
                     <tbody><?php $no=1; ?><?php foreach ($res->result() as $post): ?>
                       <tr>
                         <td><?php echo $no++; ?></td>
-                        <td><?php echo $post->deskripsi  ?></td>
+                        <td><?php echo $post->sub_nama_paket  ?></td>
                         <td><?php echo $post->durasi  ?></td>
                         <td><?php echo $post->deskripsi  ?></td>
                         <td><?php echo $post->nama_paket  ?></td>

@@ -92,8 +92,8 @@
           <div class="">
               <div class="card">
                 <div class="card-header card-header-info">
-                  <h4 class="card-title">Data Reservasi</h4>
-                  <p class="card-category">+ Tambah Reservasi</p>
+                  <h3 class="card-title">Data Reservasi</h3>
+                  <button type="button" class="btn btn-success btn-sm">+ Tambah Reservasi</button>
                 </div>
                 <div class="card-body table-responsive">
                   <table id="myTable" class="table table-hover  table-striped">
