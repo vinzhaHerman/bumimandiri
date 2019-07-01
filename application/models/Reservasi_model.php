@@ -13,7 +13,7 @@ class Reservasi_model extends CI_Model {
 	}
 
 	function get_reservasi_onproses(){ //butuh data: pelanggan, paket program, check in, check out
-		$result=$this->db->query("SELECT pelanggan.nama_depan, paket_onproses.check_in, paket_onproses.check_out, paket_program.nama_program FROM (paket_onproses INNER JOIN pelanggan ON pelanggan.id=paket_onproses.pelanggan_id) INNER JOIN paket_program ON paket_program.id=paket_onproses.paket_program_id;");
+		$result=$this->db->query("SELECT pelanggan.nama_depan, paket_riwayat.check_in, paket_riwayat.check_out, paket_program.nama_program FROM (paket_riwayat INNER JOIN pelanggan ON pelanggan.id=paket_riwayat.pelanggan_id) INNER JOIN paket_program ON paket_program.id=paket_riwayat.paket_program_id;");
         return $result;
 
 		// $result=$this->db->query("SELECT pelanggan.nama_depan, paket_program.nama_program, paket_onproses.check_out FROM ((memesan ))");

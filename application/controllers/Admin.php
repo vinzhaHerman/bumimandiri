@@ -8,6 +8,7 @@ class Admin extends CI_Controller {
 		$this->load->helper('url');
 		$this->load->model('Paket_model');
 		$this->load->model('Reservasi_model');
+		$this->load->model('Pemesanan');
 	}
 
 
@@ -26,7 +27,7 @@ class Admin extends CI_Controller {
 
 	public function reservasi()
 	{
-		$data=array('res'=>$this->Reservasi_model->get_reservasi_detailed());
+		$data=array('res'=>$this->Pemesanan->get_pemesanan());
 		$this->load->view('admin/template/head');
 		$this->load->view('admin/template/sidebar');
 		$this->load->view('admin/reservasi', $data);
