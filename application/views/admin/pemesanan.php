@@ -112,17 +112,15 @@
                         <td><?php echo $post->kode_reservasi  ?></td>
                         <td><?php echo $post->nama_depan  ?></td>
                         <td><?php echo $post->jumlah  ?></td>
-                        <td>
-                          <!-- Button trigger modal -->
-                          <a type="button"  href="<?php echo $post->bukti  ?>" class="btn btn-info btn-sm" data-toggle="modal" data-target="#showModal">
-                            <i class="material-icons">done</i> Uploaded
-                          </a>
-                        </td>
+                        <td>...</td>
                         <td><?php echo $post->pembayaran  ?></td>
                         <td class="td-actions text-right">
                               <button type="button" rel="tooltip" title="Batalkan Transaksi" class="btn btn-warning">
                                 <i class="material-icons">close</i> Batal
                               </button>
+                              <a type="button"  href="<?php echo $post->bukti  ?>" class="btn btn-info btn-sm" data-toggle="modal" data-target="#showModal">
+                            <i class="material-icons">done</i> Uploaded
+                          </a>
                               <button type="button" rel="tooltip" title="Konfirmasi" class="btn btn-success">
                                 <i class="material-icons">done</i> Konfirmasi
                               </button>

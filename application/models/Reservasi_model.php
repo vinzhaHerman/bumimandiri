@@ -20,4 +20,9 @@ class Reservasi_model extends CI_Model {
   //       return $result;
 	}
 
+	function get_reservasi_proses(){
+		$result=$this->db->query("SELECT reservasi.kode_reservasi, pelanggan.nama_depan, paket_program.nama_program, paket_riwayat.check_in, paket_riwayat.check_out FROM ((reservasi INNER JOIN pelanggan ON reservasi.id_pelanggan=pelanggan.id)INNER JOIN paket_dipesan )");
+        return $result;
+	}
+
 }

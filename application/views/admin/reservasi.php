@@ -101,9 +101,9 @@
                       <th>No.</th>
                       <th>Kode Reservasi</th>
                       <th>Atas Nama</th>
-                      <th>Jumlah</th>
-                      <th>Bukti</th>
-                      <th>Status</th>
+                      <th>Paket</th>
+                      <th>check in</th>
+                      <th>check out</th>
                       <th></th>
                     </thead>
                     <tbody><?php $no=1; ?><?php foreach ($res->result() as $post): ?>
@@ -111,7 +111,9 @@
                         <td><?php echo $no++; ?></td>
                         <td><?php echo $post->kode_reservasi  ?></td>
                         <td><?php echo $post->nama_depan  ?></td>
-                        <td><?php echo $post->jumlah  ?></td>
+                        <td><?php echo $post->paket_program  ?></td>
+                        <td><?php echo $post->check_in  ?></td>
+                        <td><?php echo $post->check_out  ?></td>
                         <td>
                           <!-- Button trigger modal -->
                           <a type="button"  href="<?php echo $post->bukti  ?>" class="btn btn-info btn-sm" data-toggle="modal" data-target="#showModal">
