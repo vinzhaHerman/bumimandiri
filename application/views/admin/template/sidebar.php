@@ -20,7 +20,7 @@
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="http://localhost/bumimandiri/Admin/reservasi">
+            <a class="nav-link" href="http://localhost/bumimandiri/Admin/pemesanan">
               <i class="material-icons">calendar_today</i>
               <p>Pemesanan</p>
             </a>
@@ -33,9 +33,9 @@
           
 
           <li class="nav-item ">
-            <a class="nav-link" href="./typography.html">
+            <a class="nav-link" href="http://localhost/bumimandiri/Admin/reservasi">
               <i class="material-icons">library_books</i>
-              <p>on - progress</p>
+              <p>Reservasi</p>
             </a>
           <li class="nav-item ">
             <a class="nav-link" href="http://localhost/bumimandiri/Admin/kelola_blog">

@@ -8,7 +8,7 @@
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
         <div class="container-fluid">
           <div class="navbar-wrapper">
-            <a class="navbar-brand" href="#pablo">RESERVASI</a>
+            <a class="navbar-brand" href="#pablo">PEMESANAN</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="sr-only">Toggle navigation</span>
@@ -92,7 +92,7 @@
           <div class="">
               <div class="card">
                 <div class="card-header card-header-info">
-                  <h3 class="card-title">Data Reservasi</h3>
+                  <h3 class="card-title">Data Pemesanan</h3>
                   <button type="button" class="btn btn-success btn-sm">+ Tambah Reservasi</button>
                 </div>
                 <div class="card-body table-responsive">

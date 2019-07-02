@@ -25,9 +25,18 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/login');
 	}
 
-	public function reservasi()
+	public function pemesanan()
 	{
 		$data=array('res'=>$this->Pemesanan->get_pemesanan());
+		$this->load->view('admin/template/head');
+		$this->load->view('admin/template/sidebar');
+		$this->load->view('admin/pemesanan', $data);
+		$this->load->view('admin/template/foot');
+	}
+
+	public function reservasi()
+	{
+		$data=array('res'=>$this->Reservasi_model->get_reservasi_detailed());
 		$this->load->view('admin/template/head');
 		$this->load->view('admin/template/sidebar');
 		$this->load->view('admin/reservasi', $data);
