@@ -112,16 +112,40 @@
                         <td><?php echo $post->kode_reservasi  ?></td>
                         <td><?php echo $post->nama_depan  ?></td>
                         <td><?php echo $post->jumlah  ?></td>
-                        <td>...</td>
-                        <td><?php echo $post->pembayaran  ?></td>
+                        <td>
+                            <button type="button"  href="" class="btn btn-info btn-sm" data-toggle="modal" data-target="#showModal">
+                            <i class="material-icons">done</i> Uploaded
+                            </button>
+
+
+
+
+                            <!-- Modal -->
+                          <div class="modal fade" id="showModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                                </div>
+                                <div class="modal-body">
+                                  <img src="<?php echo base_url() ?>upload/bukti/<?= $post->bukti ?>" alt=""style="max-width: 300px; height: auto; margin: auto;">
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                        <td class="status-pembayaran"><?php echo $post->pembayaran  ?></td>
                         <td class="td-actions text-right">
-                              <button type="button" rel="tooltip" title="Batalkan Transaksi" class="btn btn-warning">
+                              <button type="button" rel="tooltip" title="Batalkan Transaksi" class="btn btn-warning batal">
                                 <i class="material-icons">close</i> Batal
                               </button>
-                              <a type="button"  href="<?php echo $post->bukti  ?>" class="btn btn-info btn-sm" data-toggle="modal" data-target="#showModal">
-                            <i class="material-icons">done</i> Uploaded
-                          </a>
-                              <button type="button" rel="tooltip" title="Konfirmasi" class="btn btn-success">
+                              <button type="button" rel="tooltip" title="Konfirmasi" class="btn btn-success konfirmasi">
                                 <i class="material-icons">done</i> Konfirmasi
                               </button>
                             </td>
@@ -139,28 +163,6 @@
         </div>
       </div>
 
-
-
-
-      <!-- Modal -->
-      <div class="modal fade" id="showModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              ...
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
-            </div>
-          </div>
-        </div>
-      </div>
 
 
 
