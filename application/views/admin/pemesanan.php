@@ -102,20 +102,38 @@
                       <th>Kode Reservasi</th>
                       <th>Atas Nama</th>
                       <th>Jumlah</th>
-                      <th>Bukti</th>
+                      <th>Bukti Pembayaran</th>
                       <th>Status</th>
                       <th></th>
                     </thead>
                     <tbody><?php $no=1; ?><?php foreach ($res->result() as $post): ?>
                       <tr>
                         <td><?php echo $no++; ?></td>
+
                         <td><?php echo $post->kode_reservasi  ?></td>
+
                         <td><?php echo $post->nama_depan  ?></td>
+
                         <td><?php echo $post->jumlah  ?></td>
-                        <td>
-                            <button type="button"  href="" class="btn btn-info btn-sm" data-toggle="modal" data-target="#showModal">
+
+                        <td class="text-center">
+
+
+
+
+                          <?php
+                            if (empty($post->bukti)) {
+                              echo '<button type="button"  href="" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#showModal">
+                            <i class="material-icons">close</i> Empty
+                            </button>';
+                            }
+                            else{
+                              echo '<button type="button"  href="" class="btn btn-info btn-sm" data-toggle="modal" data-target="#showModal">
                             <i class="material-icons">done</i> Uploaded
-                            </button>
+                            </button>';
+                            }
+                          ?>
+
 
 
 
@@ -125,7 +143,7 @@
                             <div class="modal-dialog modal-dialog-centered" role="document">
                               <div class="modal-content">
                                 <div class="modal-header">
-                                  <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+                                  <h5 class="modal-title" id="exampleModalCenterTitle">Bukti Pembayaran</h5>
                                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                   </button>
@@ -139,15 +157,52 @@
                               </div>
                             </div>
                           </div>
+
+
+
+
+
                         </td>
                         <td class="status-pembayaran"><?php echo $post->pembayaran  ?></td>
                         <td class="td-actions text-right">
-                              <button type="button" rel="tooltip" title="Batalkan Transaksi" class="btn btn-warning batal">
+
+
+
+
+                          <?php
+                            if ($post->pembayaran == 'LUNAS' && !empty($post->bukti) ) {
+                              echo '<button type="button" rel="tooltip" title="Batalkan Transaksi" class="btn btn-warning batal" disabled>
+                                <i class="material-icons">close</i> Batal
+                              </button> <button type="button" rel="tooltip" title="Konfirmasi" class="btn btn-success konfirmasi" disabled>
+                                <i class="material-icons">done</i> Konfirmasi
+                              </button>';
+                            }
+                            elseif (empty($post->bukti)) {
+                              echo '<button type="button" rel="tooltip" title="Batalkan Transaksi" class="btn btn-warning batal">
+                                <i class="material-icons">close</i> Batal
+                              </button> <button type="button" rel="tooltip" title="Konfirmasi" class="btn btn-success konfirmasi" disabled>
+                                <i class="material-icons">done</i> Konfirmasi
+                              </button>';
+                            }
+                            else{
+                              echo '<button type="button" rel="tooltip" title="Batalkan Transaksi" class="btn btn-warning batal">
+                                <i class="material-icons">close</i> Batal
+                              </button> <button type="button" rel="tooltip" title="Konfirmasi" class="btn btn-success konfirmasi">
+                                <i class="material-icons">done</i> Konfirmasi
+                              </button>';
+                            }
+                          ?>
+
+
+
+
+
+                              <!-- <button type="button" rel="tooltip" title="Batalkan Transaksi" class="btn btn-warning batal">
                                 <i class="material-icons">close</i> Batal
                               </button>
                               <button type="button" rel="tooltip" title="Konfirmasi" class="btn btn-success konfirmasi">
                                 <i class="material-icons">done</i> Konfirmasi
-                              </button>
+                              </button> -->
                             </td>
                       </tr>
                     <?php endforeach; ?></tbody>
