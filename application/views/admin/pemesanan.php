@@ -149,7 +149,7 @@
                                   </button>
                                 </div>
                                 <div class="modal-body">
-                                  <img src="<?php echo base_url() ?>upload/bukti/<?= $post->bukti ?>" alt=""style="max-width: 300px; height: auto; margin: auto;">
+                                  <div class="modal-data"></div>
                                 </div>
                                 <div class="modal-footer">
                                   <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
@@ -253,6 +253,27 @@
             &copy;
             <script>
               document.write(new Date().getFullYear())
+
+
+
+
+              $(document).ready(function(){
+              $('#showModal').on('show.bs.modal', function (e) {
+              var getDetail = $(e.relatedTarget).data('id');
+              /* fungsi AJAX untuk melakukan fetch data */
+              $.ajax({
+                  type : 'post',
+                  url : 'foto_modal.php',
+                  /* detail per identifier ditampung pada berkas detail.php yang berada di folder application/view */
+                  data :  'getDetail='+ getDetail,
+                  /* memanggil fungsi getDetail dan mengirimkannya */
+                  success : function(data){
+                  $('.modal-data').html(data);
+                  /* menampilkan data dalam bentuk dokumen HTML */
+                  }
+              });
+              });
+              });
             </script>
             <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a>
           </div>

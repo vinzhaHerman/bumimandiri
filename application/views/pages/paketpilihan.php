@@ -34,21 +34,6 @@
 				<button type="submit" class="btn btn-success">CARI</button>
   			</div>
 		</div>
-      <?php foreach ($res->result() as $post): ?>
-  		<div class="card mb-3">
-  			<div class="card-body">
-    			<h3 class="card-title text-info"><b><?php echo $post->nama_program ?></b></h3>
-    			<p class="card-text"><?php echo $post->fasilitas ?><br>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-    			<a href="#" class="btn btn-info pull-right">Pilih Paket</a>
-    			<button class="btn btn-secondary pull-right" type="button" data-toggle="collapse" data-target="#collapsedContent1" aria-expanded="false" aria-controls="collapsedContent1">Deail</button>
-    			<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-    			<div class="collapse" id="collapsedContent1">
-  					<div class="card card-body"> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-  					</div>
-				</div>
-  			</div>
-		</div>
-    <?php endforeach; ?>
 	</div>
 
 
