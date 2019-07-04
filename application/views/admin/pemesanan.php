@@ -123,12 +123,15 @@
 
                           <?php
                             if (empty($post->bukti)) {
-                              echo '<button type="button"  href="" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#showModal">
+                              echo '<button type="button"  href="" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#showModal" disabled>
                             <i class="material-icons">close</i> Empty
                             </button>';
                             }
                             else{
-                              echo '<button type="button"  href="" class="btn btn-info btn-sm" data-toggle="modal" data-target="#showModal">
+                              echo '<button type="button"  href="',
+                              'base_url();/upload/bukti/',
+                              $post->bukti,
+                              '" class="btn btn-info btn-sm" data-toggle="modal" data-target="#showModal">
                             <i class="material-icons">done</i> Uploaded
                             </button>';
                             }

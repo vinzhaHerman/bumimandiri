@@ -28,11 +28,9 @@ class Admin extends CI_Controller {
 	public function pemesanan()
 	{
 		$data=array('res'=>$this->Pemesanan->get_pemesanan());
-		json_encode($data);
 		$this->load->view('admin/template/head');
 		$this->load->view('admin/template/sidebar');
 		$this->load->view('admin/pemesanan', $data);
-		$this->load->view('admin/foto_modal', $data);
 		$this->load->view('admin/template/foot');
 	}
 
