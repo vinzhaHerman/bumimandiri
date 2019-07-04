@@ -38,7 +38,7 @@ class Admin extends CI_Controller {
 
 	public function reservasi()
 	{
-		$data=array('res'=>$this->Reservasi_model->get_reservasi_detailed());
+		$data=array('res'=>$this->Reservasi_model->get_reservasi_proses());
 		$this->load->view('admin/template/head');
 		$this->load->view('admin/template/sidebar');
 		$this->load->view('admin/reservasi', $data);

@@ -21,7 +21,15 @@ class Reservasi_model extends CI_Model {
 	}
 
 	function get_reservasi_proses(){
-		$result=$this->db->query("SELECT reservasi.kode_reservasi, pelanggan.nama_depan, paket_program.nama_program, paket_riwayat.check_in, paket_riwayat.check_out FROM ((reservasi INNER JOIN pelanggan ON reservasi.id_pelanggan=pelanggan.id)INNER JOIN paket_dipesan )");
+		$result=$this->db->query("SELECT reservasi.kode_reservasi, pelanggan.nama_depan, paket_program.nama_program, paket_riwayat.check_in, paket_riwayat.check_out, paket_riwayat.isactive FROM ((paket_riwayat INNER JOIN reservasi ON reservasi.id=paket_riwayat.reservasi_id)INNER JOIN paket_program ON paket_riwayat.paket_program_id=paket_program.id)INNER JOIN pelanggan ON pelanggan.id=paket_riwayat.pelanggan_id;");
+        return $result;
+	}
+
+	function src_paket_by_date($tgl_masuk, $tgl_keluar){
+		$result=$this->db->query("SELECT * FROM paket_program WHERE id NOT IN (SELECT paket_program_id FROM reservasi WHERE
+   (tgl_masuk <= '2019-07-06' AND tgl_keluar >= '2019-07-06') OR
+   (tgl_masuk <= '2019-07-08' AND tgl_keluar >= '2019-07-08') OR
+   (tgl_masuk >= '2019-07-06' AND tgl_keluar <= '2019-07-08'));");
         return $result;
 	}
 

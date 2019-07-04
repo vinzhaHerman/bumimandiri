@@ -101,7 +101,7 @@
                       <th>No.</th>
                       <th>Kode Reservasi</th>
                       <th>Atas Nama</th>
-                      <th>Jumlah</th>
+                      <th>Program</th>
                       <th>Bukti Pembayaran</th>
                       <th>Status</th>
                       <th></th>
@@ -114,7 +114,7 @@
 
                         <td><?php echo $post->nama_depan  ?></td>
 
-                        <td><?php echo $post->jumlah  ?></td>
+                        <td><?php echo $post->nama_program  ?></td>
 
                         <td class="text-center">
 

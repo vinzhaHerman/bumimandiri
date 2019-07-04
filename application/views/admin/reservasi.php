@@ -100,33 +100,27 @@
                     <thead class="text-info">
                       <th>No.</th>
                       <th>Kode Reservasi</th>
-                      <th>Atas Nama</th>
-                      <th>Paket</th>
                       <th>check in</th>
                       <th>check out</th>
+                      <th>Atas Nama</th>
+                      <th>Program</th>
+                      <th>Status</th>
                       <th></th>
                     </thead>
                     <tbody><?php $no=1; ?><?php foreach ($res->result() as $post): ?>
                       <tr>
                         <td><?php echo $no++; ?></td>
                         <td><?php echo $post->kode_reservasi  ?></td>
-                        <td><?php echo $post->nama_depan  ?></td>
-                        <td><?php echo $post->paket_program  ?></td>
                         <td><?php echo $post->check_in  ?></td>
                         <td><?php echo $post->check_out  ?></td>
+                        <td><?php echo $post->nama_depan  ?></td>
+                        <td><?php echo $post->nama_program  ?></td>
                         <td>
-                          <!-- Button trigger modal -->
-                          <a type="button"  href="<?php echo $post->bukti  ?>" class="btn btn-info btn-sm" data-toggle="modal" data-target="#showModal">
-                            <i class="material-icons">done</i> Uploaded
-                          </a>
+                          <?php echo $post->isactive  ?>
                         </td>
-                        <td><?php echo $post->pembayaran  ?></td>
                         <td class="td-actions text-right">
-                              <button type="button" rel="tooltip" title="Batalkan Transaksi" class="btn btn-warning">
-                                <i class="material-icons">close</i> Batal
-                              </button>
-                              <button type="button" rel="tooltip" title="Konfirmasi" class="btn btn-success">
-                                <i class="material-icons">done</i> Konfirmasi
+                              <button type="button" rel="tooltip" title="Konfirmasi" class="btn btn-warning">
+                                <i class="material-icons">done</i> Selesai
                               </button>
                             </td>
                       </tr>
