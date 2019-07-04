@@ -1,3 +1,15 @@
+<?php 
+    // $kode_pasien = $auto->kode_max;
+    // $noUrut = (int) substr($kode_pasien, 5, 5);
+    // $noUrut++;
+    // $char = "NOPSN";
+    // $kode_pasien = $char . sprintf("%05s", $noUrut);
+?>
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <html>
@@ -20,20 +32,30 @@
 
 	<div class="container">
 		<h2 style="text-align: center;" class="mb-3">FORM PEMESANAN</h2>
+    <div class="row">
 		<div class="card mb-3">
+        <div class="card-header card-header-info">
+          <h4 class="card-title">Material Dashboard Heading</h4>
+          <p class="card-category">Created using Roboto Font Family</p>
+        </div>
   			<div class="card-body">
     			<h3 class="card-title">Pilih Tanggal Reservasi</h3>
-    			<div class="container">
+          <form action="<?php echo base_url();?>admin/cari_paket" method="post" enctype="multipart/form-data">
     				<div class="row">
         				<div class='col-sm-6'>
             				<input type='text' class="form-control" id='datetimepicker4' />
+                     <div class="form-group">
+                        <label for="jumlah_obat">Jumlah Hari</label>
+                        <input type="number" class="form-control mr-2 d-none d-sm-inline-block" id="jumlah_obat" name="jumlah_obat"  value="" required>
+                      </div>
         				</div>
     				</div>
-				</div>
-				<button type="submit" class="btn">BATAL</button>
-				<button type="submit" class="btn btn-success">CARI</button>
+          <button type="submit" class="btn btn-success pull-right">CARI</button>
+				  <button type="submit" class="btn pull-right">BATAL</button>
+          </form>
   			</div>
 		</div>
+  </div>
 	</div>
 
 
@@ -50,9 +72,10 @@
 
 
 <script type="text/javascript">
+  var nextDay = new Date(new Date().getTime()+(7*24*60*60*1000));
    $(function () {
        $('#datetimepicker4').datepicker({
-       	
+       	minDate:nextDay
        });
    });
 </script>

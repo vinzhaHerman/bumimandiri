@@ -19,7 +19,7 @@
   <script src="<?php echo base_url();?>/assets/js/plugins/bootstrap-datetimepicker.min.js"></script>
 
   <!--  DataTables.net Plugin, full documentation here: https://datatables.net/    -->
-  <script src="<?php echo base_url();?>/assets/js/plugins/jquery.datatables.min.js"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.18/sc-2.0.0/datatables.min.js"></script>
 
   <!--	Plugin for Tags, full documentation here: https://github.com/bootstrap-tagsinput/bootstrap-tagsinputs  -->
   <!-- <script src="/assets/js/plugins/bootstrap-tagsinput.js"></script> -->

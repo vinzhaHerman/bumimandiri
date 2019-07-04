@@ -66,5 +66,17 @@ class Web extends CI_Controller {
 	
 		$this->load->view('pages/booking');
 	}
+
+
+
+
+
+	public function cari_paket(){
+		$eventdate=$this->input->post('eventdate');
+        $eventtitle=$this->input->post('eventtitle');
+ 
+        $this->Reservasi_model->src_paket_by_date();
+        redirect('pages/paket_list')
+	}
 	
 }
