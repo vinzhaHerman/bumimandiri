@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-
-
-    <div class="main-panel">
-      <!-- Navbar -->
+<!-- Navbar -->
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
         <div class="container-fluid">
           <div class="navbar-wrapper">
@@ -62,7 +56,7 @@
                   <a class="dropdown-item" href="#">Profile</a>
                   <a class="dropdown-item" href="#">Settings</a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="<?php echo base_url('admin/logout') ?>">Log out</a>
+                  <a class="dropdown-item" href="#">Log out</a>
                 </div>
               </li>
             </ul>
@@ -70,87 +64,3 @@
         </div>
       </nav>
       <!-- End Navbar -->
-      <div class="content">
-        <div class="container-fluid">
-
-
-
-
-
-          <div class="card">
-            <div class="card-header card-header-primary">
-              <h4 class="card-title">+ Tambah Blog</h4>
-              <p class="card-category">Created using Roboto Font Family</p>
-            </div>
-            <div class="card-body">
-              <div id="typography">
-                <div class="card-title">
-                  <h3>Post title:</h3>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                      <div class="form-group">
-                        <input type="text" class="form-control">
-                      </div>
-                    </div>
-                </div>
-                  <div class="card-title">
-                    <h3>Post Paragraph:</h3>
-                  </div>
-                <div class="row">
-                  <div class="col-md-12">
-                    <textarea>Next, use our Get Started docs to setup Tiny!</textarea>
-                  </div>
-                </div>
-                <button type="submit" class="btn btn-primary pull-right"><b>Publish Blog</b></button>
-                <button type="submit" class="btn pull-right">Batal</button>
-                <div class="clearfix"></div>
-              </div>
-            </div>
-          </div>
-
-
-
-
-
-
-        </div>
-      </div>
-      <footer class="footer">
-        <div class="container-fluid">
-          <nav class="float-left">
-            <ul>
-              <li>
-                <a href="https://www.creative-tim.com">
-                  Creative Tim
-                </a>
-              </li>
-              <li>
-                <a href="https://creative-tim.com/presentation">
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a href="http://blog.creative-tim.com">
-                  Blog
-                </a>
-              </li>
-              <li>
-                <a href="https://www.creative-tim.com/license">
-                  Licenses
-                </a>
-              </li>
-            </ul>
-          </nav>
-          <div class="copyright float-right">
-            &copy;
-            <script>
-              document.write(new Date().getFullYear())
-            </script>
-            <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a>
-          </div>
-        </div>
-      </footer>
-    </div>
-  </div>
-

@@ -8,4 +8,13 @@ class Pemesanan extends CI_Model {
         return $result;
 	}
 
+	function get_pemesanan_row(){
+		$result=$this->db->query("SELECT COUNT(*) FROM reservasi;");
+        return $result;
+    }
+
+	function get_pemesanan_pending(){
+		$result=$this->db->query("SELECT COUNT(*) FROM reservasi WHERE pembayaran='';");
+        return $result;
+    }
 }

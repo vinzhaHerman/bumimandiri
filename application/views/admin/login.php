@@ -14,7 +14,7 @@
 <body><div class="overlay">
 <div class="main-wrapper">
   <div class="form-wrapper">
-  	<form action="action_page.php">
+  	<form action="<?php echo base_url('admin/auth'); ?>" method="post">  
   	<div class="imgcontainer">
     	<img src="<?php echo base_url();?>assets/logos/blue.png" alt="Avatar" class="avatar">
   	</div>

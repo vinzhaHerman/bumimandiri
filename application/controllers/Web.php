@@ -18,6 +18,43 @@ class Web extends CI_Controller {
 		$this->load->view('template/footer');
 	}
 
+
+
+
+
+	function auth(){
+        $username = $this->input->post('username');
+        $password = $this->input->post('password');
+        $where = array(
+            'username' => $username,
+            'password' => $password
+            );
+        $cek = $this->Admin_model->login_inf("pelanggan",$where)->num_rows();
+        if($cek > 0){
+ 
+            $data_session = array(
+                'nama' => $username,
+                'status' => "login"
+                );
+ 
+            $this->session->set_userdata($data_session);
+ 
+            // echo $this->agent->referrer();
+            redirect($_SERVER['HTTP_REFERER']);
+ 
+        }else{
+        	$this->session->set_flashdata('message', 'Masukan Username dan Password yang benar');
+            redirect(base_url('pages/auth/login'));
+        }
+    }
+    function logout(){
+        $this->session->sess_destroy();
+        redirect(base_url('admin/login'));
+    }
+
+
+
+
 	public function kegiatan()
 	{
 		$this->load->view('template/head');
@@ -76,7 +113,7 @@ class Web extends CI_Controller {
         $eventtitle=$this->input->post('eventtitle');
  
         $this->Reservasi_model->src_paket_by_date();
-        redirect('pages/paket_list')
+        redirect('pages/paket_list');
 	}
 	
 }
