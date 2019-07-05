@@ -10,7 +10,7 @@
 <body>
 <div class="main-wrapper">
   <div class="form-wrapper">
-  <form action="action_page.php">
+  <form action="<?php echo base_url('web/auth'); ?>" method="post">
   <div class="imgcontainer">
     <img src="<?php echo base_url();?>assets/logos/mixed.png" alt="Avatar" class="avatar">
   </div>

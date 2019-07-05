@@ -6,6 +6,7 @@ class Web extends CI_Controller {
 	function __construct(){
 		parent::__construct();
 		$this->load->helper('url');
+		$this->load->model('Pelanggan_model');
 	}
 
 
@@ -29,7 +30,7 @@ class Web extends CI_Controller {
             'username' => $username,
             'password' => $password
             );
-        $cek = $this->Admin_model->login_inf("pelanggan",$where)->num_rows();
+        $cek = $this->Pelanggan_model->login_inf("pelanggan",$where)->num_rows();
         if($cek > 0){
  
             $data_session = array(
@@ -40,16 +41,16 @@ class Web extends CI_Controller {
             $this->session->set_userdata($data_session);
  
             // echo $this->agent->referrer();
-            redirect($_SERVER['HTTP_REFERER']);
+            redirect(base_url());
  
         }else{
         	$this->session->set_flashdata('message', 'Masukan Username dan Password yang benar');
-            redirect(base_url('pages/auth/login'));
+            redirect(base_url('login'));
         }
     }
     function logout(){
         $this->session->sess_destroy();
-        redirect(base_url('admin/login'));
+        redirect(base_url());
     }
 
 
@@ -100,7 +101,9 @@ class Web extends CI_Controller {
 
 	public function booking()
 	{
-	
+		if($this->session->userdata('status') != "login"){
+            redirect(base_url("login"));
+        }
 		$this->load->view('pages/booking');
 	}
 
