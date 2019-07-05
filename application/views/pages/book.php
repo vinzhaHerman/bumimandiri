@@ -1,10 +1,4 @@
-<?php 
-    // $kode_pasien = $auto->kode_max;
-    // $noUrut = (int) substr($kode_pasien, 5, 5);
-    // $noUrut++;
-    // $char = "NOPSN";
-    // $kode_pasien = $char . sprintf("%05s", $noUrut);
-?>
+
 
 
 
@@ -43,14 +37,13 @@
           <form action="<?php echo base_url();?>admin/cari_paket" method="post" enctype="multipart/form-data">
     				<div class="row">
         				<div class='col-sm-6'>
-            				<input type='text' class="form-control" id='datetimepicker4' />
-                     <div class="form-group">
-                        <label for="jumlah_obat">Jumlah Hari</label>
-                        <input type="number" class="form-control mr-2 d-none d-sm-inline-block" id="jumlah_obat" name="jumlah_obat"  value="" required>
-                      </div>
+            				<input type='text' class="form-control" id='datetimepicker1' />
         				</div>
+                <div class='col-sm-6'>
+                    <input type='text' class="form-control" id='datetimepicker2' />
+                </div>
     				</div>
-          <button type="submit" class="btn btn-success pull-right">CARI</button>
+          <button type="submit" class="btn btn-success pull-right" id="btnCari">CARI</button>
 				  <button type="submit" class="btn pull-right">BATAL</button>
           </form>
   			</div>
@@ -73,10 +66,22 @@
 
 <script type="text/javascript">
   var nextDay = new Date(new Date().getTime()+(7*24*60*60*1000));
+  var coming = new Date(new Date().getTime()+(3*24*60*60*1000));
    $(function () {
-       $('#datetimepicker4').datepicker({
-       	minDate:nextDay
+       // $('#datetimepicker1').datepicker({
+       // 	minDate:nextDay
+       // });
+       $('#datetimepicker1').datepicker({
+        minDate: nextDay
        });
+
+        $('#datetimepicker2').datepicker({
+            minDate: nextDay
+        });
+      $('btnCari').on("click",function(){
+        var dt=$('#datetimepicker1').val();
+        alert(dt);
+      });
    });
 </script>
 
