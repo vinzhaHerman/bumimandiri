@@ -8,7 +8,7 @@
             <?php if ($this->session->userdata('status') == "login") {?>
 
             <li><a href="<?php echo base_url('web/logout'); ?>" class="right border-button">Logout</a></li>
-            <li><a href="http://localhost/bumimandiri/login" class="right border-button">My Account</a></li>
+            <li><a href="http://localhost/bumimandiri/Account" class="right border-button">My Account</a></li>
             <li><a href="http://localhost/bumimandiri/register" class="right fill-button">Pesan Sekarang</a></li>
 
             <?php } else { ?>

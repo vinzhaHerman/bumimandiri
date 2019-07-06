@@ -34,7 +34,8 @@ class Web extends CI_Controller {
         if($cek > 0){
  
             $data_session = array(
-                'nama' => $username,
+            	'id' => $id,
+                'nama' => $nama_depan,
                 'status' => "login"
                 );
  
