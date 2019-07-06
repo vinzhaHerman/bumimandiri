@@ -6,16 +6,21 @@ class Booking extends CI_Controller {
 	function __construct(){
 		parent::__construct();
 		$this->load->helper('url');
-		$this->load->model('Paket_model');
+		$this->load->model('Reservasi_model');
 	}
 
 
 	public function index()
 	{
-		$data=array(
-			'res'=>$this->Paket_model->get_paket_program()
-		);
-		$this->load->view('pages/book', $data);
+		
+		$this->load->view('pages/book');
+	}
+
+	public function search(){
+		$datein = $this->input->post('datein');
+		$dateout = $this->input->post('dateout');
+		$data['res']=$this->Reservasi_model->src_paket_by_date($datein, $dateout);
+		$this->load->view('pages/paket_list', $data, false);
 	}
 
 	public function paket_detail()

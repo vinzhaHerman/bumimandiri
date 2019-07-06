@@ -34,17 +34,17 @@
         </div>
   			<div class="card-body">
     			<h3 class="card-title">Pilih Tanggal Reservasi</h3>
-          <form action="<?php echo base_url();?>admin/cari_paket" method="post" enctype="multipart/form-data">
+          <form action="<?php echo base_url();?>Booking/search" method="post" enctype="multipart/form-data">
     				<div class="row">
         				<div class='col-sm-6'>
-            				<input type='text' class="form-control" id='datetimepicker1' />
+            				<input type='text' class="form-control" id='datetimepicker1' name="datein" />
         				</div>
                 <div class='col-sm-6'>
-                    <input type='text' class="form-control" id='datetimepicker2' />
+                    <input type='text' class="form-control" id='datetimepicker2' name="dateout" />
                 </div>
     				</div>
           <button type="submit" class="btn btn-success pull-right" id="btnCari">CARI</button>
-				  <button type="submit" class="btn pull-right">BATAL</button>
+				  <button type="cancel" class="btn pull-right">BATAL</button>
           </form>
   			</div>
 		</div>
@@ -66,22 +66,19 @@
 
 <script type="text/javascript">
   var nextDay = new Date(new Date().getTime()+(7*24*60*60*1000));
-  var coming = new Date(new Date().getTime()+(3*24*60*60*1000));
-   $(function () {
+   $(function(){
        // $('#datetimepicker1').datepicker({
        // 	minDate:nextDay
        // });
        $('#datetimepicker1').datepicker({
-        minDate: nextDay
+        modal: true,
+        format: 'yyyy-mm-dd'
        });
 
-        $('#datetimepicker2').datepicker({
-            minDate: nextDay
-        });
-      $('btnCari').on("click",function(){
-        var dt=$('#datetimepicker1').val();
-        alert(dt);
-      });
+       $('#datetimepicker2').datepicker({
+        modal: true,
+        format: 'yyyy-mm-dd'
+       });
    });
 </script>
 

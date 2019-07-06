@@ -98,16 +98,20 @@
                 <div class="card-body table-responsive">
                   <table id="myTable" class="table table-hover  table-striped">
                     <thead class="text-info">
-                      <th>No.</th>
-                      <th>Nama Paket</th>
-                      <th>Deskripsi</th>
+                      <th>Nama Program</th>
+                      <th>Fasilitas</th>
+                      <th>Konsumsi</th>
+                      <th>Lama Kegiatan</th>
+                      <th>Harga</th>
                       <th>Aksi</th>
                     </thead>
-                    <tbody><?php $no=1; ?><?php foreach ($res->result() as $post): ?>
+                    <tbody><?php foreach ($res->result() as $post): ?>
                       <tr>
-                        <td><?php echo $no++; ?></td>
-                        <td><?php echo $post->nama_paket  ?></td>
-                        <td><?php echo $post->deskripsi  ?></td>
+                        <td><?php echo $post->nama_program  ?></td>
+                        <td><?php echo $post->fasilitas  ?></td>
+                        <td><?php echo $post->konsumsi  ?></td>
+                        <td><?php echo $post->lama_kegiatan  ?></td>
+                        <td><?php echo $post->harga  ?></td>
                         <td class="td-actions text-right">
                               <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
                                 <i class="material-icons">edit</i>

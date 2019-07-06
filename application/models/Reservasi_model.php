@@ -25,14 +25,11 @@ class Reservasi_model extends CI_Model {
         return $result;
 	}
 
-	function src_paket_by_date(){
-
-		$tgl_masuk=$this->input->post('tgl_masuk');
-		$tgl_keluar=$this->input->post('tgl_keluar');
+	function src_paket_by_date($datein, $dateout){
 		$result=$this->db->query("SELECT * FROM paket_program WHERE id NOT IN (SELECT paket_program_id FROM reservasi WHERE
-   (tgl_masuk <= '$tgl_masuk' AND tgl_keluar >= '$tgl_masuk') OR
-   (tgl_masuk <= '$tgl_keluar' AND tgl_keluar >= '$tgl_keluar') OR
-   (tgl_masuk >= '$tgl_masuk' AND tgl_keluar <= '$tgl_keluar'));");
+   		(tgl_masuk <= '$datein' AND tgl_keluar >= '$datein') OR
+   		(tgl_masuk <= '$dateout' AND tgl_keluar >= '$dateout') OR
+   		(tgl_masuk >= '$datein' AND tgl_keluar <= '$dateout'));");
         return $result;
 	}
 
