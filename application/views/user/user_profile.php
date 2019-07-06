@@ -44,7 +44,7 @@
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item"><a href="<?php echo base_url();?>">Ke Halaman Utama</a></li>
                         <li class="list-group-item"><a href="<?php echo base_url();?>">Ke Halaman Pemesanan</a></li>
-                        <li class="list-group-item"><a href="<?php echo base_url();?>">Logout</a></li>
+                        <li class="list-group-item"><a href="<?php echo base_url('web/logout'); ?>">Logout</a></li>
                     </ul>
                 </div>
               </div>

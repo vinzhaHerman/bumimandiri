@@ -30,19 +30,20 @@ class Web extends CI_Controller {
             'username' => $username,
             'password' => $password
             );
-        $cek = $this->Pelanggan_model->login_inf("pelanggan",$where)->num_rows();
+        $cek = $this->Pelanggan_model->get_login($username,$password)->num_rows();
         if($cek > 0){
- 
+ 			$res=$cek->result()[0];
             $data_session = array(
-            	'id' => $id,
-                'nama' => $nama_depan,
+            	'id' => $res->$id,
+                'nama' => $res->nama_depan,
                 'status' => "login"
                 );
  
             $this->session->set_userdata($data_session);
  
             // echo $this->agent->referrer();
-            redirect(base_url());
+            // redirect(base_url());
+            print_r($this->session->set_userdata());
  
         }else{
         	$this->session->set_flashdata('message', 'Masukan Username dan Password yang benar');

@@ -7,6 +7,11 @@ class Pelanggan_model extends CI_Model {
 		return $this->db->get_where($table,$where);
 	}
 
+	function get_login($username,$password){
+    	$result=$this->db->query("SELECT * FROM pelanggan WHERE username='$username' && password='$password' ");
+        return $result;	
+    }
+
 	function get_user_data(){
 		$result=$this->db->query("SELECT * FROM pelanggan");
         return $result;
