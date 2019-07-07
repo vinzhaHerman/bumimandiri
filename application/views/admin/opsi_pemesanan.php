@@ -81,7 +81,9 @@
 
 
 
-
+<?php 
+  $res=$res->row_array();
+ ?>
 
           
 
@@ -96,123 +98,26 @@
                   <button type="button" class="btn btn-success btn-sm">+ Tambah Reservasi</button>
                 </div>
                 <div class="card-body table-responsive">
-                  <table id="myTable" class="table table-hover  table-striped">
-                    <thead class="text-info">
-                      <th>No.</th>
-                      <th>Kode Reservasi</th>
-                      <th>Atas Nama</th>
-                      <th>Program</th>
-                      <th>Bukti Pembayaran</th>
-                      <th>Status</th>
-                      <th></th>
-                    </thead>
-                    <tbody><?php $no=1; ?><?php foreach ($res->result() as $post): ?>
-                      <tr>
-                        <td><?php echo $no++; ?></td>
-
-                        <td><?php echo $post->kode_reservasi  ?></td>
-
-                        <td><?php echo $post->nama_depan  ?></td>
-
-                        <td><?php echo $post->nama_program  ?></td>
-
-                        <td class="text-center">
-
-
-
-
-                          <?php
-                            if (empty($post->bukti)) {
-                              echo '<button type="button"  href="" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#showModal" disabled>
-                            <i class="material-icons">close</i> Empty
-                            </button>';
-                            }
-                            else{
-                              echo '<button type="button"  href="',
-                              'base_url();/upload/bukti/',
-                              $post->bukti,
-                              '" class="btn btn-info btn-sm" data-toggle="modal" data-target="#showModal">
-                            <i class="material-icons">done</i> Uploaded
-                            </button>';
-                            }
-                          ?>
-
-
-
-
-
-                            <!-- Modal -->
-                          <div class="modal fade" id="showModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered" role="document">
-                              <div class="modal-content">
-                                <div class="modal-header">
-                                  <h5 class="modal-title" id="exampleModalCenterTitle">Bukti Pembayaran</h5>
-                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                  </button>
-                                </div>
-                                <div class="modal-body">
-                                  <div class="modal-data"></div>
-                                </div>
-                                <div class="modal-footer">
-                                  <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-
-
-
-
-
-                        </td>
-                        <td class="status-pembayaran"><?php echo $post->pembayaran  ?></td>
-                        <td class="td-actions text-right">
-
-
-
-
-                          <?php
-                            // if ($post->pembayaran == 'LUNAS' && !empty($post->bukti) ) {
-                            //   echo '<button type="button" rel="tooltip" title="Batalkan Transaksi" class="btn btn-warning batal" disabled>
-                            //     <i class="material-icons">close</i> Batal
-                            //   </button> <button type="button" rel="tooltip" title="Konfirmasi" class="btn btn-success konfirmasi" disabled>
-                            //     <i class="material-icons">done</i> Konfirmasi
-                            //   </button>';
-                            // }
-                            // elseif (empty($post->bukti)) {
-                            //   echo '<button type="button" rel="tooltip" title="Batalkan Transaksi" class="btn btn-warning batal">
-                            //     <i class="material-icons">close</i> Batal
-                            //   </button> <button type="button" rel="tooltip" title="Konfirmasi" class="btn btn-success konfirmasi" disabled>
-                            //     <i class="material-icons">done</i> Konfirmasi
-                            //   </button>';
-                            // }
-                            // else{
-                            //   echo '<button type="button" rel="tooltip" title="Batalkan Transaksi" class="btn btn-warning batal">
-                            //     <i class="material-icons">close</i> Batal
-                            //   </button> <button type="button" rel="tooltip" title="Konfirmasi" class="btn btn-success konfirmasi">
-                            //     <i class="material-icons">done</i> Konfirmasi
-                            //   </button>';
-                            // }
-                          ?>
-
-
-
-
-
-                              <!-- <button type="button" rel="tooltip" title="Batalkan Transaksi" class="btn btn-warning batal">
-                                <i class="material-icons">close</i> Batal
-                              </button>
-                              <button type="button" rel="tooltip" title="Konfirmasi" class="btn btn-success konfirmasi">
-                                <i class="material-icons">done</i> Konfirmasi
-                              </button> -->
-                              <a href="<?php echo base_url() ?>Admin/opsi_pemesanan/<?php echo $post->kode_reservasi  ?>" rel="tooltip" title="Edit" class="btn btn-success konfirmasi">
-                                <i class="material-icons"></i> Option
-                              </a>
-                            </td>
-                      </tr>
-                    <?php endforeach; ?></tbody>
-                  </table>
+                  <form action="<?php echo base_url();?>admin/ubah_status" method="post">
+                    <div class="row">
+                      <div class="col-md-3">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Kode reservasi</label>
+                          <input type="text" class="form-control" name="kodereservasi"  value="<?php echo $res['kode_reservasi'] ?>">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Status</label>
+                          <input type="text" class="form-control" name="prop">
+                        </div>
+                      </div>
+                    </div>
+                    <button type="submit" class="btn btn-success pull-right">Update Profile</button>
+                    <div class="clearfix"></div>
+                  </form>
                 </div>
               </div>
             </div>

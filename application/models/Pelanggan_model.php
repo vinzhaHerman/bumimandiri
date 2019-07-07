@@ -32,4 +32,15 @@ class Pelanggan_model extends CI_Model {
 		return $result;
 	}
 
+	function get_reservasi_byuser_empty($id){
+		$result = $this->db->query("SELECT * FROM reservasi INNER JOIN paket_program ON reservasi.paket_program_id=paket_program.id WHERE id_pelanggan='$id' AND bukti=''");
+		return $result;
+	}
+
+	function get_reservasi_bykode($kode){
+		$result = $this->db->query("SELECT * FROM reservasi WHERE kode_reservasi='$kode'");
+		return $result;
+	}
+
+
 }

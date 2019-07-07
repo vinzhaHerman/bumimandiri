@@ -109,31 +109,17 @@
                   <div class="table-responsive">
                     <table class="table">
                       <thead class=" text-primary">
-                        <th>
-                          Kode Reservasi
-                        </th>
-                        <th>
-                          Program
-                        </th>
-                        <th>
-                          Bukti Pembayaran
-                        </th>
-                        <th>
-                          Status
-                        </th>
-                        <th>
-                          Aksi
-                        </th>
+                        <th>Kode Reservasi</th>
+                        <th>Program</th>
+                        <th>Bukti Pembayaran</th>
+                        <th>Status </th>
+                        <th>Aksi</th>
                       </thead>
                       <tbody>
                         <?php foreach ($userriwayat->result() as $res): ?>
                         <tr>
-                          <td>
-                            <?php echo $res->kode_reservasi  ?>
-                          </td>
-                          <td>
-                            <?php echo $res->nama_program  ?>
-                          </td>
+                          <td><?php echo $res->kode_reservasi  ?> </td>
+                          <td><?php echo $res->nama_program  ?> </td>
                           <td>
                             <?php
                             if (empty($res->bukti)) {
@@ -148,16 +134,14 @@
                             }
                           ?>
                           </td>
-                          <td>
-                            <?php echo $res->pembayaran  ?>
-                          </td>
+                          <td><?php echo $res->pembayaran  ?></td>
                           <td class="td-actions text-right">
-                            <button type="button"  href="''" class="btn btn-success btn-sm" data-toggle="modal" data-target="#showModal">
+                            <a type="button"  href="<?php echo base_url() ?>account/upload_bukti/<?php echo $res->kode_reservasi ?>" class="btn btn-success btn-sm">
                             Upload Bukti
-                            </button>
+                            </a>
                           </td>
                         </tr>
-                        <?php endforeach ?>
+                        <?php endforeach; ?>
                       </tbody>
                     </table>
                   </div>

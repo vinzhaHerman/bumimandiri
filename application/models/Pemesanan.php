@@ -8,6 +8,11 @@ class Pemesanan extends CI_Model {
         return $result;
 	}
 
+	function get_pemesanan_byid($id){
+		$result=$this->db->query("SELECT * from reservasi WHERE kode_reservasi='$id'");
+        return $result;
+	}
+
 	function get_pemesanan_row(){
 		$result=$this->db->query("SELECT COUNT(*) FROM reservasi;");
         return $result;
@@ -21,6 +26,20 @@ class Pemesanan extends CI_Model {
 
     function set_pemesanan($kodereservasi,$datein,$dateout,$idprogram,$id){
     	$result=$this->db->query("INSERT INTO reservasi (kode_reservasi,tgl_masuk,tgl_keluar,paket_program_id,id_pelanggan) VALUES('$kodereservasi','$datein','$dateout','$idprogram','$id')");
+        return $result;
+    }
+
+    function update_status($prop,$kodereservasi){
+    	$result=$this->db->query("UPDATE reservasi SET pembayaran='$prop' WHERE kode_reservasi='$kodereservasi'");
+        return $result;
+    }
+
+
+
+
+
+    function upload_file($bukti,$kode){
+    	$result=$this->db->query("INSERT INTO reservasi (bukti) VALUES('$bukti') WHERE kode_reservasi='$kode'");
         return $result;
     }
 

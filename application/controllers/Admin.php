@@ -71,6 +71,22 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/template/foot');
 	}
 
+	public function opsi_pemesanan($id=""){
+		$data=array(
+            'res'=>$this->Pemesanan->get_pemesanan_byid($id)
+        );
+		$this->load->view('admin/template/head');
+		$this->load->view('admin/template/sidebar');
+        $this->load->view('admin/opsi_pemesanan', $data);
+		$this->load->view('admin/template/foot');
+	}
+
+	public function ubah_status(){
+		$kodereservasi = $this->input->post('kodereservasi');
+		$prop = $this->input->post('prop');
+		$this->Pemesanan->update_status($prop,$kodereservasi);
+	}
+
 	public function reservasi()
 	{
 		$data=array('res'=>$this->Reservasi_model->get_reservasi_proses());
