@@ -104,7 +104,6 @@
                       <th>check out</th>
                       <th>Atas Nama</th>
                       <th>Program</th>
-                      <th>Status</th>
                       <th></th>
                     </thead>
                     <tbody><?php $no=1; ?><?php foreach ($res->result() as $post): ?>
@@ -115,9 +114,6 @@
                         <td><?php echo $post->check_out  ?></td>
                         <td><?php echo $post->nama_depan  ?></td>
                         <td><?php echo $post->nama_program  ?></td>
-                        <td>
-                          <?php echo $post->isactive  ?>
-                        </td>
                         <td class="td-actions text-right">
                               <button type="button" rel="tooltip" title="Konfirmasi" class="btn btn-warning">
                                 <i class="material-icons">done</i> Selesai

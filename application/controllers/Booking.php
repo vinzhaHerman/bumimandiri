@@ -8,6 +8,7 @@ class Booking extends CI_Controller {
 		$this->load->helper('url');
 		$this->load->model('Reservasi_model');
 		$this->load->model('Paket_model');
+		$this->load->model('Pemesanan');
 	}
 
 
@@ -23,27 +24,10 @@ class Booking extends CI_Controller {
 
 
 
-	function save_date(){
-        $datein = $this->input->post('datein');
-		$dateout = $this->input->post('dateout');
-            $date_session = array(
-            	'datein' => $datein,
-                'dateout' => $dateout
-                );
- 
-            $this->session->set_userdata($date_session);
-            redirect();
-    }
-    function emptydate(){
-        $this->session->sess_destroy();
-        redirect(base_url("booing/search"));
-    }
-
-
-
-
-
 	public function search(){
+		if($this->session->userdata('status') != "login"){
+            redirect(base_url("login"));
+        }
 		$datein = $this->input->post('datein');
 		$dateout = $this->input->post('dateout');
 		$data['res']=$this->Reservasi_model->src_paket_by_date($datein, $dateout);
@@ -52,6 +36,9 @@ class Booking extends CI_Controller {
 
 	public function paket_detail($id)
 	{	
+		if($this->session->userdata('status') != "login"){
+            redirect(base_url("login"));
+        }
 		$datein = $this->input->post('datein');
 		$dateout = $this->input->post('dateout');
 		$data=array('res'=>$this->Paket_model->get_paket_byid($id));
@@ -60,8 +47,31 @@ class Booking extends CI_Controller {
 
 	public function paket_list()
 	{
+		if($this->session->userdata('status') != "login"){
+            redirect(base_url("login"));
+        }
 		$data=array('res'=>$this->Paket_model->get_paket_program());
 		$this->load->view('pages/paket_list', $data);
+	}
+
+
+
+
+
+	public function set_pemesanan()
+	{
+		if($this->session->userdata('status') != "login"){
+            redirect(base_url("login"));
+        }
+		$datein = $this->input->post('datein');
+		$dateout = $this->input->post('dateout');
+		$idprogram = $this->input->post('idprogram');
+		$id = $this->session->userdata('id');
+		$kodereservasi = $this->Pemesanan->kode_otomatis();
+
+
+		$this->Pemesanan->set_pemesanan($kodereservasi,$datein,$dateout,$idprogram,$id);
+		echo "berhasil";
 	}
 	
 }

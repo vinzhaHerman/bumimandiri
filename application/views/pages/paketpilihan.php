@@ -24,23 +24,37 @@
 		<h2 style="text-align: center;" class="mb-3">FORM PEMESANAN</h2>
 		<div class="card mb-3">
   			<div class="card-body">
-  				<input type='text' class="form-control" id='datetimepicker1' name="datein" value="<?php echo $res['id'] ?>" hidden/>
-    			<h3 class="card-title">Pilih Tanggal Reservasi</h3>
+          <form action="<?php echo base_url('booking/set_pemesanan'); ?>" method="post">
+  				<input type='text' class="form-control" id='datetimepicker1' name="idprogram" value="<?php echo $res['id'] ?>" hidden/>
+    			<h3 class="card-title">Untuk tanggal:</h3>
     			<div class="container">
     				<div class="row">
-        				<div class='col-sm-6'>
-            				<input type='text' class="form-control" id='datetimepicker1' name="datein" value="<?php echo $_POST['datein']?>" />
+        				<div class='col-sm-2'>
+            				<input type='text' class="form-control" id='datetimepicker1' name="datein" value="<?php echo $_POST['datein']?>" readonly/>
         				</div>
-                <div class='col-sm-6'>
-                    <input type='text' class="form-control" id='datetimepicker1' name="datein" value="<?php echo $_POST['dateout']?>" />
+                <div class='col-sm-1'>
+                    <div class="text-center">sampai</div>
+                </div>
+                <div class='col-sm-2'>
+                    <input type='text' class="form-control" id='datetimepicker1' name="datein" value="<?php echo $_POST['dateout']?>" readonly/>
                 </div>
     				</div>
 				</div>
   			</div>
   			<div class="card mb-3">
-        <div class="card-header card-header-info">
-          <h3 class="card-title"><b><?php echo $res['nama_program'] ?></b></h3>
-          <p class="card-category">Lama Kegiatan: <b><?php echo $res['lama_kegiatan'] ?></b></p>
+        <div class="card-header card-header-primary">
+          <div class="form-group row">
+              <a for="staticEmail" class="col-sm-2 col-form-label text" style="font-size: 28px;"><b>Program:</b></a>
+              <div class="col-sm-10">
+                  <input type="text" readonly class="form-control-plaintext text-success" id="staticEmail" name="namaprogram" value="<?php echo $res['nama_program'] ?>"  style="font-size: 28px;">
+              </div>
+          </div>
+          <div class="form-group row">
+              <a for="staticEmail" class="col-sm-2 col-form-label text"><b>Atas nama:</b></a>
+              <div class="col-sm-10">
+                  <input type="text" class="form-control" name="atasnama" style="color: white;">
+              </div>
+          </div>
         </div>
   			<div class="card-body">
           <div class="row">
@@ -51,8 +65,7 @@
             </div>
           </div>
     			
-          <a href="#" class="btn btn-success pull-right">Pilih Paket</a>
-    			<button class="btn btn-secondary pull-right" type="button" data-toggle="collapse" data-target="#collapsedContent1" aria-expanded="false" aria-controls="collapsedContent1">Deail</button>
+          <button type="submit" class="btn btn-primary pull-right">Pilih Paket</button>
     			<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
     			<div class="collapse" id="collapsedContent1">
   					<div class="card card-body"> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
@@ -60,6 +73,7 @@
 				</div>
   			</div>
 		</div>
+    </form>
 		</div>
 	</div>
 
