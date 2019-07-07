@@ -20,6 +20,7 @@
 		<h2 style="text-align: center;" class="mb-3">PILIH PROGRAM KEGIATAN</h2>
       <?php foreach ($res->result() as $post): ?>
   		<div class="card mb-3">
+        <form action="<?php  echo base_url("Booking/paket_detail/").$post->id;?>" method="post" enctype="multipart/form-data">
         <div class="card-header card-header-info">
           <h3 class="card-title"><b><?php echo $post->nama_program ?></b></h3>
           <p class="card-category">Lama Kegiatan: <b><?php echo $post->lama_kegiatan ?></b></p>
@@ -30,10 +31,12 @@
             <div class="col-sm-8">
               <h3 class="card-title text-info"></h3>
               <p class="card-text"><?php echo $post->fasilitas ?><br>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <input type='text' class="form-control" id='datetimepicker1' name="datein" value="<?php echo $_POST['datein']?>" hidden/>
+              <input type='text' class="form-control" id='datetimepicker1' name="dateout" value="<?php echo $_POST['dateout']?>" hidden/>
             </div>
           </div>
     			
-          <a href="#" class="btn btn-success pull-right">Pilih Paket</a>
+          <button type="submit" class="btn btn-success pull-right">Pilih Paket</button>
     			<button class="btn btn-secondary pull-right" type="button" data-toggle="collapse" data-target="#collapsedContent1" aria-expanded="false" aria-controls="collapsedContent1">Deail</button>
     			<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
     			<div class="collapse" id="collapsedContent1">
@@ -41,6 +44,7 @@
   					</div>
 				</div>
   			</div>
+      </form>
 		</div>
     <?php endforeach; ?>
 	</div>

@@ -15,24 +15,51 @@
 <body>
 
 
-
+<?php 
+  $res=$res->row_array();
+?>
 
 
 	<div class="container">
 		<h2 style="text-align: center;" class="mb-3">FORM PEMESANAN</h2>
 		<div class="card mb-3">
   			<div class="card-body">
+  				<input type='text' class="form-control" id='datetimepicker1' name="datein" value="<?php echo $res['id'] ?>" hidden/>
     			<h3 class="card-title">Pilih Tanggal Reservasi</h3>
     			<div class="container">
     				<div class="row">
         				<div class='col-sm-6'>
-            				<input type='text' class="form-control" id='datetimepicker4' />
+            				<input type='text' class="form-control" id='datetimepicker1' name="datein" value="<?php echo $_POST['datein']?>" />
         				</div>
+                <div class='col-sm-6'>
+                    <input type='text' class="form-control" id='datetimepicker1' name="datein" value="<?php echo $_POST['dateout']?>" />
+                </div>
     				</div>
 				</div>
-				<button type="submit" class="btn">BATAL</button>
-				<button type="submit" class="btn btn-success">CARI</button>
   			</div>
+  			<div class="card mb-3">
+        <div class="card-header card-header-info">
+          <h3 class="card-title"><b><?php echo $res['nama_program'] ?></b></h3>
+          <p class="card-category">Lama Kegiatan: <b><?php echo $res['lama_kegiatan'] ?></b></p>
+        </div>
+  			<div class="card-body">
+          <div class="row">
+            <div class="col-sm-3"><img style="max-width: 250px; height: auto;" src="<?php echo base_url();?>assets/img/people.jpg" alt=""></div>
+            <div class="col-sm-8">
+              <h3 class="card-title text-info"></h3>
+              <p class="card-text"><?php echo $res['fasilitas'] ?><br>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            </div>
+          </div>
+    			
+          <a href="#" class="btn btn-success pull-right">Pilih Paket</a>
+    			<button class="btn btn-secondary pull-right" type="button" data-toggle="collapse" data-target="#collapsedContent1" aria-expanded="false" aria-controls="collapsedContent1">Deail</button>
+    			<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    			<div class="collapse" id="collapsedContent1">
+  					<div class="card card-body"> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+  					</div>
+				</div>
+  			</div>
+		</div>
 		</div>
 	</div>
 

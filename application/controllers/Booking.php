@@ -19,6 +19,30 @@ class Booking extends CI_Controller {
 		$this->load->view('pages/book');
 	}
 
+
+
+
+
+	function save_date(){
+        $datein = $this->input->post('datein');
+		$dateout = $this->input->post('dateout');
+            $date_session = array(
+            	'datein' => $datein,
+                'dateout' => $dateout
+                );
+ 
+            $this->session->set_userdata($date_session);
+            redirect();
+    }
+    function emptydate(){
+        $this->session->sess_destroy();
+        redirect(base_url("booing/search"));
+    }
+
+
+
+
+
 	public function search(){
 		$datein = $this->input->post('datein');
 		$dateout = $this->input->post('dateout');
@@ -26,9 +50,12 @@ class Booking extends CI_Controller {
 		$this->load->view('pages/paket_list', $data, false);
 	}
 
-	public function paket_detail()
-	{
-		$this->load->view('pages/paketpilihan');
+	public function paket_detail($id)
+	{	
+		$datein = $this->input->post('datein');
+		$dateout = $this->input->post('dateout');
+		$data=array('res'=>$this->Paket_model->get_paket_byid($id));
+		$this->load->view('pages/paketpilihan', $data);
 	}
 
 	public function paket_list()

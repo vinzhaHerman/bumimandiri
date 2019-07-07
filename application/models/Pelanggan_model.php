@@ -28,8 +28,8 @@ class Pelanggan_model extends CI_Model {
 	}
 
 	function get_reservasi_byuser($id){
-		$query = $this->db->query('');
-		return $query->result();
+		$result = $this->db->query("SELECT * FROM reservasi INNER JOIN paket_program ON reservasi.paket_program_id=paket_program.id WHERE id_pelanggan='$id'");
+		return $result;
 	}
 
 }

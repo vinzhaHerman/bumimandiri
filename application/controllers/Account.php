@@ -15,7 +15,8 @@ class Account extends CI_Controller {
 		if($this->session->userdata('status') != "login"){
             redirect(base_url("login"));
         }
-		$data['userdata']=$this->Pelanggan_model->getuser(1);
+		$data['userdata']=$this->Pelanggan_model->getuser($this->session->userdata('id'));
+		$data['userriwayat']=$this->Pelanggan_model->get_reservasi_byuser($this->session->userdata('id'));
 		// $data=array('res'=>$this->Pelanggan_model->get_user_data());
         // $data['user_res']=$this->Pelanggan_model->get_reservasi_byuser($this->session->userdata('id'));
 		$this->load->view('user/user_profile', $data);

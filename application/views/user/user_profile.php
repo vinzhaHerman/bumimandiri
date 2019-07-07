@@ -110,9 +110,6 @@
                     <table class="table">
                       <thead class=" text-primary">
                         <th>
-                          No.
-                        </th>
-                        <th>
                           Kode Reservasi
                         </th>
                         <th>
@@ -122,54 +119,45 @@
                           Bukti Pembayaran
                         </th>
                         <th>
+                          Status
+                        </th>
+                        <th>
                           Aksi
                         </th>
                       </thead>
                       <tbody>
+                        <?php foreach ($userriwayat->result() as $res): ?>
                         <tr>
                           <td>
-                            1
+                            <?php echo $res->kode_reservasi  ?>
                           </td>
                           <td>
-                            Dakota Rice
+                            <?php echo $res->nama_program  ?>
                           </td>
                           <td>
-                            Niger
+                            <?php
+                            if (empty($res->bukti)) {
+                              echo '<button type="button"  href="" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#showModal" disabled>
+                            <i class="material-icons">close</i> Empty
+                            </button>';
+                            }
+                            else{
+                              echo '<button type="button"  href="" class="btn btn-info btn-sm" data-toggle="modal" data-target="#showModal" disabled>
+                            <i class="material-icons">done</i> Uploaded
+                            </button>';
+                            }
+                          ?>
                           </td>
                           <td>
-                            Oud-Turnhout
+                            <?php echo $res->pembayaran  ?>
                           </td>
                           <td class="td-actions text-right">
-                            <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
-                                <i class="material-icons">edit</i>
-                            </button>
-                            <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
-                                <i class="material-icons">close</i>
+                            <button type="button"  href="''" class="btn btn-success btn-sm" data-toggle="modal" data-target="#showModal">
+                            Upload Bukti
                             </button>
                           </td>
                         </tr>
-                        <tr>
-                          <td>
-                            2
-                          </td>
-                          <td>
-                            Minerva Hooper
-                          </td>
-                          <td>
-                            Curaçao
-                          </td>
-                          <td>
-                            Sinaai-Waas
-                          </td>
-                          <td class="td-actions text-right">
-                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
-                                <i class="material-icons">edit</i>
-                              </button>
-                              <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
-                                <i class="material-icons">close</i>
-                              </button>
-                            </td>
-                        </tr>
+                        <?php endforeach ?>
                       </tbody>
                     </table>
                   </div>
