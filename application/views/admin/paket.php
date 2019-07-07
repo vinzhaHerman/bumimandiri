@@ -91,13 +91,13 @@
 
           <div class="">
               <div class="card">
-                <div class="card-header card-header-info">
+                <div class="card-header card-header-primary">
                   <h3 class="card-title">Data Paket</h3>
-                  <button type="button" class="btn btn-success btn-sm">+ Tambah Paket</button>
+                  <a href="<?php echo base_url() ?>admin/tambah_paket" class="btn btn-warning btn-sm">+ Tambah Paket</a>
                 </div>
                 <div class="card-body table-responsive">
                   <table id="myTable" class="table table-hover  table-striped">
-                    <thead class="text-info">
+                    <thead class="text-primary">
                       <th>No.</th>
                       <th>Nama Paket</th>
                       <th>Deskripsi</th>
@@ -109,9 +109,9 @@
                         <td><?php echo $post->nama_paket  ?></td>
                         <td><?php echo $post->deskripsi  ?></td>
                         <td class="td-actions text-right">
-                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
-                                <i class="material-icons">edit</i>
-                              </button>
+                              <a href="<?php echo base_url() ?>Admin/ubah_paket/<?php echo $post->id  ?>" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
+                                <i class="material-icons">settings</i>
+                              </a>
                               <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
                                 <i class="material-icons">close</i>
                               </button>

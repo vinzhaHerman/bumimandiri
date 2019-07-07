@@ -91,13 +91,13 @@
 
           <div class="">
               <div class="card">
-                <div class="card-header card-header-info">
+                <div class="card-header card-header-primary">
                   <h3 class="card-title">Data Paket</h3>
-                  <button type="button" class="btn btn-success btn-sm">+ Tambah Paket</button>
+                  <button type="button" class="btn btn-warning btn-sm">+ Tambah Paket</button>
                 </div>
                 <div class="card-body table-responsive">
                   <table id="myTable" class="table table-hover  table-striped">
-                    <thead class="text-info">
+                    <thead class="text-primary">
                       <th>Nama Program</th>
                       <th>Fasilitas</th>
                       <th>Konsumsi</th>

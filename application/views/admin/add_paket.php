@@ -81,9 +81,7 @@
 
 
 
-<?php 
-  $res=$res->row_array();
- ?>
+
 
           
 
@@ -93,9 +91,9 @@
 
           <div class="">
               <div class="card">
-                <div class="card-header card-header-info">
+                <div class="card-header card-header-primary">
                   <h3 class="card-title">Data Pemesanan</h3>
-                  <button type="button" class="btn btn-success btn-sm">+ Tambah Reservasi</button>
+                  <button type="button" class="btn btn-warning btn-sm">+ Tambah Reservasi</button>
                 </div>
                 <div class="card-body table-responsive">
                   <form action="<?php echo base_url();?>admin/ubah_status" method="post">
@@ -103,7 +101,7 @@
                       <div class="col-md-3">
                         <div class="form-group">
                           <label class="bmd-label-floating">Kode reservasi</label>
-                          <input type="text" class="form-control" name="kodereservasi"  value="<?php echo $res['kode_reservasi'] ?>">
+                          <input type="text" class="form-control" name="kodereservasi"  value="">
                         </div>
                       </div>
                     </div>

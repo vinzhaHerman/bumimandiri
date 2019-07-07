@@ -45,6 +45,11 @@ class Admin extends CI_Controller {
         redirect(base_url('admin/login'));
     }
 
+	public function login()
+	{
+		$this->load->view('admin/login');
+	}
+
 
 	public function index()
 	{
@@ -57,10 +62,10 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/template/foot');
 	}
 
-	public function login()
-	{
-		$this->load->view('admin/login');
-	}
+
+
+
+
 
 	public function pemesanan()
 	{
@@ -70,7 +75,6 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/pemesanan', $data);
 		$this->load->view('admin/template/foot');
 	}
-
 	public function opsi_pemesanan($id=""){
 		$data=array(
             'res'=>$this->Pemesanan->get_pemesanan_byid($id)
@@ -80,12 +84,15 @@ class Admin extends CI_Controller {
         $this->load->view('admin/opsi_pemesanan', $data);
 		$this->load->view('admin/template/foot');
 	}
-
 	public function ubah_status(){
 		$kodereservasi = $this->input->post('kodereservasi');
 		$prop = $this->input->post('prop');
 		$this->Pemesanan->update_status($prop,$kodereservasi);
 	}
+
+
+
+
 
 	public function reservasi()
 	{
@@ -96,6 +103,11 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/template/foot');
 	}
 
+
+
+
+
+
 	public function data_paket()
 	{
 		$data=array('res'=>$this->Paket_model->get_paket());
@@ -104,6 +116,31 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/paket', $data);
 		$this->load->view('admin/template/foot');
 	}
+	public function tambah_paket()
+	{
+		$this->load->view('admin/template/head');
+		$this->load->view('admin/template/sidebar');
+		$this->load->view('admin/add_paket');
+		$this->load->view('admin/template/foot');
+	}
+	public function ubah_paket($id="")
+	{
+		$data=array('res'=>$this->Paket_model->get_paket_byid($id));
+		$this->load->view('admin/template/head');
+		$this->load->view('admin/template/sidebar');
+		$this->load->view('admin/opsi_paket', $data);
+		$this->load->view('admin/template/foot');
+	}
+	public function update_paket(){
+		// $kodereservasi = $this->input->post('kodereservasi');
+		// $prop = $this->input->post('prop');
+		// $this->Pemesanan->update_status($prop,$kodereservasi);
+	}
+
+
+
+
+
 
 	public function data_program()
 	{
@@ -113,6 +150,11 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/paket_program', $data);
 		$this->load->view('admin/template/foot');
 	}
+
+
+
+
+
 
 	public function kelola_blog()
 	{
