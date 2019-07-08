@@ -96,24 +96,29 @@
                   <button type="button" class="btn btn-warning btn-sm">+ Tambah Reservasi</button>
                 </div>
                 <div class="card-body table-responsive">
-                  <form action="<?php echo base_url();?>admin/ubah_status" method="post">
+                  <form action="<?php echo base_url('admin/set_paket'); ?>" method="post">
                     <div class="row">
-                      <div class="col-md-3">
+                      <div class="col-md-1 pull">
                         <div class="form-group">
-                          <label class="bmd-label-floating">Kode reservasi</label>
-                          <input type="text" class="form-control" name="kodereservasi"  value="">
                         </div>
                       </div>
                     </div>
                     <div class="row">
-                      <div class="col-md-6">
+                      <div class="col-md-4">
                         <div class="form-group">
-                          <label class="bmd-label-floating">Status</label>
-                          <input type="text" class="form-control" name="prop">
+                          <label class="bmd-label-floating">Nama Paket</label>
+                          <input type="text" class="form-control" name="namapaket" value="" required="true">
                         </div>
                       </div>
                     </div>
-                    <button type="submit" class="btn btn-success pull-right">Update Profile</button>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <label class="bmd-label-floating">Deskripsi:</label>
+                        <textarea name="deskripsi" required="true">Isi Deskripsi Paket!</textarea>
+                      </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary pull-right">Simpan</button>
+                    <button class="btn btn-warning pull-right">Batal</button>
                     <div class="clearfix"></div>
                   </form>
                 </div>

@@ -91,17 +91,16 @@
 
           <div class="">
               <div class="card">
-                <div class="card-header card-header-primary">
-                  <h3 class="card-title">Data Paket</h3>
-                  <a href="<?php echo base_url() ?>admin/tambah_paket" class="btn btn-warning btn-sm">+ Tambah Paket</a>
+                <div class="card-header card-header-warning">
+                  <h3 class="card-title pull-left">Laporan Data Paket</h3>
+                  <a href="" class="btn btn-danger btn-sm pull-right"><i class="fas fa-print"></i> Cetak Laporan</a>
                 </div>
                 <div class="card-body table-responsive">
                   <table id="myTable" class="table table-hover  table-striped">
-                    <thead class="text-primary">
+                    <thead class="text-warning">
                       <th>No.</th>
                       <th>Nama Paket</th>
                       <th>Deskripsi</th>
-                      <th>Aksi</th>
                     </thead>
                     <tbody><?php $no=1; ?>
                     <?php 
@@ -115,14 +114,6 @@
                         <td><?php echo $no++; ?></td>
                         <td><?php echo $post->nama_paket?></td>
                         <td><?php echo word_limit($post->deskripsi, 8);?></td>
-                        <td class="td-actions text-right">
-                              <a href="<?php echo base_url() ?>Admin/ubah_paket/<?php echo $post->id?>" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
-                                <i class="material-icons">settings</i>
-                              </a>
-                              <a href="<?php echo base_url() ?>Admin/delete_paket/<?php echo $post->id?>" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
-                                <i class="material-icons">close</i>
-                              </a>
-                            </td>
                       </tr>
                     <?php endforeach; ?></tbody>
                   </table>

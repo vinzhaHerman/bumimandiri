@@ -61,7 +61,7 @@
                       <div class="col-md-3">
                         <div class="form-group">
                           <label class="bmd-label-floating">Username</label>
-                          <input type="text" class="form-control name="username"  value="<?php echo $post->username  ?>">
+                          <input type="text" class="form-control" name="username"  value="<?php echo $post->username  ?>">
                         </div>
                       </div>
                       <div class="col-md-9">

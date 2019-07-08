@@ -6,6 +6,7 @@ class Admin extends CI_Controller {
 	function __construct(){
 		parent::__construct();
 		$this->load->helper('url');
+        $this->load->helper('text');
 		$this->load->model('Admin_model');
 		$this->load->model('Paket_model');
 		$this->load->model('Reservasi_model');
@@ -133,10 +134,31 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/opsi_paket', $data);
 		$this->load->view('admin/template/foot');
 	}
+	public function laporan_paket()
+	{
+		$data=array('res'=>$this->Paket_model->get_paket());
+		$this->load->view('admin/template/head');
+		$this->load->view('admin/template/sidebar');
+		$this->load->view('admin/laporan_paket', $data);
+		$this->load->view('admin/template/foot');
+	}
+	public function set_paket(){
+		$id = $this->input->post('id');
+		$namapaket = $this->input->post('namapaket');
+		$deskripsi = $this->input->post('deskripsi');
+		$this->Paket_model->set_paket($namapaket, $deskripsi);
+		redirect(base_url("admin/data_paket"));
+	}
 	public function update_paket(){
-		// $kodereservasi = $this->input->post('kodereservasi');
-		// $prop = $this->input->post('prop');
-		// $this->Pemesanan->update_status($prop,$kodereservasi);
+		$id = $this->input->post('id');
+		$namapaket = $this->input->post('namapaket');
+		$deskripsi = $this->input->post('deskripsi');
+		$this->Paket_model->update_paket($id, $namapaket, $deskripsi);
+		redirect(base_url("admin/data_paket"));
+	}
+	public function delete_paket($id){
+		$this->Paket_model->delete_paket($id);
+		redirect(base_url("admin/data_paket"));
 	}
 
 
