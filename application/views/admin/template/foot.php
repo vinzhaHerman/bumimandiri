@@ -1,6 +1,7 @@
 <!--   Core JS Files   -->
 <script src="<?php echo base_url();?>/assets/js/core/jquery.min.js" type="text/javascript"></script>
 <script src="<?php echo base_url();?>/assets/js/core/popper.min.js" type="text/javascript"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="<?php echo base_url();?>/assets/js/core/bootstrap-material-design.min.js" type="text/javascript"></script>
 <script src="<?php echo base_url();?>/assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
 <!-- Plugin for the momentJs  -->
@@ -19,7 +20,9 @@
   <script src="<?php echo base_url();?>/assets/js/plugins/bootstrap-datetimepicker.min.js"></script>
 
   <!--  DataTables.net Plugin, full documentation here: https://datatables.net/    -->
+  <!-- <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.18/sc-2.0.0/datatables.min.js"></script> -->
   <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.18/sc-2.0.0/datatables.min.js"></script>
+  
 
   <!--	Plugin for Tags, full documentation here: https://github.com/bootstrap-tagsinput/bootstrap-tagsinputs  -->
   <!-- <script src="/assets/js/plugins/bootstrap-tagsinput.js"></script> -->

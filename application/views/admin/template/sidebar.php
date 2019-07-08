@@ -32,18 +32,31 @@
 
           
 
-          <li class="nav-item ">
+          <!-- <li class="nav-item ">
             <a class="nav-link" href="<?php echo base_url()?>Admin/reservasi">
               <i class="material-icons">library_books</i>
               <p>Reservasi</p>
             </a>
-          </li>
+          </li> -->
           <li class="nav-item">
             <a class="nav-link collapsed" href="#submenu1" data-toggle="collapse" data-target="#submenu1">
               <i class="fas fa-list"></i>
-              <p>Data Master</p>
+              <p>Reservasi</p>
             </a>
             <div class="collapse" id="submenu1" aria-expanded="false">
+                <ul class="flex-column pl-2 nav">
+                    <li class="nav-item"><a class="nav-link" href=""><i class="fas fa-stream"></i>Waiting list</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?php echo base_url()?>Admin/reservasi"><i class="fas fa-stream"></i></i>Sedang Berlangsung</a></li>
+                    <li class="nav-item"><a class="nav-link" href=""><i class="fas fa-stream"></i></i>Riwayat</a></li>
+                </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="#submenu2" data-toggle="collapse" data-target="#submenu2">
+              <i class="fas fa-list"></i>
+              <p>Data Master</p>
+            </a>
+            <div class="collapse" id="submenu2" aria-expanded="false">
                 <ul class="flex-column pl-2 nav">
                     <li class="nav-item"><a class="nav-link" href="<?php echo base_url()?>Admin/data_paket"><i class="fas fa-stream"></i>Data Paket</a></li>
                     <li class="nav-item"><a class="nav-link" href="<?php echo base_url()?>Admin/data_program"><i class="fas fa-stream"></i></i>Data Program</a></li>
@@ -70,11 +83,11 @@
 
 
           <li class="nav-item">
-            <a class="nav-link collapsed" href="#submenu2" data-toggle="collapse" data-target="#submenu2">
+            <a class="nav-link collapsed" href="#submenu3" data-toggle="collapse" data-target="#submenu3">
               <i class="fas fa-print"></i>
               <p>Laporan</p>
             </a>
-            <div class="collapse" id="submenu2" aria-expanded="false">
+            <div class="collapse" id="submenu3" aria-expanded="false">
                 <ul class="flex-column pl-2 nav">
                     <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-users"></i>Data Pengunjung</a></li>
                     <li class="nav-item"><a class="nav-link" href="#"><i class="far fa-calendar-alt"></i>Data Reservasi</a></li>
@@ -88,11 +101,11 @@
 
 
           <li class="nav-item">
-            <a class="nav-link collapsed" href="#submenu3" data-toggle="collapse" data-target="#submenu3">
+            <a class="nav-link collapsed" href="#submenu4" data-toggle="collapse" data-target="#submenu4">
               <i class="fas fa-cog"></i>
                <p>Settings</p>
             </a>
-            <div class="collapse" id="submenu3" aria-expanded="false">
+            <div class="collapse" id="submenu4" aria-expanded="false">
                 <ul class="flex-column pl-2 nav">
                     <li class="nav-item"><a class="nav-link py-0" href="#">Profile</a></li>
                     <li class="nav-item">
