@@ -23,15 +23,17 @@ class Admin extends CI_Controller {
             'username' => $username,
             'password' => $password
             );
-        $cek = $this->Admin_model->login_inf("admins",$where)->num_rows();
-        if($cek > 0){
- 
-            $data_session = array(
-                'nama' => $username,
-                'status' => "login"
+        $hsl = $this->Admin_model->login_inf("admins",$where);
+        if($hsl->num_rows() > 0){
+ 			$res=$hsl->result()[0];
+            $data = array(
+            	's_id' => $res->id,
+                's_username' => $res->username,
+                's_level' => $res->level,
+                's_status' => "login"
                 );
  
-            $this->session->set_userdata($data_session);
+            $this->session->set_userdata($data);
  
             redirect(base_url("admin"));
  
@@ -53,7 +55,7 @@ class Admin extends CI_Controller {
 
 	public function index()
 	{
-		if($this->session->userdata('status') != "login"){
+		if($this->session->userdata('s_status') != "login"){
             redirect(base_url("admin/login"));
         }
 		$this->load->view('admin/template/head');
