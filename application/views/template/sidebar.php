@@ -2,12 +2,12 @@
 	<div class="sidebar-top">
 		<a class="btn-close" onclick="closeSlideMenu()"><i class="fas fa-bars"></i><span class="inner-menu-text">MENU</span></a>
 	</div>
-    <a href="http://localhost/bumimandiri">
+    <a href="<?php echo base_url(); ?>">
     	<div class="sidebar-item">
     		<i class="fas fa-home"></i><span class="sidebar-item-text">Beranda</span>
     	</div>
     </a>
-    <a href="http://localhost/bumimandiri/Web/kegiatan">
+    <a href="<?php echo base_url(); ?>Web/kegiatan">
     	<div class="sidebar-item">
     		<i class="fas fa-search"></i><span class="sidebar-item-text">Kegiatan Wisata</span>
     	</div>
@@ -22,20 +22,20 @@
     		<i class="fas fa-list-ul"></i><span class="sidebar-item-text">Daftar Paket</span>
     	</div>
     </a>
-    <a href="http://localhost/bumimandiri/Web/galery">
+    <a href="<?php echo base_url(); ?>Web/galery">
         <div class="sidebar-item">
             <i class="far fa-images"></i><span class="sidebar-item-text">Galery</span>
         </div>
     </a>
     	<div class="sidebar-item border-top-bot">
-    		<a href="http://localhost/bumimandiri/Web/booking"><div class="fill-button-blue"><span class="sidebar-button-text">Pesan Sekarang</span><i class="fas fa-external-link-alt"></i></div></a>
+    		<a href="<?php echo base_url(); ?>booking"><div class="fill-button-blue"><span class="sidebar-button-text">Pesan Sekarang</span><i class="fas fa-external-link-alt"></i></div></a>
     	</div>
-    <a href="http://localhost/bumimandiri/Web/bantuan">
+    <a href="<?php echo base_url(); ?>Web/bantuan">
     	<div class="sidebar-item">
     		<i class="fas fa-exclamation-circle"></i><span class="sidebar-item-text">Bantuan</span>
     	</div>
     </a>
-    <a href="http://localhost/bumimandiri/Web/about_us">
+    <a href="h<?php echo base_url(); ?>Web/about_us">
     	<div class="sidebar-item">
     		<i class="far fa-smile"></i><span class="sidebar-item-text">Tentang Kami</span>
     	</div>

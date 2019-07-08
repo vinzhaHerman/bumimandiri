@@ -110,12 +110,19 @@
                     <div class="row">
                       <div class="col-md-6">
                         <div class="form-group">
-                          <label class="bmd-label-floating">Status</label>
-                          <input type="text" class="form-control" name="prop">
+                          <label>Ubah Status</label>
+                          <div class="input-group">
+                            <div class="input-group-addon">
+                            </div>
+                            <select name="status" class="btn btn-info dropdown-toggle">
+                              <option <?php if($res['pembayaran']=='0'){echo "selected"; } ?> value='0'>Belum Lunas</option>
+                              <option <?php if( $res['pembayaran']=='1'){echo "selected"; } ?> value='1'>Lunas</option>
+                            </select>
+                          </div>
                         </div>
                       </div>
                     </div>
-                    <button type="submit" class="btn btn-success pull-right">Update Profile</button>
+                    <button type="submit" class="btn btn-success pull-right">Simpan</button>
                     <div class="clearfix"></div>
                   </form>
                 </div>

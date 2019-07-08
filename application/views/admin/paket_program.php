@@ -99,8 +99,6 @@
                   <table id="myTable" class="table table-hover  table-striped">
                     <thead class="text-primary">
                       <th>Nama Program</th>
-                      <th>Fasilitas</th>
-                      <th>Konsumsi</th>
                       <th>Lama Kegiatan</th>
                       <th>Harga</th>
                       <th>Aksi</th>
@@ -108,8 +106,6 @@
                     <tbody><?php foreach ($res->result() as $post): ?>
                       <tr>
                         <td><?php echo $post->nama_program  ?></td>
-                        <td><?php echo $post->fasilitas  ?></td>
-                        <td><?php echo $post->konsumsi  ?></td>
                         <td><?php echo $post->lama_kegiatan  ?></td>
                         <td><?php echo $post->harga  ?></td>
                         <td class="td-actions text-right">
