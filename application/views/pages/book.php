@@ -72,6 +72,7 @@
        // });
        $('#datetimepicker1').datepicker({
         modal: true,
+        minDate: nextDay,
         format: 'yyyy-mm-dd'
        });
 
