@@ -1,5 +1,24 @@
 *{padding: 0; margin: 0; font-family: 'Roboto', sans-serif;}
 
+body{
+	background-image: url(../img/booking-bg.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+
+
+
+
+/*.paksa-tengah{
+  min-width: 100vw;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 
 
 
@@ -21,13 +40,13 @@
 	font-size: 42px;
 	color: rgb(3, 169, 244);
 	margin: 3% 4%;
-}
+}*/
 
-.container{
+/*.container{
 	position: absolute;
 	width: 80%;
 	height: auto;
-	/*height: 1200px;*/
+	height: 1200px;
 	top: 12%;
 	left: 50%;
 	transform: translateX(-50%);
@@ -35,7 +54,7 @@
 	-webkit-box-shadow: 0px 0px 7px 1px rgba(128,128,128,1);
 -moz-box-shadow: 0px 0px 7px 1px rgba(128,128,128,1);
 box-shadow: 0px 0px 7px 1px rgba(128,128,128,1)7
-}
+}*/
 
 .row{
 	width: 100%;
@@ -137,10 +156,10 @@ button{cursor: pointer;}
 
 
 
-@media only screen and (max-width: 900px){
+/*@media only screen and (max-width: 900px){
 	.container{
 		position: static;
 		width: 100%;
 		transform: none;
 	}
-}
+}*/

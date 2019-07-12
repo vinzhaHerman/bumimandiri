@@ -42,6 +42,13 @@ class Reservasi_model extends CI_Model {
         return $result;
 	}
 
+	function count_date(){
+		$tgl1 = "2013-01-23";// pendefinisian tanggal awal
+		$add = "";
+		$tgl2 = date('Y-m-d', strtotime('+'.$add.'days', strtotime($tgl1))); //operasi penjumlahan tanggal sebanyak 6 hari
+		echo $tgl2; //print tanggal
+	}
+
 	
 
 }
