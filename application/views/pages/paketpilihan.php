@@ -69,11 +69,11 @@
                 </div>
                 <div class='col-sm-2'>
                   <label for="datein">Lama Hari:</label>
-                  <input type='text' class="form-control" name="datein" readonly="true" />
+                  <input type='text' class="form-control" name="lama" readonly="true" value="3" />
                 </div>
                  <div class='col-sm-4'>
-                  <label for="datein">Checkout:</label>
-                  <input type='text' class="form-control" name="datein" readonly="true" />
+                  <label for="dateout">Checkout:</label>
+                  <input type='text' class="form-control" id="dateout" name="dateout" readonly="true" />
                 </div>
                  <div class='col-sm-2'>
                   <label for="datein">Status:</label>
@@ -141,6 +141,16 @@
         modal: true,
         format: 'yyyy-mm-dd'
        });
+
+       $("#datetimepicker1").on("change",function(){
+        var selected = $(this).val();
+        var jumlahhari = parseInt($('input[name="lama"]').val());
+        var counted = selected + jumlahhari;
+        // alert(selected);
+        $('input[name="dateout"]').val(counted);
+       });
+
+       // $('input[name="dateout"]').val("Good Fish");
    });
 </script>
 
