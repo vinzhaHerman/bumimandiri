@@ -14,9 +14,9 @@ class Booking extends CI_Controller {
 
 	public function index()
 	{
-		// if($this->session->userdata('status') != "login"){
-  //           redirect(base_url("login"));
-  //       }
+		if($this->session->userdata('status') != "login"){
+            redirect(base_url("login"));
+        }
         $data=array('res'=>$this->Paket_model->get_paket());
 		$this->load->view('pages/book', $data);
 	}
@@ -43,9 +43,9 @@ class Booking extends CI_Controller {
 
 	public function paket_detail($id)
 	{	
-		// if($this->session->userdata('status') != "login"){
-  //           redirect(base_url("login"));
-  //       }
+		if($this->session->userdata('status') != "login"){
+            redirect(base_url("login"));
+        }
 		// $datein = $this->input->post('datein');
 		// $dateout = $this->input->post('dateout');
 		$data=array('res'=>$this->Paket_model->get_paket_byid($id));

@@ -9,6 +9,8 @@ class Admin extends CI_Controller {
         $this->load->helper('text');
 		$this->load->model('Admin_model');
 		$this->load->model('Paket_model');
+		$this->load->model('Petugas_model');
+		$this->load->model('Pelanggan_model');
 		$this->load->model('Reservasi_model');
 		$this->load->model('Pemesanan');
 	}
@@ -16,7 +18,7 @@ class Admin extends CI_Controller {
 
 
 
-
+// -------------------------------------------fungsi session----------------------------------------------
 	function auth(){
         $username = $this->input->post('username');
         $password = $this->input->post('password');
@@ -47,11 +49,21 @@ class Admin extends CI_Controller {
         $this->session->sess_destroy();
         redirect(base_url('admin/login'));
     }
+ // -------------------------------------------END fungsi session----------------------------------------------
 
+
+
+
+
+// -------------------------------------------login admin----------------------------------------------
 	public function login()
 	{
 		$this->load->view('admin/login');
 	}
+// -------------------------------------------END login admin----------------------------------------------
+
+
+
 
 
 	public function index()
@@ -69,7 +81,7 @@ class Admin extends CI_Controller {
 
 
 
-
+// -------------------------------------------Pemesanan----------------------------------------------
 	public function pemesanan()
 	{
 		$data=array('res'=>$this->Pemesanan->get_pemesanan());
@@ -92,11 +104,13 @@ class Admin extends CI_Controller {
 		$prop = $this->input->post('prop');
 		$this->Pemesanan->update_status($prop,$kodereservasi);
 	}
+// -------------------------------------------END pemesanan----------------------------------------------
 
 
 
 
 
+// -------------------------------------------Data reservasi----------------------------------------------
 	public function reservasi()
 	{
 		$data=array('res'=>$this->Reservasi_model->get_reservasi_proses());
@@ -105,12 +119,13 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/reservasi', $data);
 		$this->load->view('admin/template/foot');
 	}
+// -------------------------------------------END Data reservasi----------------------------------------------
 
 
 
 
 
-
+// -------------------------------------------Data Paket----------------------------------------------
 	public function data_paket()
 	{
 		$data=array('res'=>$this->Paket_model->get_paket());
@@ -160,12 +175,13 @@ class Admin extends CI_Controller {
 		$this->Paket_model->delete_paket($id);
 		redirect(base_url("admin/data_paket"));
 	}
+// -------------------------------------------END Data Paket----------------------------------------------
 
 
 
 
 
-
+// -------------------------------------------Data Program----------------------------------------------
 	public function data_program()
 	{
 		$data=array('res'=>$this->Paket_model->get_paket_program());
@@ -174,12 +190,43 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/paket_program', $data);
 		$this->load->view('admin/template/foot');
 	}
+// -------------------------------------------END Data Program----------------------------------------------
 
 
 
 
 
+// -------------------------------------------Data Petugas----------------------------------------------
+	public function data_petugas()
+	{
+		$data=array('res'=>$this->Petugas_model->get_petugas());
+		$this->load->view('admin/template/head');
+		$this->load->view('admin/template/sidebar');
+		$this->load->view('admin/petugas_master', $data);
+		$this->load->view('admin/template/foot');
+	}
+// -------------------------------------------END Data Petugas----------------------------------------------
 
+
+
+
+
+// -------------------------------------------Data Petugas----------------------------------------------
+	public function data_pelanggan()
+	{
+		$data=array('res'=>$this->Pelanggan_model->get_user_data());
+		$this->load->view('admin/template/head');
+		$this->load->view('admin/template/sidebar');
+		$this->load->view('admin/pelanggan_master', $data);
+		$this->load->view('admin/template/foot');
+	}
+// -------------------------------------------END Data Petugas----------------------------------------------
+
+
+
+
+
+// -------------------------------------------Data blog----------------------------------------------
 	public function kelola_blog()
 	{
 		$this->load->view('admin/template/head');
@@ -194,5 +241,6 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/tambah-blog');
 		$this->load->view('admin/template/foot');
 	}
+// -------------------------------------------END Data blog----------------------------------------------
 	
 }

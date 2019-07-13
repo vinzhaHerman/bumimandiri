@@ -60,8 +60,8 @@
                 <ul class="flex-column pl-2 nav">
                     <li class="nav-item"><a class="nav-link" href="<?php echo base_url()?>Admin/data_paket"><i class="fas fa-stream"></i>Data Paket</a></li>
                     <li class="nav-item"><a class="nav-link" href="<?php echo base_url()?>Admin/data_program"><i class="fas fa-stream"></i></i>Data Program</a></li>
-                    <li class="nav-item"><a class="nav-link" href="<?php echo base_url()?>Admin/data_program"><i class="fas fa-stream"></i></i>Data Petugas</a></li>
-                    <li class="nav-item"><a class="nav-link" href="<?php echo base_url()?>Admin/data_program"><i class="fas fa-stream"></i></i>Data Pelanggan</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?php echo base_url()?>Admin/data_petugas"><i class="fas fa-stream"></i></i>Data Petugas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?php echo base_url()?>Admin/data_pelanggan"><i class="fas fa-stream"></i></i>Data Pelanggan</a></li>
                 </ul>
             </div>
           </li>
