@@ -147,7 +147,9 @@
                             <h6 class="card-title">Bukti Pembayaran</h6>
                           </div>
                           <div class="card-body" style="min-height: 280px;">
-                              <div class="row"></div>
+                              <div class="row mx-auto">
+                                <img src="<?php echo base_url().'upload/bukti/'.$res['bukti'];?>" alt="<?php echo base_url().'upload/bukti/default.jpg'?>" class="img-thumbnail mx-auto" style="max-height: 250px;">
+                              </div>
                               <div class="clearfix"></div>
                           </div>
                         </div>
