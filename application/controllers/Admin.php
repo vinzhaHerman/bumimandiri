@@ -92,17 +92,22 @@ class Admin extends CI_Controller {
 	}
 	public function opsi_pemesanan($id=""){
 		$data=array(
-            'res'=>$this->Pemesanan->get_pemesanan_byid($id)
+            'res'=>$this->Pemesanan->get_pemesanan_byid($id),
+            'resd'=>$this->Pemesanan->get_pemesanan()
         );
+		$kodereservasi = $this->input->post('kodereservasi');
 		$this->load->view('admin/template/head');
 		$this->load->view('admin/template/sidebar');
-        $this->load->view('admin/opsi_pemesanan', $data);
+        $this->load->view('admin/pemesanan_opsi', $data);
 		$this->load->view('admin/template/foot');
 	}
 	public function ubah_status(){
 		$kodereservasi = $this->input->post('kodereservasi');
 		$prop = $this->input->post('prop');
 		$this->Pemesanan->update_status($prop,$kodereservasi);
+	}
+	public function ubah_status_batal($kodereservasi){
+		$this->Pemesanan->update_status_batal($kodereservasi);
 	}
 // -------------------------------------------END pemesanan----------------------------------------------
 

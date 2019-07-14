@@ -33,6 +33,14 @@ class Pemesanan extends CI_Model {
     	$result=$this->db->query("UPDATE reservasi SET pembayaran='$prop' WHERE kode_reservasi='$kodereservasi'");
         return $result;
     }
+    function update_status_lunas($kodereservasi){
+    	$result=$this->db->query("UPDATE reservasi SET pembayaran='LUNAS' WHERE kode_reservasi='$kodereservasi'");
+        return $result;
+    }
+    function update_status_batal($kodereservasi){
+    	$result=$this->db->query("UPDATE reservasi SET pembayaran='DIBATALKAN' WHERE kode_reservasi='$kodereservasi'");
+        return $result;
+    }
 
 
 
