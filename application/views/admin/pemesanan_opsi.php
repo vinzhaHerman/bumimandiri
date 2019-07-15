@@ -123,7 +123,7 @@
                         <div class="row">
                           <div class='col-sm-3 col-md-3'>
                             <label class="bmd-label-floating">Jumlah Orang</label>
-                            <input type="text" class="form-control-plaintext text-warning" name="jumlah"  value="999" readonly="">
+                            <input type="text" class="form-control-plaintext text-warning" name="jumlah"  value="<?php echo $res['jumlah_org'] ?>" readonly="">
                           </div>
                           <div class='col-sm-3 col-md-3'>
                             <label class="bmd-label-floating">Planned Check in</label>

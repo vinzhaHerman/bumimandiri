@@ -69,7 +69,7 @@
                 </div>
                 <div class='col-sm-2'>
                   <label for="datein">Lama Hari:</label>
-                  <input type='text' class="form-control" name="lama" readonly="true" value="3" />
+                  <input type='text' class="form-control" name="lama" readonly="true" value="1" />
                 </div>
                  <div class='col-sm-4'>
                   <label for="dateout">Checkout:</label>
@@ -145,9 +145,20 @@
        $("#datetimepicker1").on("change",function(){
         var selected = $(this).val();
         var jumlahhari = parseInt($('input[name="lama"]').val());
-        var counted = selected + jumlahhari;
+        // var counted = selected + jumlahhari;
+
+        var date = new Date(selected);
+
+        var newdate = new Date(date);
+
+        newdate.setDate(newdate.getDate() + jumlahhari);
+
+        var dd = newdate.getDate();
+        var mm = newdate.getMonth() + 1;
+        var y = newdate.getFullYear();
+        var someFormattedDate = y + '-' + mm + '-' + dd;
         // alert(selected);
-        $('input[name="dateout"]').val(counted);
+        $('input[name="dateout"]').val(someFormattedDate);
        });
 
        // $('input[name="dateout"]').val("Good Fish");
