@@ -95,23 +95,36 @@
               <div class="card">
                 <div class="card-header card-header-primary">
                   <h3 class="card-title">Edit Data Paket</h3>
-                  <p class="card-category">ubah isi data paket</p>
+                  <a href="<?php echo base_url();?>admin/data_paket" class="btn btn-sm"><i class="material-icons">keyboard_return</i> Kembali</a>
                 </div>
                 <div class="card-body">
                   <form action="<?php echo base_url('admin/update_paket'); ?>" method="post">
                     <div class="row">
-                      <div class="col-md-1 pull">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">ID paket :</label>
-                          <input type="text" class="form-control" name="id"  value="<?php echo $res['id']?>" readonly>
+                      <div class="col-md-4 col-sm-4">
+                        <div class="card">
+                          <div class="card-header card-header-warning">
+                            <h6 class="card-title">Thumbnail Paket</h6>
+                          </div>
+                          <div class="card-body" style="min-height: 280px;">
+                              <div class="row mx-auto">
+                                <img src="<?php echo base_url().'upload/bukti/default.jpg'?>" alt="" class="img-thumbnail mx-auto" style="max-height: 250px;">
+                              </div>
+                              <div class="clearfix"></div>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-4">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">ID paket :</label>
+                          <input type="text" class="form-control" name="id"  value="<?php echo $res['id']?>" readonly style="max-width: 120px;">
+                        </div>
                         <div class="form-group">
                           <label class="bmd-label-floating">Nama Paket</label>
                           <input type="text" class="form-control" name="namapaket" value="<?php echo $res['nama_paket']?>">
+                        </div>
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Upload/Ganti Thumbnail</label><br>
+                          <a href="" class="btn btn-primary">Upload</a>
                         </div>
                       </div>
                     </div>

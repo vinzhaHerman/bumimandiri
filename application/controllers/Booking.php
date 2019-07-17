@@ -48,7 +48,7 @@ class Booking extends CI_Controller {
         }
 		// $datein = $this->input->post('datein');
 		// $dateout = $this->input->post('dateout');
-		$data=array('res'=>$this->Paket_model->get_paket_byid($id));
+		$data=array('res'=>$this->Paket_model->get_program_byid($id));
 		$this->load->view('pages/paketpilihan', $data);
 	}
 

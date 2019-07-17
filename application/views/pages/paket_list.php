@@ -59,6 +59,9 @@
               <div class="col-sm-8">
                 <h3 class="card-title text-info"></h3>
                 <p class="card-text"><?php echo $post->fasilitas ?><br>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <input type="text" id="put" class="form-control" name="jumlahorg" value="<?php echo $post->jumlah_hari ?>" readonly="true" hidden="true">
+                <input type="text" id="put" class="form-control" name="jumlahorg" value="30" readonly="true" hidden="true">
+                <input type="text" id="put" class="form-control" name="jumlahorg" value="30" readonly="true" hidden="true">
               </div>
             </div>
           

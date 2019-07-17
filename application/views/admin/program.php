@@ -93,33 +93,26 @@
               <div class="card">
                 <div class="card-header card-header-primary">
                   <h3 class="card-title">Data Paket</h3>
-                  <a href="<?php echo base_url() ?>admin/tambah_paket" class="btn btn-warning btn-sm">+ Tambah Paket</a>
+                  <a href="<?php echo base_url() ?>admin/tambah_program" class="btn btn-warning btn-sm">+ Tambah Program</a>
                 </div>
                 <div class="card-body table-responsive">
                   <table id="myTable" class="table table-hover  table-striped">
                     <thead class="text-primary">
-                      <th>No.</th>
-                      <th>Nama Paket</th>
-                      <th>Deskripsi</th>
+                      <th>Nama Program</th>
+                      <th>Lama Kegiatan</th>
+                      <th>Harga</th>
                       <th>Aksi</th>
                     </thead>
-                    <tbody><?php $no=1; ?>
-                    <?php 
-                      function word_limit($string, $word_limit){
-                        $words = explode(" ",$string);
-                        return implode(" ",array_splice($words,0,$word_limit));
-                      }
-                      foreach(array_slice($res->result(), 0, 10) as $post ): 
-                    ?>
+                    <tbody><?php foreach ($res->result() as $post): ?>
                       <tr>
-                        <td><?php echo $no++; ?></td>
-                        <td><?php echo $post->nama_paket?></td>
-                        <td><?php echo word_limit($post->deskripsi, 8);?></td>
+                        <td><?php echo $post->nama_program  ?></td>
+                        <td><?php echo $post->lama_kegiatan  ?></td>
+                        <td><?php echo $post->harga  ?></td>
                         <td class="td-actions text-right">
-                          <a href="<?php echo base_url() ?>Admin/ubah_paket/<?php echo $post->id?>" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
+                          <a href="<?php echo base_url() ?>Admin/ubah_program/<?php echo $post->id?>" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
                             <i class="material-icons">settings</i>
                           </a>
-                          <a href="<?php echo base_url() ?>Admin/delete_paket/<?php echo $post->id?>" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
+                          <a href="<?php echo base_url() ?>Admin/delete_program/<?php echo $post->id?>" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
                             <i class="material-icons">close</i>
                           </a>
                         </td>

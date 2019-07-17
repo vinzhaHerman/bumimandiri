@@ -143,7 +143,7 @@ class Admin extends CI_Controller {
 	{
 		$this->load->view('admin/template/head');
 		$this->load->view('admin/template/sidebar');
-		$this->load->view('admin/add_paket');
+		$this->load->view('admin/paket_add');
 		$this->load->view('admin/template/foot');
 	}
 	public function ubah_paket($id="")
@@ -151,7 +151,7 @@ class Admin extends CI_Controller {
 		$data=array('res'=>$this->Paket_model->get_paket_byid($id));
 		$this->load->view('admin/template/head');
 		$this->load->view('admin/template/sidebar');
-		$this->load->view('admin/opsi_paket', $data);
+		$this->load->view('admin/paket_opsi', $data);
 		$this->load->view('admin/template/foot');
 	}
 	public function laporan_paket()
@@ -192,8 +192,52 @@ class Admin extends CI_Controller {
 		$data=array('res'=>$this->Paket_model->get_paket_program());
 		$this->load->view('admin/template/head');
 		$this->load->view('admin/template/sidebar');
-		$this->load->view('admin/paket_program', $data);
+		$this->load->view('admin/program', $data);
 		$this->load->view('admin/template/foot');
+	}
+	public function tambah_program()
+	{
+		$this->load->view('admin/template/head');
+		$this->load->view('admin/template/sidebar');
+		$this->load->view('admin/program_add');
+		$this->load->view('admin/template/foot');
+	}
+	public function ubah_program($id="")
+	{
+		$data=array(
+			'res'=>$this->Paket_model->get_program_byid($id),
+			'respaket'=>$this->Paket_model->get_paket()
+		);
+		$this->load->view('admin/template/head');
+		$this->load->view('admin/template/sidebar');
+		$this->load->view('admin/program_opsi', $data);
+		$this->load->view('admin/template/foot');
+	}
+	public function laporan_program()
+	{
+		$data=array('res'=>$this->Paket_model->get_paket());
+		$this->load->view('admin/template/head');
+		$this->load->view('admin/template/sidebar');
+		$this->load->view('admin/laporan_paket', $data);
+		$this->load->view('admin/template/foot');
+	}
+	public function set_program(){
+		$id = $this->input->post('id');
+		$namapaket = $this->input->post('namapaket');
+		$deskripsi = $this->input->post('deskripsi');
+		$this->Paket_model->set_paket($namapaket, $deskripsi);
+		redirect(base_url("admin/data_paket"));
+	}
+	public function update_program(){
+		$id = $this->input->post('id');
+		$namapaket = $this->input->post('namapaket');
+		$deskripsi = $this->input->post('deskripsi');
+		$this->Paket_model->update_paket($id, $namapaket, $deskripsi);
+		redirect(base_url("admin/data_paket"));
+	}
+	public function delete_program($id){
+		$this->Paket_model->delete_paket($id);
+		redirect(base_url("admin/data_paket"));
 	}
 // -------------------------------------------END Data Program----------------------------------------------
 

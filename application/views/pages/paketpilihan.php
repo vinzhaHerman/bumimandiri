@@ -59,7 +59,7 @@
         <div class="card">
           <div class="card-header card-header-tabs card-header-primary">
             <h2 class="card-title">Detail Pemesanan</h2>
-            <p class="card-category">Anda Memilih Program: <b class="text-warning">Nama Program</b></p>
+            <p class="card-category">Anda Memilih Program: <b class="text-warning"><?php echo $res['nama_program'] ?></b></p>
           </div>
           <div class="card-body">
              <div class="row">
@@ -69,7 +69,7 @@
                 </div>
                 <div class='col-sm-2'>
                   <label for="datein">Lama Hari:</label>
-                  <input type='text' class="form-control" name="lama" readonly="true" value="1" />
+                  <input type='text' class="form-control text-center" name="lama" readonly="true" value="<?php echo $res['jumlah_hari'] ?>" />
                 </div>
                  <div class='col-sm-4'>
                   <label for="dateout">Checkout:</label>
@@ -82,9 +82,26 @@
             </div>
             <hr>
             <div class="row">
-              <div class="col-sm-12">
-                <label for="datein">Jumlah Orang (min. 30 / max. 60):</label>
-                <input type='range' class="form-control" name="orang"/>
+              <div class="col-sm-2">
+                <label for="datein">Min.</label>
+                <input type='text' id="minval" value="30" class="form-control-plaintext text-primary" name="orang"/>
+              </div>
+              <div class="col-sm-8">
+                <label for="datein">Jumlah Orang:</label>
+                <input type='range' min="<?php echo $res['minkapasitas'] ?>" id="get" step="1" onchange="fetch()" class="form-control" name="orang"/>
+              </div>
+              <div class="col-sm-2">
+                <label for="datein">Max.</label>
+                <input type='text' id="maxval" value="<?php echo $res['kapasitas'] ?>" class="form-control-plaintext text-primary" name="orang"/>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-2">
+              </div>
+              <div class="col-sm-8">
+                <input type="text" id="put" class="form-control" name="jumlahorg" value="30" readonly="true">
+              </div>
+              <div class="col-sm-2">
               </div>
             </div>
             <hr>
@@ -127,6 +144,15 @@
 
 <script type="text/javascript">
   var nextDay = new Date(new Date().getTime()+(7*24*60*60*1000));
+
+  var maxVal = document.getElementById("maxval").value;
+  document.getElementById("get").max = maxVal;
+
+  function fetch(){
+    var get = document.getElementById("get").value;
+    document.getElementById("put").value = get;
+  }
+
    $(function(){
        // $('#datetimepicker1').datepicker({
        //   minDate:nextDay
@@ -153,8 +179,8 @@
 
         newdate.setDate(newdate.getDate() + jumlahhari);
 
-        var dd = newdate.getDate();
-        var mm = newdate.getMonth() + 1;
+        var dd = newdate.getDate() - 1;
+        var mm = ((newdate.getMonth() + 1) < 10 ? '0' : '') + (newdate.getMonth() + 1);
         var y = newdate.getFullYear();
         var someFormattedDate = y + '-' + mm + '-' + dd;
         // alert(selected);

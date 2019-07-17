@@ -5,7 +5,7 @@
 
     <div class="main-panel">
       <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
+     <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
         <div class="container-fluid">
           <div class="navbar-wrapper">
             <a class="navbar-brand" href="#pablo">Dashboard</a>
@@ -92,33 +92,47 @@
           <div class="">
               <div class="card">
                 <div class="card-header card-header-primary">
-                  <h3 class="card-title">Data Paket</h3>
-                  <button type="button" class="btn btn-warning btn-sm">+ Tambah Paket</button>
+                  <h3 class="card-title">Tambah Data Program</h3>
+                  <a href="<?php echo base_url();?>admin/data_program" class="btn btn-sm"><i class="material-icons">keyboard_return</i> Kembali</a>
                 </div>
                 <div class="card-body table-responsive">
-                  <table id="myTable" class="table table-hover  table-striped">
-                    <thead class="text-primary">
-                      <th>Nama Program</th>
-                      <th>Lama Kegiatan</th>
-                      <th>Harga</th>
-                      <th>Aksi</th>
-                    </thead>
-                    <tbody><?php foreach ($res->result() as $post): ?>
-                      <tr>
-                        <td><?php echo $post->nama_program  ?></td>
-                        <td><?php echo $post->lama_kegiatan  ?></td>
-                        <td><?php echo $post->harga  ?></td>
-                        <td class="td-actions text-right">
-                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
-                                <i class="material-icons">edit</i>
-                              </button>
-                              <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
-                                <i class="material-icons">close</i>
-                              </button>
-                            </td>
-                      </tr>
-                    <?php endforeach; ?></tbody>
-                  </table>
+                  <form action="<?php echo base_url('admin/set_paket'); ?>" method="post">
+                    <div class="row">
+                      <div class="col-md-4 col-sm-4">
+                        <div class="card">
+                          <div class="card-header card-header-warning">
+                            <h6 class="card-title">Thumbnail Program</h6>
+                          </div>
+                          <div class="card-body" style="min-height: 280px;">
+                              <div class="row mx-auto">
+                                <img src="<?php echo base_url().'upload/bukti/default.jpg'?>" alt="" class="img-thumbnail mx-auto" style="max-height: 250px;">
+                              </div>
+                              <div class="clearfix"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Nama Program</label>
+                          <input type="text" class="form-control" name="namapaket" value="">
+                        </div>
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Upload/Ganti Thumbnail</label><br>
+                          <input type="file" name="image" id="img">
+                          <a href="" class="btn btn-primary">Upload</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <label class="bmd-label-floating">Deskripsi:</label>
+                        <textarea name="deskripsi">Tulis Deskripsi Paket...</textarea>
+                      </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary pull-right">Simpan</button>
+                    <button class="btn btn-warning pull-right">Batal</button>
+                    <div class="clearfix"></div>
+                  </form>
                 </div>
               </div>
             </div>
@@ -129,6 +143,12 @@
 
         </div>
       </div>
+
+
+
+
+
+
       <footer class="footer">
         <div class="container-fluid">
           <nav class="float-left">
