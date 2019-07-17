@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 17, 2019 at 10:31 AM
+-- Generation Time: Jul 08, 2019 at 07:13 AM
 -- Server version: 10.3.15-MariaDB
 -- PHP Version: 7.3.6
 
@@ -41,16 +41,14 @@ CREATE TABLE IF NOT EXISTS `admins` (
   `foto` varchar(100) NOT NULL,
   `level` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `admins`
 --
 
 INSERT INTO `admins` (`id`, `username`, `password`, `nama`, `email`, `telp`, `foto`, `level`) VALUES
-(1, 'admin', 'admin', 'Super Admin', 'admin@system.com', '888', '', 1),
-(2, 'doyok', 'doyok', 'Doyok Bewok', 'example@mail.com', '0990', '', 2),
-(3, 'vinzhaherman', 'cucuandung', 'Vinzha herman', 'example1@mail.com', '0123', '', 1);
+(1, 'admin', 'admin', 'Super Admin', 'admin@system.com', '888', '', 1);
 
 -- --------------------------------------------------------
 
@@ -98,16 +96,16 @@ DROP TABLE IF EXISTS `paket_jenis`;
 CREATE TABLE IF NOT EXISTS `paket_jenis` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nama_paket` varchar(30) NOT NULL,
-  `deskripsi` text NOT NULL,
+  `deskripsi` varchar(80) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `paket_jenis`
 --
 
 INSERT INTO `paket_jenis` (`id`, `nama_paket`, `deskripsi`) VALUES
-(1, 'Paket Program Sekolah', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod&nbsp;tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,&nbsp;quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo&nbsp;consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse&nbsp;cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non&nbsp;proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>'),
+(1, 'Paket Program Sekolah', 'Paket untuk kepentingan sekolah'),
 (2, 'Paket Meeting', 'Paket untuk kepentingan instansi'),
 (3, 'Paket Program Umum', 'Program Umum');
 
@@ -126,8 +124,6 @@ CREATE TABLE IF NOT EXISTS `paket_program` (
   `lama_kegiatan` varchar(20) NOT NULL,
   `jumlah_hari` int(11) NOT NULL,
   `harga` int(11) NOT NULL,
-  `minkapasitas` int(11) NOT NULL,
-  `kapasitas` int(11) NOT NULL,
   `status` int(11) NOT NULL,
   `paket_jenis_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
@@ -137,18 +133,19 @@ CREATE TABLE IF NOT EXISTS `paket_program` (
 -- Dumping data for table `paket_program`
 --
 
-INSERT INTO `paket_program` (`id`, `nama_program`, `fasilitas`, `konsumsi`, `lama_kegiatan`, `jumlah_hari`, `harga`, `minkapasitas`, `kapasitas`, `status`, `paket_jenis_id`) VALUES
-(1, 'Agro & Outbound I', 'list fasilitas agro & outbound', 'list konsumsi agro & outbound', '1 hari', 1, 160000, 30, 120, 1, 1),
-(2, 'Agro & Outbound II', 'list fasilitas Agro & Outbound', 'list konsumsi Agro & Outbound', '2 hari 1 malam', 2, 137000, 30, 120, 1, 1),
-(4, 'Latihan Dasar Kepemimpinan I', 'list fasilitas Latihan Dasar Kepemimpinan', 'list konsumsi Latihan Dasar Kepemimpinan', '2 hari 1 malam', 2, 198000, 30, 120, 1, 1),
-(5, 'Latihan Dasar Kepemimpinan II', 'list fasilitas Latihan Dasar Kepemimpinan', 'list konsumsi Latihan Dasar Kepemimpinan', '3 hari 2 malam', 3, 228000, 30, 120, 1, 1),
-(6, 'Ramadhan Camp', 'list Fasilitas Ramadhan Camp', 'list konsumsi Ramadhan Camp', '2 hari 1 malam', 2, 163000, 30, 120, 1, 1),
-(7, 'Ramadhan Camp II', 'list fasilitas Ramadhan Camp', 'list konsumsi Ramadhan Camp', '3 hari 2 malam', 3, 0, 30, 120, 1, 1),
-(8, 'Laboratorium Biologi', 'laboratorium', 'laboratorium', '1 hari', 1, 0, 30, 60, 1, 1),
-(9, 'MEETING I', 'fasilitas', 'konsumsi', '2 hari 1 malam', 2, 0, 30, 45, 1, 2),
-(10, 'MEETING II', 'fasilitas meeting', 'fasilitas meeting', '2 hari 1 malam', 2, 0, 30, 45, 1, 2),
-(11, 'MEETING III', 'fasilitas meeting', 'fasilitas meeting', '1 hari', 1, 0, 30, 45, 1, 2),
-(12, 'fun & recreation', 'list fasilitas fun & recreation', 'list konsumsi fun & recreation', '1 hari', 1, 0, 30, 60, 1, 3);
+INSERT INTO `paket_program` (`id`, `nama_program`, `fasilitas`, `konsumsi`, `lama_kegiatan`, `jumlah_hari`, `harga`, `status`, `paket_jenis_id`) VALUES
+(1, 'agro & outbound I', 'list fasilitas agro & outbound', 'list konsumsi agro & outbound', '1 hari', 1, 0, 0, 1),
+(2, 'Agro & Outbound II', 'list fasilitas Agro & Outbound', 'list konsumsi Agro & Outbound', '2 hari 1 malam', 2, 0, 0, 1),
+(3, 'Agro & Outbound III', 'list fasilitas Agro & Outbound III', 'list konsumsi Agro & Outbound III', '3 hari 2 malam', 2, 0, 0, 1),
+(4, 'Latihan Dasar Kepemimpinan I', 'list fasilitas Latihan Dasar Kepemimpinan', 'list konsumsi Latihan Dasar Kepemimpinan', '2 hari 1 malam', 2, 0, 0, 1),
+(5, 'Latihan Dasar Kepemimpinan II', 'list fasilitas Latihan Dasar Kepemimpinan', 'list konsumsi Latihan Dasar Kepemimpinan', '3 hari 2 malam', 3, 0, 0, 1),
+(6, 'Ramadhan Camp', 'list Fasilitas Ramadhan Camp', 'list konsumsi Ramadhan Camp', '2 hari 1 malam', 2, 0, 0, 1),
+(7, 'Ramadhan Camp II', 'list fasilitas Ramadhan Camp', 'list konsumsi Ramadhan Camp', '3 hari 2 malam', 3, 0, 0, 1),
+(8, 'Laboratorium Biologi', 'laboratorium', 'laboratorium', '1 hari', 1, 0, 0, 1),
+(9, 'MEETING I', 'fasilitas', 'konsumsi', '2 hari 1 malam', 2, 0, 0, 2),
+(10, 'MEETING II', 'fasilitas meeting', 'fasilitas meeting', '2 hari 1 malam', 2, 0, 0, 2),
+(11, 'MEETING III', 'fasilitas meeting', 'fasilitas meeting', '1 hari', 1, 0, 0, 2),
+(12, 'fun & recreation', 'list fasilitas fun & recreation', 'list konsumsi fun & recreation', '1 hari', 1, 0, 0, 3);
 
 -- --------------------------------------------------------
 
@@ -188,8 +185,6 @@ CREATE TABLE IF NOT EXISTS `pelanggan` (
   `email` varchar(80) NOT NULL,
   `username` varchar(80) NOT NULL,
   `password` char(60) NOT NULL,
-  `alamat` text NOT NULL,
-  `telp` varchar(16) NOT NULL,
   `tgl_reg` date NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -198,9 +193,9 @@ CREATE TABLE IF NOT EXISTS `pelanggan` (
 -- Dumping data for table `pelanggan`
 --
 
-INSERT INTO `pelanggan` (`id`, `nama_depan`, `nama_belakang`, `email`, `username`, `password`, `alamat`, `telp`, `tgl_reg`) VALUES
-(1, 'andreas', 'chandra', 'adnreaschan@gmail.com', 'chandra', '123', '', '021', '2019-06-28'),
-(2, 'mimi', 'nekochan', 'nekomimi@hotmail.com', 'nekomimi', '1234', '', '022', '2019-07-01');
+INSERT INTO `pelanggan` (`id`, `nama_depan`, `nama_belakang`, `email`, `username`, `password`, `tgl_reg`) VALUES
+(1, 'andreas', 'chandra', 'adnreaschan@gmail.com', 'chandra', '123', '2019-06-28'),
+(2, 'mimi', 'nekochan', 'nekomimi@hotmail.com', 'nekomimi', '1234', '2019-07-01');
 
 -- --------------------------------------------------------
 
@@ -232,8 +227,7 @@ CREATE TABLE IF NOT EXISTS `reservasi` (
   `tgl_masuk` date NOT NULL,
   `tgl_keluar` date NOT NULL,
   `paket_program_id` int(11) NOT NULL,
-  `jumlah_org` int(11) NOT NULL,
-  `pembayaran` varchar(10) NOT NULL,
+  `pembayaran` varchar(8) NOT NULL,
   `id_pelanggan` int(11) NOT NULL,
   `bukti` varchar(100) NOT NULL,
   PRIMARY KEY (`id`),
@@ -244,9 +238,9 @@ CREATE TABLE IF NOT EXISTS `reservasi` (
 -- Dumping data for table `reservasi`
 --
 
-INSERT INTO `reservasi` (`id`, `kode_reservasi`, `tgl_masuk`, `tgl_keluar`, `paket_program_id`, `jumlah_org`, `pembayaran`, `id_pelanggan`, `bukti`) VALUES
-(1, 'RS06190001', '2019-07-06', '2019-07-08', 1, 60, 'LUNAS', 1, 'dark.png'),
-(2, 'RS07070002', '2019-07-30', '0000-00-00', 1, 34, 'DIBATALKAN', 1, 'light.png');
+INSERT INTO `reservasi` (`id`, `kode_reservasi`, `tgl_masuk`, `tgl_keluar`, `paket_program_id`, `pembayaran`, `id_pelanggan`, `bukti`) VALUES
+(1, 'RS06190001', '2019-07-06', '2019-07-08', 1, 'LUNAS', 1, 'dark.png'),
+(2, 'RS07070002', '2019-07-30', '0000-00-00', 1, 'LUNAS', 1, 'light.png');
 
 -- --------------------------------------------------------
 
