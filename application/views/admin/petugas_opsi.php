@@ -5,7 +5,7 @@
 
     <div class="main-panel">
       <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
+     <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
         <div class="container-fluid">
           <div class="navbar-wrapper">
             <a class="navbar-brand" href="#pablo">Dashboard</a>
@@ -81,7 +81,9 @@
 
 
 
-
+<?php 
+  $res=$res->row_array();
+ ?>
 
           
 
@@ -89,53 +91,105 @@
 
 
 
-          <div class="">
+          <div class="row">
+            <div class="col-md-8">
               <div class="card">
                 <div class="card-header card-header-primary">
-                  <h3 class="card-title">Data Petugas</h3>
-                  <a href="<?php echo base_url() ?>admin/add_petugas" class="btn btn-warning btn-sm">+ Tambah Data</a>
+                  <h4 class="card-title">Edit Profile</h4>
+                  <p class="card-category">Complete your profile</p>
                 </div>
-                <div class="card-body table-responsive">
-                  <table id="myTable" class="table table-hover  table-striped">
-                    <thead class="text-primary">
-                      <th>No.</th>
-                      <th>Nama Lengkap</th>
-                      <th>Username</th>
-                      <th>Email</th>
-                      <th>No. Telp</th>
-                      <th>Level</th>
-                      <th>Aksi</th>
-                    </thead>
-                    <tbody>
-                    <?php $no=1; ?>
-                    <?php 
-                      function word_limit($string, $word_limit){
-                        $words = explode(" ",$string);
-                        return implode(" ",array_splice($words,0,$word_limit));
-                      }
-                      foreach(array_slice($res->result(), 0, 10) as $post ): 
-                    ?>
-                      <tr>
-                        <td><?php echo $no++; ?></td>
-                        <td><?php echo $post->nama?></td>
-                        <td><?php echo $post->username?></td>
-                        <td><?php echo $post->email?></td>
-                        <td><?php echo $post->telp?></td>
-                        <td><?php echo $post->level?></td>
-                        <td class="td-actions text-right">
-                              <a href="<?php echo base_url() ?>Admin/ubah_petugas/<?php echo $post->id?>" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
-                                <i class="material-icons">settings</i>
-                              </a>
-                              <a href="<?php echo base_url() ?>Admin/delete_petugas/<?php echo $post->id?>" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
-                                <i class="material-icons">close</i>
-                              </a>
-                            </td>
-                      </tr>
-                    <?php endforeach; ?></tbody>
-                  </table>
+                <div class="card-body">
+                  <form>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Username</label>
+                          <input type="text" class="form-control" value="<?php echo $res['username']?>">
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Email address</label>
+                          <input type="email" class="form-control" value="<?php echo $res['email']?>">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Nama Lengkap</label>
+                          <input type="text" class="form-control" value="<?php echo $res['nama']?>">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Adress</label>
+                          <input type="text" class="form-control">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-4">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">City</label>
+                          <input type="text" class="form-control">
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Country</label>
+                          <input type="text" class="form-control">
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Postal Code</label>
+                          <input type="text" class="form-control">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label>About Me</label>
+                          <div class="form-group">
+                            <label class="bmd-label-floating"> Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo.</label>
+                            <textarea class="form-control" rows="5"></textarea>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary pull-right">Update Profile</button>
+                    <div class="clearfix"></div>
+                  </form>
                 </div>
               </div>
             </div>
+            <div class="col-md-4">
+              <div class="card card-profile">
+                <div class="card-avatar">
+                  <a href="#pablo">
+                    <img class="img" src="../assets/img/faces/marc.jpg" />
+                  </a>
+                </div>
+                <div class="card-body">
+                  <h6 class="card-category text-gray">
+                    <?php 
+                      if($res['level']=='1'){echo "Super Admin"; }
+                      else{echo "Petugas";}
+                    ?></h6>
+                  <h4 class="card-title"><?php echo $res['nama']?></h4>
+                  <p class="card-description">
+                    Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
+                  </p>
+                  <!-- <a href="#pablo" class="btn btn btn-round">Ubah Foto</a> -->
+                  <a href="#pablo" class="btn btn-primary btn-round">Log out</a>
+                </div>
+              </div>
+            </div>
+          </div>
 
 
 
@@ -143,6 +197,12 @@
 
         </div>
       </div>
+
+
+
+
+
+
       <footer class="footer">
         <div class="container-fluid">
           <nav class="float-left">

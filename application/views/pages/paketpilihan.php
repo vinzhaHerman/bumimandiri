@@ -62,10 +62,12 @@
             <p class="card-category">Anda Memilih Program: <b class="text-warning"><?php echo $res['nama_program'] ?></b></p>
           </div>
           <div class="card-body">
+            <form action="<?php echo base_url('booking/set_pemesanan'); ?>" method="post">
              <div class="row">
                 <div class='col-sm-4'>
                   <label for="datein">Untuk Tanggal</label>
                   <input type='text' class="form-control" id='datetimepicker1' name="datein" />
+                  <input type='text' class="form-control" id='idprogram' name="idprogram" value="<?php echo $res['id'] ?>" hidden/>
                 </div>
                 <div class='col-sm-2'>
                   <label for="datein">Lama Hari:</label>
@@ -84,7 +86,7 @@
             <div class="row">
               <div class="col-sm-2">
                 <label for="datein">Min.</label>
-                <input type='text' id="minval" value="30" class="form-control-plaintext text-primary" name="orang"/>
+                <input type='text' id="minval" value="30" class="form-control-plaintext text-primary" name="minorang"/>
               </div>
               <div class="col-sm-8">
                 <label for="datein">Jumlah Orang:</label>
@@ -92,7 +94,7 @@
               </div>
               <div class="col-sm-2">
                 <label for="datein">Max.</label>
-                <input type='text' id="maxval" value="<?php echo $res['kapasitas'] ?>" class="form-control-plaintext text-primary" name="orang"/>
+                <input type='text' id="maxval" value="<?php echo $res['kapasitas'] ?>" class="form-control-plaintext text-primary" name="maxorang"/>
               </div>
             </div>
             <div class="row">
@@ -110,6 +112,8 @@
                 <h4 class="">Rincian Program</h4>
               </div>
             </div>
+            <button type="submit" class="btn btn-primary pull-right">Pesan</button>
+            </form>
           </div>
         </div>
       </div>
@@ -154,9 +158,6 @@
   }
 
    $(function(){
-       // $('#datetimepicker1').datepicker({
-       //   minDate:nextDay
-       // });
        $('#datetimepicker1').datepicker({
         modal: true,
         minDate: nextDay,
@@ -171,19 +172,17 @@
        $("#datetimepicker1").on("change",function(){
         var selected = $(this).val();
         var jumlahhari = parseInt($('input[name="lama"]').val());
-        // var counted = selected + jumlahhari;
 
         var date = new Date(selected);
 
         var newdate = new Date(date);
 
-        newdate.setDate(newdate.getDate() + jumlahhari);
+        newdate.setDate(newdate.getDate() + (jumlahhari-1));
 
-        var dd = newdate.getDate() - 1;
+        var dd = ((newdate.getDate()) < 10 ? '0' : '') + (newdate.getDate());
         var mm = ((newdate.getMonth() + 1) < 10 ? '0' : '') + (newdate.getMonth() + 1);
         var y = newdate.getFullYear();
         var someFormattedDate = y + '-' + mm + '-' + dd;
-        // alert(selected);
         $('input[name="dateout"]').val(someFormattedDate);
        });
 

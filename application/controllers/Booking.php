@@ -76,9 +76,24 @@ class Booking extends CI_Controller {
 		$id = $this->session->userdata('id');
 		$kodereservasi = $this->Pemesanan->kode_otomatis();
 
+		$data=$this->Reservasi_model->src_paket_by_date_and_id($idprogram, $datein, $dateout);
 
-		$this->Pemesanan->set_pemesanan($kodereservasi,$datein,$dateout,$idprogram,$id);
-		echo "berhasil";
+		echo $data->num_rows();
+
+		// if ($data->num_rows() == 0) {
+		// 	echo "silahkan pilih tanggal lain";
+		// }
+		// else{
+		// 	echo "berhasil";
+		// }
+
+
+		// $this->Pemesanan->set_pemesanan($kodereservasi,$datein,$dateout,$idprogram,$id);
+		// echo "berhasil";
+	}
+
+	public function konfirmasi(){
+		$this->load->view('pages/konfirmasi');
 	}
 	
 }

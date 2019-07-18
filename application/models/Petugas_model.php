@@ -8,4 +8,9 @@ class Petugas_model extends CI_Model {
         return $result;
 	}
 
+	function get_petugas_byid($id){
+		$result=$this->db->query("SELECT * FROM admins WHERE id='$id'");
+        return $result;
+	}
+
 }

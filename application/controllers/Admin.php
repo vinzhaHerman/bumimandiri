@@ -254,13 +254,23 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/petugas_master', $data);
 		$this->load->view('admin/template/foot');
 	}
+	public function ubah_petugas($id="")
+	{
+		$data=array(
+			'res'=>$this->Petugas_model->get_petugas_byid($id)
+		);
+		$this->load->view('admin/template/head');
+		$this->load->view('admin/template/sidebar');
+		$this->load->view('admin/petugas_opsi', $data);
+		$this->load->view('admin/template/foot');
+	}
 // -------------------------------------------END Data Petugas----------------------------------------------
 
 
 
 
 
-// -------------------------------------------Data Petugas----------------------------------------------
+// -------------------------------------------Data Pelanggan----------------------------------------------
 	public function data_pelanggan()
 	{
 		$data=array('res'=>$this->Pelanggan_model->get_user_data());
@@ -269,7 +279,7 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/pelanggan_master', $data);
 		$this->load->view('admin/template/foot');
 	}
-// -------------------------------------------END Data Petugas----------------------------------------------
+// -------------------------------------------END Data Pelanggan----------------------------------------------
 
 
 
