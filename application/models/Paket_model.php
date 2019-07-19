@@ -18,6 +18,11 @@ class Paket_model extends CI_Model {
         return $result;
 	}
 
+	function get_paket_by_programid($id){
+		$result=$this->db->query("SELECT * FROM paket_program WHERE paket_jenis_id='$id'");
+        return $result;
+	}
+
 	function get_program_byid($id){
 		$result=$this->db->query("SELECT * FROM paket_program WHERE id='$id'");
         return $result;

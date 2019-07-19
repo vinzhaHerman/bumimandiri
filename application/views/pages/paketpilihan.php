@@ -23,6 +23,8 @@
 
 
 
+
+
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#"><b>BUMI MANDIRI</b></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -57,29 +59,46 @@
     <div class="row">
       <div class="col-lg-8 col-md-12">
         <div class="card">
-          <div class="card-header card-header-tabs card-header-primary">
+          <div class="card-header card-header-tabs card-header-info">
             <h2 class="card-title">Detail Pemesanan</h2>
-            <p class="card-category">Anda Memilih Program: <b class="text-warning"><?php echo $res['nama_program'] ?></b></p>
+            <p class="card-category">Anda Memilih Program: <b class=""><?php echo $res['nama_program'] ?></b></p>
           </div>
           <div class="card-body">
-            <form action="<?php echo base_url('booking/set_pemesanan'); ?>" method="post">
+            <form action="<?php echo base_url('booking/cek_pemesanan'); ?>" method="get">
+              <?php           
+                if($message=$this->session->flashdata('message')):
+              ?>
+              <div class="animated bounceInDown sufee-alert alert with-close btn-info alert-dismissible fade show">
+                <?php echo $message ?>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <?php endif; ?>
              <div class="row">
-                <div class='col-sm-4'>
+                <div class='col-sm-3'>
                   <label for="datein">Untuk Tanggal</label>
                   <input type='text' class="form-control" id='datetimepicker1' name="datein" />
                   <input type='text' class="form-control" id='idprogram' name="idprogram" value="<?php echo $res['id'] ?>" hidden/>
+                  <input type='text' class="form-control" id='idprogram' name="namaprogram" value="<?php echo $res['nama_program'] ?>" hidden/>
+                  <input type='text' class="form-control" name="idpaket" value="<?php echo $_GET['idpaket'] ?>" hidden/>
+                  <input type='text' class="form-control" name="namapaket" value="<?php echo $_GET['namapaket'] ?>" hidden/>      
                 </div>
                 <div class='col-sm-2'>
                   <label for="datein">Lama Hari:</label>
                   <input type='text' class="form-control text-center" name="lama" readonly="true" value="<?php echo $res['jumlah_hari'] ?>" />
                 </div>
-                 <div class='col-sm-4'>
+                <div class='col-sm-3'>
                   <label for="dateout">Checkout:</label>
                   <input type='text' class="form-control" id="dateout" name="dateout" readonly="true" />
                 </div>
+                <div class='col-sm-4'>
+                  <label for="dateout">Durasi:</label>
+                  <input type='text' class="form-control-plaintext" id="dateout" name="durasi" value="<?php echo $res['lama_kegiatan'] ?>" readonly="true" />
+                </div>
                  <div class='col-sm-2'>
-                  <label for="datein">Status:</label>
-                  <input type="text" readonly class="form-control-plaintext text-warning" id="status" value="Available">
+                  <!-- <label for="datein">Status:</label>
+                  <input type="text" readonly class="form-control-plaintext text-warning" id="status" value="Available"> -->
                 </div>
             </div>
             <hr>
@@ -90,7 +109,7 @@
               </div>
               <div class="col-sm-8">
                 <label for="datein">Jumlah Orang:</label>
-                <input type='range' min="<?php echo $res['minkapasitas'] ?>" id="get" step="1" onchange="fetch()" class="form-control" name="orang"/>
+                <input type='range' min="<?php echo $res['minkapasitas'] ?>" id="get" step="1" onchange="fetch()" class="form-control" name="jmlorang"/>
               </div>
               <div class="col-sm-2">
                 <label for="datein">Max.</label>
@@ -101,7 +120,7 @@
               <div class="col-sm-2">
               </div>
               <div class="col-sm-8">
-                <input type="text" id="put" class="form-control" name="jumlahorg" value="30" readonly="true">
+                <input type="text" id="put" class="form-control text-center" name="jumlahorg" value="30" readonly="true">
               </div>
               <div class="col-sm-2">
               </div>
@@ -109,18 +128,22 @@
             <hr>
             <div class="row">
               <div class="col-sm-12">
-                <h4 class="">Rincian Program</h4>
+                <label for="datein">Harga Program per-orang</label>
+                <input type='text' class="form-control-plaintext text-success" name="" readonly="true" value="Rp <?php echo $res['harga'] ?>" style="font-size: 1.5rem;"/>
+              </div>
+              <div class="col-sm-12">
+                <input type='text' class="form-control-plaintext text-success" name="hargasatuan" readonly="true" value="<?php echo $res['harga'] ?>" style="font-size: 1.5rem;" hidden/>
               </div>
             </div>
-            <button type="submit" class="btn btn-primary pull-right">Pesan</button>
+            <button type="submit" class="btn btn-info pull-right">Pesan</button>
             </form>
           </div>
         </div>
       </div>
       <div class="col-lg-4 col-md-12">
         <div class="card">
-          <div class="card-header card-header-warning">
-            <h4 class="card-title">Employees Stats</h4>
+          <div class="card-header card-header-success">
+            <h4 class="card-title">Pusat Bantuan</h4>
             <p class="card-category">New employees on 15th September, 2016</p>
           </div>
           <div class="card-body">

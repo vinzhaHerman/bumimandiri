@@ -58,7 +58,8 @@
           <h4 class="card-title"><?php echo $post->nama_paket ?></h4>
           <img src="<?php echo base_url();?>assets/img/people.jpg" alt="..." class="img-thumbnail">
           <!-- <p class="card-text"></p> -->
-          <input type='text' class="form-control" name="id" value="<?php echo $post->id ?>" hidden/>
+          <input type='text' class="form-control" name="idpaket" value="<?php echo $post->id ?>" hidden/>
+          <input type='text' class="form-control" name="namapaket" value="<?php echo $post->nama_paket ?>" hidden/>
           <button type="submit" class="btn btn-info">Pilih Paket</button>
           </form>
         </div>

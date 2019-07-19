@@ -50,6 +50,8 @@
         <div class="card mb-3 align-items-center mx-auto" style="width: 75vw;">
           <form action="<?php  echo base_url("Booking/paket_detail/").$post->id;?>" method="get" enctype="multipart/form-data">
             <div class="card-header card-header-primary">
+            <input type='text' class="form-control" name="idpaket" value="<?php echo $_GET['idpaket'] ?>" hidden/>
+            <input type='text' class="form-control" name="namapaket" value="<?php echo $_GET['namapaket'] ?>" hidden/>
             <h3 class="card-title"><b><?php echo $post->nama_program ?></b></h3>
             <p class="card-category">Lama Kegiatan: <b><?php echo $post->lama_kegiatan ?></b></p>
             </div>
@@ -60,8 +62,6 @@
                 <h3 class="card-title text-info"></h3>
                 <p class="card-text"><?php echo $post->fasilitas ?><br>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                 <input type="text" id="put" class="form-control" name="jumlahorg" value="<?php echo $post->jumlah_hari ?>" readonly="true" hidden="true">
-                <input type="text" id="put" class="form-control" name="jumlahorg" value="30" readonly="true" hidden="true">
-                <input type="text" id="put" class="form-control" name="jumlahorg" value="30" readonly="true" hidden="true">
               </div>
             </div>
           

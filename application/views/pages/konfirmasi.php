@@ -16,7 +16,12 @@
 
 
 
-
+<?php 
+  $program=$program->row_array();
+  $orang=$_GET['jmlorang'];
+  $hsatuan=$_GET['hargasatuan'];
+  $total=$orang*$hsatuan;
+?>
 
 
 
@@ -45,6 +50,7 @@
 
  <div class="container">
   <div class="content">
+          <form action="<?php echo base_url('booking/set_pemesanan'); ?>" method="post">
     <div class="row">
       <div class="col-md-12">
         <h2>PEMBAYARAN</h2>
@@ -66,7 +72,7 @@
                 <div class="form-group row">
                   <label for="staticEmail" class="col-sm-2 col-form-label">ID Program:</label>
                   <div class="col-sm-10">
-                    <input type="text" readonly class="form-control-plaintext text-success" id="staticEmail" value="ID">
+                    <input type="text" readonly class="form-control-plaintext text-success" id="staticEmail" name="idprogram" value="<?php echo $_GET['idprogram'] ?>">
                   </div>
                 </div>
               </div>
@@ -76,7 +82,7 @@
                 <div class="form-group row">
                   <label for="staticEmail" class="col-sm-2 col-form-label">Program:</label>
                   <div class="col-sm-10">
-                    <input type="text" readonly class="form-control-plaintext text-success" id="staticEmail" value="Nama Program">
+                    <input type="text" readonly class="form-control-plaintext text-success" id="staticEmail" value="<?php echo $_GET['namaprogram'] ?>">
                   </div>
                 </div>
               </div>
@@ -86,7 +92,7 @@
                 <div class="form-group row">
                   <label for="staticEmail" class="col-sm-2 col-form-label">Paket:</label>
                   <div class="col-sm-10">
-                    <input type="text" readonly class="form-control-plaintext text-success" id="staticEmail" value="paket">
+                    <input type="text" readonly class="form-control-plaintext text-success" id="staticEmail" value="<?php echo $_GET['namapaket'] ?>">
                   </div>
                 </div>
               </div>
@@ -95,23 +101,23 @@
               <div class="col-md-4">
                 <div class="form-group">
                   <label for="dateout">Untuk tgl.</label>
-                  <input type='text' class="form-control text-center" id="dateout" name="dateout" readonly="true" />
+                  <input type='text' class="form-control text-center" id="dateout" name="datein" value="<?php echo $_GET['datein'] ?>" readonly="true" />
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="form-group">
                   <label for="dateout">Sampai</label>
-                  <input type='text' class="form-control text-center" id="dateout" name="dateout" readonly="true" />
+                  <input type='text' class="form-control text-center" id="dateout" name="dateout" value="<?php echo $_GET['dateout'] ?>" readonly="true" />
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="form-group">
                   <label for="dateout">Durasi</label>
-                  <input type='text' class="form-control text-center" id="dateout" name="durasi" value="x hari y malam" readonly="true" />
+                  <input type='text' class="form-control text-center" id="dateout" value="<?php echo $_GET['durasi'] ?>" readonly="true" />
                 </div>
               </div>
             </div>
-            <div class="row">
+            <!-- <div class="row">
               <div class="col-md-12">
                 <div class="form-group row">
                   <label for="staticEmail" class="col-sm-2 col-form-label">Atas Nama:</label>
@@ -120,7 +126,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
             <hr>
             <div class="row">
               <div class="col-md-12">
@@ -131,6 +137,7 @@
               
             </div>
           </div>
+          </form>
         </div>
         </div>
         <div class="row">
@@ -198,7 +205,7 @@
               <div class="col-md-12">
                 <div class="form-group">
                   <label for="dateout">Harga per-orang:</label>
-                  <input type='text' class="form-control-plaintext text-right" id="dateout" name="dateout" value="Rp 145.000" readonly="true" />
+                  <input type='text' class="form-control-plaintext text-right" id="hsatuan"value="Rp <?php echo $program['harga'] ?>" readonly="true" />
                 </div>
               </div>
             </div>
@@ -206,7 +213,7 @@
               <div class="col-md-12">
                 <div class="form-group">
                   <label for="dateout">Jumlah Peserta:</label>
-                  <input type='text' class="form-control-plaintext text-right" id="dateout" name="dateout" value="60" readonly="true" />
+                  <input type='text' class="form-control-plaintext text-right" id="jpeserta" name="jmlorang" value="<?php echo $_GET['jmlorang'] ?>" readonly="true" />
                 </div>
               </div>
             </div>
@@ -215,7 +222,8 @@
               <div class="col-md-12">
                 <div class="form-group">
                   <label for="dateout">Jumlah Tagihan:</label>
-                  <input type='text' class="form-control-plaintext text-right text-success" id="dateout" name="dateout" value="Rp 123.456.789" readonly="true" style="font-weight: bold; font-size: 1.2rem;" />
+                  <input type='text' class="form-control-plaintext text-right text-success" id="total" value="<?php echo $total ?>" readonly="true" style="font-weight: bold; font-size: 1.2rem;" />
+                  <input type='text' class="form-control-plaintext text-right text-success" id="total" name="tagihan" value="<?php echo $total ?>" readonly="true" style="font-weight: bold; font-size: 1.2rem;" hidden/>
                 </div>
               </div>
             </div>
@@ -223,6 +231,7 @@
         </div>
       </div>
     </div>
+    </form>
   </div>
 </div>
 
@@ -284,7 +293,12 @@
 
 
 <script type="text/javascript">
-  
+  // $(function(){
+  //   var hsatuan = document.getElementById("hsatuan").value;
+  //   var jpeserta = document.getElementById("jpeserta").value;
+  //   var total = hsatuan * jpeserta;
+  //   document.getElementById("total").value = total;
+  // }
 </script>
 
 </body>

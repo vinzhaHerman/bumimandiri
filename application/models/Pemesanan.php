@@ -24,8 +24,16 @@ class Pemesanan extends CI_Model {
     }
 
 
-    function set_pemesanan($kodereservasi,$datein,$dateout,$idprogram,$id){
-    	$result=$this->db->query("INSERT INTO reservasi (kode_reservasi,tgl_masuk,tgl_keluar,paket_program_id,id_pelanggan) VALUES('$kodereservasi','$datein','$dateout','$idprogram','$id')");
+    function set_pemesanan($kodereservasi, $datein, $dateout, $idprogram, $jmlorang, $tagihan, $userid){
+    	$result=$this->db->query("INSERT INTO reservasi (
+            kode_reservasi,
+            tgl_masuk,
+            tgl_keluar,
+            paket_program_id,
+            jumlah_org,
+            tagihan,
+            pembayaran,
+            id_pelanggan) VALUES('$kodereservasi', '$datein', '$dateout', '$idprogram', '$jmlorang', '$tagihan', 'MENUNGGU PEMBAYARAN', '$userid')");
         return $result;
     }
 
