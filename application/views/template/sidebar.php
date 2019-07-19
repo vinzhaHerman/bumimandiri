@@ -35,7 +35,7 @@
     		<i class="fas fa-exclamation-circle"></i><span class="sidebar-item-text">Bantuan</span>
     	</div>
     </a>
-    <a href="h<?php echo base_url(); ?>Web/about_us">
+    <a href="<?php echo base_url(); ?>Web/about_us">
     	<div class="sidebar-item">
     		<i class="far fa-smile"></i><span class="sidebar-item-text">Tentang Kami</span>
     	</div>
