@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 19, 2019 at 06:17 PM
+-- Generation Time: Jul 17, 2019 at 10:31 AM
 -- Server version: 10.3.15-MariaDB
 -- PHP Version: 7.3.6
 
@@ -145,7 +145,7 @@ INSERT INTO `paket_program` (`id`, `nama_program`, `fasilitas`, `konsumsi`, `lam
 (6, 'Ramadhan Camp', 'list Fasilitas Ramadhan Camp', 'list konsumsi Ramadhan Camp', '2 hari 1 malam', 2, 163000, 30, 120, 1, 1),
 (7, 'Ramadhan Camp II', 'list fasilitas Ramadhan Camp', 'list konsumsi Ramadhan Camp', '3 hari 2 malam', 3, 0, 30, 120, 1, 1),
 (8, 'Laboratorium Biologi', 'laboratorium', 'laboratorium', '1 hari', 1, 0, 30, 60, 1, 1),
-(9, 'MEETING I', 'fasilitas', 'konsumsi', '2 hari 1 malam', 2, 124000, 30, 45, 1, 2),
+(9, 'MEETING I', 'fasilitas', 'konsumsi', '2 hari 1 malam', 2, 0, 30, 45, 1, 2),
 (10, 'MEETING II', 'fasilitas meeting', 'fasilitas meeting', '2 hari 1 malam', 2, 0, 30, 45, 1, 2),
 (11, 'MEETING III', 'fasilitas meeting', 'fasilitas meeting', '1 hari', 1, 0, 30, 45, 1, 2),
 (12, 'fun & recreation', 'list fasilitas fun & recreation', 'list konsumsi fun & recreation', '1 hari', 1, 0, 30, 60, 1, 3);
@@ -233,22 +233,20 @@ CREATE TABLE IF NOT EXISTS `reservasi` (
   `tgl_keluar` date NOT NULL,
   `paket_program_id` int(11) NOT NULL,
   `jumlah_org` int(11) NOT NULL,
-  `tagihan` int(11) NOT NULL,
-  `pembayaran` varchar(20) NOT NULL,
+  `pembayaran` varchar(10) NOT NULL,
   `id_pelanggan` int(11) NOT NULL,
   `bukti` varchar(100) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `kode_reservasi` (`kode_reservasi`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `reservasi`
 --
 
-INSERT INTO `reservasi` (`id`, `kode_reservasi`, `tgl_masuk`, `tgl_keluar`, `paket_program_id`, `jumlah_org`, `tagihan`, `pembayaran`, `id_pelanggan`, `bukti`) VALUES
-(1, 'RS06190000001', '2019-07-06', '2019-07-06', 1, 60, 5880000, 'LUNAS', 1, 'dark.png'),
-(2, 'RS07070000002', '2019-07-30', '2019-07-30', 1, 34, 5880000, 'DIBATALKAN', 1, 'light.png'),
-(3, 'RS19070000003', '2019-07-29', '2019-07-30', 9, 45, 5580000, 'MENUNGGU PEMBAYARAN', 1, '');
+INSERT INTO `reservasi` (`id`, `kode_reservasi`, `tgl_masuk`, `tgl_keluar`, `paket_program_id`, `jumlah_org`, `pembayaran`, `id_pelanggan`, `bukti`) VALUES
+(1, 'RS06190001', '2019-07-06', '2019-07-08', 1, 60, 'LUNAS', 1, 'dark.png'),
+(2, 'RS07070002', '2019-07-30', '0000-00-00', 1, 34, 'DIBATALKAN', 1, 'light.png');
 
 -- --------------------------------------------------------
 
