@@ -47,7 +47,180 @@
   <div class="content">
     <div class="row">
       <div class="col-md-12">
-        <h2>TRANSAKSI</h2>
+        <h2>PEMBAYARAN</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
+        <div class="row">
+        <div class="card">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-12">
+                <h4><b>Detail Pemesanan</b></h4>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group row">
+                  <label for="staticEmail" class="col-sm-2 col-form-label">ID Program:</label>
+                  <div class="col-sm-10">
+                    <input type="text" readonly class="form-control-plaintext text-success" id="staticEmail" value="ID">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group row">
+                  <label for="staticEmail" class="col-sm-2 col-form-label">Program:</label>
+                  <div class="col-sm-10">
+                    <input type="text" readonly class="form-control-plaintext text-success" id="staticEmail" value="Nama Program">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group row">
+                  <label for="staticEmail" class="col-sm-2 col-form-label">Paket:</label>
+                  <div class="col-sm-10">
+                    <input type="text" readonly class="form-control-plaintext text-success" id="staticEmail" value="paket">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="dateout">Untuk tgl.</label>
+                  <input type='text' class="form-control text-center" id="dateout" name="dateout" readonly="true" />
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="dateout">Sampai</label>
+                  <input type='text' class="form-control text-center" id="dateout" name="dateout" readonly="true" />
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="dateout">Durasi</label>
+                  <input type='text' class="form-control text-center" id="dateout" name="durasi" value="x hari y malam" readonly="true" />
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group row">
+                  <label for="staticEmail" class="col-sm-2 col-form-label">Atas Nama:</label>
+                  <div class="col-sm-10">
+                    <input type="text" readonly class="form-control-plaintext text-success" id="staticEmail" value="Nama Pelanggan">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-md-12">
+                <h4>Fasilitas yang didapat</h4>
+              </div>
+            </div>
+            <div class="row">
+              
+            </div>
+          </div>
+        </div>
+        </div>
+        <div class="row">
+          <div class="card">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-12">
+                  <h4><b>Metode Pembayaran</b></h4>
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-md-12">
+                  <p class="card-category">Kami menyediakan metode pembayaran menggunakan bank transfer.</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-2">
+                  <p class="card-category">Nama Bank</p>
+                </div>
+                <div class="col-md-10">
+                  <p class="card-category text-success">MANDIRI</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-2">
+                  <p class="card-category">No. Rek</p>
+                </div>
+                <div class="col-md-10">
+                  <p class="card-category text-success">12908xxxxxxxxx</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-2">
+                  <p class="card-category">A/N</p>
+                </div>
+                <div class="col-md-10">
+                  <p class="card-category text-success">BUMI MANDIRI</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <p class="card-category">Pastikan nomor rekening yang dituju adalah benar dan sesuai dengan data yang tertera diatas. jika mengalami kesulitan, segera <a href="" class="text-success"><b>hubungi kami</b></a> atau lihat <a href="" class="text-success"><b>Prosedur Pembayaran</b></a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <button type="submit" class="btn btn-success pull-right">Bayar</button>
+            <button type="submit" class="btn btn pull-right">Batal</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-header card-header-tabs card-header-success">
+            <h4 class="card-title">Rincian Biaya</h4>
+            <p class="card-category"></p>
+          </div>
+          <div class="card-body">
+            <h5 class="text-success text-center">Agro & Outbound I</h5>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="dateout">Harga per-orang:</label>
+                  <input type='text' class="form-control-plaintext text-right" id="dateout" name="dateout" value="Rp 145.000" readonly="true" />
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="dateout">Jumlah Peserta:</label>
+                  <input type='text' class="form-control-plaintext text-right" id="dateout" name="dateout" value="60" readonly="true" />
+                </div>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="dateout">Jumlah Tagihan:</label>
+                  <input type='text' class="form-control-plaintext text-right text-success" id="dateout" name="dateout" value="Rp 123.456.789" readonly="true" style="font-weight: bold; font-size: 1.2rem;" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -56,13 +229,44 @@
 
 
 
-<div class="container">
-  <div class="content">
-    <div class="row">
-      
-    </div>
-  </div>
-</div>
+
+
+
+<footer class="footer">
+        <div class="container-fluid">
+          <nav class="float-left">
+            <ul>
+              <li>
+                <a href="https://www.creative-tim.com">
+                  UBSI
+                </a>
+              </li>
+              <li>
+                <a href="https://creative-tim.com/presentation">
+                  About Us
+                </a>
+              </li>
+              <li>
+                <a href="http://blog.creative-tim.com">
+                  Blog
+                </a>
+              </li>
+              <li>
+                <a href="https://www.creative-tim.com/license">
+                  Licenses
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <div class="copyright float-right">
+            &copy;
+            <script>
+              document.write(new Date().getFullYear())
+            </script>
+            <a href="https://www.creative-tim.com" target="_blank">BUMI MANDIRI</a>
+          </div>
+        </div>
+      </footer>
 
 
 

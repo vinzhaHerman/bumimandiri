@@ -22,7 +22,7 @@ class Booking extends CI_Controller {
 	}
 
 	public function src_by_paket(){
-		$id = $this->input->post('id');
+		$id = $this->input->get('id');
 		$data=array('res'=>$this->Paket_model->get_program_by_paket($id));
 		$this->load->view('pages/paket_list', $data);
 	}
@@ -35,8 +35,8 @@ class Booking extends CI_Controller {
 		if($this->session->userdata('status') != "login"){
             redirect(base_url("login"));
         }
-		$datein = $this->input->post('datein');
-		$dateout = $this->input->post('dateout');
+		$datein = $this->input->get('datein');
+		$dateout = $this->input->get('dateout');
 		$data['res']=$this->Reservasi_model->src_paket_by_date($datein, $dateout);
 		$this->load->view('pages/paket_list', $data, false);
 	}

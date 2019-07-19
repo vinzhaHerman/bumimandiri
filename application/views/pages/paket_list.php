@@ -48,7 +48,7 @@
     <div class="row align-items-center mx-auto" >
     <?php foreach ($res->result() as $post): ?>
         <div class="card mb-3 align-items-center mx-auto" style="width: 75vw;">
-          <form action="<?php  echo base_url("Booking/paket_detail/").$post->id;?>" method="post" enctype="multipart/form-data">
+          <form action="<?php  echo base_url("Booking/paket_detail/").$post->id;?>" method="get" enctype="multipart/form-data">
             <div class="card-header card-header-primary">
             <h3 class="card-title"><b><?php echo $post->nama_program ?></b></h3>
             <p class="card-category">Lama Kegiatan: <b><?php echo $post->lama_kegiatan ?></b></p>

@@ -54,7 +54,7 @@
     <div class="col-sm">
       <div class="card mx-auto" style="width: 20rem;">
         <div class="card-body">
-          <form action="<?php  echo base_url("Booking/src_by_paket/");?>" method="post" enctype="multipart/form-data">
+          <form action="<?php  echo base_url("Booking/src_by_paket/");?>" method="get" enctype="multipart/form-data">
           <h4 class="card-title"><?php echo $post->nama_paket ?></h4>
           <img src="<?php echo base_url();?>assets/img/people.jpg" alt="..." class="img-thumbnail">
           <!-- <p class="card-text"></p> -->
