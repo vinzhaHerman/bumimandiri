@@ -36,6 +36,7 @@ class Web extends CI_Controller {
             $data_session = array(
             	'id' => $res->id,
                 'nama_depan' => $res->nama_depan,
+                'email' => $res->email,
                 'status' => "login"
                 );
  

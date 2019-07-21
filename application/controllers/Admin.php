@@ -92,8 +92,7 @@ class Admin extends CI_Controller {
 	}
 	public function opsi_pemesanan($id=""){
 		$data=array(
-            'res'=>$this->Pemesanan->get_pemesanan_byid($id),
-            'resd'=>$this->Pemesanan->get_pemesanan()
+            'res'=>$this->Pemesanan->get_pemesanan_byid($id)
         );
 		$kodereservasi = $this->input->post('kodereservasi');
 		$this->load->view('admin/template/head');
@@ -108,6 +107,18 @@ class Admin extends CI_Controller {
 	}
 	public function ubah_status_batal($kodereservasi){
 		$this->Pemesanan->update_status_batal($kodereservasi);
+		redirect(base_url("admin/pemesanan"));
+	}
+	public function send_to_proses(){
+		$kodereservasi = $this->input->post('kodereservasi');
+		$this->Pemesanan->update_status_lunas($kodereservasi);
+		$datein = $this->input->post('datein');
+		$dateout = $this->input->post('dateout');
+		$reservasiid = $this->input->post('reservasiid');
+		$programid = $this->input->post('programid');
+		$pelangganid = $this->input->post('pelangganid');
+		$this->Pemesanan->sent_to_proses($datein,$dateout,$reservasiid,$programid,$pelangganid);
+		redirect(base_url("admin/pemesanan"));
 	}
 // -------------------------------------------END pemesanan----------------------------------------------
 
@@ -119,6 +130,14 @@ class Admin extends CI_Controller {
 	public function reservasi()
 	{
 		$data=array('res'=>$this->Reservasi_model->get_reservasi_proses());
+		$this->load->view('admin/template/head');
+		$this->load->view('admin/template/sidebar');
+		$this->load->view('admin/reservasi', $data);
+		$this->load->view('admin/template/foot');
+	}
+	public function waiting_list()
+	{
+		$data=array('res'=>$this->Reservasi_model->get_reservasi_waiting());
 		$this->load->view('admin/template/head');
 		$this->load->view('admin/template/sidebar');
 		$this->load->view('admin/reservasi', $data);
@@ -202,7 +221,7 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/program_add');
 		$this->load->view('admin/template/foot');
 	}
-	public function ubah_program($id="")
+	public function ubah_program($id)
 	{
 		$data=array(
 			'res'=>$this->Paket_model->get_program_byid($id),
@@ -238,6 +257,14 @@ class Admin extends CI_Controller {
 	public function delete_program($id){
 		$this->Paket_model->delete_paket($id);
 		redirect(base_url("admin/data_paket"));
+	}
+
+	public function riwayat_program($programid){
+		$data=array('res'=>$this->Paket_model->get_program_riwayat($programid));
+		$this->load->view('admin/template/head');
+		$this->load->view('admin/template/sidebar');
+		$this->load->view('admin/program_riwayat', $data);
+		$this->load->view('admin/template/foot');
 	}
 // -------------------------------------------END Data Program----------------------------------------------
 

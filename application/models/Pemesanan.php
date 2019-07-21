@@ -4,12 +4,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Pemesanan extends CI_Model {
 
 	function get_pemesanan(){
-		$result=$this->db->query("SELECT reservasi.kode_reservasi, pelanggan.nama_depan, reservasi.bukti, paket_program.nama_program, reservasi.pembayaran FROM (reservasi INNER JOIN pelanggan ON reservasi.id_pelanggan=pelanggan.id) INNER JOIN paket_program ON reservasi.paket_program_id=paket_program.id;");
+		$result=$this->db->query("SELECT reservasi.id, reservasi.kode_reservasi, reservasi.id_pelanggan, reservasi.paket_program_id, pelanggan.nama_depan, reservasi.bukti, paket_program.nama_program, reservasi.pembayaran FROM (reservasi INNER JOIN pelanggan ON reservasi.id_pelanggan=pelanggan.id) INNER JOIN paket_program ON reservasi.paket_program_id=paket_program.id;");
         return $result;
 	}
 
 	function get_pemesanan_byid($id){
-		$result=$this->db->query("SELECT * from reservasi WHERE kode_reservasi='$id'");
+		$result=$this->db->query("SELECT reservasi.id, reservasi.kode_reservasi, reservasi.id_pelanggan, reservasi.paket_program_id, reservasi.tagihan, reservasi.jumlah_org, reservasi.tgl_masuk, reservasi.tgl_keluar, pelanggan.nama_depan, reservasi.bukti, paket_program.nama_program, reservasi.pembayaran FROM (reservasi INNER JOIN pelanggan ON reservasi.id_pelanggan=pelanggan.id) INNER JOIN paket_program ON reservasi.paket_program_id=paket_program.id WHERE kode_reservasi='$id'");
         return $result;
 	}
 
@@ -41,10 +41,21 @@ class Pemesanan extends CI_Model {
     	$result=$this->db->query("UPDATE reservasi SET pembayaran='$prop' WHERE kode_reservasi='$kodereservasi'");
         return $result;
     }
+
     function update_status_lunas($kodereservasi){
     	$result=$this->db->query("UPDATE reservasi SET pembayaran='LUNAS' WHERE kode_reservasi='$kodereservasi'");
         return $result;
     }
+    function sent_to_proses($datein,$dateout,$reservasiid,$programid,$pelangganid){
+        $result=$this->db->query("INSERT INTO paket_riwayat (
+            check_in,
+            check_out,
+            reservasi_id,
+            paket_program_id,
+            pelanggan_id) VALUES('$datein', '$dateout', '$reservasiid', '$programid', '$pelangganid')");
+        return $result;
+    }
+
     function update_status_batal($kodereservasi){
     	$result=$this->db->query("UPDATE reservasi SET pembayaran='DIBATALKAN' WHERE kode_reservasi='$kodereservasi'");
         return $result;
@@ -54,8 +65,8 @@ class Pemesanan extends CI_Model {
 
 
 
-    function upload_file($bukti,$kode){
-    	$result=$this->db->query("INSERT INTO reservasi (bukti) VALUES('$bukti') WHERE kode_reservasi='$kode'");
+    function upload_bukti($bukti,$kode){
+    	$result=$this->db->query("UPDATE reservasi SET bukti='$bukti' WHERE kode_reservasi='$kode'");
         return $result;
     }
 

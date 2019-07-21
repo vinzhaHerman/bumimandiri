@@ -17,6 +17,7 @@
 
 <?php 
   $res=$res->row_array();
+  $hasil_rupiah = "Rp " . number_format($res['harga'],2,',','.');
 ?>
 
 
@@ -78,7 +79,7 @@
              <div class="row">
                 <div class='col-sm-3'>
                   <label for="datein">Untuk Tanggal</label>
-                  <input type='text' class="form-control" id='datetimepicker1' name="datein" />
+                  <input type='text' class="form-control" id='datetimepicker1' name="datein" required="true" />
                   <input type='text' class="form-control" id='idprogram' name="idprogram" value="<?php echo $res['id'] ?>" hidden/>
                   <input type='text' class="form-control" id='idprogram' name="namaprogram" value="<?php echo $res['nama_program'] ?>" hidden/>
                   <input type='text' class="form-control" name="idpaket" value="<?php echo $_GET['idpaket'] ?>" hidden/>
@@ -129,7 +130,7 @@
             <div class="row">
               <div class="col-sm-12">
                 <label for="datein">Harga Program per-orang</label>
-                <input type='text' class="form-control-plaintext text-success" name="" readonly="true" value="Rp <?php echo $res['harga'] ?>" style="font-size: 1.5rem;"/>
+                <input type='text' class="form-control-plaintext text-success" name="" readonly="true" value="<?php echo $hasil_rupiah ?>" style="font-size: 1.5rem;"/>
               </div>
               <div class="col-sm-12">
                 <input type='text' class="form-control-plaintext text-success" name="hargasatuan" readonly="true" value="<?php echo $res['harga'] ?>" style="font-size: 1.5rem;" hidden/>
@@ -183,7 +184,7 @@
    $(function(){
        $('#datetimepicker1').datepicker({
         modal: true,
-        minDate: nextDay,
+        // minDate: nextDay,
         format: 'yyyy-mm-dd'
        });
 

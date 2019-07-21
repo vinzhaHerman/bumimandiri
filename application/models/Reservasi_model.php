@@ -7,6 +7,10 @@ class Reservasi_model extends CI_Model {
 		$result=$this->db->query("SELECT * FROM reservasi");
         return $result;
 	}
+	function get_reservasi_bykode($kode){
+		$result=$this->db->query("SELECT * FROM reservasi WHERE kode_reservasi='$kode'");
+        return $result;
+	}
 	function get_reservasi_detailed(){
 		$result=$this->db->query("SELECT pelanggan.nama_depan, reservasi.tgl_masuk, reservasi.tgl_keluar, reservasi.metode, reservasi.pembayaran, paket_jenis.nama_paket FROM ((paket_dipesan INNER JOIN paket_jenis ON paket_dipesan.paket_jenis_id=paket_jenis.id) INNER JOIN reservasi ON reservasi.id=paket_dipesan.reservasi_id) INNER JOIN pelanggan ON reservasi.id_pelanggan=pelanggan.id;");
         return $result;
@@ -20,8 +24,27 @@ class Reservasi_model extends CI_Model {
   //       return $result;
 	}
 
+	// function get_reservasi_proses(){
+	// 	$result=$this->db->query("SELECT * FROM paket_riwayat WHERE
+ //        (check_in <= '2019-07-29' AND check_out >= '2019-07-29') OR
+ //        (check_in <= '2019-07-29' AND check_out >= '2019-07-29') OR
+ //        (check_in >= '2019-07-29' AND check_out <= '2019-07-29')");
+ //        return $result;
+	// }
+
+	function get_reservasi_waiting(){
+		$date = date('Y-m-d');
+		$result=$this->db->query("SELECT paket_riwayat.check_in, paket_riwayat.check_out, reservasi.kode_reservasi, reservasi.jumlah_org, paket_program.nama_program, pelanggan.nama_depan, pelanggan.email FROM ((paket_riwayat INNER JOIN reservasi ON paket_riwayat.reservasi_id=reservasi.id) INNER JOIN paket_program ON paket_riwayat.paket_program_id=paket_program.id) INNER JOIN pelanggan ON paket_riwayat.pelanggan_id=pelanggan.id WHERE
+        (check_in >= '$date' AND check_out >= '$date')");
+        return $result;
+	}
+
 	function get_reservasi_proses(){
-		$result=$this->db->query("SELECT reservasi.kode_reservasi, pelanggan.nama_depan, paket_program.nama_program, paket_riwayat.check_in, paket_riwayat.check_out FROM ((paket_riwayat INNER JOIN reservasi ON reservasi.id=paket_riwayat.reservasi_id)INNER JOIN paket_program ON paket_riwayat.paket_program_id=paket_program.id)INNER JOIN pelanggan ON pelanggan.id=paket_riwayat.pelanggan_id;");
+		$date = date('Y-m-d');
+		$result=$this->db->query("SELECT paket_riwayat.check_in, paket_riwayat.check_out, reservasi.kode_reservasi, reservasi.jumlah_org, paket_program.nama_program, pelanggan.nama_depan, pelanggan.email FROM ((paket_riwayat INNER JOIN reservasi ON paket_riwayat.reservasi_id=reservasi.id) INNER JOIN paket_program ON paket_riwayat.paket_program_id=paket_program.id) INNER JOIN pelanggan ON paket_riwayat.pelanggan_id=pelanggan.id WHERE
+        (check_in <= '$date' AND check_out >= '$date') OR
+        (check_in <= '$date' AND check_out >= '$date') OR
+        (check_in >= '$date' AND check_out <= '$date')");
         return $result;
 	}
 

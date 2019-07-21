@@ -21,6 +21,7 @@
   $orang=$_GET['jmlorang'];
   $hsatuan=$_GET['hargasatuan'];
   $total=$orang*$hsatuan;
+  $hasil_rupiah = "Rp " . number_format($total,2,',','.');
 ?>
 
 
@@ -189,7 +190,7 @@
         <div class="row">
           <div class="col-md-12">
             <button type="submit" class="btn btn-success pull-right">Bayar</button>
-            <button type="submit" class="btn btn pull-right">Batal</button>
+            <a href="<?php echo base_url(); ?>" class="btn btn pull-right">Batal</a>
           </div>
         </div>
       </div>
@@ -222,7 +223,7 @@
               <div class="col-md-12">
                 <div class="form-group">
                   <label for="dateout">Jumlah Tagihan:</label>
-                  <input type='text' class="form-control-plaintext text-right text-success" id="total" value="<?php echo $total ?>" readonly="true" style="font-weight: bold; font-size: 1.2rem;" />
+                  <input type='text' class="form-control-plaintext text-right text-success" id="total" value="<?php echo $hasil_rupiah ?>" readonly="true" style="font-weight: bold; font-size: 1.2rem;" />
                   <input type='text' class="form-control-plaintext text-right text-success" id="total" name="tagihan" value="<?php echo $total ?>" readonly="true" style="font-weight: bold; font-size: 1.2rem;" hidden/>
                 </div>
               </div>

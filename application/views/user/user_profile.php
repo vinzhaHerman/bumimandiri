@@ -136,7 +136,7 @@
                           </td>
                           <td><?php echo $res->pembayaran  ?></td>
                           <td class="td-actions text-right">
-                            <a type="button"  href="<?php echo base_url() ?>account/upload_bukti/<?php echo $res->kode_reservasi ?>" class="btn btn-success btn-sm">
+                            <a  href="<?php echo base_url() ?>account/upload_bukti/<?php echo $res->kode_reservasi ?>" class="btn btn-success btn-sm">
                             Upload Bukti
                             </a>
                           </td>

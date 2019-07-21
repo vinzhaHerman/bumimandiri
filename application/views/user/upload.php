@@ -14,6 +14,9 @@
 </head>
 
 
+<?php $userriwayat=$userriwayat->row_array() ?>
+
+
 
 
 <body>
@@ -54,9 +57,9 @@
               <div class="jumbotron">
                 <h1 class="display-4">Hello, world!</h1>
                 <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-                <form action="<?php echo base_url();?>account/upload_file">
-                <input type="text" class="form-control" name="kode_reservasi" value="<?php foreach ($userriwayat->result() as $res): ?><?php echo $res->kode_reservasi  ?><?php endforeach; ?>" hidden>
-                <input type="file" name="fileupload" value="fileupload" id="fileupload"> <label for="fileupload"> Select a file to upload</label> 
+                <?php echo form_open_multipart('Account/do_upload');?>
+                <input type="text" class="form-control" name="kode" value="<?php echo $userriwayat['kode_reservasi'] ?>" >
+                <input type="file" name="fileupload" id="fileupload"> <label for="fileupload"> Select a file to upload</label> 
                 <hr class="my-4">
                 <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
                 <p class="lead">

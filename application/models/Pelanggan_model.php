@@ -43,4 +43,11 @@ class Pelanggan_model extends CI_Model {
 	}
 
 
+	function get_pelanggan_riwayat($userid){
+		$date = date('Y-m-d');
+		$result=$this->db->query("SELECT * FROM paket_riwayat WHERE (check_in < '$date' AND check_out < '$date') AND pelanggan_id='$userid');");
+        return $result;
+	}
+
+
 }

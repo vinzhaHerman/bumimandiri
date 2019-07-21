@@ -96,6 +96,7 @@
                 <div class="card-header card-header-primary">
                   <h3 class="card-title">Edit Data Program</h3>
                   <a href="<?php echo base_url();?>admin/data_program" class="btn btn-sm"><i class="material-icons">keyboard_return</i> Kembali</a>
+                  <a href="<?php echo base_url();?>admin/riwayat_program/<?php echo $res['id'] ?>" class="btn btn-warning btn-sm pull-right"><i class="material-icons">lock</i> Lihat riwayat program</a>
                 </div>
                 <div class="card-body">
                   <form action="<?php echo base_url('admin/update_program'); ?>" method="post">

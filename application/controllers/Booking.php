@@ -62,23 +62,18 @@ class Booking extends CI_Controller {
 
 		$data=$this->Reservasi_model->src_paket_by_date_and_id($idprogram, $datein, $dateout);
 
-		// echo $data->num_rows();
+		// echo $data->num_rows(); //->cek jumlah row.
 
 		if ($data->num_rows() == 0) {
-			// echo "silahkan pilih tanggal lain";
 			$this->session->set_flashdata('message', 'Tanggal tidak tersedia. Silahkan pilih tanggal lain.');
 			redirect($_SERVER['HTTP_REFERER']);
 		}
 		else{
-			// echo "berhasil";
 			$data=array(
 				'program'=>$this->Paket_model->get_program_byid($idprogram)
 			);
 			$this->load->view('pages/konfirmasi',$data);
 		}
-
-
-		
 	}
 
 	public function set_pemesanan(){
@@ -90,9 +85,22 @@ class Booking extends CI_Controller {
 		$tagihan = $this->input->post('tagihan');
 		$userid = $this->session->userdata('id');
 		$usernama = $this->session->userdata('nama_depan');
+		$useremail = $this->session->userdata('email');
 		$kodereservasi = $this->Pemesanan->kode_otomatis();
 		$this->Pemesanan->set_pemesanan($kodereservasi, $datein, $dateout, $idprogram, $jmlorang, $tagihan, $userid);
 		redirect(base_url("booking/acc_pesanan"));
+
+		$this->load->library('email');
+
+		$this->email->from('no-reply-bumimandiri@gmail.com', 'BUMI MANDIRI systems');
+		$this->email->to('vinzhaherman@gmail.com');
+		$this->email->cc('another@another-example.com');
+		$this->email->bcc('them@their-example.com');
+
+		$this->email->subject('Email Test');
+		$this->email->message('Testing the email class.');
+
+		$this->email->send();
 	}
 
 	public function konfirmasi(){

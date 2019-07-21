@@ -14,13 +14,13 @@
       <div class="sidebar-wrapper">
         <ul class="nav">
           <li class="nav-item active">
-            <a class="nav-link" href="http://localhost/bumimandiri/Admin">
+            <a class="nav-link" href="<?php echo base_url()?>bumimandiri/Admin">
               <i class="material-icons">dashboard</i>
               <p>Beranda</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="http://localhost/bumimandiri/Admin/pemesanan">
+            <a class="nav-link" href="<?php echo base_url()?>Admin/pemesanan">
               <i class="material-icons">calendar_today</i>
               <p>Pemesanan</p>
             </a>
@@ -45,7 +45,7 @@
             </a>
             <div class="collapse" id="submenu1" aria-expanded="false">
                 <ul class="flex-column pl-2 nav">
-                    <li class="nav-item"><a class="nav-link" href=""><i class="material-icons">library_books</i>Waiting list</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?php echo base_url()?>Admin/waiting_list"><i class="material-icons">library_books</i>Waiting list</a></li>
                     <li class="nav-item"><a class="nav-link" href="<?php echo base_url()?>Admin/reservasi"><i class="material-icons">library_books</i>Sedang Berlangsung</a></li>
                     <li class="nav-item"><a class="nav-link" href=""><i class="material-icons">library_books</i>Riwayat</a></li>
                 </ul>

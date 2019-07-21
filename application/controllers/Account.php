@@ -6,7 +6,9 @@ class Account extends CI_Controller {
 	function __construct(){
 		parent::__construct();
 		$this->load->helper('url');
+		$this->load->helper('form');
 		$this->load->model('Pelanggan_model');
+		$this->load->model('Reservasi_model');
 		$this->load->model('Pemesanan');
 	}
 
@@ -30,11 +32,11 @@ class Account extends CI_Controller {
             redirect(base_url("login"));
         }
 		$data['userdata']=$this->Pelanggan_model->getuser($this->session->userdata('id'));
-		$data['userriwayat']=$this->Pelanggan_model->get_reservasi_byuser_empty($this->session->userdata('id'));
+		$data['userriwayat']=$this->Reservasi_model->get_reservasi_bykode($id);
 		// $data=array('res'=>$this->Pelanggan_model->get_user_data());
         // $data['user_res']=$this->Pelanggan_model->get_reservasi_byuser($this->session->userdata('id'));
         $fileupload = $this->input->post('fileupload');
-		$this->load->view('user/upload', $data);
+		$this->load->view('user/upload', $data, array('error' => ' ' ));
 	}
 	
 	public function upload_file()
@@ -50,22 +52,26 @@ class Account extends CI_Controller {
         $config['upload_path']          = './upload/bukti/';
         $config['allowed_types']        = 'jpg|png';
         $config['maintain_ratio'] 		= TRUE;
-        $config['max_size']             = 100;
-        $config['max_width']            = 1024;
+        $config['encrypt_name'] 		= TRUE;
 
         $this->load->library('upload', $config);
 
-        if ( ! $this->upload->do_upload('bukti'))
+        if ( ! $this->upload->do_upload('fileupload'))
         {
                 $error = array('error' => $this->upload->display_errors());
 
-                $this->load->view('upload_form', $error);
+                redirect($_SERVER['HTTP_REFERER'], $error);
         }
         else
         {
-                $data = array('upload_data' => $this->upload->data());
+        		$upload_data = $this->upload->data();
+            	$data = array('upload_data' => $upload_data);
+            	$bukti = $upload_data['file_name'];
 
-                $this->load->view('upload_success', $data);
+     			$kode = $this->input->post('kode');
+
+                $this->Pemesanan->upload_bukti($bukti,$kode);
+                redirect(base_url("Account"));
         }
      }
 }
