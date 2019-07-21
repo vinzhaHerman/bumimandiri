@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 21, 2019 at 06:57 PM
+-- Generation Time: Jul 19, 2019 at 06:17 PM
 -- Server version: 10.3.15-MariaDB
 -- PHP Version: 7.3.6
 
@@ -165,15 +165,14 @@ CREATE TABLE IF NOT EXISTS `paket_riwayat` (
   `paket_program_id` int(11) NOT NULL,
   `pelanggan_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `paket_riwayat`
 --
 
 INSERT INTO `paket_riwayat` (`id`, `check_in`, `check_out`, `reservasi_id`, `paket_program_id`, `pelanggan_id`) VALUES
-(6, '2019-07-01', '2019-07-02', 1, 2, 2),
-(7, '2019-07-19', '2019-07-20', 8, 2, 1);
+(1, '2019-07-06', '2019-07-08', 1, 3, 1);
 
 -- --------------------------------------------------------
 
@@ -240,17 +239,16 @@ CREATE TABLE IF NOT EXISTS `reservasi` (
   `bukti` varchar(100) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `kode_reservasi` (`kode_reservasi`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `reservasi`
 --
 
 INSERT INTO `reservasi` (`id`, `kode_reservasi`, `tgl_masuk`, `tgl_keluar`, `paket_program_id`, `jumlah_org`, `tagihan`, `pembayaran`, `id_pelanggan`, `bukti`) VALUES
-(1, 'RS21070000001', '2019-07-01', '2019-07-02', 2, 55, 7535000, 'LUNAS', 2, '6a76442b2844f36ad3e4103c790e450a.png'),
-(7, 'RS21070000002', '2019-07-11', '2019-07-12', 2, 84, 11508000, 'MENUNGGU PEMBAYARAN', 2, ''),
-(8, 'RS21070000003', '2019-07-19', '2019-07-20', 2, 91, 12467000, 'LUNAS', 1, '3f70cf9d79c801e5081890cd0715c20e.png'),
-(9, 'RS21070000004', '2019-07-16', '2019-07-17', 2, 57, 7809000, 'MENUNGGU PEMBAYARAN', 1, '');
+(1, 'RS06190000001', '2019-07-06', '2019-07-06', 1, 60, 5880000, 'LUNAS', 1, 'dark.png'),
+(2, 'RS07070000002', '2019-07-30', '2019-07-30', 1, 34, 5880000, 'DIBATALKAN', 1, 'light.png'),
+(3, 'RS19070000003', '2019-07-29', '2019-07-30', 9, 45, 5580000, 'MENUNGGU PEMBAYARAN', 1, '');
 
 -- --------------------------------------------------------
 
