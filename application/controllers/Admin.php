@@ -12,6 +12,7 @@ class Admin extends CI_Controller {
 		$this->load->model('Petugas_model');
 		$this->load->model('Pelanggan_model');
 		$this->load->model('Reservasi_model');
+		$this->load->model('Post_model');
 		$this->load->model('Pemesanan');
 	}
 
@@ -306,6 +307,23 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/pelanggan_master', $data);
 		$this->load->view('admin/template/foot');
 	}
+	public function detail_pelanggan($id="")
+	{
+		$data=array(
+			'res'=>$this->Pelanggan_model->get_pelanggan_byid($id)
+		);
+		$this->load->view('admin/template/head');
+		$this->load->view('admin/template/sidebar');
+		$this->load->view('admin/pelanggan_opsi', $data);
+		$this->load->view('admin/template/foot');
+	}
+	public function riwayat_pelanggan($pelangganid){
+		$data=array('res'=>$this->Pelanggan_model->get_riwayat_byuser($pelangganid));
+		$this->load->view('admin/template/head');
+		$this->load->view('admin/template/sidebar');
+		$this->load->view('admin/pelanggan_riwayat', $data);
+		$this->load->view('admin/template/foot');
+	}
 // -------------------------------------------END Data Pelanggan----------------------------------------------
 
 
@@ -315,18 +333,51 @@ class Admin extends CI_Controller {
 // -------------------------------------------Data blog----------------------------------------------
 	public function kelola_blog()
 	{
+		$data=array(
+			'promosi'=>$this->Post_model->get_post_bytype(1),
+			'artikel'=>$this->Post_model->get_post_bytype(2),
+			'event'=>$this->Post_model->get_post_bytype(3)
+		);
 		$this->load->view('admin/template/head');
 		$this->load->view('admin/template/sidebar');
-		$this->load->view('admin/blog');
+		$this->load->view('admin/blog', $data);
 		$this->load->view('admin/template/foot');
 	}
-	public function tambah_blog()
+	public function tambah_promosi()
 	{
 		$this->load->view('admin/template/head');
 		$this->load->view('admin/template/sidebar');
-		$this->load->view('admin/tambah-blog');
+		$this->load->view('admin/tambah_promosi');
 		$this->load->view('admin/template/foot');
 	}
+	public function set_promosi()
+     {
+        $config['upload_path']          = './upload/promosi/';
+        $config['allowed_types']        = 'jpg|png';
+        $config['maintain_ratio'] 		= TRUE;
+        $config['encrypt_name'] 		= TRUE;
+
+        $this->load->library('upload', $config);
+
+        if ( ! $this->upload->do_upload('fileupload'))
+        {
+                $error = array('error' => $this->upload->display_errors());
+
+                redirect($_SERVER['HTTP_REFERER'], $error);
+        }
+        else
+        {
+        		$upload_data = $this->upload->data();
+            	$data = array('upload_data' => $upload_data);
+            	$img = $upload_data['file_name'];
+
+     			$judul = $this->input->post('judul');
+     			$para = $this->input->post('para');
+
+                $this->Post_model->set_promosi($judul, $para, $img);
+                redirect(base_url("Admin/kelola_blog"));
+        }
+     }
 // -------------------------------------------END Data blog----------------------------------------------
 	
 }

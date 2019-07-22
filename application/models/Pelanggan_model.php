@@ -17,6 +17,11 @@ class Pelanggan_model extends CI_Model {
         return $result;
 	}
 
+	function get_pelanggan_byid($id){
+		$result=$this->db->query("SELECT * FROM pelanggan WHERE id='$id'");
+        return $result;
+	}
+
 	function get_user_id_byid(){
 		$result=$this->db->query("SELECT id FROM pelanggan");
         return $result;
@@ -46,6 +51,25 @@ class Pelanggan_model extends CI_Model {
 	function get_pelanggan_riwayat($userid){
 		$date = date('Y-m-d');
 		$result=$this->db->query("SELECT * FROM paket_riwayat WHERE (check_in < '$date' AND check_out < '$date') AND pelanggan_id='$userid');");
+        return $result;
+	}
+
+	function get_riwayat_byuser($pelangganid){
+		$date = date('Y-m-d');
+		$result=$this->db->query("
+			SELECT paket_riwayat.check_in, 
+			paket_riwayat.check_out, 
+			reservasi.kode_reservasi, 
+			reservasi.jumlah_org, 
+			paket_program.nama_program, 
+			paket_riwayat.paket_program_id 
+			FROM 
+			(paket_riwayat INNER JOIN reservasi ON paket_riwayat.reservasi_id=reservasi.id) 
+			INNER JOIN paket_program ON paket_riwayat.paket_program_id=paket_program.id 
+			WHERE 
+			(check_in < '$date' AND check_out < '$date') 
+			AND 
+			(paket_riwayat.pelanggan_id='$pelangganid');");
         return $result;
 	}
 

@@ -14,7 +14,7 @@
       <div class="sidebar-wrapper">
         <ul class="nav">
           <li class="nav-item active">
-            <a class="nav-link" href="<?php echo base_url()?>bumimandiri/Admin">
+            <a class="nav-link" href="<?php echo base_url()?>Admin">
               <i class="material-icons">dashboard</i>
               <p>Beranda</p>
             </a>
@@ -47,7 +47,6 @@
                 <ul class="flex-column pl-2 nav">
                     <li class="nav-item"><a class="nav-link" href="<?php echo base_url()?>Admin/waiting_list"><i class="material-icons">library_books</i>Waiting list</a></li>
                     <li class="nav-item"><a class="nav-link" href="<?php echo base_url()?>Admin/reservasi"><i class="material-icons">library_books</i>Sedang Berlangsung</a></li>
-                    <li class="nav-item"><a class="nav-link" href=""><i class="material-icons">library_books</i>Riwayat</a></li>
                 </ul>
             </div>
           </li>

@@ -5,7 +5,7 @@
 
     <div class="main-panel">
       <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
+     <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
         <div class="container-fluid">
           <div class="navbar-wrapper">
             <a class="navbar-brand" href="#pablo">Dashboard</a>
@@ -81,7 +81,9 @@
 
 
 
-
+<?php 
+  $res=$res->row_array();
+ ?>
 
           
 
@@ -89,51 +91,84 @@
 
 
 
-          <div class="">
+          <div class="row">
+            <div class="col-md-12">
               <div class="card">
                 <div class="card-header card-header-primary">
-                  <h3 class="card-title">Data Pelanggan</h3>
-                  <a href="<?php echo base_url() ?>admin/add_petugas" class="btn btn-warning btn-sm">+ Tambah Data</a>
+                  <h4 class="card-title">Data <?php echo $res['nama_depan']?> <?php echo $res['nama_belakang']?></h4>
+                  <a href="<?php echo base_url();?>admin/data_pelanggan" class="btn btn-sm"><i class="material-icons">keyboard_return</i> Kembali</a>
+                  <a href="<?php echo base_url();?>admin/riwayat_pelanggan/<?php echo $res['id'] ?>" class="btn btn-warning btn-sm pull-right"><i class="fas fa-print"></i> Hitsory Transaksi</a>
                 </div>
-                <div class="card-body table-responsive">
-                  <table id="myTable" class="table table-hover  table-striped">
-                    <thead class="text-primary">
-                      <th>No.</th>
-                      <th>Nama Lengkap</th>
-                      <th>Username</th>
-                      <th>Email</th>
-                      <th>No. Telp</th>
-                      <th>Aksi</th>
-                    </thead>
-                    <tbody>
-                    <?php $no=1; ?>
-                    <?php 
-                      function word_limit($string, $word_limit){
-                        $words = explode(" ",$string);
-                        return implode(" ",array_splice($words,0,$word_limit));
-                      }
-                      foreach(array_slice($res->result(), 0, 10) as $post ): 
-                    ?>
-                      <tr>
-                        <td><?php echo $no++; ?></td>
-                        <td><?php echo $post->nama_depan?></td>
-                        <td><?php echo $post->username?></td>
-                        <td><?php echo $post->email?></td>
-                        <td><?php echo $post->telp?></td>
-                        <td class="td-actions text-right">
-                              <a href="<?php echo base_url() ?>Admin/detail_pelanggan/<?php echo $post->id?>" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
-                                <i class="material-icons">settings</i>
-                              </a>
-                              <a href="<?php echo base_url() ?>Admin/delete_petugas/<?php echo $post->id?>" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
-                                <i class="material-icons">close</i>
-                              </a>
-                            </td>
-                      </tr>
-                    <?php endforeach; ?></tbody>
-                  </table>
+                <div class="card-body">
+                  <form>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Username</label>
+                          <input type="text" class="form-control-plaintext" value="<?php echo $res['username']?>" readonly>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Email address</label>
+                          <input type="email" class="form-control-plaintext" value="<?php echo $res['email']?>" readonly>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Nama Lengkap</label>
+                          <input type="text" class="form-control-plaintext" value="<?php echo $res['nama_depan']?>" readonly>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Adress</label>
+                          <input type="text" class="form-control" readonly>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-4">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">City</label>
+                          <input type="text" class="form-control" readonly>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Country</label>
+                          <input type="text" class="form-control" readonly>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Postal Code</label>
+                          <input type="text" class="form-control" readonly>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label>About Me</label>
+                          <div class="form-group">
+                            <label class="bmd-label-floating"> Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo.</label>
+                            <textarea class="form-control" rows="5" readonly></textarea>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary pull-right">Update Profile</button>
+                    <div class="clearfix"></div>
+                  </form>
                 </div>
               </div>
             </div>
+          </div>
 
 
 
@@ -141,6 +176,12 @@
 
         </div>
       </div>
+
+
+
+
+
+
       <footer class="footer">
         <div class="container-fluid">
           <nav class="float-left">

@@ -91,9 +91,10 @@
 
           <div class="">
               <div class="card">
-                <div class="card-header card-header-info">
-                  <h3 class="card-title">Data Reservasi</h3>
-                  <button type="button" class="btn btn-success btn-sm">+ Tambah Reservasi</button>
+                <div class="card-header card-header-warning">
+                  <h3 class="card-title">Riwayat Program</h3>
+                  <a href="<?php echo base_url();?>admin/data_program" class="btn btn-sm"><i class="material-icons">keyboard_return</i> Kembali</a>
+                  <a href="" class="btn btn-danger btn-sm pull-right"><i class="fas fa-print"></i> Cetak Laporan</a>
                 </div>
                 <div class="card-body table-responsive">
                   <table id="myTable" class="table table-hover  table-striped">

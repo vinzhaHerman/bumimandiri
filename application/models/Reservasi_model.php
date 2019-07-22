@@ -19,9 +19,6 @@ class Reservasi_model extends CI_Model {
 	function get_reservasi_onproses(){ //butuh data: pelanggan, paket program, check in, check out
 		$result=$this->db->query("SELECT pelanggan.nama_depan, paket_riwayat.check_in, paket_riwayat.check_out, paket_program.nama_program FROM (paket_riwayat INNER JOIN pelanggan ON pelanggan.id=paket_riwayat.pelanggan_id) INNER JOIN paket_program ON paket_program.id=paket_riwayat.paket_program_id;");
         return $result;
-
-		// $result=$this->db->query("SELECT pelanggan.nama_depan, paket_program.nama_program, paket_onproses.check_out FROM ((memesan ))");
-  //       return $result;
 	}
 
 	// function get_reservasi_proses(){
@@ -56,11 +53,19 @@ class Reservasi_model extends CI_Model {
         return $result;
 	}
 
+	// function src_paket_by_date_and_id($idprogram, $datein, $dateout){
+	// 	$result=$this->db->query("SELECT * FROM paket_program WHERE id='$idprogram' NOT IN (SELECT paket_program_id FROM reservasi WHERE
+ //   		(tgl_masuk <= '$datein' AND tgl_keluar >= '$datein') OR
+ //   		(tgl_masuk <= '$dateout' AND tgl_keluar >= '$dateout') OR
+ //   		(tgl_masuk >= '$datein' AND tgl_keluar <= '$dateout'));");
+ //        return $result;
+	// }
+
 	function src_paket_by_date_and_id($idprogram, $datein, $dateout){
-		$result=$this->db->query("SELECT * FROM paket_program WHERE id='$idprogram' NOT IN (SELECT paket_program_id FROM reservasi WHERE
-   		(tgl_masuk <= '$datein' AND tgl_keluar >= '$datein') OR
-   		(tgl_masuk <= '$dateout' AND tgl_keluar >= '$dateout') OR
-   		(tgl_masuk >= '$datein' AND tgl_keluar <= '$dateout'));");
+		$result=$this->db->query("SELECT * FROM paket_program WHERE id='$idprogram' NOT IN (SELECT paket_program_id FROM paket_riwayat WHERE
+   		(check_in <= '$datein' AND check_out >= '$datein') OR
+   		(check_in <= '$dateout' AND check_out >= '$dateout') OR
+   		(check_in >= '$datein' AND check_out <= '$dateout'));");
         return $result;
 	}
 

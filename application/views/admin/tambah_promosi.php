@@ -79,10 +79,15 @@
 
           <div class="card">
             <div class="card-header card-header-primary">
-              <h4 class="card-title">+ Tambah Blog</h4>
+              <h4 class="card-title">+ Tambah Promosi</h4>
               <p class="card-category">Created using Roboto Font Family</p>
             </div>
             <div class="card-body">
+              <?php echo form_open_multipart('Admin/set_promosi');?>
+                <input type="text" class="form-control" name="kode" value="<?php  ?>" >
+                <input type="file" name="fileupload" id="fileupload"> <label for="fileupload"> Select a file to upload</label> 
+                <hr class="my-4">
+                <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
               <div id="typography">
                 <div class="card-title">
                   <h3>Post title:</h3>
@@ -90,7 +95,7 @@
                 <div class="row">
                     <div class="col-md-12">
                       <div class="form-group">
-                        <input type="text" class="form-control">
+                        <input type="text" name="judul" class="form-control">
                       </div>
                     </div>
                 </div>
@@ -99,11 +104,12 @@
                   </div>
                 <div class="row">
                   <div class="col-md-12">
-                    <textarea>Next, use our Get Started docs to setup Tiny!</textarea>
+                    <textarea name="para"></textarea>
                   </div>
                 </div>
-                <button type="submit" class="btn btn-primary pull-right"><b>Publish Blog</b></button>
-                <button type="submit" class="btn pull-right">Batal</button>
+                </form>
+                <button type="submit" class="btn btn-primary pull-right"><b>Publish</b></button>
+                <a class="btn pull-right">Batal</a>
                 <div class="clearfix"></div>
               </div>
             </div>

@@ -91,42 +91,34 @@
 
           <div class="">
               <div class="card">
-                <div class="card-header card-header-primary">
-                  <h3 class="card-title">Data Pelanggan</h3>
-                  <a href="<?php echo base_url() ?>admin/add_petugas" class="btn btn-warning btn-sm">+ Tambah Data</a>
+                <div class="card-header card-header-warning">
+                  <h3 class="card-title">Riwayat Transaksi</h3>
+                  <a href="<?php echo base_url();?>admin/data_pelanggan" class="btn btn-sm"><i class="material-icons">keyboard_return</i> Kembali</a>
+                  <a href="" class="btn btn-danger btn-sm pull-right"><i class="fas fa-print"></i> Cetak Laporan</a>
                 </div>
                 <div class="card-body table-responsive">
                   <table id="myTable" class="table table-hover  table-striped">
-                    <thead class="text-primary">
+                    <thead class="text-info">
                       <th>No.</th>
-                      <th>Nama Lengkap</th>
-                      <th>Username</th>
-                      <th>Email</th>
-                      <th>No. Telp</th>
-                      <th>Aksi</th>
+                      <th>Kode Reservasi</th>
+                      <th>check in</th>
+                      <th>check out</th>
+                      <th>Program</th>
+                      <th>Jumlah Peserta</th>
+                      <th></th>
                     </thead>
-                    <tbody>
-                    <?php $no=1; ?>
-                    <?php 
-                      function word_limit($string, $word_limit){
-                        $words = explode(" ",$string);
-                        return implode(" ",array_splice($words,0,$word_limit));
-                      }
-                      foreach(array_slice($res->result(), 0, 10) as $post ): 
-                    ?>
+                    <tbody><?php $no=1; ?><?php foreach ($res->result() as $post): ?>
                       <tr>
                         <td><?php echo $no++; ?></td>
-                        <td><?php echo $post->nama_depan?></td>
-                        <td><?php echo $post->username?></td>
-                        <td><?php echo $post->email?></td>
-                        <td><?php echo $post->telp?></td>
+                        <td><?php echo $post->kode_reservasi  ?></td>
+                        <td><?php echo $post->check_in  ?></td>
+                        <td><?php echo $post->check_out  ?></td>
+                        <td><?php echo $post->nama_program  ?></td>
+                        <td><?php echo $post->jumlah_org ?></td>
                         <td class="td-actions text-right">
-                              <a href="<?php echo base_url() ?>Admin/detail_pelanggan/<?php echo $post->id?>" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
-                                <i class="material-icons">settings</i>
-                              </a>
-                              <a href="<?php echo base_url() ?>Admin/delete_petugas/<?php echo $post->id?>" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
-                                <i class="material-icons">close</i>
-                              </a>
+                              <button type="button" rel="tooltip" title="Konfirmasi" class="btn btn-warning">
+                                <i class="material-icons">done</i> Selesai
+                              </button>
                             </td>
                       </tr>
                     <?php endforeach; ?></tbody>
@@ -141,6 +133,34 @@
 
         </div>
       </div>
+
+
+
+
+      <!-- Modal -->
+      <div class="modal fade" id="showModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
       <footer class="footer">
         <div class="container-fluid">
           <nav class="float-left">

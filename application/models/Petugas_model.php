@@ -14,3 +14,4 @@ class Petugas_model extends CI_Model {
 	}
 
 }
+?>
