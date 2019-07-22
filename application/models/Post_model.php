@@ -8,6 +8,11 @@ class Post_model extends CI_Model {
         return $result;
 	}
 
+	function get_post_limit3(){
+		$result=$this->db->query("SELECT * FROM post ORDER BY id DESC limit 3");
+        return $result;
+	}
+
 	function get_post_byid($id){
 		$result=$this->db->query("SELECT * FROM post WHERE id='$id'");
         return $result;
@@ -15,6 +20,11 @@ class Post_model extends CI_Model {
 
 	function get_post_bytype($pt){
 		$result=$this->db->query("SELECT * FROM post WHERE post_type='$pt'");
+        return $result;
+	}
+
+	function get_post_bytype_limit3($pt){
+		$result=$this->db->query("SELECT * FROM post WHERE post_type='$pt' ORDER BY id DESC limit 3");
         return $result;
 	}
 

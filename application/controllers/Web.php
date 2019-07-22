@@ -7,13 +7,18 @@ class Web extends CI_Controller {
 		parent::__construct();
 		$this->load->helper('url');
 		$this->load->model('Pelanggan_model');
+		$this->load->model('Post_model');
 	}
 
 
 	public function index()
 	{
+		$data=array(
+            'promosi'=>$this->Post_model->get_post_bytype_limit3(1),
+            'artikel'=>$this->Post_model->get_post_bytype_limit3(2)
+        );
 		$this->load->view('template/head');
-		$this->load->view('pages/home');
+		$this->load->view('pages/home', $data);
 		$this->load->view('template/navbar');
 		$this->load->view('template/sidebar');
 		$this->load->view('template/footer');
@@ -61,8 +66,11 @@ class Web extends CI_Controller {
 
 	public function kegiatan()
 	{
+		$data=array(
+            'list'=>$this->Post_model->get_post()
+        );
 		$this->load->view('template/head');
-		$this->load->view('pages/kegiatan');
+		$this->load->view('pages/kegiatan', $data);
 		$this->load->view('template/navbar');
 		$this->load->view('template/sidebar');
 		$this->load->view('template/footer');

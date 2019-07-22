@@ -23,12 +23,20 @@
 
         <div class="middle-title">ARTIKEL</div>
         <div class="box-slider-container">
+            <?php
+                function word_limit($string, $word_limit){
+                $words = explode(" ",$string);
+                return implode(" ",array_splice($words,0,$word_limit));
+                }
+                foreach(array_slice($promosi->result(), 0, 3) as $pro ):
+            ?>
             <div class="box-container">
-                <img class="box-content box-img" src="<?php echo base_url();?>assets/img/dive.jpg" alt="">
-                <div class="box-content box-title">BLOCK TITLE</div>
-                <div class="box-content box-text">Lorem ipsum dolor sit amet, consectetur elait. Iusto eveniet fugiat harum quidem quibusdam esse</div>
+                <img class="box-content box-img" src="<?php echo base_url();?>upload/promosi/<?php echo $pro->gambar_post?>" alt="">
+                <div class="box-content box-title"><?php echo $pro->judul_post?></div>
+                <div class="box-content box-text"><?php echo word_limit($pro->isi_post, 10);?></div>
             </div>
-            <div class="box-container">
+            <?php endforeach; ?>
+            <!-- <div class="box-container">
                 <img class="box-content box-img" src="<?php echo base_url();?>assets/img/run.jpg" alt="">
                 <div class="box-content box-title">BLOCK TITLE</div>
                 <div class="box-content box-text">Lorem ipsum dolor sit amet, consectetur elait. Iusto eveniet fugiat harum quidem quibusdam esse</div>
@@ -37,7 +45,7 @@
                 <img class="box-content box-img" src="<?php echo base_url();?>assets/img/kids.jpg" alt="">
                 <div class="box-content box-title">BLOCK TITLE</div>
                 <div class="box-content box-text">Lorem ipsum dolor sit amet, consectetur elait. Iusto eveniet fugiat harum quidem quibusdam esse</div>
-            </div>
+            </div> -->
         </div>
         <!-- ------------------------END box buat artikel/promosi------------------------------------------- -->
 
@@ -53,12 +61,16 @@
 
         <!-- --------------------------box buat artikel/promosi--------------------------------------------- -->        
         <div class="box-slider-container">
+            <?php
+                foreach(array_slice($artikel->result(), 0, 3) as $art ):
+            ?>
             <div class="box-container">
-                <img class="box-content box-img" src="<?php echo base_url();?>assets/img/homepagepict.jpg" alt="">
-                <div class="box-content box-title">BLOCK TITLE</div>
-                <div class="box-content box-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto eveniet fugiat harum quidem quibusdam esse</div>
+                <img class="box-content box-img" src="<?php echo base_url();?>upload/artikel/<?php echo $art->gambar_post?>" alt="">
+                <div class="box-content box-title"><?php echo $art->judul_post?></div>
+                <div class="box-content box-text"><?php echo word_limit($art->isi_post, 10);?></div>
             </div>
-            <div class="box-container">
+            <?php endforeach; ?>
+            <!-- <div class="box-container">
                 <img class="box-content box-img" src="<?php echo base_url();?>assets/img/lake.jpg" alt="">
                 <div class="box-content box-title">BLOCK TITLE</div>
                 <div class="box-content box-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto eveniet fugiat harum quidem quibusdam esse</div>
@@ -67,7 +79,7 @@
                 <img class="box-content box-img" src="<?php echo base_url();?>assets/img/people.jpg" alt="">
                 <div class="box-content box-title">BLOCK TITLE</div>
                 <div class="box-content box-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto eveniet fugiat harum quidem quibusdam esse</div>
-            </div>
+            </div> -->
         </div>
         <!-- ------------------------END box buat artikel/promosi------------------------------------------- -->
 

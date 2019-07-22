@@ -378,6 +378,41 @@ class Admin extends CI_Controller {
                 redirect(base_url("Admin/kelola_blog"));
         }
      }
+     public function tambah_artikel()
+	{
+		$this->load->view('admin/template/head');
+		$this->load->view('admin/template/sidebar');
+		$this->load->view('admin/tambah_artikel');
+		$this->load->view('admin/template/foot');
+	}
+     public function set_artikel()
+     {
+        $config['upload_path']          = './upload/artikel/';
+        $config['allowed_types']        = 'jpg|png';
+        $config['maintain_ratio'] 		= TRUE;
+        $config['encrypt_name'] 		= TRUE;
+
+        $this->load->library('upload', $config);
+
+        if ( ! $this->upload->do_upload('fileupload'))
+        {
+                $error = array('error' => $this->upload->display_errors());
+
+                redirect($_SERVER['HTTP_REFERER'], $error);
+        }
+        else
+        {
+        		$upload_data = $this->upload->data();
+            	$data = array('upload_data' => $upload_data);
+            	$img = $upload_data['file_name'];
+
+     			$judul = $this->input->post('judul');
+     			$para = $this->input->post('para');
+
+                $this->Post_model->set_artikel($judul, $para, $img);
+                redirect(base_url("Admin/kelola_blog"));
+        }
+     }
 // -------------------------------------------END Data blog----------------------------------------------
 	
 }
