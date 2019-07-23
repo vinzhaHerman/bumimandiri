@@ -95,7 +95,7 @@
             <div class="col-md-8">
               <div class="card">
                 <div class="card-header card-header-primary">
-                  <h4 class="card-title">Edit Profile</h4>
+                  <h4 class="card-title">View/Edit Profile</h4>
                   <p class="card-category">Complete your profile</p>
                 </div>
                 <div class="card-body">
@@ -133,20 +133,8 @@
                     <div class="row">
                       <div class="col-md-4">
                         <div class="form-group">
-                          <label class="bmd-label-floating">City</label>
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">Country</label>
-                          <input type="text" class="form-control">
-                        </div>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">Postal Code</label>
-                          <input type="text" class="form-control">
+                          <label class="bmd-label-floating">No. telp</label>
+                          <input type="text" class="form-control" value="<?php echo $res['telp']?>">
                         </div>
                       </div>
                     </div>

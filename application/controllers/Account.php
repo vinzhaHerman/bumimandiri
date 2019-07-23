@@ -38,14 +38,6 @@ class Account extends CI_Controller {
         $fileupload = $this->input->post('fileupload');
 		$this->load->view('user/upload', $data, array('error' => ' ' ));
 	}
-	
-	public function upload_file()
-	{
-		$fileupload = $this->input->post('fileupload');
-		$kode = $this->input->post('kode_reservasi');
-		$this->Pemesanan->upload_file($fileupload, $kode);
-		echo "success";
-	}
 
 	 public function do_upload()
      {
@@ -71,6 +63,33 @@ class Account extends CI_Controller {
      			$kode = $this->input->post('kode');
 
                 $this->Pemesanan->upload_bukti($bukti,$kode);
+                redirect(base_url("Account"));
+        }
+     }
+
+     public function update_foto()
+     {
+        $config['upload_path']          = './upload/user/profile_photos/';
+        $config['allowed_types']        = 'jpg|png';
+        $config['maintain_ratio'] 		= TRUE;
+        $config['encrypt_name'] 		= TRUE;
+
+        $this->load->library('upload', $config);
+
+        if ( ! $this->upload->do_upload('fileupload'))
+        {
+                $error = array('error' => $this->upload->display_errors());
+
+                redirect($_SERVER['HTTP_REFERER'], $error);
+        }
+        else
+        {
+        		$upload_data = $this->upload->data();
+            	$data = array('upload_data' => $upload_data);
+            	$foto = $upload_data['file_name'];
+     			$id = $this->session->userdata('id')
+
+                $this->Pelanggan_model->update_foto($foto,$id);
                 redirect(base_url("Account"));
         }
      }

@@ -77,25 +77,6 @@
 
 
 
-          <!-- <div class="card">
-            <div class="card-header card-header-primary">
-              <h4 class="card-title">Material Dashboard Heading</h4>
-              <p class="card-category">Created using Roboto Font Family</p>
-            </div>
-            <div class="card-body">
-              <div id="typography">
-                <div class="card-title">
-                  <h2>Typography</h2>
-                </div>
-                <div class="row">
-                </div>
-              </div>
-            </div>
-          </div> -->
-
-
-
-
 
           <div class="">
               <div class="card">
@@ -231,6 +212,7 @@
 
 
 
+
         </div>
       </div>
       <footer class="footer">
@@ -264,6 +246,7 @@
             <script>
               document.write(new Date().getFullYear())
             </script>
+
             <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a>
           </div>
         </div>

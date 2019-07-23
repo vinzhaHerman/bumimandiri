@@ -129,6 +129,21 @@
                 </div>
               </div>
             </div>
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header card-header-info">
+            </div>
+            <div class="card-body">
+              <div id="typography">
+                <div class="card-title">
+                  <canvas id="myChart" width="80" height="30"></canvas>
+                </div>
+                <div class="row">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
 
 
@@ -167,6 +182,38 @@
             <script>
               document.write(new Date().getFullYear())
             </script>
+<script>
+var ctx = document.getElementById('myChart').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+        labels: ['Red', 'Blue', 'Yellow'],
+        datasets: [{
+            label: '# of Votes',
+            data: [12, 19, 3],
+            backgroundColor: [
+                'rgba(255, 99, 132)',
+                'rgba(54, 162, 235)',
+                'rgba(255, 206, 86)',
+                'rgba(75, 192, 192)',
+                'rgba(153, 102, 255)',
+                'rgba(255, 159, 64)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+    }
+});
+</script>
             <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a>
           </div>
         </div>

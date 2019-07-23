@@ -157,7 +157,7 @@
                           </div>
                           <div class="card-body" style="min-height: 280px;">
                               <div class="row mx-auto">
-                                <a href="<?php echo base_url().'upload/bukti/'.$res['bukti'];?>" class="mx-auto"><img src="<?php echo base_url().'upload/bukti/'.$res['bukti'];?>" alt="<?php echo base_url().'upload/bukti/default.jpg'?>" class="img-thumbnail mx-auto" style="max-height: 250px;"></a>
+                                <a href="<?php echo base_url().'upload/bukti/'.$res['bukti'];?>" class="mx-auto"><img src="<?php echo base_url().'upload/bukti/'.$res['bukti'];?>" onerror="this.onerror=null; this.src='<?php echo base_url().'upload/bukti/default.jpg'?>'" alt="" class="img-thumbnail mx-auto" style="max-height: 250px;"></a>
                               </div>
                               <div class="clearfix"></div>
                           </div>

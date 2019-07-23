@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 23, 2019 at 08:43 AM
+-- Generation Time: Jul 21, 2019 at 06:57 PM
 -- Server version: 10.3.15-MariaDB
 -- PHP Version: 7.3.6
 
@@ -31,16 +31,17 @@ USE `bumimandiri`;
 --
 
 DROP TABLE IF EXISTS `admins`;
-CREATE TABLE `admins` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `admins` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL,
   `nama` varchar(80) NOT NULL,
   `email` varchar(50) NOT NULL,
   `telp` varchar(20) NOT NULL,
   `foto` varchar(100) NOT NULL,
-  `level` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `level` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `admins`
@@ -58,11 +59,12 @@ INSERT INTO `admins` (`id`, `username`, `password`, `nama`, `email`, `telp`, `fo
 --
 
 DROP TABLE IF EXISTS `fasilitas`;
-CREATE TABLE `fasilitas` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `fasilitas` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `nama_fasilitas` varchar(80) NOT NULL,
   `deskripsi` varchar(100) NOT NULL,
-  `gambar_fasilitas` varchar(100) NOT NULL
+  `gambar_fasilitas` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -72,11 +74,12 @@ CREATE TABLE `fasilitas` (
 --
 
 DROP TABLE IF EXISTS `memesan`;
-CREATE TABLE `memesan` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `memesan` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `pelanggan_id` int(11) NOT NULL,
-  `paket_riwayat_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `paket_riwayat_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `memesan`
@@ -92,11 +95,12 @@ INSERT INTO `memesan` (`id`, `pelanggan_id`, `paket_riwayat_id`) VALUES
 --
 
 DROP TABLE IF EXISTS `paket_jenis`;
-CREATE TABLE `paket_jenis` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `paket_jenis` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `nama_paket` varchar(30) NOT NULL,
-  `deskripsi` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `deskripsi` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `paket_jenis`
@@ -114,8 +118,8 @@ INSERT INTO `paket_jenis` (`id`, `nama_paket`, `deskripsi`) VALUES
 --
 
 DROP TABLE IF EXISTS `paket_program`;
-CREATE TABLE `paket_program` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `paket_program` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `nama_program` varchar(30) NOT NULL,
   `fasilitas` varchar(100) NOT NULL,
   `konsumsi` varchar(80) NOT NULL,
@@ -125,8 +129,9 @@ CREATE TABLE `paket_program` (
   `minkapasitas` int(11) NOT NULL,
   `kapasitas` int(11) NOT NULL,
   `status` int(11) NOT NULL,
-  `paket_jenis_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `paket_jenis_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `paket_program`
@@ -152,14 +157,15 @@ INSERT INTO `paket_program` (`id`, `nama_program`, `fasilitas`, `konsumsi`, `lam
 --
 
 DROP TABLE IF EXISTS `paket_riwayat`;
-CREATE TABLE `paket_riwayat` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `paket_riwayat` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `check_in` date NOT NULL,
   `check_out` date NOT NULL,
   `reservasi_id` int(11) NOT NULL,
   `paket_program_id` int(11) NOT NULL,
-  `pelanggan_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `pelanggan_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `paket_riwayat`
@@ -176,7 +182,7 @@ INSERT INTO `paket_riwayat` (`id`, `check_in`, `check_out`, `reservasi_id`, `pak
 --
 
 DROP TABLE IF EXISTS `pelanggan`;
-CREATE TABLE `pelanggan` (
+CREATE TABLE IF NOT EXISTS `pelanggan` (
   `id` int(11) NOT NULL,
   `nama_depan` varchar(80) NOT NULL,
   `nama_belakang` varchar(80) NOT NULL,
@@ -185,17 +191,17 @@ CREATE TABLE `pelanggan` (
   `password` char(60) NOT NULL,
   `alamat` text NOT NULL,
   `telp` varchar(16) NOT NULL,
-  `foto_profil` varchar(100) NOT NULL,
-  `tgl_reg` date NOT NULL
+  `tgl_reg` date NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `pelanggan`
 --
 
-INSERT INTO `pelanggan` (`id`, `nama_depan`, `nama_belakang`, `email`, `username`, `password`, `alamat`, `telp`, `foto_profil`, `tgl_reg`) VALUES
-(1, 'andreas', 'chandra', 'adnreaschan@gmail.com', 'chandra', '123', '', '021', '', '2019-06-28'),
-(2, 'mimi', 'nekochan', 'nekomimi@hotmail.com', 'nekomimi', '1234', '', '022', '', '2019-07-01');
+INSERT INTO `pelanggan` (`id`, `nama_depan`, `nama_belakang`, `email`, `username`, `password`, `alamat`, `telp`, `tgl_reg`) VALUES
+(1, 'andreas', 'chandra', 'adnreaschan@gmail.com', 'chandra', '123', '', '021', '2019-06-28'),
+(2, 'mimi', 'nekochan', 'nekomimi@hotmail.com', 'nekomimi', '1234', '', '022', '2019-07-01');
 
 -- --------------------------------------------------------
 
@@ -204,27 +210,15 @@ INSERT INTO `pelanggan` (`id`, `nama_depan`, `nama_belakang`, `email`, `username
 --
 
 DROP TABLE IF EXISTS `post`;
-CREATE TABLE `post` (
+CREATE TABLE IF NOT EXISTS `post` (
   `id` int(11) NOT NULL,
   `judul_post` varchar(80) NOT NULL,
   `isi_post` varchar(100) NOT NULL,
   `gambar_post` varchar(100) NOT NULL,
-  `date_created` date NOT NULL,
-  `post_type` int(11) NOT NULL
+  `slug` varchar(80) NOT NULL,
+  `post_type` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `post`
---
-
-INSERT INTO `post` (`id`, `judul_post`, `isi_post`, `gambar_post`, `date_created`, `post_type`) VALUES
-(1, 'judul promosi 1', 'isi promosi 1', '90c83ce29a931801ba737eb14af5d76d.jpg', '2019-07-22', 1),
-(2, 'judul artikel 1', 'isi artikel 1', 'b36e5ec962aaba5427690391afd6371e.jpg', '2019-07-22', 2),
-(3, 'judul event 1', 'isi event 1', '', '2019-07-22', 3),
-(4, 'judul promosi 2', '<p>isi promosi 2</p>', '4db737bc2f1a3986dd5f3ee63d3fc3fa.jpg', '2019-07-22', 1),
-(5, 'judul artikel 2', '<p>isi artikel 2</p>', '5f87f6d5a6736ae7d4f113b67cf251e3.jpg', '2019-07-22', 2),
-(6, 'judul artikel 3', '<p>isi artikel 3</p>', '1f517f2185ca8fad362cb23fe00ce46c.jpg', '2019-07-22', 2),
-(7, 'judul promosi 3', '<p>isi promosi 3</p>', '00fef98f15c301c03803ade565640e7a.jpg', '2019-07-22', 1);
 
 -- --------------------------------------------------------
 
@@ -233,8 +227,8 @@ INSERT INTO `post` (`id`, `judul_post`, `isi_post`, `gambar_post`, `date_created
 --
 
 DROP TABLE IF EXISTS `reservasi`;
-CREATE TABLE `reservasi` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `reservasi` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `kode_reservasi` char(20) NOT NULL,
   `tgl_masuk` date NOT NULL,
   `tgl_keluar` date NOT NULL,
@@ -243,8 +237,10 @@ CREATE TABLE `reservasi` (
   `tagihan` int(11) NOT NULL,
   `pembayaran` varchar(20) NOT NULL,
   `id_pelanggan` int(11) NOT NULL,
-  `bukti` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `bukti` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `kode_reservasi` (`kode_reservasi`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `reservasi`
@@ -263,136 +259,14 @@ INSERT INTO `reservasi` (`id`, `kode_reservasi`, `tgl_masuk`, `tgl_keluar`, `pak
 --
 
 DROP TABLE IF EXISTS `testimoni`;
-CREATE TABLE `testimoni` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `testimoni` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `summary` varchar(100) NOT NULL,
   `paragraph` int(100) NOT NULL,
   `tgl_testimoni` datetime NOT NULL,
-  `id_pelanggan` int(11) NOT NULL
+  `id_pelanggan` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `admins`
---
-ALTER TABLE `admins`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `fasilitas`
---
-ALTER TABLE `fasilitas`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `memesan`
---
-ALTER TABLE `memesan`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `paket_jenis`
---
-ALTER TABLE `paket_jenis`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `paket_program`
---
-ALTER TABLE `paket_program`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `paket_riwayat`
---
-ALTER TABLE `paket_riwayat`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `pelanggan`
---
-ALTER TABLE `pelanggan`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `post`
---
-ALTER TABLE `post`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `reservasi`
---
-ALTER TABLE `reservasi`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `kode_reservasi` (`kode_reservasi`);
-
---
--- Indexes for table `testimoni`
---
-ALTER TABLE `testimoni`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `admins`
---
-ALTER TABLE `admins`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT for table `fasilitas`
---
-ALTER TABLE `fasilitas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `memesan`
---
-ALTER TABLE `memesan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `paket_jenis`
---
-ALTER TABLE `paket_jenis`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT for table `paket_program`
---
-ALTER TABLE `paket_program`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
-
---
--- AUTO_INCREMENT for table `paket_riwayat`
---
-ALTER TABLE `paket_riwayat`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
--- AUTO_INCREMENT for table `post`
---
-ALTER TABLE `post`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
--- AUTO_INCREMENT for table `reservasi`
---
-ALTER TABLE `reservasi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
-
---
--- AUTO_INCREMENT for table `testimoni`
---
-ALTER TABLE `testimoni`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

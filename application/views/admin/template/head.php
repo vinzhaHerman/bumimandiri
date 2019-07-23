@@ -15,6 +15,10 @@
   	<!-- CSS Files -->
   	<link href="<?php echo base_url();?>/assets/css/material-dashboard.css" rel="stylesheet" />
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.18/b-1.5.6/b-print-1.5.6/r-2.2.2/sc-2.0.0/datatables.min.css"/>
-	<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js"></script>
-  	<script>tinymce.init({selector:'textarea'});</script>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css">
+	<script src="<?php echo base_url();?>/assets/js/core/jquery.min.js" type="text/javascript"></script>
+	<!-- Plugin for the momentJs  -->
+ 	<script src="<?php echo base_url();?>/assets/js/plugins/moment.min.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
 </head>
