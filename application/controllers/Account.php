@@ -25,6 +25,19 @@ class Account extends CI_Controller {
 		$this->load->view('user/user_profile', $data);
 	}
 
+	public function update_profile()
+	{
+		$namadepan = $this->input->post('namadepan');
+		$namabelakang = $this->input->post('namabelakang');
+		$email = $this->input->post('email');
+		$username = $this->input->post('username');
+		$alamat = $this->input->post('alamat');
+		$telp = $this->input->post('telp');
+		$userid = $this->session->userdata('id');
+		$this->Pelanggan_model->update_profile($namadepan,$namabelakang,$email,$username,$alamat,$telp,$userid);
+		redirect(base_url("Account"));
+	}
+
 
 	public function upload_bukti($id="")
 	{
@@ -87,7 +100,7 @@ class Account extends CI_Controller {
         		$upload_data = $this->upload->data();
             	$data = array('upload_data' => $upload_data);
             	$foto = $upload_data['file_name'];
-     			$id = $this->session->userdata('id')
+     			$id = $this->session->userdata('id');
 
                 $this->Pelanggan_model->update_foto($foto,$id);
                 redirect(base_url("Account"));

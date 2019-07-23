@@ -76,6 +76,11 @@ class Pelanggan_model extends CI_Model {
 
 
 
+	function update_profile($namadepan,$namabelakang,$email,$username,$alamat,$telp,$userid){
+    	$result=$this->db->query("UPDATE pelanggan SET nama_depan='$namadepan', nama_belakang='$namabelakang', email='$email', username='$username', alamat='$alamat', telp='$telp' WHERE id='$userid'");
+        return $result;
+    }
+
 
 	function update_foto($foto,$id){
 		$result=$this->db->query("UPDATE pelanggan SET foto_profil='$foto' WHERE id='$id'");

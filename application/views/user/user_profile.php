@@ -20,20 +20,17 @@
 
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#"><b>BUMI MANDIRI</b></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-    </button>
+    <a class="navbar-brand" href="<?php echo base_url();?>"><b>BUMI MANDIRI</b></a>
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item dropdown pull-right">
-          <a class="nav-link" href="#pablo" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My Account</a>
+          <a class="nav-link" href="#pablo" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
             <a class="dropdown-item" href="#">Profile</a>
             <a class="dropdown-item" href="#">Settings</a>
         </li>
       </ul>
-    <a class="navbar-brand" href="#">Form Pemesanan</a>
+    <a class="navbar-brand pull-right" href="#">User Profile</a>
     </div>
   </nav>
   
@@ -47,12 +44,18 @@
                 <div class="card-body">
                 <div class="card-avatar">
                   <a href="#pablo">
-                    <img class="img" src="<?php echo base_url();?>/assets/img/faces/marc.jpg" />
+                    <img class="img" src="<?php echo base_url();?>/upload/user/profile_photos/<?php echo $post->foto_profil  ?>" />
                   </a>
                 </div>
                   <h6 class="card-category text-gray">User Account</h6>
                   <h4 class="card-title"><?php echo $post->nama_depan  ?></h4>
-                  <a href="#pablo" class="btn btn-primary btn-round">Ganti Foto</a>
+                  <a href="#pablo" class="btn btn-primary btn-round" data-toggle="collapse" data-target="#collapsedContent1" aria-expanded="false" aria-controls="collapsedContent1">Ganti Foto</a>
+                  <div class="collapse" id="collapsedContent1">
+                    <?php echo form_open_multipart('Account/update_foto');?>
+                    <input type="file" name="fileupload" id="fileupload">
+                    <button type="submit" class="btn btn-sm btn-success btn-round">Upload</button>
+                    </form>
+                  </div>
                 </div>
               </div>
               <div class="card card-profile">
@@ -63,7 +66,7 @@
                 <div class="card-body">
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item"><a href="<?php echo base_url();?>">Ke Halaman Utama</a></li>
-                        <li class="list-group-item"><a href="<?php echo base_url();?>">Ke Halaman Pemesanan</a></li>
+                        <li class="list-group-item"><a href="<?php echo base_url();?>Booking">Ke Halaman Pemesanan</a></li>
                         <li class="list-group-item"><a href="<?php echo base_url('web/logout'); ?>">Logout</a></li>
                     </ul>
                 </div>
@@ -72,11 +75,11 @@
             <div class="col-md-8">
               <div class="card">
                 <div class="card-header card-header-primary">
-                  <h4 class="card-title">Edit Profile</h4>
+                  <h4 class="card-title">View/Edit Profile</h4>
                   <p class="card-category">Complete your profile</p>
                 </div>
                 <div class="card-body">
-                  <form action="<?php echo base_url('web/auth'); ?>" method="post">
+                  <form action="<?php echo base_url('Account/update_profile'); ?>" method="post">
                     <div class="row">
                       <div class="col-md-3">
                         <div class="form-group">
@@ -95,21 +98,21 @@
                       <div class="col-md-6">
                         <div class="form-group">
                           <label class="bmd-label-floating">Nama Depan</label>
-                          <input type="text" class="form-control" name="nama_depan" value="<?php echo $post->nama_depan  ?>">
+                          <input type="text" class="form-control" name="namadepan" value="<?php echo $post->nama_depan  ?>">
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="form-group">
                           <label class="bmd-label-floating">Nama Belakang</label>
-                          <input type="text" class="form-control" name="nama_belakang" value="<?php echo $post->nama_belakang  ?>">
+                          <input type="text" class="form-control" name="namabelakang" value="<?php echo $post->nama_belakang  ?>">
                         </div>
                       </div>
                     </div>
                     <div class="row">
                       <div class="col-md-12">
                         <div class="form-group">
-                          <label class="bmd-label-floating" name="alamat">Alamat</label>
-                          <input type="text" class="form-control">
+                          <label class="bmd-label-floating">Alamat</label>
+                          <input type="text" class="form-control" name="alamat" value="<?php echo $post->alamat  ?>">
                         </div>
                       </div>
                     </div>
