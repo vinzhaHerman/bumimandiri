@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 23, 2019 at 11:18 AM
--- Server version: 10.1.28-MariaDB
--- PHP Version: 7.1.10
+-- Generation Time: Jul 23, 2019 at 08:43 AM
+-- Server version: 10.3.15-MariaDB
+-- PHP Version: 7.3.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -38,7 +38,6 @@ CREATE TABLE `admins` (
   `nama` varchar(80) NOT NULL,
   `email` varchar(50) NOT NULL,
   `telp` varchar(20) NOT NULL,
-  `alamat` varchar(100) NOT NULL,
   `foto` varchar(100) NOT NULL,
   `level` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -47,10 +46,44 @@ CREATE TABLE `admins` (
 -- Dumping data for table `admins`
 --
 
-INSERT INTO `admins` (`id`, `username`, `password`, `nama`, `email`, `telp`, `alamat`, `foto`, `level`) VALUES
-(1, 'admin', 'admin', 'Super Admin', 'admin@system.com', '888', '', '', 1),
-(2, 'doyok', 'doyok', 'Doyok Bewok', 'example@mail.com', '0990', '', '', 2),
-(3, 'vinzhaherman', 'cucuandung', 'Vinzha herman', 'example1@mail.com', '0123', '', '', 1);
+INSERT INTO `admins` (`id`, `username`, `password`, `nama`, `email`, `telp`, `foto`, `level`) VALUES
+(1, 'admin', 'admin', 'Super Admin', 'admin@system.com', '888', '', 1),
+(2, 'doyok', 'doyok', 'Doyok Bewok', 'example@mail.com', '0990', '', 2),
+(3, 'vinzhaherman', 'cucuandung', 'Vinzha herman', 'example1@mail.com', '0123', '', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `fasilitas`
+--
+
+DROP TABLE IF EXISTS `fasilitas`;
+CREATE TABLE `fasilitas` (
+  `id` int(11) NOT NULL,
+  `nama_fasilitas` varchar(80) NOT NULL,
+  `deskripsi` varchar(100) NOT NULL,
+  `gambar_fasilitas` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `memesan`
+--
+
+DROP TABLE IF EXISTS `memesan`;
+CREATE TABLE `memesan` (
+  `id` int(11) NOT NULL,
+  `pelanggan_id` int(11) NOT NULL,
+  `paket_riwayat_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `memesan`
+--
+
+INSERT INTO `memesan` (`id`, `pelanggan_id`, `paket_riwayat_id`) VALUES
+(1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -249,6 +282,18 @@ ALTER TABLE `admins`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `fasilitas`
+--
+ALTER TABLE `fasilitas`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `memesan`
+--
+ALTER TABLE `memesan`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `paket_jenis`
 --
 ALTER TABLE `paket_jenis`
@@ -300,6 +345,18 @@ ALTER TABLE `testimoni`
 --
 ALTER TABLE `admins`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `fasilitas`
+--
+ALTER TABLE `fasilitas`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `memesan`
+--
+ALTER TABLE `memesan`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `paket_jenis`
