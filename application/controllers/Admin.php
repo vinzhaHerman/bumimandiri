@@ -179,7 +179,7 @@ class Admin extends CI_Controller {
 		$data=array('res'=>$this->Paket_model->get_paket());
 		$this->load->view('admin/template/head');
 		$this->load->view('admin/template/sidebar');
-		$this->load->view('admin/laporan_paket', $data);
+		$this->load->view('admin/paket_laporan', $data);
 		$this->load->view('admin/template/foot');
 	}
 	public function set_paket(){

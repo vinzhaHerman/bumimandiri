@@ -12,23 +12,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
   <div class="main-wrapper">
     <div class="form-wrapper">
-    <form action="action_page.php">
+    <form action="<?php echo base_url('Register/daftar');?>" method="post">
       <div class="container">
         <div class="imgcontainer-register">
           <img src="<?php echo base_url();?>assets/logos/mixed.png" alt="Avatar" class="avatar-register">
         </div>
       <h1 class="form-title">Sign Up</h1>
-      <input type="text" placeholder="Nama Lengkap" name="name" required>
+      <input type="text" placeholder="Nama Depan" name="namadepan" required>
 
-      <input type="text" placeholder="Masukan username anda" name="user" required>
+      <input type="text" placeholder="Nama Belakang" name="namabelakang" required>
+
+      <input type="text" placeholder="Masukan username anda" name="username" required>
 
       <input type="text" placeholder="Email address" name="email" required>
 
-      <input type="password" placeholder="Password" name="psw" required>
+      <input type="password" placeholder="Password" name="password" required>
 
-      <input type="password" placeholder="Ketik Ulang Password" name="psw-repeat" required>
-
-      <input type="text" placeholder="Nomor Telepon" name="no_telp" required>
+      <input type="password" placeholder="Ketik Ulang Password" name="confirm_password" required>
 
       <p class="agreement">Saya menyetujui <a href="http://localhost/bumimandiri/syaratdanketentuan" style="color:dodgerblue">Syarat dan Ketentuan</a> yang berlaku.</p>
 
