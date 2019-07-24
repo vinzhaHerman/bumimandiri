@@ -93,7 +93,6 @@
               <div class="card">
                 <div class="card-header card-header-primary">
                   <h3 class="card-title">Data Pelanggan</h3>
-                  <a href="<?php echo base_url() ?>admin/add_petugas" class="btn btn-warning btn-sm">+ Tambah Data</a>
                 </div>
                 <div class="card-body table-responsive">
                   <table id="myTable" class="table table-hover  table-striped">
@@ -103,7 +102,6 @@
                       <th>Username</th>
                       <th>Email</th>
                       <th>No. Telp</th>
-                      <th>Aksi</th>
                     </thead>
                     <tbody>
                     <?php $no=1; ?>
@@ -120,14 +118,6 @@
                         <td><?php echo $post->username?></td>
                         <td><?php echo $post->email?></td>
                         <td><?php echo $post->telp?></td>
-                        <td class="td-actions text-right">
-                              <a href="<?php echo base_url() ?>Admin/detail_pelanggan/<?php echo $post->id?>" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
-                                <i class="material-icons">settings</i>
-                              </a>
-                              <a href="<?php echo base_url() ?>Admin/delete_petugas/<?php echo $post->id?>" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
-                                <i class="material-icons">close</i>
-                              </a>
-                            </td>
                       </tr>
                     <?php endforeach; ?></tbody>
                   </table>
