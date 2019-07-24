@@ -7,7 +7,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/auth.css">
-  <title>Register</title>
+  <title>Daftar</title>
 </head>
 <body>
   <div class="main-wrapper">
@@ -17,7 +17,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="imgcontainer-register">
           <img src="<?php echo base_url();?>assets/logos/mixed.png" alt="Avatar" class="avatar-register">
         </div>
-      <h1 class="form-title">Sign Up</h1>
+      <h1 class="form-title">Daftar</h1>
       <input type="text" placeholder="Nama Depan" name="namadepan" required>
 
       <input type="text" placeholder="Nama Belakang" name="namabelakang" required>
@@ -33,8 +33,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <p class="agreement">Saya menyetujui <a href="http://localhost/bumimandiri/syaratdanketentuan" style="color:dodgerblue">Syarat dan Ketentuan</a> yang berlaku.</p>
 
       <div class="clearfix">
-        <button type="submit" class="positive-button">Sign Up</button>
-        <a href="http://localhost/bumimandiri/"><button type="button" class="negative-button">Cancel</button></a>
+        <button type="submit" class="positive-button">Daftar</button>
+        <a href="http://localhost/bumimandiri/"><button type="button" class="negative-button">Batal</button></a>
       </div>
     </div>
   </form>

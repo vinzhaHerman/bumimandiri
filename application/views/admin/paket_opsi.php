@@ -103,7 +103,7 @@
                       <div class="col-md-4 col-sm-4">
                         <div class="card">
                           <div class="card-header card-header-warning">
-                            <h6 class="card-title">Thumbnail Paket</h6>
+                            <h6 class="card-title">Daftar Paket</h6>
                           </div>
                           <div class="card-body" style="min-height: 280px;">
                               <div class="row mx-auto">
@@ -134,9 +134,10 @@
                         <textarea name="deskripsi"><?php echo $res['deskripsi']?></textarea>
                       </div>
                     </div>
+
+                    <div class="clearfix">
                     <button type="submit" class="btn btn-primary pull-right">Simpan</button>
-                    <button class="btn btn-warning pull-right">Batal</button>
-                    <div class="clearfix"></div>
+                  </div>
                   </form>
                 </div>
               </div>

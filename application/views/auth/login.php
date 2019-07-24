@@ -17,22 +17,22 @@
 
   <div class="container">
     <div class="form-container">
-    <label for="username">Username</label>
+    <label for="username">Nama Pengguna</label>
     <input type="text" placeholder="Enter Username" name="username" required>
     </div>
 
     <div class="form-container">
-    <label for="password">Password</label>
+    <label for="password">Kata Sandi</label>
     <input type="password" placeholder="Enter Password" name="password" required>
     </div>
 
     <p class="mid-text">Belum punya akun? <a href="http://localhost/bumimandiri/register">daftar sekarang</a></p>
-    <button class="positive-button" type="submit">Login</button>
+    <button class="positive-button" type="submit">Masuk</button>
   </div>
 
   <div class="button-container">
     <a class="links" href="http://localhost/bumimandiri/web"><button type="button" class="negative-button">Kembali</button></a>
-    <p class="bottom-text"><a href="http://localhost/bumimandiri/lupapass">Forgot Password?</a></p>
+    <p class="bottom-text"><a href="http://localhost/bumimandiri/lupapass">Lupa password?</a></p>
   </div>
   </form>
   </div>
