@@ -17,15 +17,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="imgcontainer-register">
           <img src="<?php echo base_url();?>assets/logos/mixed.png" alt="Avatar" class="avatar-register">
         </div>
-      <h1 class="form-title">Forget Password?</h1>
+      <h1 class="form-title">Lupa Password?</h1>
       <input type="text" placeholder="Masukan username anda" name="user" required>
 
       <input type="text" placeholder="Email address" name="email" required>
 
 
       <div class="clearfix">
-        <button type="submit" class="positive-button">Submit</button>
-        <a href="http://localhost/bumimandiri/login"><button type="button" class="negative-button">Cancel</button></a>
+        <button type="submit" class="positive-button">Setuju</button>
+        <a href="http://localhost/bumimandiri/login"><button type="button" class="negative-button">Batal</button></a>
       </div>
     </div>
   </form>

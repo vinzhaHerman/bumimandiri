@@ -92,7 +92,7 @@
           <div class="">
               <div class="card">
                 <div class="card-header card-header-primary">
-                  <h3 class="card-title">Data Paket</h3>
+                  <h3 class="card-title">Data Program</h3>
                   <a href="<?php echo base_url() ?>admin/tambah_program" class="btn btn-warning btn-sm">+ Tambah Program</a>
                 </div>
                 <div class="card-body table-responsive">

@@ -7,7 +7,7 @@
         Tip 2: you can also add an image using data-image tag
     -->
       <div class="logo">
-        <a href="http://localhost/bumimmandiri/admin" class="simple-text logo-normal">
+        <a href="<?php echo base_url()?>Admin" class="simple-text logo-normal">
           Bumi Mandiri
         </a>
       </div>
@@ -45,7 +45,7 @@
             </a>
             <div class="collapse" id="submenu1" aria-expanded="false">
                 <ul class="flex-column pl-2 nav">
-                    <li class="nav-item"><a class="nav-link" href="<?php echo base_url()?>Admin/waiting_list"><i class="material-icons">library_books</i>Waiting list</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?php echo base_url()?>Admin/waiting_list"><i class="material-icons">library_books</i>Daftar Tunggu</a></li>
                     <li class="nav-item"><a class="nav-link" href="<?php echo base_url()?>Admin/reservasi"><i class="material-icons">library_books</i>Sedang Berlangsung</a></li>
                 </ul>
             </div>

@@ -87,13 +87,13 @@
                       <ul class="nav nav-tabs" data-tabs="tabs">
                         <li class="nav-item">
                           <a class="nav-link active" href="#profile" data-toggle="tab">
-                            Promosi
+                            Atikel
                             <div class="ripple-container"></div>
                           </a>
                         </li>
                         <li class="nav-item">
                           <a class="nav-link" href="#messages" data-toggle="tab">
-                            Artikel
+                            Disarankan
                             <div class="ripple-container"></div>
                           </a>
                         </li>
@@ -116,7 +116,7 @@
                             <td>
                               <!-- some content -->
                             </td>
-                            <td><a href="<?php echo base_url(); ?>Admin/tambah_promosi"><b>+ TAMBAH PROMOSI</b></a></td>
+                            <td><a href="<?php echo base_url(); ?>Admin/tambah_promosi"><b>+ TAMBAH Artikel</b></a></td>
                           </tr>
                           <?php $no=1; ?>
                           <?php 
@@ -150,7 +150,7 @@
                             <td>
                               <!-- some content -->
                             </td>
-                            <td><a href="<?php echo base_url(); ?>Admin/tambah_artikel"><b>+ TAMBAH ARTIKEL</b></a></td>
+                            <td><a href="<?php echo base_url(); ?>Admin/tambah_artikel"><b>+ TAMBAH Disarankan</b></a></td>
                           </tr>
                           <?php $no=1; ?>
                           <?php 
