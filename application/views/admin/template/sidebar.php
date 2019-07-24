@@ -70,12 +70,12 @@
               <p>Blogs</p>
             </a>
           </li>
-          <li class="nav-item ">
+          <!-- <li class="nav-item ">
             <a class="nav-link" href="./notifications.html">
               <i class="material-icons">perm_media</i>
               <p>Gallery</p>
             </a>
-          </li>
+          </li> -->
 
 
 

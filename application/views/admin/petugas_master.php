@@ -93,7 +93,7 @@
               <div class="card">
                 <div class="card-header card-header-primary">
                   <h3 class="card-title">Data Petugas</h3>
-                  <a href="<?php echo base_url() ?>admin/add_petugas" class="btn btn-warning btn-sm">+ Tambah Data</a>
+                  <a href="<?php echo base_url() ?>admin/tambah_petugas" class="btn btn-warning btn-sm">+ Tambah Data</a>
                 </div>
                 <div class="card-body table-responsive">
                   <table id="myTable" class="table table-hover  table-striped">
@@ -123,9 +123,9 @@
                         <td><?php echo $post->telp?></td>
                         <td><?php echo $post->level?></td>
                         <td class="td-actions text-right">
-                              <a href="<?php echo base_url() ?>Admin/ubah_petugas/<?php echo $post->id?>" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
+                              <!-- <a href="Admin/ubah_petugas/" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
                                 <i class="material-icons">settings</i>
-                              </a>
+                              </a> -->
                               <a href="<?php echo base_url() ?>Admin/delete_petugas/<?php echo $post->id?>" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
                                 <i class="material-icons">close</i>
                               </a>

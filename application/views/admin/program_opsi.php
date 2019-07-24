@@ -99,29 +99,37 @@
                   <a href="<?php echo base_url();?>admin/riwayat_program/<?php echo $res['id'] ?>" class="btn btn-warning btn-sm pull-right"><i class="material-icons">lock</i> Lihat riwayat program</a>
                 </div>
                 <div class="card-body">
-                  <form action="<?php echo base_url('admin/update_program'); ?>" method="post">
                     <div class="row">
                       <div class="col-md-4 col-sm-4">
                         <div class="card">
                           <div class="card-header card-header-warning">
-                            <h6 class="card-title">Thumbnail Program</h6>
+                            <h6 class="card-title">Gambar Program</h6>
                           </div>
                           <div class="card-body" style="min-height: 280px;">
                               <div class="row mx-auto">
-                                <img src="<?php echo base_url().'upload/bukti/default.jpg'?>" alt="" class="img-thumbnail mx-auto" style="max-height: 250px;">
+                                <img src="<?php echo base_url().'upload/paket/program/'.$res['program_img'];?>?>" onerror="this.onerror=null; this.src='<?php echo base_url().'upload/bukti/default.jpg'?>'" alt="" class="img-thumbnail mx-auto" style="max-height: 250px;">
+                              </div>
+                              <div class="row mx-auto">
+                                <?php echo form_open_multipart('Admin/update_foto_program');?>
+                                <label>Update/Edit gambar</label>
+                                <input type="file" name="fileupload" id="fileupload">
+                                <input type="text" class="form-control" name="id"  value="<?php echo $res['id']?>" readonly style="max-width: 120px;" hidden>
+                                <button type="submit" class="btn btn-success btn-sm btn-round pull-right" href="#" role="button">Upload</button>
+                                </form>
                               </div>
                               <div class="clearfix"></div>
                           </div>
                         </div>
                       </div>
                       <div class="col-md-4">
+                      <form action="<?php echo base_url('admin/update_program'); ?>" method="post">
                         <div class="form-group">
                           <label class="bmd-label-floating">ID program :</label>
                           <input type="text" class="form-control" name="id"  value="<?php echo $res['id']?>" readonly style="max-width: 120px;">
                         </div>
                         <div class="form-group">
                           <label class="bmd-label-floating">Nama Program*</label>
-                          <input type="text" class="form-control" name="namapaket" value="<?php echo $res['nama_program']?>">
+                          <input type="text" class="form-control" name="namaprogram" value="<?php echo $res['nama_program']?>">
                         </div>
                         <div class="form-group">
                           <label class="bmd-label-floating">Termasuk Dalam Paket:*</label>
@@ -135,37 +143,33 @@
                           <div class="col-md-5">
                             <div class="form-group">
                               <label class="bmd-label-floating">Lama Kegiatan*</label>
-                              <input type="text" class="form-control" name="namapaket" value="<?php echo $res['lama_kegiatan']?>">
+                              <input type="text" class="form-control" name="lama" value="<?php echo $res['lama_kegiatan']?>">
                             </div>
                           </div>
                           <div class="col-md-4">
                             <div class="form-group">
                               <label class="bmd-label-floating">Jumlah Hari*</label>
-                              <input type="text" class="form-control text-center" name="namapaket" value="<?php echo $res['jumlah_hari']?>">
+                              <input type="text" class="form-control text-center" name="jml" value="<?php echo $res['jumlah_hari']?>">
                             </div>
                           </div>
-                        </div>
-                        <div class="form-group">
-                          <label class="bmd-label-floating">Upload/Ganti Thumbnail*</label><br>
-                          <a href="" class="btn btn-primary">Upload</a>
                         </div>
                       </div>
                       <div class="col-md-4">
                         <div class="form-group">
                           <label class="bmd-label-floating">Harga per orang* :</label>
-                          <input type="text" class="form-control" name="id"  value="<?php echo $res['harga']?>">
+                          <input type="text" class="form-control" name="harga"  value="<?php echo $res['harga']?>">
                         </div>
                         <div class="row">
                           <div class="col-md-6">
                             <div class="form-group">
                               <label class="bmd-label-floating">Minimal Peserta*</label>
-                              <input type="text" class="form-control text-center" name="namapaket" value="<?php echo $res['minkapasitas']?>">
+                              <input type="text" class="form-control text-center" name="minkapa" value="<?php echo $res['minkapasitas']?>">
                             </div>
                           </div>
                           <div class="col-md-6">
                             <div class="form-group">
                               <label class="bmd-label-floating">Maksimal Peserta*</label>
-                              <input type="text" class="form-control text-center" name="namapaket" value="<?php echo $res['kapasitas']?>">
+                              <input type="text" class="form-control text-center" name="maxkapa" value="<?php echo $res['kapasitas']?>">
                             </div>
                           </div>
                         </div>
@@ -181,14 +185,14 @@
                     <div class="row">
                       <div class="col-md-12">
                         <label class="bmd-label-floating">Fasilitas*:</label>
-                        <textarea name="deskripsi"><?php echo $res['fasilitas']?></textarea>
+                        <textarea name="fasilitas"><?php echo $res['fasilitas']?></textarea>
                       </div>
                     </div>
                     <hr>
                     <div class="row">
                       <div class="col-md-12">
                         <label class="bmd-label-floating">Konsumsi*:</label>
-                        <textarea name="deskripsi"><?php echo $res['konsumsi']?></textarea>
+                        <textarea name="konsumsi"><?php echo $res['konsumsi']?></textarea>
                       </div>
                     </div>
                     <hr>

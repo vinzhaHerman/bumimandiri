@@ -91,61 +91,93 @@
 
 
 
-          <div class="">
+          <div class="row">
+            <div class="col-md-8">
               <div class="card">
                 <div class="card-header card-header-primary">
-                  <h3 class="card-title">Edit Data Paket</h3>
-                  <a href="<?php echo base_url();?>admin/data_paket" class="btn btn-sm"><i class="material-icons">keyboard_return</i> Kembali</a>
+                  <h4 class="card-title">View/Edit Profile</h4>
+                  <p class="card-category">Complete your profile</p>
                 </div>
                 <div class="card-body">
+                  <form>
                     <div class="row">
-                      <div class="col-md-4 col-sm-4">
-                        <div class="card">
-                          <div class="card-header card-header-warning">
-                            <h6 class="card-title">Gambar Paket</h6>
-                          </div>
-                          <div class="card-body" style="min-height: 280px;">
-                              <div class="row mx-auto">
-                                <img src="<?php echo base_url().'upload/paket/jenis/'.$res['paket_img'];?>?>" onerror="this.onerror=null; this.src='<?php echo base_url().'upload/bukti/default.jpg'?>'" alt="" class="img-thumbnail mx-auto" style="max-height: 250px;">
-                              </div>
-                              <div class="row mx-auto">
-                                <?php echo form_open_multipart('Admin/update_foto_paket');?>
-                                <label>Update/Edit gambar</label>
-                                <input type="file" name="fileupload" id="fileupload">
-                                <input type="text" class="form-control" name="id"  value="<?php echo $res['id']?>" readonly style="max-width: 120px;" hidden>
-                                <button type="submit" class="btn btn-success btn-sm btn-round pull-right" href="#" role="button">Upload</button>
-                                </form>
-                              </div>
-                              <div class="clearfix"></div>
-                          </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Username</label>
+                          <input type="text" class="form-control" value="<?php echo $res['username']?>">
                         </div>
                       </div>
-                      <div class="col-md-8">
-                        <form action="<?php echo base_url('admin/update_paket'); ?>" method="post">
+                      <div class="col-md-6">
                         <div class="form-group">
-                          <label class="bmd-label-floating">ID paket :</label>
-                          <input type="text" class="form-control" name="id"  value="<?php echo $res['id']?>" readonly style="max-width: 120px;">
+                          <label class="bmd-label-floating">Email address</label>
+                          <input type="email" class="form-control" value="<?php echo $res['email']?>">
                         </div>
-                        <div class="form-group">
-                          <label class="bmd-label-floating">Nama Paket</label>
-                          <input type="text" class="form-control" name="namapaket" value="<?php echo $res['nama_paket']?>">
-                        </div>
+                      </div>
+                    </div>
                     <div class="row">
                       <div class="col-md-12">
-                        <label class="bmd-label-floating">Deskripsi:</label>
-                        <textarea name="deskripsi"><?php echo $res['deskripsi']?></textarea>
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Nama Lengkap</label>
+                          <input type="text" class="form-control" value="<?php echo $res['nama']?>">
+                        </div>
                       </div>
                     </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Adress</label>
+                          <input type="text" class="form-control">
+                        </div>
                       </div>
                     </div>
-
-                    <div class="clearfix">
-                    <button type="submit" class="btn btn-primary pull-right">Simpan</button>
-                  </div>
+                    <div class="row">
+                      <div class="col-md-4">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">No. telp</label>
+                          <input type="text" class="form-control" value="<?php echo $res['telp']?>">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label>Alamat</label>
+                          <div class="form-group">
+                            <label class="bmd-label-floating"></label>
+                            <input type="text" class="form-control" value="<?php echo $res['alamat']?>">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary pull-right">Update Profile</button>
+                    <div class="clearfix"></div>
                   </form>
                 </div>
               </div>
             </div>
+            <div class="col-md-4">
+              <div class="card card-profile">
+                <div class="card-avatar">
+                  <a href="#pablo">
+                    <img class="img" src="../assets/img/faces/marc.jpg" />
+                  </a>
+                </div>
+                <div class="card-body">
+                  <h6 class="card-category text-gray">
+                    <?php 
+                      if($res['level']=='1'){echo "Super Admin"; }
+                      else{echo "Petugas";}
+                    ?></h6>
+                  <h4 class="card-title"><?php echo $res['nama']?></h4>
+                  <p class="card-description">
+                    Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
+                  </p>
+                  <!-- <a href="#pablo" class="btn btn btn-round">Ubah Foto</a> -->
+                  <a href="#pablo" class="btn btn-primary btn-round">Log out</a>
+                </div>
+              </div>
+            </div>
+          </div>
 
 
 

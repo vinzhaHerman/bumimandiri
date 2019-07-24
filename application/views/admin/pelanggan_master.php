@@ -102,6 +102,7 @@
                       <th>Username</th>
                       <th>Email</th>
                       <th>No. Telp</th>
+                      <th>Aksi</th>
                     </thead>
                     <tbody>
                     <?php $no=1; ?>
@@ -118,6 +119,11 @@
                         <td><?php echo $post->username?></td>
                         <td><?php echo $post->email?></td>
                         <td><?php echo $post->telp?></td>
+                        <td class="td-actions text-right">
+                              <a href="<?php echo base_url() ?>Admin/detail_pelanggan/<?php echo $post->id?>" rel="tooltip" title="Edit Task" class="btn btn-primary btn-sm">
+                                <i class="material-icons">settings</i>DETAIL
+                              </a>
+                            </td>
                       </tr>
                     <?php endforeach; ?></tbody>
                   </table>

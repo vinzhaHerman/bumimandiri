@@ -79,6 +79,19 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/template/foot');
 	}
 
+	public function profile()
+	{
+		if($this->session->userdata('s_status') != "login"){
+            redirect(base_url("admin/login"));
+        }
+		$data['res']=$this->Petugas_model->get_petugas_byid($this->session->userdata('s_id'));
+		// echo $this->session->userdata('id');
+		$this->load->view('admin/template/head');
+		$this->load->view('admin/template/sidebar');
+		$this->load->view('admin/profil', $data);
+		$this->load->view('admin/template/foot');
+	}
+
 
 
 
@@ -197,6 +210,32 @@ class Admin extends CI_Controller {
 		$this->Paket_model->update_paket($id, $namapaket, $deskripsi);
 		redirect(base_url("admin/data_paket"));
 	}
+	public function update_foto_paket()
+     {
+        $config['upload_path']          = './upload/paket/jenis/';
+        $config['allowed_types']        = 'jpg|png';
+        $config['maintain_ratio'] 		= TRUE;
+        $config['encrypt_name'] 		= TRUE;
+
+        $this->load->library('upload', $config);
+
+        if ( ! $this->upload->do_upload('fileupload'))
+        {
+                $error = array('error' => $this->upload->display_errors());
+
+                redirect($_SERVER['HTTP_REFERER'], $error);
+        }
+        else
+        {
+        		$upload_data = $this->upload->data();
+            	$data = array('upload_data' => $upload_data);
+            	$img = $upload_data['file_name'];
+     			$id = $this->input->post('id');
+
+                $this->Paket_model->update_foto_paket($id, $img);
+                redirect(base_url("Admin/data_paket"));
+        }
+     }
 	public function delete_paket($id){
 		$this->Paket_model->delete_paket($id);
 		redirect(base_url("admin/data_paket"));
@@ -280,11 +319,45 @@ class Admin extends CI_Controller {
 	}
 	public function update_program(){
 		$id = $this->input->post('id');
-		$namapaket = $this->input->post('namapaket');
-		$deskripsi = $this->input->post('deskripsi');
-		$this->Paket_model->update_paket($id, $namapaket, $deskripsi);
-		redirect(base_url("admin/data_paket"));
+		$namaprogram = $this->input->post('namaprogram');
+		$paket = $this->input->post('paket');
+		$lama = $this->input->post('lama');
+		$jml = $this->input->post('jml');
+		$harga = $this->input->post('harga');
+		$minkapa = $this->input->post('minkapa');
+		$maxkapa = $this->input->post('maxkapa');
+		$status = $this->input->post('status');
+		$fasilitas = $this->input->post('fasilitas');
+		$konsumsi = $this->input->post('konsumsi');
+		$this->Paket_model->update_program($id, $namaprogram, $fasilitas, $konsumsi, $lama, $jml, $harga, $minkapa, $maxkapa, $status, $paket);
+		redirect(base_url("admin/data_program"));
 	}
+	public function update_foto_program()
+     {
+        $config['upload_path']          = './upload/paket/program/';
+        $config['allowed_types']        = 'jpg|png';
+        $config['maintain_ratio'] 		= TRUE;
+        $config['encrypt_name'] 		= TRUE;
+
+        $this->load->library('upload', $config);
+
+        if ( ! $this->upload->do_upload('fileupload'))
+        {
+                $error = array('error' => $this->upload->display_errors());
+
+                redirect($_SERVER['HTTP_REFERER'], $error);
+        }
+        else
+        {
+        		$upload_data = $this->upload->data();
+            	$data = array('upload_data' => $upload_data);
+            	$img = $upload_data['file_name'];
+     			$id = $this->input->post('id');
+
+                $this->Paket_model->update_foto_program($id, $img);
+                redirect(base_url("Admin/data_program"));
+        }
+     }
 	public function delete_program($id){
 		$this->Paket_model->delete_paket($id);
 		redirect(base_url("admin/data_paket"));
@@ -311,6 +384,24 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/template/sidebar');
 		$this->load->view('admin/petugas_master', $data);
 		$this->load->view('admin/template/foot');
+	}
+	public function tambah_petugas()
+	{
+		$this->load->view('admin/template/head');
+		$this->load->view('admin/template/sidebar');
+		$this->load->view('admin/petugas_tambah');
+		$this->load->view('admin/template/foot');
+	}
+	public function set_petugas(){
+		$username = $this->input->post('username');
+		$password = $this->input->post('password');
+		$nama = $this->input->post('nama');
+		$email = $this->input->post('email');
+		$telp = $this->input->post('telp');
+		$alamat = $this->input->post('alamat');
+		$level = $this->input->post('level');
+		$this->Petugas_model->set_petugas($username, $password, $nama, $email, $telp, $alamat, $level);
+		redirect(base_url("admin/data_petugas"));
 	}
 	public function ubah_petugas($id="")
 	{

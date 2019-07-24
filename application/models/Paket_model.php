@@ -59,9 +59,21 @@ class Paket_model extends CI_Model {
 		$result=$this->db->query("UPDATE paket_jenis SET nama_paket='$namapaket', deskripsi='$deskripsi' WHERE id='$id'");
         return $result;
 	}
+	function update_program($id, $namaprogram, $fasilitas, $konsumsi, $lama, $jml, $harga, $minkapa, $maxkapa, $status, $paket){
+		$result=$this->db->query("UPDATE paket_program SET nama_program='$namaprogram', fasilitas='$fasilitas', konsumsi='$konsumsi', lama_kegiatan='$lama', jumlah_hari='$jml' ,harga='$harga', minkapasitas='$minkapa', kapasitas='$maxkapa', status='$status', paket_jenis_id='$paket' WHERE id='$id'");
+        return $result;
+	}
 
 	function delete_paket($id=""){
 		$result=$this->db->query("DELETE FROM paket_jenis WHERE id='$id'");
+        return $result;
+	}
+	function update_foto_paket($id, $img){
+		$result=$this->db->query("UPDATE paket_jenis SET paket_img='$img' WHERE id='$id'");
+        return $result;
+	}
+	function update_foto_program($id, $img){
+		$result=$this->db->query("UPDATE paket_program SET program_img='$img' WHERE id='$id'");
         return $result;
 	}
 	// ---------------------------------------------- END manipulasi data ------------------------------------------------------ //
