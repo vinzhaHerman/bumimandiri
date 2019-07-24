@@ -34,7 +34,7 @@
     </div>
   </nav>
   
-<div class="container">
+<div class="container-fluid">
     <div class="content">
         <div class="container-fluid">
                 <?php foreach ($userdata->result() as $post): ?>
@@ -170,12 +170,21 @@
                   </div>
                 </div>
               </div>
+
+              <div class="card">
+                <div class="card-header card-header-primary" <?php if ($userriwayat->result()==0) { echo "hidden"; }?>>
+                  <h4 class="card-title">Ulasan</h4>
+                  <p class="card-category">Bagaimana kesan anda:</p>
+                </div>
+                <div class="card-body">
+                  
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
 </div>
-<hr>
 
     <!-- JQuery  -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

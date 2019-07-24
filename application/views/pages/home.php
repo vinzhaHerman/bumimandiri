@@ -89,11 +89,15 @@
 
         <div class="cutomer-reviews-container">
             <section class="center slider">
+                <?php
+                    foreach(array_slice($testimoni->result(), 0, 3) as $tes ):
+                ?>
                 <div class="slider-panel">
                     <div class="ball"></div>
-                    <div class="customer-slider-name">Reviewer name here</div>
-                    <div class="slider-text">Lorem ipsum dolor sit amet, conse adipiscing elitsed do eiusmod Lorem ipsum dolor sit amet, conse adipiscing elitsed do eiusmod</div>
+                    <div class="customer-slider-name"><?php echo $tes->summary?></div>
+                    <div class="slider-text"><?php echo $tes->paragraph?></div>
                 </div>
+                <?php endforeach; ?>
                 <div class="slider-panel">
                     <div class="ball"></div>
                     <div class="customer-slider-name">Reviewer name here</div>

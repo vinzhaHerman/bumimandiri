@@ -32,7 +32,7 @@
 
   <div class="button-container">
     <a class="links" href="http://localhost/bumimandiri/web"><button type="button" class="negative-button">Kembali</button></a>
-    <p class="bottom-text"><a href="http://localhost/bumimandiri/lupapass">Forgot Password?</a></p>
+    <p class="bottom-text"><a href="<?php echo base_url();?>Lupa_password">Forgot Password?</a></p>
   </div>
   </form>
   </div>
