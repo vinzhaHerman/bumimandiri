@@ -1,7 +1,4 @@
-<?php
-date_default_timezone_set('Asia/Jakarta');
-defined('BASEPATH') OR exit('No direct script access allowed');
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,23 +9,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
   <div class="main-wrapper">
     <div class="form-wrapper">
-    <form action="<?php echo base_url('Register/daftar');?>" method="post">
+    <?php echo form_open('Register/daftar'); ?>
       <div class="container">
         <div class="imgcontainer-register">
           <img src="<?php echo base_url();?>assets/logos/mixed.png" alt="Avatar" class="avatar-register">
         </div>
       <h1 class="form-title">Daftar</h1>
-      <input type="text" placeholder="Nama Depan" name="namadepan" required>
-
-      <input type="text" placeholder="Nama Belakang" name="namabelakang" required>
-
-      <input type="text" placeholder="Masukan username anda" name="username" required>
-
-      <input type="text" placeholder="Email address" name="email" required>
-
-      <input type="password" placeholder="Password" name="password" required>
-
-      <input type="password" placeholder="Ketik Ulang Password" name="confirm_password" required>
+      <?php echo form_error('namadepan'); ?>
+      <input type="text" placeholder="Nama Depan" name="namadepan">
+      <?php echo form_error('namabelakang'); ?>
+      <input type="text" placeholder="Nama Belakang" name="namabelakang">
+      <?php echo form_error('username'); ?>
+      <input type="text" placeholder="Masukan username anda" name="username">
+      <?php echo form_error('email'); ?>
+      <input type="text" placeholder="Email address" name="email">
+      <?php echo form_error('password'); ?>
+      <input type="password" placeholder="Password" name="password">
+      <?php echo form_error('confirm_password'); ?>
+      <input type="password" placeholder="Ketik Ulang Password" name="confirm_password">
 
       <p class="agreement">Saya menyetujui <a href="http://localhost/bumimandiri/syaratdanketentuan" style="color:dodgerblue">Syarat dan Ketentuan</a> yang berlaku.</p>
 
@@ -37,7 +35,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <a href="http://localhost/bumimandiri/"><button type="button" class="negative-button">Batal</button></a>
       </div>
     </div>
-  </form>
+  <?php echo form_close(); ?>
   </div>
 </div>
 </body>

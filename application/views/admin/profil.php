@@ -17,40 +17,7 @@
             <span class="navbar-toggler-icon icon-bar"></span>
           </button>
           <div class="collapse navbar-collapse justify-content-end">
-            <!-- <form class="navbar-form">
-              <div class="input-group no-border">
-                <input type="text" value="" class="form-control" placeholder="Search...">
-                <button type="submit" class="btn btn-white btn-round btn-just-icon">
-                  <i class="material-icons">search</i>
-                  <div class="ripple-container"></div>
-                </button>
-              </div>
-            </form> -->
             <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" href="#pablo">
-                  <i class="material-icons">dashboard</i>
-                  <p class="d-lg-none d-md-block">
-                    Stats
-                  </p>
-                </a>
-              </li>
-              <!-- <li class="nav-item dropdown">
-                <a class="nav-link" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="material-icons">notifications</i>
-                  <span class="notification">5</span>
-                  <p class="d-lg-none d-md-block">
-                    Some Actions
-                  </p>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">Mike John responded to your email</a>
-                  <a class="dropdown-item" href="#">You have 5 new tasks</a>
-                  <a class="dropdown-item" href="#">You're now friend with Andrew</a>
-                  <a class="dropdown-item" href="#">Another Notification</a>
-                  <a class="dropdown-item" href="#">Another One</a>
-                </div>
-              </li> -->
               <li class="nav-item dropdown">
                 <a class="nav-link" href="#pablo" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="material-icons">person</i>
@@ -59,8 +26,7 @@
                   </p>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
-                  <a class="dropdown-item" href="#">Profile</a>
-                  <a class="dropdown-item" href="#">Settings</a>
+                  <a class="dropdown-item" href="<?php echo base_url() ?>Admin/profile">Profile</a>
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="<?php echo base_url('admin/logout') ?>">Log out</a>
                 </div>
@@ -99,18 +65,18 @@
                   <p class="card-category">Complete your profile</p>
                 </div>
                 <div class="card-body">
-                  <form>
+                  <form action="<?php echo base_url('admin/update_petugas');?>" method="post">
                     <div class="row">
                       <div class="col-md-6">
                         <div class="form-group">
                           <label class="bmd-label-floating">Username</label>
-                          <input type="text" class="form-control" value="<?php echo $res['username']?>">
+                          <input type="text" class="form-control" name="username" value="<?php echo $res['username']?>">
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="form-group">
                           <label class="bmd-label-floating">Email address</label>
-                          <input type="email" class="form-control" value="<?php echo $res['email']?>">
+                          <input type="email" class="form-control" name="email" value="<?php echo $res['email']?>">
                         </div>
                       </div>
                     </div>
@@ -118,15 +84,7 @@
                       <div class="col-md-12">
                         <div class="form-group">
                           <label class="bmd-label-floating">Nama Lengkap</label>
-                          <input type="text" class="form-control" value="<?php echo $res['nama']?>">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-12">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">Adress</label>
-                          <input type="text" class="form-control">
+                          <input type="text" class="form-control" name="nama" value="<?php echo $res['nama']?>">
                         </div>
                       </div>
                     </div>
@@ -134,7 +92,18 @@
                       <div class="col-md-4">
                         <div class="form-group">
                           <label class="bmd-label-floating">No. telp</label>
-                          <input type="text" class="form-control" value="<?php echo $res['telp']?>">
+                          <input type="text" class="form-control" name="telp" value="<?php echo $res['telp']?>">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-4">
+                        <div class="form-group">
+                          <label class="bmd-label-floating" name="level">Level</label>
+                           <select name="level" class="form-control">
+                            <option <?php if($res['level']=='1'){echo "selected"; } ?> value='1'>Super Admin</option>
+                            <option <?php if($res['level']=='2'){echo "selected"; } ?> value='2'>Petugas</option>
+                          </select>
                         </div>
                       </div>
                     </div>
@@ -144,7 +113,7 @@
                           <label>Alamat</label>
                           <div class="form-group">
                             <label class="bmd-label-floating"></label>
-                            <input type="text" class="form-control" value="<?php echo $res['alamat']?>">
+                            <input type="text" class="form-control" name="alamat" value="<?php echo $res['alamat']?>">
                           </div>
                         </div>
                       </div>

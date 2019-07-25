@@ -59,8 +59,7 @@
                   </p>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
-                  <a class="dropdown-item" href="#">Profile</a>
-                  <a class="dropdown-item" href="#">Settings</a>
+                  <a class="dropdown-item" href="<?php echo base_url() ?>Admin/profile">Profile</a>
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="<?php echo base_url('admin/logout') ?>">Log out</a>
                 </div>
@@ -131,12 +130,12 @@
                             <td><?php echo $prom->judul_post?></td>
                             <td><?php echo $prom->isi_post?></td>
                             <td class="td-actions text-right pull-right">
-                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
+                              <a href="<?php echo base_url() ?>Admin/ubah_blog/<?php echo $prom->id?>" rel="tooltip" title="Edit" class="btn btn-primary btn-link btn-sm">
                                 <i class="material-icons">edit</i>
-                              </button>
-                              <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
+                              </a>
+                              <a href="<?php echo base_url() ?>Admin/delete_blog/<?php echo $prom->id?>" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
                                 <i class="material-icons">close</i>
-                              </button>
+                              </a>
                             </td>
                           </tr>
                           <?php endforeach; ?>
@@ -161,12 +160,12 @@
                             <td><?php echo $art->judul_post?></td>
                             <td><?php echo $art->isi_post?></td>
                             <td class="td-actions text-right pull-right">
-                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
+                              <a href="<?php echo base_url() ?>Admin/ubah_blog/<?php echo $art->id?>" rel="tooltip" title="Edit" class="btn btn-primary btn-link btn-sm">
                                 <i class="material-icons">edit</i>
-                              </button>
-                              <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
+                              </a>
+                              <a href="<?php echo base_url() ?>Admin/delete_artikel/<?php echo $art->id?>" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
                                 <i class="material-icons">close</i>
-                              </button>
+                              </a>
                             </td>
                           </tr>
                           <?php endforeach; ?>
@@ -191,12 +190,12 @@
                             <td><?php echo $ev->judul_post?></td>
                             <td><?php echo $ev->isi_post?></td>
                             <td class="td-actions text-right pull-right">
-                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
+                              <a href="<?php echo base_url() ?>Admin/ubah_blog/<?php echo $ev->id?>" rel="tooltip" title="Edit" class="btn btn-primary btn-link btn-sm">
                                 <i class="material-icons">edit</i>
-                              </button>
-                              <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
+                              </a>
+                              <a href="<?php echo base_url() ?>Admin/delete_event/<?php echo $ev->id?>" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
                                 <i class="material-icons">close</i>
-                              </button>
+                              </a>
                             </td>
                           </tr>
                           <?php endforeach; ?>

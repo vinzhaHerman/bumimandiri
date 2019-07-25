@@ -37,6 +37,11 @@ class Post_model extends CI_Model {
 		$result=$this->db->query("INSERT INTO post (judul_post, isi_post, gambar_post, date_created, post_type) VALUES ('$judul', '$para', '$img', '$date', '1')");
         return $result;
 	}
+	function update_post($id, $judul, $para, $img){
+		$date = date('Y-m-d');
+		$result=$this->db->query("UPDATE post SET judul_post='$judul', isi_post='$para', gambar_post='$img' WHERE id='$id'");
+        return $result;
+	}
 	function set_artikel($judul, $para, $img){
 		$date = date('Y-m-d');
 		$result=$this->db->query("INSERT INTO post (judul_post, isi_post, gambar_post, date_created, post_type) VALUES ('$judul', '$para','$img', '$date', '2')");

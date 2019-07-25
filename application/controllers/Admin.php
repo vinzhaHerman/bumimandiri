@@ -14,6 +14,7 @@ class Admin extends CI_Controller {
 		$this->load->model('Pelanggan_model');
 		$this->load->model('Reservasi_model');
 		$this->load->model('Post_model');
+		$this->load->model('Testimoni_model');
 		$this->load->model('Pemesanan');
 	}
 
@@ -73,9 +74,12 @@ class Admin extends CI_Controller {
 		if($this->session->userdata('s_status') != "login"){
             redirect(base_url("admin/login"));
         }
+        $data=array(
+            'res'=>$this->Testimoni_model->get_testimoni_detailed()
+        );
 		$this->load->view('admin/template/head');
 		$this->load->view('admin/template/sidebar');
-		$this->load->view('admin/dashboard');
+		$this->load->view('admin/dashboard', $data);
 		$this->load->view('admin/template/foot');
 	}
 
@@ -421,6 +425,19 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/petugas_opsi', $data);
 		$this->load->view('admin/template/foot');
 	}
+
+	public function update_petugas()
+	{
+		$id = $this->session->userdata('s_id');
+		$username = $this->input->post('username');
+		$nama = $this->input->post('nama');
+		$email = $this->input->post('email');
+		$telp = $this->input->post('telp');
+		$alamat = $this->input->post('alamat');
+		$level = $this->input->post('level');
+		$this->Petugas_model->update_petugas($id, $username, $nama, $email, $telp, $alamat, $level);
+		redirect(base_url("admin/profile"));
+	}
 // -------------------------------------------END Data Petugas----------------------------------------------
 
 
@@ -478,6 +495,49 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/template/sidebar');
 		$this->load->view('admin/tambah_promosi');
 		$this->load->view('admin/template/foot');
+	}
+	public function ubah_blog($id="")
+	{
+		$data=array(
+			'res'=>$this->Post_model->get_post_byid($id)
+		);
+		$this->load->view('admin/template/head');
+		$this->load->view('admin/template/sidebar');
+		$this->load->view('admin/blog_opsi', $data);
+		$this->load->view('admin/template/foot');
+	}
+	public function update_post()
+	{
+		$config['upload_path']          = './upload/promosi/';
+        $config['allowed_types']        = 'jpg|png';
+        $config['maintain_ratio'] 		= TRUE;
+        $config['encrypt_name'] 		= TRUE;
+
+        $this->load->library('upload', $config);
+
+        if ( ! $this->upload->do_upload('fileupload'))
+        {
+                $error = array('error' => $this->upload->display_errors());
+
+                redirect($_SERVER['HTTP_REFERER'], $error);
+        }
+        else
+        {
+        		$upload_data = $this->upload->data();
+            	$data = array('upload_data' => $upload_data);
+            	$img = $upload_data['file_name'];
+
+            	$id = $this->input->post('id');
+     			$judul = $this->input->post('judul');
+     			$para = $this->input->post('para');
+
+                $this->Post_model->update_post($id, $judul, $para, $img);
+                redirect(base_url("Admin/kelola_blog"));
+        }
+	}
+	public function delete_promosi($id){
+		$this->Paket_model->delete_program($id);
+		redirect(base_url("admin/blog"));
 	}
 	public function set_promosi()
      {
@@ -543,5 +603,20 @@ class Admin extends CI_Controller {
         }
      }
 // -------------------------------------------END Data blog----------------------------------------------
+
+
+
+
+
+     public function publish_testimoni($id)
+     {
+     	$this->Testimoni_model->publish_testimoni($id);
+     	redirect(base_url("Admin"));
+     }
+     public function delete_testimoni($id)
+     {
+     	$this->Testimoni_model->delete_testimoni($id);
+     	redirect(base_url("Admin"));
+     }
 	
 }

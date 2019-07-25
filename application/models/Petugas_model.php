@@ -22,8 +22,8 @@ class Petugas_model extends CI_Model {
         return $result;
 	}
 
-	function update_petugas($username, $nama, $email, $telp, $alamat, $level){
-		$result=$this->db->query("UPDATE petugas SET username='$username', nama='$nama', email='$email', telp='$telp', alamat='$alamat', level='$level' WHERE id='$id'");
+	function update_petugas($id, $username, $nama, $email, $telp, $alamat, $level){
+		$result=$this->db->query("UPDATE admins SET username='$username', nama='$nama', email='$email', telp='$telp', alamat='$alamat', level='$level' WHERE id='$id'");
         return $result;
 	}
 
