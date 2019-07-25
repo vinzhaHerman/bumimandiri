@@ -286,9 +286,10 @@ class Admin extends CI_Controller {
 	}
 	public function tambah_program()
 	{
+		$data=array('respaket'=>$this->Paket_model->get_paket());
 		$this->load->view('admin/template/head');
 		$this->load->view('admin/template/sidebar');
-		$this->load->view('admin/program_add');
+		$this->load->view('admin/program_add', $data);
 		$this->load->view('admin/template/foot');
 	}
 	public function ubah_program($id)
@@ -302,6 +303,10 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/program_opsi', $data);
 		$this->load->view('admin/template/foot');
 	}
+	public function delete_program($id){
+		$this->Paket_model->delete_program($id);
+		redirect(base_url("admin/data_program"));
+	}
 	public function laporan_program()
 	{
 		$data=array('res'=>$this->Paket_model->get_paket());
@@ -311,11 +316,18 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/template/foot');
 	}
 	public function set_program(){
-		$id = $this->input->post('id');
-		$namapaket = $this->input->post('namapaket');
-		$deskripsi = $this->input->post('deskripsi');
-		$this->Paket_model->set_paket($namapaket, $deskripsi);
-		redirect(base_url("admin/data_paket"));
+		$namaprogram = $this->input->post('namaprogram');
+		$paket = $this->input->post('paket');
+		$lama = $this->input->post('lama');
+		$jml = $this->input->post('jml');
+		$harga = $this->input->post('harga');
+		$minkapa = $this->input->post('minkapa');
+		$maxkapa = $this->input->post('maxkapa');
+		$status = $this->input->post('status');
+		$fasilitas = $this->input->post('fasilitas');
+		$konsumsi = $this->input->post('konsumsi');
+		$this->Paket_model->set_program($namaprogram, $fasilitas, $konsumsi, $lama, $jml, $harga, $minkapa, $maxkapa, $status, $paket);
+		redirect(base_url("admin/data_program"));
 	}
 	public function update_program(){
 		$id = $this->input->post('id');
@@ -358,10 +370,6 @@ class Admin extends CI_Controller {
                 redirect(base_url("Admin/data_program"));
         }
      }
-	public function delete_program($id){
-		$this->Paket_model->delete_paket($id);
-		redirect(base_url("admin/data_paket"));
-	}
 
 	public function riwayat_program($programid){
 		$data=array('res'=>$this->Paket_model->get_program_riwayat($programid));

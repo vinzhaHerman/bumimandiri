@@ -98,28 +98,10 @@
                 <div class="card-body table-responsive">
                   <form action="<?php echo base_url('admin/set_paket'); ?>" method="post">
                     <div class="row">
-                      <div class="col-md-4 col-sm-4">
-                        <div class="card">
-                          <div class="card-header card-header-warning">
-                            <h6 class="card-title">Thumbnail Paket</h6>
-                          </div>
-                          <div class="card-body" style="min-height: 280px;">
-                              <div class="row mx-auto">
-                                <img src="<?php echo base_url().'upload/bukti/default.jpg'?>" alt="" class="img-thumbnail mx-auto" style="max-height: 250px;">
-                              </div>
-                              <div class="clearfix"></div>
-                          </div>
-                        </div>
-                      </div>
                       <div class="col-md-6">
                         <div class="form-group">
                           <label class="bmd-label-floating">Nama Paket</label>
                           <input type="text" class="form-control" name="namapaket" value="">
-                        </div>
-                        <div class="form-group">
-                          <label class="bmd-label-floating">Upload/Ganti Thumbnail</label><br>
-                          <input type="file" name="image" id="img">
-                          <a href="" class="btn btn-primary">Upload</a>
                         </div>
                       </div>
                     </div>

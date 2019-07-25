@@ -37,18 +37,18 @@
 <div class="container-fluid">
     <div class="content">
         <div class="container-fluid">
-                <?php foreach ($userdata->result() as $post): ?>
+                <?php $userdata=$userdata->row_array() ?>
           <div class="row">
             <div class="col-md-4">
               <div class="card card-profile">
                 <div class="card-body">
                 <div class="card-avatar">
                   <a href="#pablo">
-                    <img class="img" src="<?php echo base_url();?>/upload/user/profile_photos/<?php echo $post->foto_profil  ?>" />
+                    <img class="img" src="<?php echo base_url();?>/upload/user/profile_photos/<?php echo $userdata['foto_profil']  ?>" />
                   </a>
                 </div>
                   <h6 class="card-category text-gray">User Account</h6>
-                  <h4 class="card-title"><?php echo $post->nama_depan  ?></h4>
+                  <h4 class="card-title"><?php echo $userdata['nama_depan']  ?></h4>
                   <a href="#pablo" class="btn btn-primary btn-round" data-toggle="collapse" data-target="#collapsedContent1" aria-expanded="false" aria-controls="collapsedContent1">Ganti Foto</a>
                   <div class="collapse" id="collapsedContent1">
                     <?php echo form_open_multipart('Account/update_foto');?>
@@ -60,14 +60,13 @@
               </div>
               <div class="card card-profile">
                 <div class="card-header card-header-primary">
-                  <h4 class="card-title">NAVIGATION</h4>
-                  <p class="card-category">Complete your profile</p>
+                  <h4 class="card-title">NAVIGASI</h4>
                 </div>
                 <div class="card-body">
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item"><a href="<?php echo base_url();?>">Ke Halaman Utama</a></li>
                         <li class="list-group-item"><a href="<?php echo base_url();?>Booking">Ke Halaman Pemesanan</a></li>
-                        <li class="list-group-item"><a href="<?php echo base_url('web/logout'); ?>">Logout</a></li>
+                        <li class="list-group-item"><a href="<?php echo base_url('web/logout'); ?>" class="btn btn-danger btn-round">Logout</a></li>
                     </ul>
                 </div>
               </div>
@@ -84,13 +83,13 @@
                       <div class="col-md-3">
                         <div class="form-group">
                           <label class="bmd-label-floating">Username</label>
-                          <input type="text" class="form-control" name="username"  value="<?php echo $post->username  ?>">
+                          <input type="text" class="form-control" name="username"  value="<?php echo $userdata['username']  ?>">
                         </div>
                       </div>
                       <div class="col-md-9">
                         <div class="form-group">
                           <label class="bmd-label-floating">Email address</label>
-                          <input type="email" class="form-control" name="email" value="<?php echo $post->email  ?>">
+                          <input type="email" class="form-control" name="email" value="<?php echo $userdata['email']  ?>">
                         </div>
                       </div>
                     </div>
@@ -98,13 +97,13 @@
                       <div class="col-md-6">
                         <div class="form-group">
                           <label class="bmd-label-floating">Nama Depan</label>
-                          <input type="text" class="form-control" name="namadepan" value="<?php echo $post->nama_depan  ?>">
+                          <input type="text" class="form-control" name="namadepan" value="<?php echo $userdata['nama_depan']  ?>">
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="form-group">
                           <label class="bmd-label-floating">Nama Belakang</label>
-                          <input type="text" class="form-control" name="namabelakang" value="<?php echo $post->nama_belakang  ?>">
+                          <input type="text" class="form-control" name="namabelakang" value="<?php echo $userdata['nama_belakang']  ?>">
                         </div>
                       </div>
                     </div>
@@ -112,17 +111,16 @@
                       <div class="col-md-12">
                         <div class="form-group">
                           <label class="bmd-label-floating">Alamat</label>
-                          <input type="text" class="form-control" name="alamat" value="<?php echo $post->alamat  ?>">
+                          <input type="text" class="form-control" name="alamat" value="<?php echo $userdata['alamat']  ?>">
                         </div>
                       </div>
                     </div>
-                    <h6 class="card-category text-gray">Member sejak: <?php echo $post->tgl_reg  ?></h6>
+                    <h6 class="card-category text-gray">Member sejak: <?php echo $userdata['tgl_reg']  ?></h6>
                     <button type="submit" class="btn btn-success pull-right">Update Profile</button>
                     <div class="clearfix"></div>
                   </form>
                 </div>
               </div>
-          <?php endforeach ?>
               <div class="card">
                 <div class="card-header card-header-warning">
                   <h4 class="card-title">Riwayat Transaksi</h4>
@@ -171,20 +169,58 @@
                 </div>
               </div>
 
+              <?php if (empty($userriwayat->result())) { echo "<div class=collapse>"; }?>
               <div class="card">
-                <div class="card-header card-header-primary" <?php if ($userriwayat->result()==0) { echo "hidden"; }?>>
+                <div class="card-header card-header-primary">
                   <h4 class="card-title">Ulasan</h4>
                   <p class="card-category">Bagaimana kesan anda:</p>
                 </div>
                 <div class="card-body">
-                  
+                  <form action="<?php echo base_url('Account/set_testimoni'); ?>" method="post">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <label class="bmd-label-floating">Pendapat Anda:</label>
+                      <input type="text" class="form-control" name="summary" value="">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <label class="bmd-label-floating">Detail:</label>
+                      <textarea class="form-control" name="paragraph" value=""></textarea>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <button type="button"  href="" class="btn btn-success btn-sm pull-right"><i class="material-icons">done</i>Simpan</button>
+                    </div>
+                  </div>
+                  </form>
                 </div>
-              </div>
             </div>
           </div>
         </div>
       </div>
 </div>
+<footer class="footer">
+  <div class="container-fluid">
+    <nav class="float-left">
+      <ul>
+        <li>
+          <a href="https://www.creative-tim.com">
+            UBSI - Tim Bumi
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <div class="copyright float-right">
+      &copy;
+      <script>
+        document.write(new Date().getFullYear())
+      </script>
+      <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a>
+    </div>
+  </div>
+</footer>
 
     <!-- JQuery  -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

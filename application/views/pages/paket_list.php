@@ -16,22 +16,20 @@
 
 
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="<?php  echo base_url();?>"><b>BUMI MANDIRI</b></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-  <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarText">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item dropdown pull-right">
-        <a class="nav-link" href="#pablo" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Akun Saya</a>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
-          <a class="dropdown-item" href="http://localhost/bumimandiri/Account">Profil</a>
-      </li>
-    </ul>
-  <a class="navbar-brand" href="http://localhost/bumimandiri/booking">Form Pemesanan</a>
-  </div>
-</nav>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="<?php echo base_url();?>"><b>BUMI MANDIRI</b></a>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item dropdown pull-right">
+          <a class="nav-link" href="#pablo" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
+            <a class="dropdown-item" href="#">Profile</a>
+            <a class="dropdown-item" href="#">Settings</a>
+        </li>
+      </ul>
+    <a class="navbar-brand pull-right" href="#">Transaksi</a>
+    </div>
+  </nav>
 
 
 

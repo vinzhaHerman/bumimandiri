@@ -18,9 +18,9 @@ class Testimoni_model extends CI_Model {
         return $result;
 	}
 
-	function set_testimoni($id){
+	function set_testimoni($sum, $para, $userid){
 		$date = date('Y-m-d');
-		$result=$this->db->query("INSERT INTO testimoni (summary, paragraph, tgl, id_pelanggan, isActive) VALUES ('$sum', '$para', '$date', '0')");
+		$result=$this->db->query("INSERT INTO testimoni (summary, paragraph, tgl, id_pelanggan, isActive) VALUES ('$sum', '$para', '$date', '$userid', '0')");
         return $result;
 	}
 

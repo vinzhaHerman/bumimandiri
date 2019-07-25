@@ -82,7 +82,6 @@
 
 
 
-
           
 
 
@@ -92,45 +91,85 @@
           <div class="">
               <div class="card">
                 <div class="card-header card-header-primary">
-                  <h3 class="card-title">Tambah Data Program</h3>
+                  <h3 class="card-title">Edit Data Program</h3>
                   <a href="<?php echo base_url();?>admin/data_program" class="btn btn-sm"><i class="material-icons">keyboard_return</i> Kembali</a>
                 </div>
-                <div class="card-body table-responsive">
-                  <form action="<?php echo base_url('admin/set_paket'); ?>" method="post">
+                <div class="card-body">
                     <div class="row">
-                      <div class="col-md-4 col-sm-4">
-                        <div class="card">
-                          <div class="card-header card-header-warning">
-                            <h6 class="card-title">Thumbnail Program</h6>
+                      <div class="col-md-4">
+                      <form action="<?php echo base_url('admin/set_program'); ?>" method="post">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Nama Program*</label>
+                          <input type="text" class="form-control" name="namaprogram">
+                        </div>
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Termasuk Dalam Paket:*</label>
+                          <select id="selectPaket" name="paket" class="form-control">
+                            <?php foreach ($respaket->result() as $paket):?>
+                            <option value="<?php echo $paket->id ?>"><?php echo $paket->nama_paket ?></option>
+                            <?php endforeach; ?>
+                          </select>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-5">
+                            <div class="form-group">
+                              <label class="bmd-label-floating">Lama Kegiatan*</label>
+                              <input type="text" class="form-control" name="lama">
+                            </div>
                           </div>
-                          <div class="card-body" style="min-height: 280px;">
-                              <div class="row mx-auto">
-                                <img src="<?php echo base_url().'upload/bukti/default.jpg'?>" alt="" class="img-thumbnail mx-auto" style="max-height: 250px;">
-                              </div>
-                              <div class="clearfix"></div>
+                          <div class="col-md-4">
+                            <div class="form-group">
+                              <label class="bmd-label-floating">Jumlah Hari*</label>
+                              <input type="text" class="form-control text-center" name="jml">
+                            </div>
                           </div>
                         </div>
                       </div>
-                      <div class="col-md-6">
+                      <div class="col-md-4">
                         <div class="form-group">
-                          <label class="bmd-label-floating">Nama Program</label>
-                          <input type="text" class="form-control" name="namapaket" value="">
+                          <label class="bmd-label-floating">Harga per orang* :</label>
+                          <input type="text" class="form-control" name="harga">
+                        </div>
+                        <div class="row">
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label class="bmd-label-floating">Minimal Peserta*</label>
+                              <input type="text" class="form-control text-center" name="minkapa">
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label class="bmd-label-floating">Maksimal Peserta*</label>
+                              <input type="text" class="form-control text-center" name="maxkapa">
+                            </div>
+                          </div>
                         </div>
                         <div class="form-group">
-                          <label class="bmd-label-floating">Upload/Ganti Thumbnail</label><br>
-                          <input type="file" name="image" id="img">
-                          <a href="" class="btn btn-primary">Upload</a>
+                          <label class="bmd-label-floating">Status* :</label>
+                          <select name="status" class="form-control">
+                            <option value='1'>Available</option>
+                            <option value='0'>Unavailable</option>
+                          </select>
                         </div>
                       </div>
                     </div>
                     <div class="row">
                       <div class="col-md-12">
-                        <label class="bmd-label-floating">Deskripsi:</label>
-                        <textarea name="deskripsi">Tulis Deskripsi Paket...</textarea>
+                        <label class="bmd-label-floating">Fasilitas*:</label>
+                        <textarea name="fasilitas"></textarea>
                       </div>
                     </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <label class="bmd-label-floating">Konsumsi*:</label>
+                        <textarea name="konsumsi"></textarea>
+                      </div>
+                    </div>
+                    <hr>
                     <button type="submit" class="btn btn-primary pull-right">Simpan</button>
                     <button class="btn btn-warning pull-right">Batal</button>
+                    <label class="bmd-label-floating">*tidak boleh kosong<label>
                     <div class="clearfix"></div>
                   </form>
                 </div>

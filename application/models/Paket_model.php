@@ -51,9 +51,15 @@ class Paket_model extends CI_Model {
 
 	// ---------------------------------------------- Manipulasi data ------------------------------------------------------ //
 	function set_paket($namapaket, $deskripsi){
-		$result=$this->db->query("INSERT INTO paket_jenis (nama_paket, deskripsi) VALUES('$namapaket','$deskripsi')");
+		$result=$this->db->query("INSERT INTO paket_jenis (nama_paket, deskripsi, paket_img) VALUES('$namapaket','$deskripsi','default.jpg')");
         return $result;
 	}
+
+	function set_program($namaprogram, $fasilitas, $konsumsi, $lama, $jml, $harga, $minkapa, $maxkapa, $status, $paket){
+		$result=$this->db->query("INSERT INTO paket_program (nama_program, fasilitas, konsumsi, lama_kegiatan, jumlah_hari, harga, minkapasitas, kapasitas, status, program_img, paket_jenis_id) VALUES('$namaprogram', '$fasilitas', '$konsumsi', '$lama', '$jml', '$harga', '$minkapa', '$maxkapa', '$status', 'default.jpg', '$paket')");
+        return $result;
+	}
+
 
 	function update_paket($id, $namapaket, $deskripsi){
 		$result=$this->db->query("UPDATE paket_jenis SET nama_paket='$namapaket', deskripsi='$deskripsi' WHERE id='$id'");
@@ -66,6 +72,10 @@ class Paket_model extends CI_Model {
 
 	function delete_paket($id=""){
 		$result=$this->db->query("DELETE FROM paket_jenis WHERE id='$id'");
+        return $result;
+	}
+	function delete_program($id=""){
+		$result=$this->db->query("DELETE FROM paket_program WHERE id='$id'");
         return $result;
 	}
 	function update_foto_paket($id, $img){
