@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 26, 2019 at 09:32 AM
+-- Generation Time: Jul 25, 2019 at 10:45 AM
 -- Server version: 10.3.15-MariaDB
 -- PHP Version: 7.3.6
 
@@ -48,11 +48,10 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`id`, `username`, `password`, `nama`, `email`, `telp`, `alamat`, `foto`, `level`) VALUES
-(1, 'admin', 'admin', 'Super Admin', 'admin@system.com', '888999', 'Alamat lengkap', 'default.jpg', 1),
+(1, 'admin', 'admin', 'Super Admin', 'admin@system.com', '888', 'Alamat lengkap', 'default.jpg', 1),
 (2, 'doyok', 'doyok', 'Doyok Bewok', 'example@mail.com', '0990', 'Alamat lengkap', 'default.jpg', 2),
 (3, 'vinzhaherman', 'cucuandung', 'Vinzha herman', 'example1@mail.com', '0123', 'Alamat lengkap', 'default.jpg', 1),
-(4, 'admin_tester_1', '123', 'Admin', 'admin2@example.com', '999', 'Alamat Lengkap', 'default.jpg', 2),
-(5, 'a', 'a', 'a', 'a', 'a', 'a', 'default.jpg', 2);
+(4, 'admin_tester_1', '123', 'Admin', 'admin2@example.com', '999', 'Alamat Lengkap', 'default.jpg', 2);
 
 -- --------------------------------------------------------
 
@@ -75,7 +74,8 @@ CREATE TABLE `paket_jenis` (
 INSERT INTO `paket_jenis` (`id`, `nama_paket`, `deskripsi`, `paket_img`) VALUES
 (1, 'Paket Program Sekolah', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod&nbsp;tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,&nbsp;quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo&nbsp;consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse&nbsp;cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non&nbsp;proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>', '5a574acc030da09c177ca42d51123444.jpg'),
 (2, 'Paket Meeting', 'Paket untuk kepentingan instansi', '63586b095bc258150c02a1be1e8d8993.jpg'),
-(3, 'Paket Program Umum', 'Program Umum', '36b28247852ac771cac4e29fd73f26fb.jpg');
+(3, 'Paket Program Umum', 'Program Umum', '36b28247852ac771cac4e29fd73f26fb.jpg'),
+(6, 'a', '<p>a</p>', 'default.jpg');
 
 -- --------------------------------------------------------
 
@@ -107,7 +107,7 @@ INSERT INTO `paket_program` (`id`, `nama_program`, `fasilitas`, `konsumsi`, `lam
 (1, 'Agro & Outbound I', 'list fasilitas agro & outbound', 'list konsumsi agro & outbound', '1 hari', 1, 160000, 30, 120, 1, 'default.jpg', 1),
 (2, 'Agro & Outbound II', 'list fasilitas Agro & Outbound', 'list konsumsi Agro & Outbound', '2 hari 1 malam', 2, 137000, 30, 120, 1, '5a391f5be8e2c249cbd31a20dba5262b.jpg', 1),
 (4, 'Latihan Dasar Kepemimpinan I', 'list fasilitas Latihan Dasar Kepemimpinan', 'list konsumsi Latihan Dasar Kepemimpinan', '2 hari 1 malam', 2, 198000, 30, 120, 1, 'default.jpg', 1),
-(5, 'Latihan Dasar Kepemimpinan II', 'list fasilitas Latihan Dasar Kepemimpinan', 'list konsumsi Latihan Dasar Kepemimpinan', '3 hari 2 malam', 3, 228000, 30, 120, 1, 'c9dc7cbbfcb4df36310fddf1bd005b88.jpg', 1),
+(5, 'Latihan Dasar Kepemimpinan II', 'list fasilitas Latihan Dasar Kepemimpinan', 'list konsumsi Latihan Dasar Kepemimpinan', '3 hari 2 malam', 3, 228000, 30, 120, 1, 'default.jpg', 1),
 (6, 'Ramadhan Camp', 'list Fasilitas Ramadhan Camp', 'list konsumsi Ramadhan Camp', '2 hari 1 malam', 2, 163000, 30, 120, 1, 'default.jpg', 1),
 (7, 'Ramadhan Camp II', '<p>list fasilitas Ramadhan Camp</p>', '<p>list konsumsi Ramadhan Camp</p>', '3 hari 2 malam', 3, 0, 30, 120, 1, 'default.jpg', 1),
 (8, 'Laboratorium Biologi', 'laboratorium', 'laboratorium', '1 hari', 1, 0, 30, 60, 1, 'default.jpg', 1),
@@ -166,9 +166,8 @@ CREATE TABLE `pelanggan` (
 
 INSERT INTO `pelanggan` (`id`, `nama_depan`, `nama_belakang`, `email`, `username`, `password`, `alamat`, `telp`, `foto_profil`, `tgl_reg`) VALUES
 (1, 'Andreas', 'Chandra Widyanta', 'adnreaschan@gmail.com', 'chandra', '123', 'Contoh alamat 1 no. 2', '', '042d757943fff7d6a4b036ff60e5928a.png', '2019-06-28'),
-(2, 'Mimi', 'Nekochan', 'nekomimi@hotmail.com', 'nekomimi', '1234', 'Isekai', '', '4e3729291967ee2c3a147f05b82b0d41.jpg', '2019-07-01'),
-(3, 'Vinzha', 'Herman', 'vinzhaherman@gmail.com', 'mkurus', 'cucucu', 'Alamat_lengkap_user4', '081234567890', 'default.jpg', '2019-07-24'),
-(4, 'test nama depan', 'test nama belakang', 'testmail', 'test', 'tes', '', '', '', '0000-00-00');
+(2, 'mimi', 'nekochan', 'nekomimi@hotmail.com', 'nekomimi', '1234', '', '022', 'default.jpg', '2019-07-01'),
+(3, 'Vinzha', 'Herman', 'vinzhaherman@gmail.com', 'mkurus', 'cucucu', 'Alamat_lengkap_user4', '081234567890', 'default.jpg', '2019-07-24');
 
 -- --------------------------------------------------------
 
@@ -197,7 +196,7 @@ INSERT INTO `post` (`id`, `judul_post`, `isi_post`, `gambar_post`, `date_created
 (4, 'judul promosi 2', '<p>isi promosi 2</p>', '4db737bc2f1a3986dd5f3ee63d3fc3fa.jpg', '2019-07-22', 1),
 (5, 'judul artikel 2', '<p>isi artikel 2</p>', '5f87f6d5a6736ae7d4f113b67cf251e3.jpg', '2019-07-22', 2),
 (6, 'judul artikel 3', '<p>isi artikel 3</p>', '1f517f2185ca8fad362cb23fe00ce46c.jpg', '2019-07-22', 2),
-(7, 'judul promosi 3', '<p>isi promosi 3</p>', '9413c562a0a8c2db77bf6256893f9d24.jpg', '2019-07-22', 1);
+(7, 'judul promosi 3', '<p>isi promosi 3</p>', '00fef98f15c301c03803ade565640e7a.jpg', '2019-07-22', 1);
 
 -- --------------------------------------------------------
 
@@ -237,7 +236,7 @@ INSERT INTO `reservasi` (`id`, `kode_reservasi`, `tgl_masuk`, `tgl_keluar`, `pak
 
 DROP TABLE IF EXISTS `testimoni`;
 CREATE TABLE `testimoni` (
-  `id_testimoni` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `summary` varchar(100) NOT NULL,
   `paragraph` text NOT NULL,
   `tgl` date NOT NULL,
@@ -249,7 +248,7 @@ CREATE TABLE `testimoni` (
 -- Dumping data for table `testimoni`
 --
 
-INSERT INTO `testimoni` (`id_testimoni`, `summary`, `paragraph`, `tgl`, `id_pelanggan`, `isActive`) VALUES
+INSERT INTO `testimoni` (`id`, `summary`, `paragraph`, `tgl`, `id_pelanggan`, `isActive`) VALUES
 (1, 'Manajemen yang bagus', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', '2019-07-24', 1, 1),
 (2, 'Suasana nya benar-benar nyaman', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', '2019-07-24', 2, 1);
 
@@ -343,7 +342,7 @@ ALTER TABLE `reservasi`
 -- Indexes for table `testimoni`
 --
 ALTER TABLE `testimoni`
-  ADD PRIMARY KEY (`id_testimoni`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `tokens`
@@ -359,7 +358,7 @@ ALTER TABLE `tokens`
 -- AUTO_INCREMENT for table `admins`
 --
 ALTER TABLE `admins`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `paket_jenis`
@@ -383,7 +382,7 @@ ALTER TABLE `paket_riwayat`
 -- AUTO_INCREMENT for table `pelanggan`
 --
 ALTER TABLE `pelanggan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `post`
@@ -401,7 +400,7 @@ ALTER TABLE `reservasi`
 -- AUTO_INCREMENT for table `testimoni`
 --
 ALTER TABLE `testimoni`
-  MODIFY `id_testimoni` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tokens`
