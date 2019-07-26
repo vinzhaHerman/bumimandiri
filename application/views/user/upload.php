@@ -79,9 +79,9 @@
               <div class="jumbotron">
                 <h1 class="display-4">Satu langkah lagi!</h1>
                 <label for="fileupload">untuk Reservasi</label> 
-                <input type="text" class="form-control-plaintext text-primary" name="kode" value="<?php echo $userriwayat['kode_reservasi'] ?>" style="font-size: 1.5rem;">
                 <p class="lead">Silahkan upload foto bukti transaksi anda disini. pesanan anda akan di konfirmasi oleh pihak kami paling lambat 1 x 24 jam.</p>
                 <?php echo form_open_multipart('Account/do_upload');?>
+                <input type="text" class="form-control-plaintext text-primary" name="kode" value="<?php echo $userriwayat['kode_reservasi'] ?>" style="font-size: 1.5rem;">
                 <input type="file" name="fileupload" id="fileupload">
                 <hr class="my-4">
                 <p>Pastikan data yang anda masukan benar.</p>
