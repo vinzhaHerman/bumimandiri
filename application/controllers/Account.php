@@ -106,4 +106,15 @@ class Account extends CI_Controller {
                 redirect(base_url("Account"));
         }
      }
+
+
+
+
+
+     public function bukti_pemesanan($id)
+     {
+        $data=array('res'=>$this->Pemesanan->get_pemesanan_byid($id));
+        // $data['res']=$this->Pemesanan->get_pemesanan_byid($id);
+        $this->load->view('user/bukti_pemesanan', $data);
+     }
 }

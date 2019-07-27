@@ -159,7 +159,7 @@ class Admin extends CI_Controller {
 		$data=array('res'=>$this->Reservasi_model->get_reservasi_waiting());
 		$this->load->view('admin/template/head');
 		$this->load->view('admin/template/sidebar');
-		$this->load->view('admin/reservasi', $data);
+		$this->load->view('admin/reservasi_waiting', $data);
 		$this->load->view('admin/template/foot');
 	}
 	public function laporan_reservasi()
@@ -254,31 +254,6 @@ class Admin extends CI_Controller {
 	public function print_paket(){
 		$data['paket'] = $this->db->get('paket_jenis')->result();
         $this->load->view('admin/laporan_print_paket',$data);
-	}
-	public function print_paket_pdf(){
-		$pdf = new FPDF('l','mm','A4');
-        // membuat halaman baru
-        $pdf->AddPage();
-        // setting jenis font yang akan digunakan
-        $pdf->SetFont('Arial','B',16);
-        // mencetak string 
-        $pdf->Cell(190,7,'LAPORAN DATA PAKET',0,1,'C');
-        $pdf->SetFont('Arial','B',12);
-        $pdf->Cell(190,7,'BUMI MANDIRI',0,1,'C');
-        // Memberikan space kebawah agar tidak terlalu rapat
-        $pdf->Cell(10,7,'',0,1);
-        $pdf->SetFont('Arial','B',10);
-        $pdf->Cell(50,6,'Nama Paket',1,0);
-        $pdf->Cell(120,6,'Deskripsi',1,0);
-        $pdf->SetFont('Arial','',10);
-        $paket = $this->db->get('paket_jenis')->result();
-        foreach ($paket as $row){
-            $pdf->Ln(10);
-            $pdf->Cell(50,6,$row->nama_paket,1,0);
-            $pdf->Cell(190,6,$row->deskripsi,1,0);
-            $pdf->Ln(10);
-        }
-        $pdf->Output();
 	}
 // -------------------------------------------END Data Paket----------------------------------------------
 

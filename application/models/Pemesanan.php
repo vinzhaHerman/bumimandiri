@@ -9,7 +9,7 @@ class Pemesanan extends CI_Model {
 	}
 
 	function get_pemesanan_byid($id){
-		$result=$this->db->query("SELECT reservasi.id, reservasi.kode_reservasi, reservasi.id_pelanggan, reservasi.paket_program_id, reservasi.tagihan, reservasi.jumlah_org, reservasi.tgl_masuk, reservasi.tgl_keluar, pelanggan.nama_depan, reservasi.bukti, paket_program.nama_program, reservasi.pembayaran FROM (reservasi INNER JOIN pelanggan ON reservasi.id_pelanggan=pelanggan.id) INNER JOIN paket_program ON reservasi.paket_program_id=paket_program.id WHERE kode_reservasi='$id'");
+		$result=$this->db->query("SELECT reservasi.id, reservasi.kode_reservasi, reservasi.id_pelanggan, reservasi.paket_program_id, reservasi.tagihan, reservasi.jumlah_org, reservasi.tgl_masuk, reservasi.tgl_keluar, pelanggan.nama_depan, pelanggan.nama_belakang, reservasi.bukti, paket_program.nama_program, reservasi.pembayaran FROM (reservasi INNER JOIN pelanggan ON reservasi.id_pelanggan=pelanggan.id) INNER JOIN paket_program ON reservasi.paket_program_id=paket_program.id WHERE kode_reservasi='$id'");
         return $result;
 	}
 
