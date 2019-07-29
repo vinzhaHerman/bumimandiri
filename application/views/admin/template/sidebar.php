@@ -50,6 +50,7 @@
                 </ul>
             </div>
           </li>
+          <?php if ($this->session->userdata('s_level') == "1") {?>
           <li class="nav-item">
             <a class="nav-link collapsed" href="#submenu2" data-toggle="collapse" data-target="#submenu2">
               <i class="fas fa-list"></i>
@@ -64,6 +65,7 @@
                 </ul>
             </div>
           </li>
+          <?php } else { ?><?php } ?>
           <li class="nav-item ">
             <a class="nav-link" href="<?php echo base_url()?>Admin/kelola_blog">
               <i class="fas fa-book"></i>
