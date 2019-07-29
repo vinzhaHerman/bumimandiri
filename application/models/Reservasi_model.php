@@ -53,6 +53,12 @@ class Reservasi_model extends CI_Model {
         return $result;
 	}
 
+	function src_reservasi_detail_filterDate($datein,$dateout){
+		$result=$this->db->query("SELECT reservasi.id, reservasi.kode_reservasi, reservasi.tgl_masuk, reservasi.tgl_keluar, paket_jenis.nama_paket, paket_program.nama_program, reservasi.jumlah_org, pelanggan.nama_depan FROM reservasi INNER JOIN paket_program on reservasi.paket_program_id=paket_program.id INNER JOIN paket_jenis on paket_program.paket_jenis_id=paket_jenis.id INNER JOIN pelanggan on reservasi.id_pelanggan=pelanggan.id WHERE (tgl_keluar>='$datein' and tgl_keluar<='$dateout') AND reservasi.pembayaran='LUNAS' " );
+        return $result;
+
+	}
+
 	// function src_paket_by_date_and_id($idprogram, $datein, $dateout){
 	// 	$result=$this->db->query("SELECT * FROM paket_program WHERE id='$idprogram' NOT IN (SELECT paket_program_id FROM reservasi WHERE
  //   		(tgl_masuk <= '$datein' AND tgl_keluar >= '$datein') OR

@@ -57,41 +57,51 @@
 
           <div class="">
               <div class="card">
-                <div class="card-header card-header-primary">
-                  <h3 class="card-title">Data Pelanggan</h3>
+                <div class="card-header card-header-warning">
+                  <h3 class="card-title pull-left">Laporan Data Reservasi</h3>
+                  <!-- <a href="" class="btn btn-danger btn-sm pull-right"><i class="fas fa-print"></i> Cetak Laporan</a> -->
                 </div>
                 <div class="card-body table-responsive">
-                  <table id="myTable" class="table table-hover  table-striped">
-                    <thead class="text-primary">
-                      <th>No.</th>
-                      <th>Nama Lengkap</th>
-                      <th>Username</th>
-                      <th>Email</th>
-                      <th>No. Telp</th>
-                      <th>Aksi</th>
+
+                  <form action="<?php echo base_url('Admin/laporan_reservasi_src') ?>" method="get">
+                    <div class="row">
+                      <div class="col-lg-5">
+                        <label for="datein">Untuk Tanggal</label>
+                        <input type='text' class="form-control" id='datetimepicker1' name="datein" required="true" />
+                      </div>
+                      <div class="col-lg-5">
+                        <label for="datein">Sampai</label>
+                        <input type='text' class="form-control" id='datetimepicker2' name="dateout" required="true" />
+                      </div>
+                      <div class="col-lg-2">
+                        <button type="submit" class="btn btn-lg btn-warning pull-right">Cari</button>
+                      </div>
+                    </div>
+                  </form>
+                  <hr>
+                  <table id="laporan" class="table table-hover  table-striped">
+                    <thead class="text-warning">
+                      <th>Kode reservasi</th>
+                      <th>Masuk</th>
+                      <th>Keluar</th>
+                      <th>Nama Paket</th>
+                      <th>Nama Program</th>
+                      <th>Atas Nama</th>
+                      <th class="text-right">jumlah orang</th>
                     </thead>
                     <tbody>
-                    <?php $no=1; ?>
-                    <?php 
-                      function word_limit($string, $word_limit){
-                        $words = explode(" ",$string);
-                        return implode(" ",array_splice($words,0,$word_limit));
-                      }
-                      foreach(array_slice($res->result(), 0, 10) as $post ): 
-                    ?>
+                    <?php foreach ($res->result() as $post): ?>
                       <tr>
-                        <td><?php echo $no++; ?></td>
-                        <td><?php echo $post->nama_depan?></td>
-                        <td><?php echo $post->username?></td>
-                        <td><?php echo $post->email?></td>
-                        <td><?php echo $post->telp?></td>
-                        <td class="td-actions text-right">
-                              <a href="<?php echo base_url() ?>Admin/detail_pelanggan/<?php echo $post->id?>" rel="tooltip" title="Edit Task" class="btn btn-primary btn-sm">
-                                <i class="material-icons">settings</i> DETAIL
-                              </a>
-                            </td>
+                        <td><?php echo $post->kode_reservasi ?></td>
+                        <td><?php echo $post->tgl_masuk ?></td>
+                        <td><?php echo $post->tgl_keluar ?></td>
+                        <td><?php echo $post->nama_paket ?></td>
+                        <td><?php echo $post->nama_program ?></td>
+                        <td><?php echo $post->nama_depan ?></td>
+                        <td class="text-right"><?php echo $post->jumlah_org ?></td>
                       </tr>
-                    <?php endforeach; ?></tbody>
+                    <?php endforeach; ?>
+                    </tbody>
                   </table>
                 </div>
               </div>

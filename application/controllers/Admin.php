@@ -169,6 +169,16 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/reservasi_laporan');
 		$this->load->view('admin/template/foot');
 	}
+	public function laporan_reservasi_src()
+	{
+		$datein = $this->input->get('datein');
+		$dateout = $this->input->get('dateout');
+		$data=array('res'=>$this->Reservasi_model->src_reservasi_detail_filterDate($datein,$dateout));
+		$this->load->view('admin/template/head');
+		$this->load->view('admin/template/sidebar');
+		$this->load->view('admin/reservasi_laporan_hsl', $data);
+		$this->load->view('admin/template/foot');
+	}
 // -------------------------------------------END Data reservasi----------------------------------------------
 
 

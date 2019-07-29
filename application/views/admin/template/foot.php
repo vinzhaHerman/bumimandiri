@@ -105,12 +105,12 @@
 <script>
   $(document).ready( function () {
     $('#laporan').DataTable({
-    dom: 'Bfrtip',
+    dom: 'Brtip',
         buttons: [
-            'copyHtml5',
-            'excelHtml5',
-            'csvHtml5',
-            'pdfHtml5'
+            { extend: 'copyHtml5', className: 'btn btn-warning' },
+            { extend: 'excelHtml5', className: 'btn btn-warning' },
+            { extend: 'csvHtml5', className: 'btn btn-warning' },
+            { extend: 'pdfHtml5', className: 'btn btn-danger', text: '<i class="fas fa-print"></i> Cetak Laporan' }
         ]
     });
   });

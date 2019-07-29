@@ -59,10 +59,10 @@
               <div class="card">
                 <div class="card-header card-header-warning">
                   <h3 class="card-title pull-left">Laporan Data Paket</h3>
-                  <a href="<?php echo base_url('admin/print_paket');?>" class="btn btn-danger btn-sm pull-right"><i class="fas fa-print"></i> Cetak Laporan</a>
+                  <!-- <a href="" class="btn btn-danger btn-sm pull-right"><i class="fas fa-print"></i> Cetak Laporan</a> -->
                 </div>
                 <div class="card-body table-responsive">
-                  <table id="myTable" class="table table-hover  table-striped">
+                  <table id="laporan" class="table table-hover  table-striped">
                     <thead class="text-warning">
                       <th>No.</th>
                       <th>Nama Paket</th>

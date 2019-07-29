@@ -60,18 +60,17 @@
                 <div class="card-header card-header-warning">
                   <h3 class="card-title">Riwayat Transaksi</h3>
                   <a href="<?php echo base_url();?>admin/data_pelanggan" class="btn btn-sm"><i class="material-icons">keyboard_return</i> Kembali</a>
-                  <a href="" class="btn btn-danger btn-sm pull-right"><i class="fas fa-print"></i> Cetak Laporan</a>
+                  <!-- <a href="" class="btn btn-danger btn-sm pull-right"><i class="fas fa-print"></i> Cetak Laporan</a> -->
                 </div>
                 <div class="card-body table-responsive">
-                  <table id="myTable" class="table table-hover  table-striped">
+                  <table id="laporan" class="table table-hover  table-striped">
                     <thead class="text-info">
                       <th>No.</th>
                       <th>Kode Reservasi</th>
                       <th>check in</th>
                       <th>check out</th>
                       <th>Program</th>
-                      <th>Jumlah Peserta</th>
-                      <th></th>
+                      <th class="text-right">Jumlah Peserta</th>
                     </thead>
                     <tbody><?php $no=1; ?><?php foreach ($res->result() as $post): ?>
                       <tr>
@@ -80,12 +79,7 @@
                         <td><?php echo $post->check_in  ?></td>
                         <td><?php echo $post->check_out  ?></td>
                         <td><?php echo $post->nama_program  ?></td>
-                        <td><?php echo $post->jumlah_org ?></td>
-                        <td class="td-actions text-right">
-                              <button type="button" rel="tooltip" title="Konfirmasi" class="btn btn-warning">
-                                <i class="material-icons">done</i> Selesai
-                              </button>
-                            </td>
+                        <td class="text-right"><?php echo $post->jumlah_org ?></td>
                       </tr>
                     <?php endforeach; ?></tbody>
                   </table>

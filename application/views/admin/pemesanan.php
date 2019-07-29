@@ -170,7 +170,7 @@
                                 <i class="material-icons">done</i> Konfirmasi
                               </button> -->
                               <a href="<?php echo base_url() ?>Admin/opsi_pemesanan/<?php echo $post->kode_reservasi  ?>" rel="tooltip" title="Edit" class="btn btn-success konfirmasi">
-                                <i class="material-icons">settings</i> Option
+                                <i class="material-icons">settings</i> Opsi
                               </a>
                             </td>
                       </tr>

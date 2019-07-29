@@ -89,7 +89,7 @@
             <div class="collapse" id="submenu3" aria-expanded="false">
                 <ul class="flex-column pl-2 nav">
                     <li class="nav-item"><a class="nav-link" href=""><i class="fas fa-users"></i>Data Pengunjung</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#"><i class="far fa-calendar-alt"></i>Data Reservasi</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?php echo base_url()?>Admin/laporan_reservasi"><i class="far fa-calendar-alt"></i>Data Reservasi</a></li>
                     <li class="nav-item"><a class="nav-link" href="<?php echo base_url()?>Admin/laporan_paket"><i class="fas fa-stream"></i>Data Paket</a></li>
                 </ul>
             </div>

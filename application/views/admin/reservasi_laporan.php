@@ -58,43 +58,42 @@
           <div class="">
               <div class="card">
                 <div class="card-header card-header-warning">
-                  <h3 class="card-title pull-left">Laporan Data Paket</h3>
-                  <a href="<?php echo base_url('admin/print_paket');?>" class="btn btn-danger btn-sm pull-right"><i class="fas fa-print"></i> Cetak Laporan</a>
+                  <h3 class="card-title pull-left">Laporan Data Reservasi</h3>
+                  <!-- <a href="" class="btn btn-danger btn-sm pull-right"><i class="fas fa-print"></i> Cetak Laporan</a> -->
                 </div>
                 <div class="card-body table-responsive">
 
-                  <form action="<?php echo base_url('web/laporan-transaksi/pembayaran/print') ?>" method="post">
+                  <form action="<?php echo base_url('Admin/laporan_reservasi_src') ?>" method="get">
                     <div class="row">
-                      <div class="col-lg-6">
+                      <div class="col-lg-5">
                         <label for="datein">Untuk Tanggal</label>
                         <input type='text' class="form-control" id='datetimepicker1' name="datein" required="true" />
                       </div>
-                      <div class="col-lg-6">
+                      <div class="col-lg-5">
                         <label for="datein">Sampai</label>
                         <input type='text' class="form-control" id='datetimepicker2' name="dateout" required="true" />
                       </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-lg-12">
-                        <button type="submit" class="btn btn-info pull-right">Cari</button>
+                      <div class="col-lg-2">
+                        <button type="submit" class="btn btn-lg btn-warning pull-right">Cari</button>
                       </div>
                     </div>
                   </form>
                   <hr>
                   <table id="laporan" class="table table-hover  table-striped">
                     <thead class="text-warning">
-                      <th>No.</th>
+                      <th>Kode reservasi</th>
+                      <th>Masuk</th>
+                      <th>Keluar</th>
                       <th>Nama Paket</th>
-                      <th>Deskripsi</th>
+                      <th>Nama Program</th>
+                      <th>Atas Nama</th>
+                      <th>jumlah orang</th>
                     </thead>
-                    <tbody><?php $no=1; ?>
-                    <?php ?>
+                    <tbody>
                       <tr>
-                        <td><?php ?></td>
-                        <td><?php ?></td>
-                        <td><?php ?></td>
+                        <td></td>
                       </tr>
-                    <?php ?></tbody>
+                    </tbody>
                   </table>
                 </div>
               </div>

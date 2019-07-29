@@ -14,7 +14,6 @@
   	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
   	<!-- CSS Files -->
   	<link href="<?php echo base_url();?>/assets/css/material-dashboard.css" rel="stylesheet" />
-	<!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.18/b-1.5.6/b-print-1.5.6/r-2.2.2/sc-2.0.0/datatables.min.css"/> -->
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css">
 	<script src="<?php echo base_url();?>/assets/js/core/jquery.min.js" type="text/javascript"></script>
 	<!-- Plugin for the momentJs  -->
@@ -25,3 +24,10 @@
     <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.10.18/b-1.5.6/b-html5-1.5.6/b-print-1.5.6/r-2.2.2/datatables.min.css"/>
 </head>
+
+<style type="text/css">
+  div.dt-buttons {
+  	position: relative;
+    float: right;
+}
+</style>
