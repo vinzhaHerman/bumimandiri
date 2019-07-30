@@ -49,6 +49,15 @@ class Account extends CI_Controller {
         redirect(base_url("Account"));
     }
 
+    public function update_testimoni()
+    {
+        $sum = $this->input->post('sum');
+        $para = $this->input->post('para');
+        $id = $this->input->post('id');
+        $this->Testimoni_model->update_testimoni($sum, $para, $id);
+        redirect(base_url("Account"));
+    }
+
 
 	public function upload_bukti($id="")
 	{
