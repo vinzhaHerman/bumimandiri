@@ -44,8 +44,8 @@ class Account extends CI_Controller {
     {
         $sum = $this->input->post('sum');
         $para = $this->input->post('para');
-        $id = $this->input->post('id');
-        $this->Testimoni_model->set_testimoni($sum, $para, $id);
+        $userid = $this->session->userdata('id');
+        $this->Testimoni_model->set_testimoni($sum, $para, $userid);
         redirect(base_url("Account"));
     }
 
