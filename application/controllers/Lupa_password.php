@@ -43,24 +43,24 @@ class Lupa_password extends CI_Controller {
 
              
              $config = Array(
-    			'protocol' => 'smtp',
-    			'smtp_host' => 'ssl://smtp.googlemail.com',
-    			'smtp_port' => 465,
-    			'smtp_user' => 'drevar420@gmail.com',
-    			'smtp_pass' => 'bakara238',
-    			'mailtype'  => 'html', 
-    			'charset'   => 'iso-8859-1'
-			);			 
+    			     'protocol' => 'smtp',
+    			     'smtp_host' => 'ssl://smtp.googlemail.com',
+    			     'smtp_port' => 465,
+    			     'smtp_user' => 'drevar420@gmail.com',
+    			     'smtp_pass' => 'bakara238',
+    			     'mailtype'  => 'html', 
+    			     'charset'   => 'iso-8859-1'
+			       );			 
              $this->load->library('email', $config);
-			 $this->email->set_newline("\r\n");	
+			       $this->email->set_newline("\r\n");	
 
-				$this->email->from('bumimandiri@system.com', 'BUMI MANDIRI');
-				$this->email->to('vinzhaherman@gmail.com');
+				     $this->email->from('bumimandiri@system.com', 'BUMI MANDIRI');
+				     $this->email->to($email);
 
-				$this->email->subject('Email Test');
-				$this->email->message($message);
+				     $this->email->subject('Email Test');
+				     $this->email->message($message);
 
-				$this->email->send();
+				     $this->email->send();
              exit;  
            
          }  
