@@ -94,7 +94,7 @@
                               echo '<button type="button"  href="',
                               'base_url();/upload/bukti/',
                               $post->bukti,
-                              '" class="btn btn-info btn-sm" data-toggle="modal" data-target="#showModal">
+                              '" class="btn btn-info btn-sm" data-toggle="modal" data-target="#showModal" disabled>
                             <i class="material-icons">done</i> Uploaded
                             </button>';
                             }

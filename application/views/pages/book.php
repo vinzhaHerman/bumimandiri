@@ -53,7 +53,7 @@
         <div class="card-body">
           <form action="<?php  echo base_url("Booking/src_by_paket/");?>" method="get" enctype="multipart/form-data">
           <h4 class="card-title"><?php echo $post->nama_paket ?></h4>
-          <img src="<?php echo base_url();?>assets/img/people.jpg" alt="..." class="img-thumbnail">
+          <img src="<?php echo base_url();?>upload/paket/jenis/<?php echo $post->paket_img ?>" alt="..." class="img-thumbnail">
           <!-- <p class="card-text"></p> -->
           <input type='text' class="form-control" name="idpaket" value="<?php echo $post->id ?>" hidden/>
           <input type='text' class="form-control" name="namapaket" value="<?php echo $post->nama_paket ?>" hidden/>

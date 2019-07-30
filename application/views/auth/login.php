@@ -17,6 +17,11 @@
 
   <div class="container">
     <div class="form-container">
+      <?php 
+          if($message=$this->session->flashdata('message')):
+      ?>
+      <p style="text-align: center;"><?php echo $message ?></p>
+      <?php endif; ?>
     <label for="username">Nama Pengguna</label>
     <input type="text" placeholder="Enter Username" name="username" required>
     </div>

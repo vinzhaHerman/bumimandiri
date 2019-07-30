@@ -123,17 +123,45 @@
                           </div>
                           <div class="card-body" style="min-height: 280px;">
                               <div class="row mx-auto">
-                                <a href="<?php echo base_url().'upload/bukti/'.$res['bukti'];?>" class="mx-auto"><img src="<?php echo base_url().'upload/bukti/'.$res['bukti'];?>" onerror="this.onerror=null; this.src='<?php echo base_url().'upload/bukti/default.jpg'?>'" alt="" class="img-thumbnail mx-auto" style="max-height: 250px;"></a>
+                                <a href="<?php echo base_url().'upload/bukti/'.$res['bukti'];?>"target="_blank" class="mx-auto"><img src="<?php echo base_url().'upload/bukti/'.$res['bukti'];?>" onerror="this.onerror=null; this.src='<?php echo base_url().'upload/bukti/default.jpg'?>'" alt="" class="img-thumbnail mx-auto" style="max-height: 250px;"></a>
                               </div>
                               <div class="clearfix"></div>
                           </div>
                         </div>
                       </div>
                     </div>
-                    <div class="row">
+                    <button type="button" class="btn btn-success pull-right" data-toggle="modal" data-target="#modalKon"><i class="material-icons">done</i> Konfirmasi Pembayaran</button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="modalKon" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalCenterTitle">Konfirmasi Transaksi</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            <div class="modal-data">
+                              <div class="row">
+                                <div class="col-md-2 mx-auto align-item-center text-center">
+                                  <i class="material-icons" style="font-size: 4rem; color: orange;">info</i>
+                                </div>
+                                <div class="col-md-10">
+                                  Anda yakin ingin konfirmasi pembayaran dan melanjutkan transaksi? Pastikan data sudah sesuai sebelum melanjutkan.
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn" data-dismiss="modal">Kembali</button>
+                            <button type="submit" class="btn btn-success pull-right"><i class="material-icons">done</i> Konfirmasi Pembayaran</button>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <button type="submit" class="btn btn-success pull-right"><i class="material-icons">done</i> Konfirmasi Pembayaran</button>
-                    <a href="<?php echo base_url();?>admin/ubah_status_batal/<?php echo $res['kode_reservasi'] ?>" class="btn btn-danger pull-right"><i class="material-icons">clear</i> Batalkan Transaksi</a>
+                    <!-- Modal -->
+                    <button type="button" data-toggle="modal" data-target="#modalBatal" class="btn btn-danger pull-right"><i class="material-icons">clear</i> Batalkan Transaksi</button>
                     <div class="clearfix"></div>
                   </form>
                 </div>
@@ -151,26 +179,35 @@
 
 
       <!-- Modal -->
-      <div class="modal fade" id="showModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal fade" id="modalBatal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalCenterTitle">Bukti Pembayaran</h5>
+              <h5 class="modal-title" id="exampleModalCenterTitle">Konfirmasi pembatalan transaksi</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-body">
               <div class="modal-data">
-                <?php echo base_url().'upload/bukti/'.$res['bukti'];?>
+                <div class="row">
+                  <div class="col-md-2">
+                    <i class="material-icons" style="font-size: 4rem; color: orange;">info</i>
+                  </div>
+                  <div class="col-md-10">
+                    Anda yakin ingin membatalkan pesanan? Pesanan yang dibatalkan tidak akan dapat dilanjutkan kembali dalam proses transaksi!
+                  </div>
+                </div>
               </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
-            /div>
+              <button type="button" class="btn" data-dismiss="modal">Kembali</button>
+              <a class="btn btn-warning" href="<?php echo base_url();?>admin/ubah_status_batal/<?php echo $res['kode_reservasi'] ?>">Batalkan</a>
+            </div>
           </div>
         </div>
       </div>
+      <!-- Modal -->
 
 
 

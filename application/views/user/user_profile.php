@@ -159,7 +159,7 @@
                             <a  href="<?php echo base_url() ?>account/upload_bukti/<?php echo $res->kode_reservasi ?>" class="btn btn-success btn-sm" title="Upload bukti pembayaran">
                             <i class="material-icons">cloud_upload</i>
                             </a>
-                            <a  href="<?php echo base_url() ?>account/bukti_pemesanan/<?php echo $res->kode_reservasi ?>" class="btn btn-info btn-sm <?php if(!($res->pembayaran=='LUNAS')){echo "collapse";}  ?>" title="Cetak bukti transaksi">
+                            <a  href="<?php echo base_url() ?>account/bukti_pemesanan/<?php echo $res->kode_reservasi ?>" target="_blank" class="btn btn-info btn-sm <?php if(!($res->pembayaran=='LUNAS')){echo "collapse";}  ?>" title="Cetak bukti transaksi">
                             <i class="material-icons">print</i>
                             </a>
                           </td>
@@ -171,7 +171,39 @@
                 </div>
               </div>
 
-              <?php if (empty($userriwayat->result())) { echo "<div class=collapse>"; }?>
+              <?php if (empty($userriwayat->result())) {?>
+              
+              <?php } elseif (!empty($userreview->result())) { ?>
+              <div class="card">
+                <div class="card-header card-header-primary">
+                  <h4 class="card-title">Ulasan</h4>
+                  <p class="card-category">Bagaimana kesan anda:</p>
+                </div>
+                <div class="card-body">
+                  <?php $userreview=$userreview->row_array()?>
+                  <form action="<?php echo base_url('Account/update_testimoni'); ?>" method="post">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <label class="bmd-label-floating">Pendapat Anda:</label>
+                      <input type="text" class="form-control" name="id" value="<?php echo $userreview['id_testimoni'] ?>" hidden>
+                      <input type="text" class="form-control" name="sum" value="<?php echo $userreview['summary'] ?>">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <label class="bmd-label-floating">Detail:</label>
+                      <textarea class="form-control" name="para"><?php echo $userreview['paragraph'] ?></textarea>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <button type="button"  href="" class="btn btn-success btn-sm pull-right"><i class="material-icons">edit</i> Ubah</button>
+                    </div>
+                  </div>
+                  </form>
+                </div>
+              </div>
+              <?php } else {  ?>
               <div class="card">
                 <div class="card-header card-header-primary">
                   <h4 class="card-title">Ulasan</h4>
@@ -182,23 +214,24 @@
                   <div class="row">
                     <div class="col-md-12">
                       <label class="bmd-label-floating">Pendapat Anda:</label>
-                      <input type="text" class="form-control" name="summary" value="">
+                      <input type="text" class="form-control" name="sum" value="">
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-md-12">
                       <label class="bmd-label-floating">Detail:</label>
-                      <textarea class="form-control" name="paragraph" value=""></textarea>
+                      <textarea class="form-control" name="para" value=""></textarea>
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-md-12">
-                      <button type="button"  href="" class="btn btn-success btn-sm pull-right"><i class="material-icons">done</i>Simpan</button>
+                      <button type="submit" class="btn btn-success btn-sm pull-right"><i class="material-icons">done</i>Simpan</button>
                     </div>
                   </div>
                   </form>
                 </div>
-            </div>
+              </div>
+              <?php } ?>
           </div>
         </div>
       </div>

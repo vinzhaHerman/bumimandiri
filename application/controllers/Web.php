@@ -54,7 +54,7 @@ class Web extends CI_Controller {
             // echo $data_session['id'];
  
         }else{
-        	$this->session->set_flashdata('message', 'Masukan Username dan Password yang benar');
+        	$this->session->set_flashdata('message', 'Nama pengguna atau kata sandi salah.');
             redirect(base_url('login'));
         }
     }

@@ -78,7 +78,8 @@ class Pelanggan_model extends CI_Model {
 
 
 	function set_pelanggan($namadepan,$namabelakang,$email,$username,$password){
-    	$result=$this->db->query("INSERT INTO pelanggan (nama_depan, nama_belakang, email, username, password) VALUES ('$namadepan', '$namabelakang', '$email', '$username', '$password')");
+		$date = date('Y-m-d');
+    	$result=$this->db->query("INSERT INTO pelanggan (nama_depan, nama_belakang, email, username, password, foto_profil, tgl_reg) VALUES ('$namadepan', '$namabelakang', '$email', '$username', '$password', 'default.jpg', '$date')");
         return $result;
     }
 

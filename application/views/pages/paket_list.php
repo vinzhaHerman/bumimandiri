@@ -72,7 +72,7 @@
                   
                 </div>
                 <div class="row">
-                  <div class="col-sm-3"><img style="max-width: 235px; height: auto;" src="<?php echo base_url();?>assets/img/people.jpg" alt=""></div>
+                  <div class="col-sm-3"><img style="max-width: 235px; height: auto;" src="<?php echo base_url();?>upload/paket/program/<?php echo $post->program_img ?>" alt=""></div>
                   <div class="col-sm-8">
                     <h3 class="card-title text-success">Fasilitas:</h3>
                     <p class="card-text"><?php echo $post->fasilitas ?></p>

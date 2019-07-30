@@ -9,6 +9,7 @@ class Account extends CI_Controller {
 		$this->load->helper('form');
 		$this->load->model('Pelanggan_model');
 		$this->load->model('Reservasi_model');
+        $this->load->model('Testimoni_model');
 		$this->load->model('Pemesanan');
 	}
 
@@ -20,6 +21,7 @@ class Account extends CI_Controller {
         }
 		$data['userdata']=$this->Pelanggan_model->getuser($this->session->userdata('id'));
 		$data['userriwayat']=$this->Pelanggan_model->get_reservasi_byuser($this->session->userdata('id'));
+        $data['userreview']=$this->Testimoni_model->get_testimoni_by_userid($this->session->userdata('id'));
 		// $data=array('res'=>$this->Pelanggan_model->get_user_data());
         // $data['user_res']=$this->Pelanggan_model->get_reservasi_byuser($this->session->userdata('id'));
 		$this->load->view('user/user_profile', $data);
@@ -37,6 +39,15 @@ class Account extends CI_Controller {
 		$this->Pelanggan_model->update_profile($namadepan,$namabelakang,$email,$username,$alamat,$telp,$userid);
 		redirect(base_url("Account"));
 	}
+
+    public function set_testimoni()
+    {
+        $sum = $this->input->post('sum');
+        $para = $this->input->post('para');
+        $id = $this->input->post('id');
+        $this->Testimoni_model->set_testimoni($sum, $para, $id);
+        redirect(base_url("Account"));
+    }
 
 
 	public function upload_bukti($id="")
