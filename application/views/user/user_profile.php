@@ -197,7 +197,7 @@
                   </div>
                   <div class="row">
                     <div class="col-md-12">
-                      <button type="button"  href="" class="btn btn-success btn-sm pull-right"><i class="material-icons">edit</i> Ubah</button>
+                      <button type="submit"  href="" class="btn btn-success btn-sm pull-right"><i class="material-icons">edit</i> Ubah</button>
                     </div>
                   </div>
                   </form>
