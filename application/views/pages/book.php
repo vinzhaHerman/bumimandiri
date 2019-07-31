@@ -49,15 +49,27 @@
   <div class="row text-center align-items-center mx-auto" >
     <?php foreach ($res->result() as $post): ?>
     <div class="col-sm">
-      <div class="card mx-auto" style="width: 20rem;">
+      <!-- <div class="card mx-auto" style="width: 20rem;">
+        <div class="card-body">
+          <form action="<?php  //echo base_url("Booking/src_by_paket/");?>" method="get" enctype="multipart/form-data">
+          <h4 class="card-title"><?php //echo $post->nama_paket ?></h4>
+          <img src="<?php //echo base_url();?>upload/paket/jenis/<?php //echo $post->paket_img ?>" alt="..." class="img-thumbnail">
+          <p class="card-text"></p>
+          <input type='text' class="form-control" name="idpaket" value="<?php //echo $post->id ?>" hidden/>
+          <input type='text' class="form-control" name="namapaket" value="<?php //echo $post->nama_paket ?>" hidden/>
+          <button type="submit" class="btn btn-info">Pilih Paket</button>
+          </form>
+        </div>
+      </div> -->
+      <div class="card mx-auto" style="width: 18rem;">
+        <img class="card-img-top" src="<?php echo base_url();?>upload/paket/jenis/<?php echo $post->paket_img ?>" alt="Card image cap" style="max-height: 220px; width: auto;">
         <div class="card-body">
           <form action="<?php  echo base_url("Booking/src_by_paket/");?>" method="get" enctype="multipart/form-data">
-          <h4 class="card-title"><?php echo $post->nama_paket ?></h4>
-          <img src="<?php echo base_url();?>upload/paket/jenis/<?php echo $post->paket_img ?>" alt="..." class="img-thumbnail">
-          <!-- <p class="card-text"></p> -->
+          <h5 class="card-title text-success"><b><?php echo $post->nama_paket ?></b></h5>
           <input type='text' class="form-control" name="idpaket" value="<?php echo $post->id ?>" hidden/>
           <input type='text' class="form-control" name="namapaket" value="<?php echo $post->nama_paket ?>" hidden/>
-          <button type="submit" class="btn btn-info">Pilih Paket</button>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <button type="submit" class="btn btn-success">Pilih Paket</button>
           </form>
         </div>
       </div>
