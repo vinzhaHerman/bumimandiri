@@ -8,6 +8,7 @@ class Account extends CI_Controller {
 		$this->load->helper('url');
 		$this->load->helper('form');
 		$this->load->model('Pelanggan_model');
+        $this->load->model('Pemesanan');
 		$this->load->model('Reservasi_model');
         $this->load->model('Testimoni_model');
 		$this->load->model('Pemesanan');
@@ -137,4 +138,38 @@ class Account extends CI_Controller {
         // $data['res']=$this->Pemesanan->get_pemesanan_byid($id);
         $this->load->view('user/bukti_pemesanan', $data);
      }
+
+
+
+
+
+     public function pembatalan($id="")
+    {
+        if($this->session->userdata('status') != "login"){
+            redirect(base_url("login"));
+        }
+        $data['userdata']=$this->Pelanggan_model->getuser($this->session->userdata('id'));
+        $data['userriwayat']=$this->Reservasi_model->get_reservasi_bykode($id);
+        // $data=array('res'=>$this->Pelanggan_model->get_user_data());
+        // $data['user_res']=$this->Pelanggan_model->get_reservasi_byuser($this->session->userdata('id'));
+        $fileupload = $this->input->post('fileupload');
+        $this->load->view('user/form_pembatalan', $data, array('error' => ' ' ));
+    }
+
+
+
+
+    public function set_pembatalan()
+    {
+        $kode = $this->input->post('kode');
+        $alasan = $this->input->post('alasan');
+        $norek = $this->input->post('norek');
+        $an = $this->input->post('an');
+        $rid = $this->input->post('rid');
+        $userid = $this->session->userdata('id');
+        $this->Pemesanan->set_pembatalan($alasan, $norek, $an, $rid, $userid);
+        $this->Pemesanan->update_status_reqbatal($kode);
+        redirect(base_url("Account"));
+    }
+
 }

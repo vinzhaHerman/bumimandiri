@@ -36,7 +36,8 @@
 <div class="container-fluid">
     <div class="content">
         <div class="container-fluid">
-                <?php $userdata=$userdata->row_array() ?>
+          <?php $userdata=$userdata->row_array() ?>
+          <?php $hariini = date('Y-m-d'); ?>
           <div class="row">
             <div class="col-md-4">
               <div class="card card-profile">
@@ -47,7 +48,7 @@
                   </a>
                 </div>
                   <h6 class="card-category text-gray">User Account</h6>
-                  <h4 class="card-title"><?php echo $userdata['nama_depan']  ?></h4>
+                  <h4 class="card-title"><?php echo $userdata['nama_depan']  ?> <?php echo $userdata['nama_belakang']  ?></h4>
                   <a href="#pablo" class="btn btn-primary btn-round" data-toggle="collapse" data-target="#collapsedContent1" aria-expanded="false" aria-controls="collapsedContent1">Ganti Foto</a>
                   <div class="collapse" id="collapsedContent1">
                     <?php echo form_open_multipart('Account/update_foto');?>
@@ -161,6 +162,9 @@
                             </a>
                             <a  href="<?php echo base_url() ?>account/bukti_pemesanan/<?php echo $res->kode_reservasi ?>" target="_blank" class="btn btn-info btn-sm <?php if(!($res->pembayaran=='LUNAS')){echo "collapse";}  ?>" title="Cetak bukti transaksi">
                             <i class="material-icons">print</i>
+                            </a>
+                            <a  href="<?php echo base_url() ?>account/pembatalan/<?php echo $res->kode_reservasi ?>" target="_blank" class="btn btn-danger btn-sm <?php if((!($res->pembayaran=='LUNAS')) || ($hariini>($res->tgl_masuk)) || ($res->pembayaran=='PERMINTAAN BATAL')){echo "collapse";}  ?>" title="Permohonan pembatalan">
+                            <i class="material-icons">close</i>
                             </a>
                           </td>
                         </tr>

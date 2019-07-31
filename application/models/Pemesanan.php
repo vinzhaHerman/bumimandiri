@@ -61,12 +61,26 @@ class Pemesanan extends CI_Model {
         return $result;
     }
 
+    function update_status_reqbatal($kodereservasi){
+        $result=$this->db->query("UPDATE reservasi SET pembayaran='PERMINTAAN BATAL' WHERE kode_reservasi='$kodereservasi'");
+        return $result;
+    }
+
 
 
 
 
     function upload_bukti($bukti,$kode){
     	$result=$this->db->query("UPDATE reservasi SET bukti='$bukti' WHERE kode_reservasi='$kode'");
+        return $result;
+    }
+
+
+
+
+
+    function set_pembatalan($alasan, $norek, $an, $rid, $userid){
+        $result=$this->db->query("INSERT INTO pembatalan (alasan, norek, an, reservasi_id, pelanggan_id) VALUES ('$alasan', '$norek', '$an', '$rid', '$userid')");
         return $result;
     }
 

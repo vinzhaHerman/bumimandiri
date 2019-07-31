@@ -52,7 +52,7 @@
                 <div class="card-body">
                 <div class="card-avatar">
                   <a href="#pablo">
-                    <img class="img" src="<?php echo base_url();?>/upload/user/profile_photos/<?php echo $userdata['foto_profil']  ?>" />" />
+                    <img class="img" src="<?php echo base_url();?>/upload/user/profile_photos/<?php echo $userdata['foto_profil']  ?>" />
                   </a>
                 </div>
                   <h6 class="card-category text-gray">User Account</h6>
@@ -74,19 +74,61 @@
               </div>
             </div>
             <div class="col-md-8">
-              <div class="jumbotron">
-                <?php echo form_open_multipart('Account/do_upload');?>
-                <h1 class="display-4">Satu langkah lagi!</h1>
+              <div class="card">
+                <div class="card-body">
+                <?php echo form_open('Account/set_pembatalan');?>
+                <h2 class="display-4">Form permohonan pembatalan</h2>
                 <label for="fileupload">untuk Reservasi</label> 
                 <input type="text" class="form-control-plaintext text-primary" name="kode" value="<?php echo $userriwayat['kode_reservasi'] ?>" style="font-size: 1.5rem;">
-                <p class="lead">Silahkan upload foto bukti transaksi anda disini. pesanan anda akan di konfirmasi oleh pihak kami paling lambat 1 x 24 jam.</p>
-                <input type="file" name="fileupload" id="fileupload">
+                <input type="text" class="form-control-plaintext text-primary" name="rid" value="<?php echo $userriwayat['id'] ?>" hidden>
                 <hr class="my-4">
+                <p class="lead">Apa alasan anda melakukan pembatalan?</p>
+                <div class="form-check">
+                  <input class="" type="radio" name="alasan" id="op1" value="Salah memasukan tanggal pelaksanaan kegiatan/program" checked>
+                  <label class="form-check-label" for="op1">
+                    Salah memasukan tanggal pelaksanaan
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="" type="radio" name="alasan" id="op2" value="Salah memilih paket/program">
+                  <label class="form-check-label" for="op2">
+                    Salah memilih paket/program
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="" type="radio" name="alasan" id="op3" value="Salah input jumlah peserta">
+                  <label class="form-check-label" for="op3">
+                    Salah input jumlah peserta
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="" type="radio" name="alasan" id="op4" value="Lainnya">
+                  <label class="form-check-label" for="op4">
+                    Lainnya
+                  </label>
+                </div>
+                <hr class="my-4">
+                <div class="row">
+                  <div class="col-md-8">
+                    <div class="form-group">
+                      <label class="bmd-label-floating">Masukan no. rekening anda</label>
+                      <input type="text" class="form-control" name="norek" required="ture">
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label class="bmd-label-floating">Atas nama</label>
+                      <input type="text" class="form-control" name="an" required="true">
+                    </div>
+                  </div>
+                </div>
                 <p>Pastikan data yang anda masukan benar.</p>
                 <p class="lead">
-                  <button type="submit" class="btn btn-primary btn-lg" href="#" role="button">Upload</button>
+                  <button type="submit" class="btn btn-primary btn-lg pull-right" href="#" role="button">Kirim</button>
                 </p>
                 </form>
+
+                </div>
               </div>
             </div>
             </div>
