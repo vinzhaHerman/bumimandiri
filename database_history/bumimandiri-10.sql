@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 31, 2019 at 08:38 AM
+-- Generation Time: Jul 30, 2019 at 07:21 PM
 -- Server version: 10.3.15-MariaDB
 -- PHP Version: 7.3.6
 
@@ -68,7 +68,7 @@ CREATE TABLE IF NOT EXISTS `paket_jenis` (
   `deskripsi` text NOT NULL,
   `paket_img` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `paket_jenis`
@@ -77,7 +77,7 @@ CREATE TABLE IF NOT EXISTS `paket_jenis` (
 INSERT INTO `paket_jenis` (`id`, `nama_paket`, `deskripsi`, `paket_img`) VALUES
 (1, 'Paket Program Sekolah', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod&nbsp;tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,&nbsp;quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo&nbsp;consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse&nbsp;cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non&nbsp;proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>', '5a574acc030da09c177ca42d51123444.jpg'),
 (2, 'Paket Meeting', 'Paket untuk kepentingan instansi', '63586b095bc258150c02a1be1e8d8993.jpg'),
-(3, 'Paket Program Umum', 'Paket untuk kepentingan umum', 'default.jpg');
+(3, 'Paket Program Umum', 'Program Umum', '36b28247852ac771cac4e29fd73f26fb.jpg');
 
 -- --------------------------------------------------------
 
@@ -99,9 +99,8 @@ CREATE TABLE IF NOT EXISTS `paket_program` (
   `status` int(11) NOT NULL,
   `program_img` varchar(50) NOT NULL,
   `paket_jenis_id` int(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `program_jenis_id` (`paket_jenis_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `paket_program`
@@ -116,8 +115,9 @@ INSERT INTO `paket_program` (`id`, `nama_program`, `fasilitas`, `konsumsi`, `lam
 (7, 'Ramadhan Camp II', '<p>list fasilitas Ramadhan Camp tes</p>', '<p>list konsumsi Ramadhan Camp tes</p>', '3 hari 2 malam', 3, 123, 30, 120, 1, '9e2c205db821ce67e07bbbc79fe86ddd.jpg', 1),
 (8, 'Laboratorium Biologi', 'laboratorium', 'laboratorium', '1 hari', 1, 0, 30, 60, 1, 'default.jpg', 1),
 (9, 'MEETING I', 'fasilitas', 'konsumsi', '2 hari 1 malam', 2, 124000, 30, 45, 1, 'default.jpg', 2),
-(10, 'MEETING II', '<p>fasilitas meeting</p>', '<p>fasilitas meeting</p>', '2 hari 1 malam', 2, 0, 30, 45, 0, 'default.jpg', 1),
-(11, 'MEETING III', 'fasilitas meeting', 'fasilitas meeting', '1 hari', 1, 0, 30, 45, 1, 'default.jpg', 2);
+(10, 'MEETING II', 'fasilitas meeting', 'fasilitas meeting', '2 hari 1 malam', 2, 0, 30, 45, 1, 'default.jpg', 2),
+(11, 'MEETING III', 'fasilitas meeting', 'fasilitas meeting', '1 hari', 1, 0, 30, 45, 1, 'default.jpg', 2),
+(12, 'fun & recreation', '<p>list fasilitas fun &amp; recreation</p>', '<p>list konsumsi fun &amp; recreation</p>', '1 hari', 1, 0, 30, 60, 1, 'default.jpg', 3);
 
 -- --------------------------------------------------------
 
@@ -304,16 +304,6 @@ INSERT INTO `tokens` (`id`, `token`, `pelanggan_id`, `created`) VALUES
 (19, '30fa1e9153c5e316e121fa9dfcb037', 3, '2019-07-24'),
 (20, '0cbcdeb3b6ebacb48023d6cdd1f7a0', 3, '2019-07-30'),
 (21, '265e17fc97733107750e68fdf71ac2', 3, '2019-07-30');
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `paket_program`
---
-ALTER TABLE `paket_program`
-  ADD CONSTRAINT `program_jenis_id` FOREIGN KEY (`paket_jenis_id`) REFERENCES `paket_jenis` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
