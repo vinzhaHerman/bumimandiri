@@ -75,8 +75,12 @@ class Admin extends CI_Controller {
             redirect(base_url("admin/login"));
         }
         $data=array(
-            'res'=>$this->Testimoni_model->get_testimoni_detailed()
+            'res'=>$this->Testimoni_model->get_testimoni_detailed(),
+            'pembatalan'=>$this->Pemesanan->get_pembatalan()
         );
+        $data['totalpemesanan'] = $this->Pemesanan->get_pemesanan()->num_rows();
+        $data['totalpelanggan'] = $this->Pelanggan_model->get_user_data()->num_rows();
+        $data['totalreservasi'] = $this->Reservasi_model->get_reservasi_proses()->num_rows();
 		$this->load->view('admin/template/head');
 		$this->load->view('admin/template/sidebar');
 		$this->load->view('admin/dashboard', $data);

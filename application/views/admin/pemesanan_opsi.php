@@ -130,7 +130,7 @@
                         </div>
                       </div>
                     </div>
-                    <button type="button" class="btn btn-success pull-right" data-toggle="modal" data-target="#modalKon" <?php if(empty($res['bukti'])){echo "disabled"; } ?>><i class="material-icons">done</i> Konfirmasi Pembayaran</button>
+                    <button type="button" class="btn btn-success pull-right" data-toggle="modal" data-target="#modalKon" <?php if(empty($res['bukti']) || ($res['pembayaran']=='PERMINTAAN BATAL') || ($res['pembayaran']=='DIBATALKAN') || ($res['pembayaran']=='LUNAS')){echo "disabled"; } ?>><i class="material-icons">done</i> Konfirmasi Pembayaran</button>
                     <!-- Modal -->
                     <div class="modal fade" id="modalKon" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                       <div class="modal-dialog modal-dialog-centered" role="document">
@@ -161,7 +161,7 @@
                       </div>
                     </div>
                     <!-- Modal -->
-                    <button type="button" data-toggle="modal" data-target="#modalBatal" class="btn btn-danger pull-right"><i class="material-icons">clear</i> Batalkan Transaksi</button>
+                    <button type="button" data-toggle="modal" data-target="#modalBatal" class="btn btn-danger pull-right" <?php if($res['pembayaran']=='DIBATALKAN'){echo "disabled"; } ?>><i class="material-icons">clear</i> Batalkan Transaksi</button>
                     <div class="clearfix"></div>
                   </form>
                 </div>

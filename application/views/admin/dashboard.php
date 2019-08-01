@@ -72,75 +72,57 @@
       <div class="content">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-lg-3 col-md-6 col-sm-6">
-              <div class="card card-stats">
-                <div class="card-header card-header-warning card-header-icon">
-                  <div class="card-icon">
-                    <i class="material-icons">content_copy</i>
-                  </div>
-                  <p class="card-category">Pemesanan</p>
-                  <h3 class="card-title">49/50
-                    <small>GB</small>
-                  </h3>
-                </div>
-                <div class="card-footer">
-                  <div class="stats">
-                    <i class="material-icons text-danger">warning</i>
-                    <a href="#pablo">Get More Space...</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="col-lg-4 col-md-6 col-sm-6">
               <div class="card card-stats">
                 <div class="card-header card-header-success card-header-icon">
                   <div class="card-icon">
                     <i class="material-icons">store</i>
                   </div>
-                  <p class="card-category">Revenue</p>
-                  <h3 class="card-title">$34,245</h3>
+                  <p class="card-category">Sedang Berlangsung</p>
+                  <h3 class="card-title"><?php echo $totalreservasi; ?></h3>
                 </div>
                 <div class="card-footer">
                   <div class="stats">
-                    <i class="material-icons">date_range</i> Last 24 Hours
+                    <!-- <i class="material-icons">date_range</i> Last 24 Hours -->
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-              <div class="card card-stats">
-                <div class="card-header card-header-danger card-header-icon">
-                  <div class="card-icon">
-                    <i class="material-icons">info_outline</i>
-                  </div>
-                  <p class="card-category">Fixed Issues</p>
-                  <h3 class="card-title">75</h3>
-                </div>
-                <div class="card-footer">
-                  <div class="stats">
-                    <i class="material-icons">local_offer</i> Tracked from Github
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="col-lg-4 col-md-6 col-sm-6">
               <div class="card card-stats">
                 <div class="card-header card-header-info card-header-icon">
                   <div class="card-icon">
-                    <i class="fa fa-twitter"></i>
+                    <i class="material-icons">info_outline</i>
                   </div>
-                  <p class="card-category">Followers</p>
-                  <h3 class="card-title">+245</h3>
+                  <p class="card-category">Pelanggan terdaftar</p>
+                  <h3 class="card-title"><?php echo $totalpelanggan; ?></h3>
                 </div>
                 <div class="card-footer">
                   <div class="stats">
-                    <i class="material-icons">update</i> Just Updated
+                    <!-- <i class="material-icons">local_offer</i> Tracked from Github -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+              <div class="card card-stats">
+                <div class="card-header card-header-warning card-header-icon">
+                  <div class="card-icon">
+                    <i class="material-icons">local_offer</i>
+                  </div>
+                  <p class="card-category">Pemesanan masuk</p>
+                  <h3 class="card-title"><?php echo $totalpemesanan; ?></h3>
+                </div>
+                <div class="card-footer">
+                  <div class="stats">
+                    <!-- <i class="material-icons text-danger">warning</i>
+                    <a href="#pablo">Get More Space...</a> -->
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="row">
+          <!-- <div class="row">
             <div class="col-md-4">
               <div class="card card-chart">
                 <div class="card-header card-header-success">
@@ -190,11 +172,11 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
           <div class="row">
-            <div class="col-lg-12 col-md-12">
+            <div class="col-lg-9 col-md-9">
               <div class="card">
-                <div class="card-header card-header-info">
+                <div class="card-header card-header-primary">
                   <h4 class="card-title">Ulasan Terbaru</h4>
                   <p class="card-category">Daftar ulasan oleh pelanggan</p>
                 </div>
@@ -224,6 +206,75 @@
                       <?php endforeach; ?>
                     </tbody>
                   </table>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+              <div class="card card-stats">
+                <div class="card-header card-header-primary card-header-icon">
+                  <div class="card-icon">
+                    <i class="material-icons">content_copy</i>
+                  </div>
+                  <p class="card-category">Ulasan</p>
+                  <h3 class="card-title"><?php echo $res->num_rows(); ?></h3>
+                </div>
+                <div class="card-footer">
+                  <div class="stats">
+                    <!-- <a href="#pablo">Terpublikasi</a> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-9 col-md-9">
+              <div class="card">
+                <div class="card-header card-header-warning">
+                  <h4 class="card-title">Permintaan Pembatalan oleh pelanggan</h4>
+                  <p class="card-category">Daftar Permintaan Pembatalan oleh pelanggan</p>
+                </div>
+                <div class="card-body table-responsive">
+                  <table class="table table-hover">
+                    <thead class="text-info">
+                      <th>Kode Res.</th>
+                      <th>Pelanggan</th>
+                      <th>Alasan</th>
+                      <th>No rek</th>
+                      <th>A/N</th>
+                    </thead>
+                    <tbody>
+                      <?php foreach ($pembatalan->result() as $pb): ?>
+                      <tr>
+                        <td width="30px">
+                          <a href="<?php echo base_url() ?>Admin/opsi_pemesanan/<?php echo $pb->kode_reservasi  ?>" class="btn btn-sm btn-warning">
+                                <?php echo $pb->kode_reservasi ?>
+                              </a>
+                        </td>
+                        <td><?php echo $pb->nama_depan ?></td>
+                        <td><?php echo $pb->alasan ?></td>
+                        <td><?php echo $pb->norek ?></td>
+                        <td><?php echo $pb->an ?></td>
+                      </tr>
+                      <?php endforeach; ?>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+              <div class="card card-stats">
+                <div class="card-header card-header-warning card-header-icon">
+                  <div class="card-icon">
+                    <i class="material-icons">content_copy</i>
+                  </div>
+                  <p class="card-category">Pembatalan</p>
+                  <h3 class="card-title"><?php echo $pembatalan->num_rows(); ?>
+                  </h3>
+                </div>
+                <div class="card-footer">
+                  <div class="stats">
+                    <!-- <a href="#pablo">Dari </a> -->
+                  </div>
                 </div>
               </div>
             </div>

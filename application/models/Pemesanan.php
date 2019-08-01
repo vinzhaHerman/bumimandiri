@@ -23,6 +23,11 @@ class Pemesanan extends CI_Model {
         return $result;
     }
 
+    function get_pembatalan(){
+        $result=$this->db->query("SELECT pembatalan.id, pembatalan.alasan, pembatalan.norek, pembatalan.an, reservasi.id, reservasi.kode_reservasi, pelanggan.nama_depan FROM pembatalan INNER JOIN reservasi ON pembatalan.reservasi_id=reservasi.id INNER JOIN pelanggan ON pembatalan.pelanggan_id=pelanggan.id");
+        return $result;
+    }
+
 
     function set_pemesanan($kodereservasi, $datein, $dateout, $idprogram, $jmlorang, $tagihan, $userid){
     	$result=$this->db->query("INSERT INTO reservasi (
