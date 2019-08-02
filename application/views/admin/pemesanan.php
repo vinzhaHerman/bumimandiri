@@ -63,6 +63,7 @@
                 <div class="card-body table-responsive">
                   <table id="myTable" class="table table-hover  table-striped">
                     <thead class="text-info">
+                      <th>No.</th>
                       <th>Kode Reservasi</th>
                       <th>Atas Nama</th>
                       <th>Program</th>
@@ -72,6 +73,7 @@
                     </thead>
                     <tbody><?php $no=1; ?><?php foreach ($res->result() as $post): ?>
                       <tr>
+                        <td><?php echo $no++  ?></td>
 
                         <td><?php echo $post->kode_reservasi  ?></td>
 

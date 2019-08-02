@@ -92,11 +92,44 @@
                               <!-- <a href="Admin/ubah_petugas/" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
                                 <i class="material-icons">settings</i>
                               </a> -->
-                              <a href="<?php echo base_url() ?>Admin/delete_petugas/<?php echo $post->id?>" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
+                              <!-- <a href="<?php //echo base_url() ?>Admin/delete_petugas/<?php //echo $post->id?>" rel="tooltip" title="Remove" class="btn btn-danger btn-sm">
                                 <i class="material-icons">close</i>
-                              </a>
+                              </a> -->
+                              <button type="button" class="btn btn-danger pull-right" rel="tooltip" title="hapus" data-toggle="modal" data-target="#<?php echo $post->id?>"><i class="material-icons">close</i></button>
                             </td>
                       </tr>
+                      <!-- Modal -->
+                      <div class="modal fade" id="<?php echo $post->id?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalCenterTitle">Konfirmasi hapus data</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              <div class="modal-data">
+                                <div class="row">
+                                  <div class="col-md-2">
+                                    <i class="material-icons" style="font-size: 4rem; color: red;">info</i>
+                                  </div>
+                                  <div class="col-md-10">
+                                    Anda yakin ingin menghapus data? Data yang sudah dihapus tidak dapat dikembalikan!
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn" data-dismiss="modal">Kembali</button>
+                              <a href="<?php echo base_url() ?>Admin/delete_program/<?php echo $post->id?>" class="btn btn-danger">
+                                <i class="material-icons">close</i> Hapus
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Modal -->
                     <?php endforeach; ?></tbody>
                   </table>
                 </div>

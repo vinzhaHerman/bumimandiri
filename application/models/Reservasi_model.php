@@ -32,7 +32,7 @@ class Reservasi_model extends CI_Model {
 	function get_reservasi_waiting(){
 		$date = date('Y-m-d');
 		$result=$this->db->query("SELECT paket_riwayat.check_in, paket_riwayat.check_out, reservasi.kode_reservasi, reservasi.jumlah_org, paket_program.nama_program, pelanggan.nama_depan, pelanggan.email FROM ((paket_riwayat INNER JOIN reservasi ON paket_riwayat.reservasi_id=reservasi.id) INNER JOIN paket_program ON paket_riwayat.paket_program_id=paket_program.id) INNER JOIN pelanggan ON paket_riwayat.pelanggan_id=pelanggan.id WHERE
-        (check_in >= '$date' AND check_out >= '$date')");
+        (check_in >= '$date' AND check_out >= '$date') AND reservasi.pembayaran='LUNAS'");
         return $result;
 	}
 
@@ -41,7 +41,7 @@ class Reservasi_model extends CI_Model {
 		$result=$this->db->query("SELECT paket_riwayat.check_in, paket_riwayat.check_out, reservasi.kode_reservasi, reservasi.jumlah_org, paket_program.nama_program, pelanggan.nama_depan, pelanggan.email FROM ((paket_riwayat INNER JOIN reservasi ON paket_riwayat.reservasi_id=reservasi.id) INNER JOIN paket_program ON paket_riwayat.paket_program_id=paket_program.id) INNER JOIN pelanggan ON paket_riwayat.pelanggan_id=pelanggan.id WHERE
         (check_in <= '$date' AND check_out >= '$date') OR
         (check_in <= '$date' AND check_out >= '$date') OR
-        (check_in >= '$date' AND check_out <= '$date')");
+        (check_in >= '$date' AND check_out <= '$date') AND reservasi.pembayaran='LUNAS'");
         return $result;
 	}
 

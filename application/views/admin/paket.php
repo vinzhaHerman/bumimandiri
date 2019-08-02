@@ -93,7 +93,7 @@
                         <div class="modal-dialog modal-dialog-centered" role="document">
                           <div class="modal-content">
                             <div class="modal-header">
-                              <h5 class="modal-title" id="exampleModalCenterTitle">Konfirmasi pembatalan transaksi</h5>
+                              <h5 class="modal-title" id="exampleModalCenterTitle">Konfirmasi hapus data</h5>
                               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                               </button>
@@ -125,7 +125,7 @@
                 </div>
               </div>
             </div>
-        <div class="col-md-12">
+        <!-- <div class="col-md-12">
           <div class="card">
             <div class="card-header card-header-info">
             </div>
@@ -139,7 +139,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
 
 
 

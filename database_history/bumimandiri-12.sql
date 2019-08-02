@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 02, 2019 at 08:56 AM
+-- Generation Time: Aug 01, 2019 at 12:16 PM
 -- Server version: 10.3.15-MariaDB
 -- PHP Version: 7.3.6
 
@@ -134,7 +134,7 @@ CREATE TABLE IF NOT EXISTS `paket_riwayat` (
   `paket_program_id` int(11) NOT NULL,
   `pelanggan_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `paket_riwayat`
@@ -144,8 +144,7 @@ INSERT INTO `paket_riwayat` (`id`, `check_in`, `check_out`, `reservasi_id`, `pak
 (6, '2019-07-01', '2019-07-02', 1, 2, 2),
 (7, '2019-07-19', '2019-07-20', 8, 2, 1),
 (8, '2019-07-16', '2019-07-17', 9, 2, 1),
-(9, '2019-08-09', '2019-08-10', 10, 9, 2),
-(10, '2019-08-21', '2019-08-23', 11, 5, 1);
+(9, '2019-08-09', '2019-08-10', 10, 9, 2);
 
 -- --------------------------------------------------------
 
@@ -252,7 +251,7 @@ CREATE TABLE IF NOT EXISTS `reservasi` (
   `bukti` varchar(100) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `kode_reservasi` (`kode_reservasi`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `reservasi`
@@ -260,11 +259,10 @@ CREATE TABLE IF NOT EXISTS `reservasi` (
 
 INSERT INTO `reservasi` (`id`, `kode_reservasi`, `tgl_masuk`, `tgl_keluar`, `paket_program_id`, `jumlah_org`, `tagihan`, `pembayaran`, `id_pelanggan`, `bukti`) VALUES
 (1, 'RS21070000001', '2019-07-01', '2019-07-02', 2, 55, 7535000, 'LUNAS', 2, '6a76442b2844f36ad3e4103c790e450a.png'),
-(7, 'RS21070000002', '2019-07-11', '2019-07-12', 2, 84, 11508000, 'DIBATALKAN', 2, ''),
+(7, 'RS21070000002', '2019-07-11', '2019-07-12', 2, 84, 11508000, 'MENUNGGU PEMBAYARAN', 2, ''),
 (8, 'RS21070000003', '2019-07-19', '2019-07-20', 2, 91, 12467000, 'LUNAS', 1, '3f70cf9d79c801e5081890cd0715c20e.png'),
 (9, 'RS21070000004', '2019-07-16', '2019-07-17', 2, 57, 7809000, 'LUNAS', 1, '8220c7a70cb969177b9b87c07ba29ff4.png'),
-(10, 'RS31070000005', '2019-08-09', '2019-08-10', 9, 35, 4340000, 'DIBATALKAN', 2, '503c33038ad37862b1490763237b3e3b.png'),
-(11, 'RS02080000006', '2019-08-21', '2019-08-23', 5, 84, 19152000, 'LUNAS', 1, '025843bfb2e84792d7b499c2201c78d5.png');
+(10, 'RS31070000005', '2019-08-09', '2019-08-10', 9, 35, 4340000, 'PERMINTAAN BATAL', 2, '503c33038ad37862b1490763237b3e3b.png');
 
 -- --------------------------------------------------------
 

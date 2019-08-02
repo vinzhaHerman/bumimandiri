@@ -100,8 +100,8 @@
                       <div class="col-md-4">
                         <div class="form-group">
                           <label class="bmd-label-floating" name="level">Level</label>
-                           <select name="level" class="form-control">
-                            <option <?php if($res['level']=='1'){echo "selected"; } ?> value='1'>Super Admin</option>
+                           <select name="level" class="form-control" disabled="true">
+                            <option <?php if($res['level']=='1'){echo "selected"; } ?> value='1'>Admin</option>
                             <option <?php if($res['level']=='2'){echo "selected"; } ?> value='2'>Petugas</option>
                           </select>
                         </div>
@@ -128,13 +128,13 @@
               <div class="card card-profile">
                 <div class="card-avatar">
                   <a href="#pablo">
-                    <img class="img" src="../assets/img/faces/marc.jpg" />
+                    <img class="img" src="<?php echo base_url();?>/upload/admin/<?php echo $res['foto']  ?>" />
                   </a>
                 </div>
                 <div class="card-body">
                   <h6 class="card-category text-gray">
                     <?php 
-                      if($res['level']=='1'){echo "Super Admin"; }
+                      if($res['level']=='1'){echo "Admin"; }
                       else{echo "Petugas";}
                     ?></h6>
                   <h4 class="card-title"><?php echo $res['nama']?></h4>
@@ -142,7 +142,7 @@
                     Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
                   </p>
                   <!-- <a href="#pablo" class="btn btn btn-round">Ubah Foto</a> -->
-                  <a href="#pablo" class="btn btn-primary btn-round">Log out</a>
+                  <a href="<?php echo base_url('admin/logout') ?>" class="btn btn-primary btn-round">Log out</a>
                 </div>
               </div>
             </div>

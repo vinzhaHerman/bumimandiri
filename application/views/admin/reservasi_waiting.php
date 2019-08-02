@@ -59,7 +59,6 @@
               <div class="card">
                 <div class="card-header card-header-info">
                   <h3 class="card-title">Data Reservasi</h3>
-                  <button type="button" class="btn btn-success btn-sm">+ Kembali</button>
                 </div>
                 <div class="card-body table-responsive">
                   <table id="myTable" class="table table-hover  table-striped">
@@ -70,8 +69,7 @@
                       <th>check out</th>
                       <th>Atas Nama</th>
                       <th>Program</th>
-                      <th>Jumlah Peserta</th>
-                      <th></th>
+                      <th>Jumlah Peserta</th                      <th></th>
                     </thead>
                     <tbody><?php $no=1; ?><?php foreach ($res->result() as $post): ?>
                       <tr>
@@ -82,11 +80,6 @@
                         <td><?php echo $post->nama_depan  ?></td>
                         <td><?php echo $post->nama_program  ?></td>
                         <td><?php echo $post->jumlah_org ?></td>
-                        <td class="td-actions text-right">
-                              <button type="button" rel="tooltip" title="Konfirmasi" class="btn btn-warning">
-                                <i class="material-icons">done</i> Selesai
-                              </button>
-                            </td>
                       </tr>
                     <?php endforeach; ?></tbody>
                   </table>

@@ -434,6 +434,12 @@ class Admin extends CI_Controller {
 		$this->Petugas_model->update_petugas($id, $username, $nama, $email, $telp, $alamat, $level);
 		redirect(base_url("admin/profile"));
 	}
+
+	public function delete_petugas($id){
+		$this->Paket_model->delete_petugas($id);
+		redirect(base_url("admin/data_petugas"));
+	}
+
 // -------------------------------------------END Data Petugas----------------------------------------------
 
 

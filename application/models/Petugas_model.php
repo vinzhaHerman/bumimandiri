@@ -27,5 +27,10 @@ class Petugas_model extends CI_Model {
         return $result;
 	}
 
+	function delete_petugas($id, $username, $nama, $email, $telp, $alamat, $level){
+		$result=$this->db->query("DELETE FROM admins WHERE id='$id'");
+        return $result;
+	}
+
 }
 ?>
