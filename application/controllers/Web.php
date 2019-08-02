@@ -80,8 +80,9 @@ class Web extends CI_Controller {
 	public function fasilitas()
 	{
 		$this->load->view('template/head');
+		$this->load->view('pages/fasilitas');
 		$this->load->view('template/navbar');
-		$this->load->view('fasilitas/fasilitaskegiatan');
+		$this->load->view('template/sidebar');
 		$this->load->view('template/footer');
 	}
 	public function daftarpaket()

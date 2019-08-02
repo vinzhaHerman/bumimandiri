@@ -2,7 +2,7 @@
 <div class="main-content-wrapper">
 
     <div class="filler"></div>
-    <div class="section-title">GALERY</div>
+    <div class="section-title">FASILITAS</div>
     <div class="kartu-container">
     	<img class="svg" src="<?php echo base_url(); ?>/assets/img/undraw_steps_ngvm.svg">
     	<div class="tba-text">
