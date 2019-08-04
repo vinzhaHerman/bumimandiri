@@ -171,7 +171,7 @@
                               <button type="button" rel="tooltip" title="Konfirmasi" class="btn btn-success konfirmasi">
                                 <i class="material-icons">done</i> Konfirmasi
                               </button> -->
-                              <a href="<?php echo base_url() ?>Admin/opsi_pemesanan/<?php echo $post->kode_reservasi  ?>" rel="tooltip" title="Edit" class="btn btn-success konfirmasi">
+                              <a href="<?php echo base_url() ?>Admin/opsi_pemesanan/<?php echo $post->kode_reservasi  ?>" rel="tooltip" title="Lihat Detail" class="btn btn-success konfirmasi">
                                 <i class="material-icons">settings</i> Opsi
                               </a>
                             </td>

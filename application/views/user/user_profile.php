@@ -157,7 +157,7 @@
                           </td>
                           <td><?php echo $res->pembayaran  ?></td>
                           <td class="td-actions text-right">
-                            <a  href="<?php echo base_url() ?>account/upload_bukti/<?php echo $res->kode_reservasi ?>" class="btn btn-success btn-sm" title="Upload bukti pembayaran">
+                            <a  href="<?php echo base_url() ?>account/upload_bukti/<?php echo $res->kode_reservasi ?>" class="btn btn-success btn-sm <?php if(!($res->pembayaran=='MENUNGGU PEMBAYARAN')){echo "collapse";}  ?>" title="Upload bukti pembayaran">
                             <i class="material-icons">cloud_upload</i>
                             </a>
                             <a  href="<?php echo base_url() ?>account/bukti_pemesanan/<?php echo $res->kode_reservasi ?>" target="_blank" class="btn btn-info btn-sm <?php if(!($res->pembayaran=='LUNAS')){echo "collapse";}  ?>" title="Cetak bukti transaksi">

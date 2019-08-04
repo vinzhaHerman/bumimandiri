@@ -96,12 +96,12 @@
                             <div class="ripple-container"></div>
                           </a>
                         </li>
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                           <a class="nav-link" href="#settings" data-toggle="tab">
                             Events
                             <div class="ripple-container"></div>
                           </a>
-                        </li>
+                        </li> -->
                       </ul>
                     </div>
                   </div>

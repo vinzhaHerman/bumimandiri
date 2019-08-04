@@ -112,7 +112,7 @@
                         <div class="row">
                           <div class='col-sm-10 col-md-10'>
                             <label class="bmd-label-floating">Status Pemesanan</label>
-                            <input type="text" class="form-control-plaintext text-success" name="pembayaran"  value="<?php echo $res['pembayaran'] ?>" style="font-size: 1.2rem;" readonly="">
+                            <input type="text" class="form-control-plaintext text-success" name="pembayaran"  value="<?php echo $res['pembayaran'] ?>" style="font-size: 1.5rem;" readonly="true">
                           </div>
                         </div>
                       </div>
@@ -161,7 +161,7 @@
                       </div>
                     </div>
                     <!-- Modal -->
-                    <button type="button" data-toggle="modal" data-target="#modalBatal" class="btn btn-danger pull-right" <?php if($res['pembayaran']=='DIBATALKAN'){echo "disabled"; } ?>><i class="material-icons">clear</i> Batalkan Transaksi</button>
+                    <button type="button" data-toggle="modal" data-target="#modalBatal" class="btn btn-danger pull-right" <?php if($res['pembayaran']=='DIBATALKAN' || $res['pembayaran']=='LUNAS'){echo "disabled"; } ?>><i class="material-icons">clear</i> Batalkan Transaksi</button>
                     <div class="clearfix"></div>
                   </form>
                 </div>
@@ -202,7 +202,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn" data-dismiss="modal">Kembali</button>
-              <a class="btn btn-warning" href="<?php echo base_url();?>admin/ubah_status_batal/<?php echo $res['kode_reservasi'] ?>">Batalkan</a>
+              <a class="btn btn-warning" href="<?php echo base_url();?>admin/ubah_status_batal/<?php echo $res['kode_reservasi'] ?>" target="_blank">Batalkan</a>
             </div>
           </div>
         </div>
