@@ -90,9 +90,9 @@
                     foreach(array_slice($testimoni->result(), 0, 3) as $tes ):
                 ?>
                 <div class="slider-panel">
-                    <div class="ball"></div>
+                    <div class="ball" style="overflow: hidden;"><img src="<?php echo base_url()?>/upload/user/profile_photos/<?php echo $tes->foto_profil?>" style="max-width: 128px;"></div>
                     <div class="customer-slider-name"><?php echo $tes->summary?></div>
-                    <div class="slider-text"><?php echo $tes->paragraph?></div>
+                    <div class="slider-text"><?php echo word_limit($tes->paragraph, 10); ?></div>
                 </div>
                 <?php endforeach; ?>
                 <div class="slider-panel">

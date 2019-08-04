@@ -17,7 +17,7 @@ class Web extends CI_Controller {
 		$data=array(
             'promosi'=>$this->Post_model->get_post_bytype_limit3(1),
             'artikel'=>$this->Post_model->get_post_bytype_limit3(2),
-            'testimoni'=>$this->Testimoni_model->get_testimoni_limit()
+            'testimoni'=>$this->Testimoni_model->get_testimoni_detailed_limit()
         );
 		$this->load->view('template/head');
 		$this->load->view('pages/home', $data);

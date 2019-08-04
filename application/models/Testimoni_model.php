@@ -13,6 +13,11 @@ class Testimoni_model extends CI_Model {
         return $result;
 	}
 
+	function get_testimoni_detailed_limit(){
+		$result=$this->db->query("SELECT testimoni.id_testimoni, testimoni.summary, testimoni.paragraph, testimoni.tgl, testimoni.isActive, pelanggan.nama_depan, pelanggan.foto_profil FROM testimoni INNER JOIN pelanggan ON testimoni.id_pelanggan=pelanggan.id WHERE isActive='0' ORDER BY testimoni.id_testimoni DESC limit 6");
+        return $result;
+	}
+
 	function get_testimoni_limit(){
 		$result=$this->db->query("SELECT * FROM testimoni WHERE isActive='1' ORDER BY id_testimoni DESC limit 6");
         return $result;
