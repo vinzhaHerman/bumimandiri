@@ -35,7 +35,7 @@
           <p>Mohon selesaikan pembayaran dalam waktu maksimal 48 jam. jika dalam waktu yang ditentukan anda belum melakukan pembayaran maka pesanan anda berhak kami batalkan.</p>
           <p class="lead">
             <a class="btn btn-info btn-lg" href="<?php echo base_url(); ?>" role="button">ke halaman utama</a>
-            <a class="btn btn-success btn-lg" href="#" role="button">upload bukti</a>
+            <a class="btn btn-success btn-lg" href="<?php echo base_url(); ?>/Account" role="button">upload bukti</a>
           </p>
         </div>
       </div>

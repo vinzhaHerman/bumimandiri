@@ -55,7 +55,7 @@
 <div class="container">
   <div class="content">
     <div class="row">
-      <div class="col-lg-8 col-md-12">
+      <div class="col-lg-12 col-md-12">
         <div class="card">
           <div class="card-header card-header-tabs card-header-info">
             <h2 class="card-title">Detail Pemesanan</h2>
@@ -138,7 +138,7 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-4 col-md-12">
+      <!-- <div class="col-lg-4 col-md-12">
         <div class="card">
           <div class="card-header card-header-success">
             <h4 class="card-title">Pusat Bantuan</h4>
@@ -147,7 +147,7 @@
           <div class="card-body">
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </div>
@@ -181,7 +181,7 @@
    $(function(){
        $('#datetimepicker1').datepicker({
         modal: true,
-        // minDate: nextDay,
+        minDate: nextDay,
         format: 'yyyy-mm-dd'
        });
 

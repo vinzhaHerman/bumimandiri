@@ -125,12 +125,12 @@
                 </div>
               </div>
             </div> -->
-            <hr>
+            <!-- <hr>
             <div class="row">
               <div class="col-md-12">
                 <h4>Fasilitas yang didapat</h4>
               </div>
-            </div>
+            </div> -->
             <div class="row">
               
             </div>
