@@ -50,6 +50,8 @@
 <?php 
   $res=$res->row_array();
   $hasil_rupiah = "Rp " . number_format($res['tagihan'],2,',','.');
+  $kembali = $res['tagihan']*(15/100);
+  $hasil_kembali = "Rp " . number_format($kembali,2,',','.');
  ?>
 
           
@@ -113,6 +115,12 @@
                           <div class='col-sm-10 col-md-10'>
                             <label class="bmd-label-floating">Status Pemesanan</label>
                             <input type="text" class="form-control-plaintext text-success" name="pembayaran"  value="<?php echo $res['pembayaran'] ?>" style="font-size: 1.5rem;" readonly="true">
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class='col-sm-10 col-md-10'>
+                            <label class="bmd-label-floating">Biaya denda: </label>
+                            <input type="text" class="form-control-plaintext text-warning" name="pembayaran"  value="<?php echo $hasil_kembali ?>" style="font-size: 1.5rem;" readonly="true">
                           </div>
                         </div>
                       </div>

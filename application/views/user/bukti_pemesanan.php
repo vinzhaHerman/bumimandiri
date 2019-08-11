@@ -64,13 +64,14 @@
       transform: translate(-50%, -50%);
     }
     .gede{
-      font-size: 1.5rem;
+      font-size: 1.6rem;
     }
 </style>
 
 
 <?php $res=$res->row_array();
   $date = date('d-M-Y');
+  $tagihan = "Rp " . number_format($res['tagihan'],2,',','.');
 ?>
 
 
@@ -90,7 +91,7 @@
           <div class="col-md-4">
             <div class="form-group pull-right">
               <label class="bmd-label-floating">Tanggal Cetak</label>
-              <p class="text-info"><?php echo $date; ?></p>
+              <p class="text"><?php echo $date; ?></p>
             </div>
           </div>
         </div>
@@ -99,27 +100,33 @@
           <div class="col-md-6">
             <div class="form-group">
               <label class="bmd-label-floating">Nama Program:</label>
-              <p class="text-info"><b><?php echo $res['nama_program']; ?></b></p>
+              <p class="text"><b><?php echo $res['nama_program']; ?></b></p>
             </div>
           </div>
           <div class="col-md-2">
             <div class="form-group">
               <label class="bmd-label-floating">Untuk Tanggal:</label>
-              <p class="text-info"><?php echo $res['tgl_masuk']; ?></p>
+              <p class="text"><?php echo $res['tgl_masuk']; ?></p>
             </div>
           </div>
           <div class="col-md-4">
             <div class="form-group pull-right">
               <label class="bmd-label-floating">Sampai:</label>
-              <p class="text-info"><?php echo $res['tgl_keluar']; ?></p>
+              <p class="text"><?php echo $res['tgl_keluar']; ?></p>
             </div>
           </div>
         </div>
         <div class="row">
-          <div class="col-md-12">
+          <div class="col-md-4">
             <div class="form-group">
               <label class="bmd-label-floating">Atas Nama</label>
-              <p class="text-info"><?php echo $res['nama_depan']; ?> <?php echo $res['nama_belakang']; ?></p>
+              <p class="text"><?php echo $res['nama_depan']; ?> <?php echo $res['nama_belakang']; ?></p>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="form-group pull-right">
+              <label class="bmd-label-floating">Total</label>
+              <p class="text-info gede"><?php echo $tagihan; ?></p>
             </div>
           </div>
         </div>
