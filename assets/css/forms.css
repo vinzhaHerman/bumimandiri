@@ -1,0 +1,24 @@
+
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.login-div {
+  max-width: 450px;
+  padding: 35px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: white;
+}
+.logo {
+  background-image: url("../logos/mixed.png");
+  background-size: cover;
+  width:120px;
+  height:105px;
+  margin:0 auto;
+}

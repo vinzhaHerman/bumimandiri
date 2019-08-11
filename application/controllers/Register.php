@@ -14,39 +14,44 @@ class Register extends CI_Controller {
 
 	public function index()
 	{	
+		$this->load->view('template/head_bootstrap');
 		$this->load->view('auth/register');
+		$this->load->view('template/foot_bootstrap');
 	}
 
 	public function daftar()
 	{
-		$this->form_validation->set_rules('namadepan', 'Nama Depan', 'required');
-		$this->form_validation->set_rules('namabelakang', 'Nama Belakang', 'required');
-		$this->form_validation->set_rules('username', 'User Name', 'required');
-		$this->form_validation->set_rules('email', 'Email', 'required');
+		// $this->form_validation->set_rules('namadepan', 'Nama Depan', 'required');
+		// $this->form_validation->set_rules('namabelakang', 'Nama Belakang', 'required');
+		// $this->form_validation->set_rules('username', 'User Name', 'required');
+		$this->form_validation->set_rules('email', 'Email', 'required|valid_email');
 		$this->form_validation->set_rules('password', 'Password', 'required');
 		$this->form_validation->set_rules('confirm_password', 'Confirm Password', 'required|matches[password]');
-		// if ($password != $confirm_password) {
-		// 	echo "password tidak sama";
-		// }
-		// else{
-	
-		// 	echo $namadepan;	
-		// 	echo $namabelakang;	
-		// 	echo $email;	
-		// 	echo $username;	
-		// 	echo $password;	
-		// 	echo $telp;
-		// }
+
 		if($this->form_validation->run() == false){
+			// redirect(base_url('Register'));
+			$this->load->view('template/head_bootstrap');
 			$this->load->view('auth/register');
+			$this->load->view('template/foot_bootstrap');
 		}else{
-			$namadepan = $this->input->post('namadepan');
-			$namabelakang = $this->input->post('namabelakang');
 			$email = $this->input->post('email');
-			$username = $this->input->post('username');
-			$password = $this->input->post('password');
-			$this->Pelanggan_model->set_pelanggan($namadepan,$namabelakang,$email,$username,$password);
-			$this->load->view('auth/login');
+			$cek = $this->Pelanggan_model->check_email_dup($email);
+			if ($cek->num_rows() > 0) {
+				$this->load->view('template/head_bootstrap');
+				$this->load->view('auth/register');
+				$this->load->view('template/foot_bootstrap');
+				echo "email sudah terdaftar";
+			}
+			else{
+				$namadepan = $this->input->post('namadepan');
+				$namabelakang = $this->input->post('namabelakang');
+				$username = $this->input->post('username');
+				$password = $this->input->post('password');
+				// $this->Pelanggan_model->set_pelanggan($namadepan,$namabelakang,$email,$username,$password);
+				$this->load->view('template/head_bootstrap');
+				$this->load->view('auth/login');
+				$this->load->view('template/foot_bootstrap');
+			}
 		}
 	}
 }

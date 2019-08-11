@@ -1,42 +1,78 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/auth.css">
-  <title>Daftar</title>
-</head>
-<body>
-  <div class="main-wrapper">
-    <div class="form-wrapper">
-    <?php echo form_open('Register/daftar'); ?>
-      <div class="container">
-        <div class="imgcontainer-register">
-          <img src="<?php echo base_url();?>assets/logos/mixed.png" alt="Avatar" class="avatar-register">
+    <?php //echo validation_errors(); ?>
+    <div class="login-div">
+      <div class="row">
+        <div class="logo"></div>
+        <div class="col-lg-12">
+          <?php           
+            if($message=validation_errors()):
+          ?>
+          <div class="alert alert-warning">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <i class="material-icons">close</i>
+            </button>
+              <?php echo validation_errors(); ?>
+          </div>
+          <?php endif; ?>
         </div>
-      <h1 class="form-title">Daftar</h1>
-      <?php echo form_error('namadepan'); ?>
-      <input type="text" placeholder="Nama Depan" name="namadepan">
-      <?php echo form_error('namabelakang'); ?>
-      <input type="text" placeholder="Nama Belakang" name="namabelakang">
-      <?php echo form_error('username'); ?>
-      <input type="text" placeholder="Masukan username anda" name="username">
-      <?php echo form_error('email'); ?>
-      <input type="text" placeholder="Email address" name="email">
-      <?php echo form_error('password'); ?>
-      <input type="password" placeholder="Password" name="password">
-      <?php echo form_error('confirm_password'); ?>
-      <input type="password" placeholder="Ketik Ulang Password" name="confirm_password">
-
-      <p class="agreement">Saya menyetujui <a href="http://localhost/bumimandiri/syaratdanketentuan" style="color:dodgerblue">Syarat dan Ketentuan</a> yang berlaku.</p>
-
-      <div class="clearfix">
-        <button type="submit" class="positive-button">Daftar</button>
-        <a href="http://localhost/bumimandiri/"><button type="button" class="negative-button">Batal</button></a>
       </div>
+      <div class="row align-item-center mx-auto">
+        <h3>Daftar Akun</h3>
+      </div>
+      <?php echo form_open('Register/daftar'); ?>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <!-- <label class="bmd-label-floating">Email</label> -->
+            <input type="text" placeholder="Email anda. contoh: example@gmail.com" class="form-control" name="email">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <input type="text" placeholder="Nama Depan" class="form-control" name="namadepan" required="true">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <input type="text" placeholder="Nama Belakang" class="form-control" name="namabelakang" required="true">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <!-- <label class="bmd-label-floating">Nama Pengguna/username</label> -->
+            <input type="text" placeholder="Nama Pengguna/Username" class="form-control" name="username" required="true">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <!-- <label class="bmd-label-floating">Password</label> -->
+            <input type="password" class="form-control" placeholder="Kata Sandi" name="password" required="true">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <!-- <label class="bmd-label-floating">Ketik ulang password</label> -->
+            <input type="password" class="form-control" placeholder="Ketik ulang kata sandi" name="confirm_password">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12"><p>Sudah punya akun? <a href="<?php echo base_url();?>Login" class="text-success">Login</a></p></div>
+      </div>
+      <div class="row">
+        <div class="col-md-12"><label>Dengan mendaftar anda menyetujui <a href="">syarat & ketentuan</a> yang berlaku</label></div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <button type="submit" class="btn btn-success btn-block">Daftar</button>
+        </div>
+      </div>
+      <?php echo form_close(); ?>
     </div>
-  <?php echo form_close(); ?>
-  </div>
-</div>
-</body>
-</html>

@@ -12,6 +12,20 @@ class Pelanggan_model extends CI_Model {
         return $result;	
     }
 
+
+
+
+
+    function check_email_dup($email){
+    	$result=$this->db->query("SELECT * FROM pelanggan WHERE email='$email' ");
+        return $result;	
+    }
+
+
+
+
+    
+
 	function get_user_data(){
 		$result=$this->db->query("SELECT * FROM pelanggan");
         return $result;

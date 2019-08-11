@@ -1,48 +1,61 @@
-<!-- login ---->
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/auth.css">
-  <title></title>
-</head>
-<body>
-<div class="main-wrapper">
-  <div class="form-wrapper">
-  <form action="<?php echo base_url('web/auth'); ?>" method="post">
-  <div class="imgcontainer">
-    <img src="<?php echo base_url();?>assets/logos/mixed.png" alt="Avatar" class="avatar">
-  </div>
-
-  <div class="container">
-    <div class="form-container">
-      <?php 
+    <?php //echo validation_errors(); ?>
+    <div class="login-div" style="width: 28rem;">
+      <div class="row">
+        <div class="logo"></div>
+      </div>
+      <div class="row align-item-center mx-auto">
+        <div class="col-md-12"><h3 class="text-center">Login</h3></div>
+      </div>
+        <?php           
           if($message=$this->session->flashdata('message')):
-      ?>
-      <p style="text-align: center;"><?php echo $message ?></p>
-      <?php endif; ?>
-    <label for="username">Nama Pengguna</label>
-    <input type="text" placeholder="Enter Username" name="username" required>
+        ?>
+        <div class="col-lg-12">
+          <div class="alert alert-danger">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <i class="material-icons">close</i>
+            </button>
+              <?php echo $message ?>
+          </div>
+        </div>
+        <?php endif; ?>
+      <?php echo form_open('Web/auth'); ?>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <label class="bmd-label-floating">Username</label>
+            <input type="text" class="form-control" name="username"  required="true">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <label class="bmd-label-floating">Kata sandi</label>
+            <input type="password" class="form-control" name="password" required="true">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12"><p style="margin: 24px 0 24px 0;">Belum punya akun? <a href="<?php echo base_url();?>Register" class="text-success">Daftar</a></p></div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <button type="submit" class="btn btn-info btn-block">Masuk</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <?php
+          $previous = "javascript:history.go(-1)";
+          if(isset($_SERVER['HTTP_REFERER'])) {
+            $previous = $_SERVER['HTTP_REFERER'];
+          }
+          ?>
+          <a href="<?= $previous ?>" class="btn btn-warning btn-block">Kembali</a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12"><label class="pull-right" style="margin: 24px 0 0 0;"><a href="<?php echo base_url();?>Lupa_password">Lupa password?</a></label></div>
+      </div>
+      <?php echo form_close(); ?>
     </div>
-
-    <div class="form-container">
-    <label for="password">Kata Sandi</label>
-    <input type="password" placeholder="Enter Password" name="password" required>
-    </div>
-
-    <p class="mid-text">Belum punya akun? <a href="http://localhost/bumimandiri/register">daftar sekarang</a></p>
-    <button class="positive-button" type="submit">Masuk</button>
-  </div>
-
-  <div class="button-container">
-    <a class="links" href="http://localhost/bumimandiri/web"><button type="button" class="negative-button">Kembali</button></a>
-    <p class="bottom-text"><a href="<?php echo base_url();?>Lupa_password">Lupa password?</a></p>
-  </div>
-  </form>
-  </div>
-</div>
-</body>
-</html>
-
-<!--end login section-->
