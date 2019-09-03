@@ -81,5 +81,13 @@
 <script src="<?php echo base_url()?>assets/js/jquery.min.js"></script>
 <script src="<?php echo base_url()?>assets/slick/slick.js"></script>
 <script src="<?php echo base_url()?>assets/js/main.js"></script>
+<script src="<?php echo base_url()?>live2d/js/live2d.js"></script>
+<script src="<?php echo base_url()?>live2d/js/message.js"></script>
+<script type="text/javascript">
+    var message_Path = '/live2d/'
+</script>
+<script type="text/javascript">
+    loadlive2d("live2d", "live2d/model/haru/haru.model.json");
+</script>
 </body>
 </html>

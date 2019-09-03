@@ -23,6 +23,7 @@ class Web extends CI_Controller {
 		$this->load->view('pages/home', $data);
 		$this->load->view('template/navbar');
 		$this->load->view('template/sidebar');
+		$this->load->view('template/chara');
 		$this->load->view('template/footer');
 	}
 

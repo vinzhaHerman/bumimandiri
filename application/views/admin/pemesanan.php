@@ -88,15 +88,12 @@
 
                           <?php
                             if (empty($post->bukti)) {
-                              echo '<button type="button"  href="" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#showModal" disabled>
+                              echo '<button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#showModal" disabled>
                             <i class="material-icons">close</i> Empty
                             </button>';
                             }
                             else{
-                              echo '<button type="button"  href="',
-                              'base_url();/upload/bukti/',
-                              $post->bukti,
-                              '" class="btn btn-info btn-sm" data-toggle="modal" data-target="#showModal" disabled>
+                              echo '<button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#'.$post->kode_reservasi.'">
                             <i class="material-icons">done</i> Uploaded
                             </button>';
                             }
@@ -107,7 +104,7 @@
 
 
                             <!-- Modal -->
-                          <div class="modal fade" id="showModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                          <div class="modal fade" id="<?php echo $post->kode_reservasi  ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered" role="document">
                               <div class="modal-content">
                                 <div class="modal-header">
@@ -117,7 +114,9 @@
                                   </button>
                                 </div>
                                 <div class="modal-body">
-                                  <div class="modal-data"></div>
+                                  <div class="modal-data">
+                                  	<img src="<?php echo base_url().'upload/bukti/'.$post->bukti?>" onerror="this.onerror=null; this.src='<?php echo base_url().'upload/bukti/default.jpg'?>'" alt="" class="img-thumbnail mx-auto" style="max-height: 250px;">
+                                  </div>
                                 </div>
                                 <div class="modal-footer">
                                   <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>

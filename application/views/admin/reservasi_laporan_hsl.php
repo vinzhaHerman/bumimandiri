@@ -82,8 +82,8 @@
                   <table id="laporan" class="table table-hover  table-striped">
                     <thead class="text-warning">
                       <th>Kode reservasi</th>
-                      <th>Masuk</th>
-                      <th>Keluar</th>
+                      <th>Mulai</th>
+                      <th>Selesai</th>
                       <th>Nama Paket</th>
                       <th>Nama Program</th>
                       <th>Atas Nama</th>
