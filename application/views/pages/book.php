@@ -49,18 +49,6 @@
   <div class="row text-center align-items-center mx-auto" >
     <?php foreach ($res->result() as $post): ?>
     <div class="col-sm">
-      <!-- <div class="card mx-auto" style="width: 20rem;">
-        <div class="card-body">
-          <form action="<?php  //echo base_url("Booking/src_by_paket/");?>" method="get" enctype="multipart/form-data">
-          <h4 class="card-title"><?php //echo $post->nama_paket ?></h4>
-          <img src="<?php //echo base_url();?>upload/paket/jenis/<?php //echo $post->paket_img ?>" alt="..." class="img-thumbnail">
-          <p class="card-text"></p>
-          <input type='text' class="form-control" name="idpaket" value="<?php //echo $post->id ?>" hidden/>
-          <input type='text' class="form-control" name="namapaket" value="<?php //echo $post->nama_paket ?>" hidden/>
-          <button type="submit" class="btn btn-info">Pilih Paket</button>
-          </form>
-        </div>
-      </div> -->
       <div class="card mx-auto" style="width: 18rem;">
         <img class="card-img-top" src="<?php echo base_url();?>upload/paket/jenis/<?php echo $post->paket_img ?>" alt="Card image cap" style="max-height: 220px; width: auto;">
         <div class="card-body">
@@ -86,8 +74,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="<?php echo base_url();?>/assets/js/core/bootstrap-material-design.min.js" type="text/javascript"></script>
-	<!--  Plugin for the DateTimePicker, full documentation here: https://eonasdan.github.io/bootstrap-datetimepicker/ -->
-  <!--  Plugin for the DatePicker, https://gijgo.com/datepicker/example/material-design -->
 <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
 
 

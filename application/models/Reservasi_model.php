@@ -67,11 +67,19 @@ class Reservasi_model extends CI_Model {
  //        return $result;
 	// }
 
+	// function src_paket_by_date_and_id($idprogram, $datein, $dateout){
+	// 	$result=$this->db->query("SELECT * FROM paket_program WHERE id='$idprogram' NOT IN (SELECT paket_program_id FROM paket_riwayat WHERE
+ //   		(check_in <= '$datein' AND check_out >= '$datein') OR
+ //   		(check_in <= '$dateout' AND check_out >= '$dateout') OR
+ //   		(check_in >= '$datein' AND check_out <= '$dateout'));");
+ //        return $result;
+	// }
+
 	function src_paket_by_date_and_id($idprogram, $datein, $dateout){
-		$result=$this->db->query("SELECT * FROM paket_program WHERE id='$idprogram' NOT IN (SELECT paket_program_id FROM paket_riwayat WHERE
-   		(check_in <= '$datein' AND check_out >= '$datein') OR
-   		(check_in <= '$dateout' AND check_out >= '$dateout') OR
-   		(check_in >= '$datein' AND check_out <= '$dateout'));");
+		$result=$this->db->query("SELECT * FROM paket_program WHERE id='$idprogram' NOT IN (SELECT paket_program_id FROM reservasi WHERE
+        (tgl_masuk <= '$datein' AND tgl_keluar >= '$datein') OR
+        (tgl_masuk <= '$dateout' AND tgl_keluar >= '$dateout') OR
+        (tgl_masuk >= '$datein' AND tgl_keluar <= '$dateout'))");
         return $result;
 	}
 

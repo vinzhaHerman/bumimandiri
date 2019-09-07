@@ -80,7 +80,7 @@
                 <div class="form-group row">
                   <label for="staticEmail" class="col-sm-2 col-form-label">Program:</label>
                   <div class="col-sm-10">
-                    <input type="text" readonly class="form-control-plaintext text-success" id="staticEmail" value="<?php echo $_GET['namaprogram'] ?>">
+                    <input type="text" readonly class="form-control-plaintext text-success" name="namaprogram" value="<?php echo $_GET['namaprogram'] ?>">
                   </div>
                 </div>
               </div>

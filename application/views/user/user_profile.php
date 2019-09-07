@@ -80,20 +80,6 @@
                 <div class="card-body">
                   <form action="<?php echo base_url('Account/update_profile'); ?>" method="post">
                     <div class="row">
-                      <div class="col-md-3">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">Username</label>
-                          <input type="text" class="form-control" name="username"  value="<?php echo $userdata['username']  ?>">
-                        </div>
-                      </div>
-                      <div class="col-md-9">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">Email address</label>
-                          <input type="email" class="form-control" name="email" value="<?php echo $userdata['email']  ?>">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
                       <div class="col-md-6">
                         <div class="form-group">
                           <label class="bmd-label-floating">Nama Depan</label>
@@ -104,6 +90,26 @@
                         <div class="form-group">
                           <label class="bmd-label-floating">Nama Belakang</label>
                           <input type="text" class="form-control" name="namabelakang" value="<?php echo $userdata['nama_belakang']  ?>">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-3">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Username</label>
+                          <input type="text" class="form-control" name="username"  value="<?php echo $userdata['username']  ?>">
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">No. Telp (HP)</label>
+                          <input type="text" class="form-control" name="username"  value="<?php echo $userdata['telp']  ?>">
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Email address</label>
+                          <input type="email" class="form-control" name="email" value="<?php echo $userdata['email']  ?>">
                         </div>
                       </div>
                     </div>
@@ -155,7 +161,72 @@
                             }
                           ?>
                           </td>
-                          <td><?php echo $res->pembayaran  ?></td>
+                          <td><?php echo $res->pembayaran  ?><?php if(($res->pembayaran=='MENUNGGU PEMBAYARAN')){?>
+                            <button type="button" class="btn btn-warning btn-link" rel="tooltip" title="lihat info rekening" data-toggle="modal" data-target="#openModal"><i class="material-icons">info</i></button>
+                            <?php } ?></td>
+
+
+
+
+
+                           <!-- Modal -->
+                          <div class="modal fade" id="openModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title" id="exampleModalCenterTitle">Informasi Rekening Transfer</h5>
+                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                                </div>
+                                <div class="modal-body">
+                                  <div class="modal-data">
+                                    <div class="row">
+                                      <div class="col-md-12">
+                                        <p class="card-category">Kami menyediakan metode pembayaran menggunakan bank transfer.</p>
+                                      </div>
+                                    </div>
+                                    <div class="row">
+                                      <div class="col-md-3">
+                                        <p class="card-category">Nama Bank</p>
+                                      </div>
+                                      <div class="col-md-9">
+                                        <p class="card-category text-success">MANDIRI</p>
+                                      </div>
+                                    </div>
+                                    <div class="row">
+                                      <div class="col-md-3">
+                                        <p class="card-category">No. Rek</p>
+                                      </div>
+                                      <div class="col-md-9">
+                                        <p class="card-category text-success">12908xxxxxxxxx</p>
+                                      </div>
+                                    </div>
+                                    <div class="row">
+                                      <div class="col-md-3">
+                                        <p class="card-category">A/N</p>
+                                      </div>
+                                      <div class="col-md-9">
+                                        <p class="card-category text-success">BUMI MANDIRI</p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="modal-footer">
+                                  <div class="row">
+                                      <div class="col-md-12">
+                                        <p class="card-category">Pastikan nomor rekening yang dituju adalah benar dan sesuai dengan data yang tertera diatas. jika mengalami kesulitan, segera <a href="" class="text-success"><b>hubungi kami</b></a> atau lihat <a href="" class="text-success"><b>Prosedur Pembayaran</b></a></p>
+                                      </div>
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+
+
+
+
                           <td class="td-actions text-right">
                             <a  href="<?php echo base_url() ?>account/upload_bukti/<?php echo $res->kode_reservasi ?>" class="btn btn-success btn-sm <?php if(!($res->pembayaran=='MENUNGGU PEMBAYARAN')){echo "collapse";}  ?>" title="Upload bukti pembayaran">
                             <i class="material-icons">cloud_upload</i>

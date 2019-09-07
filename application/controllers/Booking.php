@@ -82,25 +82,46 @@ class Booking extends CI_Controller {
 		$durasi = $this->input->post('durasi');
 		$jmlorang = $this->input->post('jmlorang');
 		$idprogram = $this->input->post('idprogram');
+		$namaprogram = $this->input->post('namaprogram');
 		$tagihan = $this->input->post('tagihan');
 		$userid = $this->session->userdata('id');
 		$usernama = $this->session->userdata('nama_depan');
 		$useremail = $this->session->userdata('email');
 		$kodereservasi = $this->Pemesanan->kode_otomatis();
+		// echo "$kodereservasi";
 		$this->Pemesanan->set_pemesanan($kodereservasi, $datein, $dateout, $idprogram, $jmlorang, $tagihan, $userid);
-		redirect(base_url("booking/acc_pesanan"));
 
-		$this->load->library('email');
+		$config = Array(
+    			     'protocol' => 'smtp',
+    			     'smtp_host' => 'ssl://smtp.googlemail.com',
+    			     'smtp_port' => 465,
+    			     'smtp_user' => 'drevar420@gmail.com',
+    			     'smtp_pass' => 'bakara238',
+    			     'mailtype'  => 'html', 
+    			     'charset'   => 'iso-8859-1'
+			       );
 
-		$this->email->from('no-reply-bumimandiri@gmail.com', 'BUMI MANDIRI systems');
-		$this->email->to('vinzhaherman@gmail.com');
-		$this->email->cc('another@another-example.com');
-		$this->email->bcc('them@their-example.com');
+        $message = '<html><body>';
+		$message .= '<table rules="all" style="border-color: #666;" cellpadding="10">';
+		$message .= "<tr style='background: #eee;'><td><strong>Atas nama:</strong> </td><td>" . $usernama . "</td></tr>";
+		$message .= "<tr><td><strong>Email:</strong> </td><td>" . $useremail . "</td></tr>";
+		$message .= "<tr><td><strong>Program:</strong> </td><td>" . $namaprogram . "</td></tr>";
+		$message .= "<tr><td><strong>Jumlah org:</strong> </td><td>" . $jmlorang . "</td></tr>";
+		$message .= "<tr><td><strong>Tgl. mulai:</strong> </td><td>" . $datein . "</td></tr>";
+		$message .= "<tr><td><strong>Tgl. selesai:</strong> </td><td>" . $dateout . "</td></tr>";
+		$message .= "<tr><td><strong>Jml. Tagihan:</strong> </td><td><strong>" . $tagihan . "</strong></td></tr>";
+		$message .= "</table>";
+		$message .= "</body></html>";
 
-		$this->email->subject('Email Test');
-		$this->email->message('Testing the email class.');
+        $this->load->library('email', $config);
+		$this->email->set_newline("\r\n");	
+		$this->email->from('bumimandiri@system.com', 'BUMI MANDIRI - NO REPLY');
+		$this->email->to($useremail);
+		$this->email->subject('Invoice Pemesanan');
+		$this->email->message($message);
 
 		$this->email->send();
+		redirect(base_url("booking/acc_pesanan"));
 	}
 
 	public function konfirmasi(){

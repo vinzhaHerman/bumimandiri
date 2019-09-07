@@ -60,7 +60,7 @@
         <div class="col-md-12">
           <div class="card">
             <form action="<?php  echo base_url("Booking/paket_detail/").$post->id;?>" method="get" enctype="multipart/form-data">
-            <div class="card-header card-header-success">
+            <div class="card-header card-header-info">
               <input type='text' class="form-control" name="idpaket" value="<?php echo $_GET['idpaket'] ?>" hidden/>
               <input type='text' class="form-control" name="namapaket" value="<?php echo $_GET['namapaket'] ?>" hidden/>
               <h3 class="card-title"><b><?php echo $post->nama_program ?></b></h3>
@@ -68,12 +68,21 @@
             </div>
             <div class="card-body">
               <div id="typography">
-                <div class="card-title">
-                  
-                </div>
                 <div class="row">
-                  <div class="col-sm-3"><img style="max-width: 235px; height: auto;" src="<?php echo base_url();?>upload/paket/program/<?php echo $post->program_img ?>" alt=""></div>
-                  <div class="col-sm-8">
+                  <div class="col-sm-3">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <img style="max-width: 235px; height: auto;" src="<?php echo base_url();?>upload/paket/program/<?php echo $post->program_img ?>" alt="">
+                      </div>
+                    </div>
+                    <hr>
+                    <div class="row text-center">
+                      <div class="col-md-12">
+                        <button type="submit" class="btn btn-success">Pilih Paket</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-9">
                     <h3 class="card-title text-success">Fasilitas:</h3>
                     <p class="card-text"><?php echo $post->fasilitas ?></p>
                     <hr>
@@ -81,11 +90,6 @@
                     <p class="card-text"><?php echo $post->konsumsi ?></p>
                     <input type="text" id="put" class="form-control" name="jumlahorg" value="<?php echo $post->jumlah_hari ?>" readonly="true" hidden="true">
                   </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-12">
-                <button type="submit" class="btn btn-warning pull-right">Pilih Paket</button>
                 </div>
               </div>
             </div>

@@ -31,7 +31,7 @@
     	</div>
 
     	<button class="positive-button" type="submit">Login</button>
-    	<a class="links" href="http://localhost/PBumiMandiri/web"><button type="button" class="negative-button">Kembali</button></a>
+    	<a class="links" href="<?php echo base_url() ?>"><button type="button" class="negative-button">Kembali</button></a>
     	<p class="bottom-text">Admin Systems.</a>
   	</div>
   	</form>
