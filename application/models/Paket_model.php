@@ -86,21 +86,13 @@ class Paket_model extends CI_Model {
 		$result=$this->db->query("UPDATE paket_program SET program_img='$img' WHERE id='$id'");
         return $result;
 	}
-	// ---------------------------------------------- END manipulasi data ------------------------------------------------------ //
+	// ---------------------------------------------- END manipulasi data -------------------------------------------------- //
 
 
 
 
 
 	// ---------------------------------------------- riwayat ------------------------------------------------------ //
-	// function get_program_riwayat($programid){
-	// 	$date = date('Y-m-d');
-	// 	$result=$this->db->query("
-	// 		SELECT * FROM paket_riwayat 
-	// 		WHERE 
-	// 		(check_in < '$date' AND check_out < '$date') AND (paket_program_id='$programid');");
- //        return $result;
-	// }
 
 	function get_program_riwayat($programid){
 		$date = date('Y-m-d');

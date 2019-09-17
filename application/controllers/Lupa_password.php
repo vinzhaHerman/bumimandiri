@@ -46,8 +46,8 @@ class Lupa_password extends CI_Controller {
     			     'protocol' => 'smtp',
     			     'smtp_host' => 'ssl://smtp.googlemail.com',
     			     'smtp_port' => 465,
-    			     'smtp_user' => 'drevar420@gmail.com',
-    			     'smtp_pass' => 'bakara238',
+    			     'smtp_user' => 'your email',
+    			     'smtp_pass' => 'your password',
     			     'mailtype'  => 'html', 
     			     'charset'   => 'iso-8859-1'
 			       );			 
