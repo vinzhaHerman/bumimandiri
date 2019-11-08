@@ -20,9 +20,9 @@ class Web extends CI_Controller {
             'testimoni'=>$this->Testimoni_model->get_testimoni_detailed_limit()
         );
 		$this->load->view('template/head');
-		$this->load->view('pages/home', $data);
-		$this->load->view('template/navbar');
-		$this->load->view('template/sidebar');
+		$this->load->view('template/navbar2');
+		$this->load->view('template/sidebar2');
+		$this->load->view('pages/home2', $data);
 		$this->load->view('template/footer');
 	}
 
@@ -72,17 +72,17 @@ class Web extends CI_Controller {
             'list'=>$this->Post_model->get_post()
         );
 		$this->load->view('template/head');
+		$this->load->view('template/navbar2');
+		$this->load->view('template/sidebar2');
 		$this->load->view('pages/kegiatan', $data);
-		$this->load->view('template/navbar');
-		$this->load->view('template/sidebar');
 		$this->load->view('template/footer');
 	}
 	public function fasilitas()
 	{
 		$this->load->view('template/head');
+		$this->load->view('template/navbar2');
+		$this->load->view('template/sidebar2');
 		$this->load->view('pages/fasilitas');
-		$this->load->view('template/navbar');
-		$this->load->view('template/sidebar');
 		$this->load->view('template/footer');
 	}
 	public function daftarpaket()
@@ -95,9 +95,9 @@ class Web extends CI_Controller {
 	public function about_us()
 	{
 		$this->load->view('template/head');
+		$this->load->view('template/navbar2');
+		$this->load->view('template/sidebar2');
 		$this->load->view('pages/about_us');
-		$this->load->view('template/navbar');
-		$this->load->view('template/sidebar');
 		$this->load->view('template/footer');
 	}
 	public function bantuan()
@@ -107,9 +107,9 @@ class Web extends CI_Controller {
 	public function galery()
 	{
 		$this->load->view('template/head');
+		$this->load->view('template/navbar2');
+		$this->load->view('template/sidebar2');
 		$this->load->view('pages/galery');
-		$this->load->view('template/navbar');
-		$this->load->view('template/sidebar');
 		$this->load->view('template/footer');
 	}
 
