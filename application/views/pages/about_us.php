@@ -1,5 +1,4 @@
 <div class="main-wrapper">
-	<div class="filler"></div>
 	<div class="profile-main-wrapper">
 		<div class="section">
 			<div class="overlay"></div>
@@ -34,7 +33,7 @@
 			</div>
 		</div>
 		<div class="section">
-			<div class="container">
+			<div class="vmc">
 				<div class="visi-container">
 					<h2 class="title visi">VISI</h2>
 					<p class="visi-para">Terciptanya kader-kader pemimpin yang amanah, mumpuni dan handal, yang dilandasi oleh cita – cita mewujudkan rahmat bagi alam semesta beserta seluruh isinya.</p>
