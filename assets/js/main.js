@@ -76,38 +76,80 @@ jQuery( document ).ready(function( $ ) {
 
 
 
-//----------------------------------------- sidebar configuration -------------------------------------------------
+// $(document).ready(function(){
+// 	$('#nav-icon3').click(function(){
+// 		$(this).toggleClass('open');
+// 	});
+// });
 
-$(document).ready(function(){
-	// $('.menu-open').click(function(){
-	// 	$('#side-menu').fadeToggle("fast");
-	// });
-	// $('.btn-close').click(function(){
-	// 	$('#side-menu').fadeToggle("slow");
-	// });
-	$('#side-menu').css({"box-shadow":"0px 1px 5px 1px #555"});
-	$('.fullscreen-bg-container').click(function(){
-		$('#side-menu').css({"left":"-250px"});
-	});
-	$('.main-wrapper').click(function(){
-		$('#side-menu').css({"left":"-250px"});
-	});
+var bread = document.getElementById('nav-icon-open');
+var sandwich = document.getElementById('nav-icon-close');
+var n = document.getElementById('nav-panel');
+
+bread.addEventListener("click", function(){
+    n.classList.remove("inactive");
+    n.classList.add("active", "animated", "slideInDown");
 });
 
-var slidemenu = document.getElementById('side-menu');
+sandwich.addEventListener("click", function(){
+    n.classList.add("slideOutUp");
+    setTimeout(function(){
+        n.classList.remove("active", "slideOutUp");
+        n.classList.add("inactive");
+    }, 1000);
+    
+});
 
-function openSlideMenu(){
-   slidemenu.style.left='0';
-}
-function closeSlideMenu(){
-   slidemenu.style.left='-250px';
-}
+window.addEventListener("scroll", function(){
+    var y = Math.round(window.scrollY);
+    if (y == 0) {
+        // alert("working");
+        document.getElementById('navcon').classList.remove("navbar-con-active");
+    } else {
+        document.getElementById('navcon').classList.add("navbar-con-active");
+    }
+});
 
-window.onclick = function(event) {
-  if (event.target == slidemenu) {
-   slidemenu.style.left = '-250px';
-  }
-}
+
+
+
+
+
+//----------------------------------------- sidebar configuration -------------------------------------------------
+
+// $(document).ready(function(){
+// 	// $('.menu-open').click(function(){
+// 	// 	$('#side-menu').fadeToggle("fast");
+// 	// });
+// 	// $('.btn-close').click(function(){
+// 	// 	$('#side-menu').fadeToggle("slow");
+// 	// });
+
+
+
+// 	$('#side-menu').css({"box-shadow":"0px 1px 5px 1px #555"});
+// 	$('.fullscreen-bg-container').click(function(){
+// 		$('#side-menu').css({"left":"-250px"});
+// 	});
+// 	$('.main-wrapper').click(function(){
+// 		$('#side-menu').css({"left":"-250px"});
+// 	});
+// });
+
+// var slidemenu = document.getElementById('side-menu');
+
+// function openSlideMenu(){
+//    slidemenu.style.left='0';
+// }
+// function closeSlideMenu(){
+//    slidemenu.style.left='-250px';
+// }
+
+// window.onclick = function(event) {
+//   if (event.target == slidemenu) {
+//    slidemenu.style.left = '-250px';
+//   }
+// }
 
 //----------------------------------------- sidebar configuration -------------------------------------------------
 

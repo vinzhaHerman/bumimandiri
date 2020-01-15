@@ -59,8 +59,7 @@
                   </p>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
-                  <a class="dropdown-item" href="#">Profile</a>
-                  <a class="dropdown-item" href="#">Settings</a>
+                  <a class="dropdown-item" href="<?php echo base_url() ?>Admin/profile">Profile</a>
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="<?php echo base_url('admin/logout') ?>">Log out</a>
                 </div>
@@ -77,25 +76,6 @@
 
 
 
-          <!-- <div class="card">
-            <div class="card-header card-header-primary">
-              <h4 class="card-title">Material Dashboard Heading</h4>
-              <p class="card-category">Created using Roboto Font Family</p>
-            </div>
-            <div class="card-body">
-              <div id="typography">
-                <div class="card-title">
-                  <h2>Typography</h2>
-                </div>
-                <div class="row">
-                </div>
-              </div>
-            </div>
-          </div> -->
-
-
-
-
 
           <div class="">
               <div class="card">
@@ -106,22 +86,22 @@
                       <ul class="nav nav-tabs" data-tabs="tabs">
                         <li class="nav-item">
                           <a class="nav-link active" href="#profile" data-toggle="tab">
-                            Blog
+                            Atikel
                             <div class="ripple-container"></div>
                           </a>
                         </li>
                         <li class="nav-item">
                           <a class="nav-link" href="#messages" data-toggle="tab">
-                            Artikel
+                            Disarankan
                             <div class="ripple-container"></div>
                           </a>
                         </li>
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                           <a class="nav-link" href="#settings" data-toggle="tab">
                             Events
                             <div class="ripple-container"></div>
                           </a>
-                        </li>
+                        </li> -->
                       </ul>
                     </div>
                   </div>
@@ -135,100 +115,60 @@
                             <td>
                               <!-- some content -->
                             </td>
-                            <td><a href="http://localhost/PBumiMandiri/Admin/tambah_blog"><b>+ TAMBAH BLOG BARU</b></a></td>
+                            <td><a href="<?php echo base_url(); ?>Admin/tambah_promosi"><b>+ TAMBAH Artikel</b></a></td>
                           </tr>
+                          <?php $no=1; ?>
+                          <?php 
+                            function word_limit($string, $word_limit){
+                              $words = explode(" ",$string);
+                              return implode(" ",array_splice($words,0,$word_limit));
+                            }
+                            foreach(array_slice($promosi->result(), 0, 10) as $prom ): 
+                          ?>
                           <tr>
-                            <td>
-                              1
-                            </td>
-                            <td>Sign contract for "What are conference organizers afraid of?"</td>
-                            <td class="td-actions text-right">
-                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
+                            <td><?php echo $no++; ?></td>
+                            <td><?php echo $prom->judul_post?></td>
+                            <td><?php echo $prom->isi_post?></td>
+                            <td class="td-actions text-right pull-right">
+                              <a href="<?php echo base_url() ?>Admin/ubah_blog/<?php echo $prom->id?>" rel="tooltip" title="Edit" class="btn btn-primary btn-link btn-sm">
                                 <i class="material-icons">edit</i>
-                              </button>
-                              <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
+                              </a>
+                              <a href="<?php echo base_url() ?>Admin/delete_blog/<?php echo $prom->id?>" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
                                 <i class="material-icons">close</i>
-                              </button>
+                              </a>
                             </td>
                           </tr>
-                          <tr>
-                            <td>
-                              2
-                            </td>
-                            <td>Lines From Great Russian Literature? Or E-mails From My Boss?</td>
-                            <td class="td-actions text-right">
-                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
-                                <i class="material-icons">edit</i>
-                              </button>
-                              <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
-                                <i class="material-icons">close</i>
-                              </button>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              3
-                            </td>
-                            <td>Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit
-                            </td>
-                            <td class="td-actions text-right">
-                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
-                                <i class="material-icons">edit</i>
-                              </button>
-                              <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
-                                <i class="material-icons">close</i>
-                              </button>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              4
-                            </td>
-                            <td>Create 4 Invisible User Experiences you Never Knew About</td>
-                            <td class="td-actions text-right">
-                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
-                                <i class="material-icons">edit</i>
-                              </button>
-                              <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
-                                <i class="material-icons">close</i>
-                              </button>
-                            </td>
-                          </tr>
+                          <?php endforeach; ?>
                         </tbody>
                       </table>
                     </div>
                     <div class="tab-pane" id="messages">
                       <table class="table">
                         <tbody>
-                          <tr>
+                         <tr>
                             <td>
-                              1
+                              <!-- some content -->
                             </td>
-                            <td>Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit
-                            </td>
-                            <td class="td-actions text-right">
-                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
+                            <td><a href="<?php echo base_url(); ?>Admin/tambah_artikel"><b>+ TAMBAH Disarankan</b></a></td>
+                          </tr>
+                          <?php $no=1; ?>
+                          <?php 
+                            foreach(array_slice($artikel->result(), 0, 10) as $art ): 
+                          ?>
+                          <tr>
+                            <td><?php echo $no++; ?></td>
+                            <td><?php echo $art->judul_post?></td>
+                            <td><?php echo $art->isi_post?></td>
+                            <td class="td-actions text-right pull-right">
+                              <a href="<?php echo base_url() ?>Admin/ubah_blog/<?php echo $art->id?>" rel="tooltip" title="Edit" class="btn btn-primary btn-link btn-sm">
                                 <i class="material-icons">edit</i>
-                              </button>
-                              <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
+                              </a>
+                              <a href="<?php echo base_url() ?>Admin/delete_artikel/<?php echo $art->id?>" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
                                 <i class="material-icons">close</i>
-                              </button>
+                              </a>
                             </td>
                           </tr>
-                          <tr>
-                            <td>
-                              2
-                            </td>
-                            <td>Sign contract for "What are conference organizers afraid of?"</td>
-                            <td class="td-actions text-right">
-                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
-                                <i class="material-icons">edit</i>
-                              </button>
-                              <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
-                                <i class="material-icons">close</i>
-                              </button>
-                            </td>
-                          </tr>
+                          <?php endforeach; ?>
                         </tbody>
                       </table>
                     </div>
@@ -237,47 +177,28 @@
                         <tbody>
                           <tr>
                             <td>
-                              1
+                              <!-- some content -->
                             </td>
-                            <td>Lines From Great Russian Literature? Or E-mails From My Boss?</td>
-                            <td class="td-actions text-right">
-                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
-                                <i class="material-icons">edit</i>
-                              </button>
-                              <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
-                                <i class="material-icons">close</i>
-                              </button>
-                            </td>
+                            <td><a href="<?php echo base_url(); ?>Admin/tambah_event"><b>+ TAMBAH EVENT</b></a></td>
                           </tr>
+                          <?php $no=1; ?>
+                          <?php 
+                            foreach(array_slice($event->result(), 0, 10) as $ev ): 
+                          ?>
                           <tr>
-                            <td>
-                              2
-                            </td>
-                            <td>Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit
-                            </td>
-                            <td class="td-actions text-right">
-                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
+                            <td><?php echo $no++; ?></td>
+                            <td><?php echo $ev->judul_post?></td>
+                            <td><?php echo $ev->isi_post?></td>
+                            <td class="td-actions text-right pull-right">
+                              <a href="<?php echo base_url() ?>Admin/ubah_blog/<?php echo $ev->id?>" rel="tooltip" title="Edit" class="btn btn-primary btn-link btn-sm">
                                 <i class="material-icons">edit</i>
-                              </button>
-                              <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
+                              </a>
+                              <a href="<?php echo base_url() ?>Admin/delete_event/<?php echo $ev->id?>" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
                                 <i class="material-icons">close</i>
-                              </button>
+                              </a>
                             </td>
                           </tr>
-                          <tr>
-                            <td>
-                              3
-                            </td>
-                            <td>Sign contract for "What are conference organizers afraid of?"</td>
-                            <td class="td-actions text-right">
-                              <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
-                                <i class="material-icons">edit</i>
-                              </button>
-                              <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
-                                <i class="material-icons">close</i>
-                              </button>
-                            </td>
-                          </tr>
+                          <?php endforeach; ?>
                         </tbody>
                       </table>
                     </div>
@@ -285,6 +206,7 @@
                 </div>
               </div>
           </div>
+
 
 
 
@@ -323,6 +245,7 @@
             <script>
               document.write(new Date().getFullYear())
             </script>
+
             <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a>
           </div>
         </div>

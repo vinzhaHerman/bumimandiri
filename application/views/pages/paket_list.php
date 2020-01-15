@@ -16,49 +16,102 @@
 
 
 
-	<div class="container">
-		<h2 style="text-align: center;" class="mb-3">PILIH PROGRAM KEGIATAN</h2>
-      <?php foreach ($res->result() as $post): ?>
-  		<div class="card mb-3">
-        <form action="<?php  echo base_url("Booking/paket_detail/").$post->id;?>" method="post" enctype="multipart/form-data">
-        <div class="card-header card-header-info">
-          <h3 class="card-title"><b><?php echo $post->nama_program ?></b></h3>
-          <p class="card-category">Lama Kegiatan: <b><?php echo $post->lama_kegiatan ?></b></p>
-        </div>
-  			<div class="card-body">
-          <div class="row">
-            <div class="col-sm-3"><img style="max-width: 250px; height: auto;" src="<?php echo base_url();?>assets/img/people.jpg" alt=""></div>
-            <div class="col-sm-8">
-              <h3 class="card-title text-info"></h3>
-              <p class="card-text"><?php echo $post->fasilitas ?><br>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <input type='text' class="form-control" id='datetimepicker1' name="datein" value="<?php echo $_POST['datein']?>" hidden/>
-              <input type='text' class="form-control" id='datetimepicker1' name="dateout" value="<?php echo $_POST['dateout']?>" hidden/>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="<?php echo base_url();?>"><b>BUMI MANDIRI</b></a>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item dropdown pull-right">
+          <a class="nav-link" href="#pablo" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
+            <a class="dropdown-item" href="#">Profile</a>
+            <a class="dropdown-item" href="#">Settings</a>
+        </li>
+      </ul>
+    <a class="navbar-brand pull-right" href="#">Transaksi</a>
+    </div>
+  </nav>
+
+
+
+
+
+<div class="container">
+  <div class="content">
+    <a href="http://localhost/bumimandiri/booking">
+    <div class="row align-items-center mx-auto"  style="width: 75vw;">
+      <h5 class="text-primary"><i class="fas fa-arrow-left"></i> Kembali</h5>
+    </a>
+    </div>
+
+
+
+
+
+    <div class="row text-center align-items-center mx-auto">
+      <h2 class="align-items-center mx-auto">PILIH PROGRAM</h2>
+    </div>
+ 
+
+
+
+
+    <div class="row align-items-center mx-auto">
+    <?php foreach ($res->result() as $post): ?>
+        <div class="col-md-12">
+          <div class="card">
+            <form action="<?php  echo base_url("Booking/paket_detail/").$post->id;?>" method="get" enctype="multipart/form-data">
+            <div class="card-header card-header-info">
+              <input type='text' class="form-control" name="idpaket" value="<?php echo $_GET['idpaket'] ?>" hidden/>
+              <input type='text' class="form-control" name="namapaket" value="<?php echo $_GET['namapaket'] ?>" hidden/>
+              <h3 class="card-title"><b><?php echo $post->nama_program ?></b></h3>
+              <p class="card-category">Lama Kegiatan: <b><?php echo $post->lama_kegiatan ?></b></p>
             </div>
+            <div class="card-body">
+              <div id="typography">
+                <div class="row">
+                  <div class="col-sm-3">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <img style="max-width: 235px; height: auto;" src="<?php echo base_url();?>upload/paket/program/<?php echo $post->program_img ?>" alt="">
+                      </div>
+                    </div>
+                    <hr>
+                    <div class="row text-center">
+                      <div class="col-md-12">
+                        <button type="submit" class="btn btn-success">Pilih Paket</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-9">
+                    <h3 class="card-title text-success">Fasilitas:</h3>
+                    <p class="card-text"><?php echo $post->fasilitas ?></p>
+                    <hr>
+                    <h3 class="card-title text-success">Konsumsi:</h3>
+                    <p class="card-text"><?php echo $post->konsumsi ?></p>
+                    <input type="text" id="put" class="form-control" name="jumlahorg" value="<?php echo $post->jumlah_hari ?>" readonly="true" hidden="true">
+                  </div>
+                </div>
+              </div>
+            </div>
+            </form>
           </div>
-    			
-          <button type="submit" class="btn btn-success pull-right">Pilih Paket</button>
-    			<button class="btn btn-secondary pull-right" type="button" data-toggle="collapse" data-target="#collapsedContent1" aria-expanded="false" aria-controls="collapsedContent1">Deail</button>
-    			<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-    			<div class="collapse" id="collapsedContent1">
-  					<div class="card card-body"> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-  					</div>
-				</div>
-  			</div>
-      </form>
-		</div>
+        </div>
     <?php endforeach; ?>
-	</div>
+    </div>
+  </div>
+</div>
 
 
 
 
-	<!-- JQuery  -->
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  	<!-- Plugin for the momentJs  -->
- 	<script src="<?php echo base_url();?>/assets/js/plugins/moment.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-	<script src="<?php echo base_url();?>/assets/js/core/bootstrap-material-design.min.js" type="text/javascript"></script>
+
+<!-- JQuery  -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<!-- Plugin for the momentJs  -->
+<script src="<?php echo base_url();?>/assets/js/plugins/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="<?php echo base_url();?>/assets/js/core/bootstrap-material-design.min.js" type="text/javascript"></script>
 
 </body>
 </html>

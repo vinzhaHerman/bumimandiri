@@ -9,19 +9,19 @@
     </a>
     <a href="<?php echo base_url(); ?>Web/kegiatan">
     	<div class="sidebar-item">
-    		<i class="fas fa-search"></i><span class="sidebar-item-text">Kegiatan Wisata</span>
+    		<i class="fas fa-search"></i><span class="sidebar-item-text">Artikel & Promosi</span>
     	</div>
     </a>
-    <a href="">
+    <a href="<?php echo base_url(); ?>Web/fasilitas">
     	<div class="sidebar-item">
     		<i class="fas fa-bed"></i><span class="sidebar-item-text">Fasilitas</span>
     	</div>
     </a>
-    <a href="">
+    <!-- <a href="">
     	<div class="sidebar-item">
     		<i class="fas fa-list-ul"></i><span class="sidebar-item-text">Daftar Paket</span>
     	</div>
-    </a>
+    </a> -->
     <a href="<?php echo base_url(); ?>Web/galery">
         <div class="sidebar-item">
             <i class="far fa-images"></i><span class="sidebar-item-text">Galery</span>
@@ -35,7 +35,7 @@
     		<i class="fas fa-exclamation-circle"></i><span class="sidebar-item-text">Bantuan</span>
     	</div>
     </a>
-    <a href="h<?php echo base_url(); ?>Web/about_us">
+    <a href="<?php echo base_url(); ?>Web/about_us">
     	<div class="sidebar-item">
     		<i class="far fa-smile"></i><span class="sidebar-item-text">Tentang Kami</span>
     	</div>

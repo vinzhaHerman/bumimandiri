@@ -17,40 +17,7 @@
             <span class="navbar-toggler-icon icon-bar"></span>
           </button>
           <div class="collapse navbar-collapse justify-content-end">
-            <!-- <form class="navbar-form">
-              <div class="input-group no-border">
-                <input type="text" value="" class="form-control" placeholder="Search...">
-                <button type="submit" class="btn btn-white btn-round btn-just-icon">
-                  <i class="material-icons">search</i>
-                  <div class="ripple-container"></div>
-                </button>
-              </div>
-            </form> -->
             <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" href="#pablo">
-                  <i class="material-icons">dashboard</i>
-                  <p class="d-lg-none d-md-block">
-                    Stats
-                  </p>
-                </a>
-              </li>
-              <!-- <li class="nav-item dropdown">
-                <a class="nav-link" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="material-icons">notifications</i>
-                  <span class="notification">5</span>
-                  <p class="d-lg-none d-md-block">
-                    Some Actions
-                  </p>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">Mike John responded to your email</a>
-                  <a class="dropdown-item" href="#">You have 5 new tasks</a>
-                  <a class="dropdown-item" href="#">You're now friend with Andrew</a>
-                  <a class="dropdown-item" href="#">Another Notification</a>
-                  <a class="dropdown-item" href="#">Another One</a>
-                </div>
-              </li> -->
               <li class="nav-item dropdown">
                 <a class="nav-link" href="#pablo" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="material-icons">person</i>
@@ -59,8 +26,7 @@
                   </p>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
-                  <a class="dropdown-item" href="#">Profile</a>
-                  <a class="dropdown-item" href="#">Settings</a>
+                  <a class="dropdown-item" href="<?php echo base_url() ?>Admin/profile">Profile</a>
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="<?php echo base_url('admin/logout') ?>">Log out</a>
                 </div>
@@ -93,7 +59,6 @@
               <div class="card">
                 <div class="card-header card-header-info">
                   <h3 class="card-title">Data Pemesanan</h3>
-                  <button type="button" class="btn btn-success btn-sm">+ Tambah Reservasi</button>
                 </div>
                 <div class="card-body table-responsive">
                   <table id="myTable" class="table table-hover  table-striped">
@@ -108,7 +73,7 @@
                     </thead>
                     <tbody><?php $no=1; ?><?php foreach ($res->result() as $post): ?>
                       <tr>
-                        <td><?php echo $no++; ?></td>
+                        <td><?php echo $no++  ?></td>
 
                         <td><?php echo $post->kode_reservasi  ?></td>
 
@@ -123,15 +88,12 @@
 
                           <?php
                             if (empty($post->bukti)) {
-                              echo '<button type="button"  href="" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#showModal" disabled>
+                              echo '<button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#showModal" disabled>
                             <i class="material-icons">close</i> Empty
                             </button>';
                             }
                             else{
-                              echo '<button type="button"  href="',
-                              'base_url();/upload/bukti/',
-                              $post->bukti,
-                              '" class="btn btn-info btn-sm" data-toggle="modal" data-target="#showModal">
+                              echo '<button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#'.$post->kode_reservasi.'">
                             <i class="material-icons">done</i> Uploaded
                             </button>';
                             }
@@ -142,7 +104,7 @@
 
 
                             <!-- Modal -->
-                          <div class="modal fade" id="showModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                          <div class="modal fade" id="<?php echo $post->kode_reservasi  ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered" role="document">
                               <div class="modal-content">
                                 <div class="modal-header">
@@ -152,7 +114,9 @@
                                   </button>
                                 </div>
                                 <div class="modal-body">
-                                  <div class="modal-data"></div>
+                                  <div class="modal-data">
+                                  	<img src="<?php echo base_url().'upload/bukti/'.$post->bukti?>" onerror="this.onerror=null; this.src='<?php echo base_url().'upload/bukti/default.jpg'?>'" alt="" class="img-thumbnail mx-auto" style="max-height: 250px;">
+                                  </div>
                                 </div>
                                 <div class="modal-footer">
                                   <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
@@ -206,8 +170,8 @@
                               <button type="button" rel="tooltip" title="Konfirmasi" class="btn btn-success konfirmasi">
                                 <i class="material-icons">done</i> Konfirmasi
                               </button> -->
-                              <a href="<?php echo base_url() ?>Admin/opsi_pemesanan/<?php echo $post->kode_reservasi  ?>" rel="tooltip" title="Edit" class="btn btn-success konfirmasi">
-                                <i class="material-icons">settings</i> Option
+                              <a href="<?php echo base_url() ?>Admin/opsi_pemesanan/<?php echo $post->kode_reservasi  ?>" rel="tooltip" title="Lihat Detail" class="btn btn-success konfirmasi">
+                                <i class="material-icons">settings</i> Opsi
                               </a>
                             </td>
                       </tr>

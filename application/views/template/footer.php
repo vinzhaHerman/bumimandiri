@@ -32,54 +32,44 @@
 </div> -->
 <!-- --------------------------END grid footer--------------------------------------------- --> 
 <!-- --------------------------grid footer--------------------------------------------- --> 
-<div class="footer">
-    <div class="footer-grid-container">
-        <div class="grid-item">
-            <div class="grid-item-content">
-                <ul>
-                    <img style="width: 120px; height: 120px;" src="<?php echo base_url(); ?>assets/logos/white.png">
-                </ul>
-            </div>
-        </div>
-        <div class="grid-item">
-            <div class="grid-item-content">
-                <ul>
-                    <li class="mini-title"><b>Bumi Mandiri</b></li>
-                    <li><a href="#">Getting Here</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">FeedBac</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="grid-item">
-            <div class="grid-item-content">
-                <ul>
-                    <li class="mini-title">External Links</li>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Feedback</a></li>
-                </ul>
-            </div>
-        </div> 
-        <div class="grid-item">
-            <div class="grid-item-content">
-                <ul>
-                    <li class="mini-title">Follow Us On:</li>
-                    <li class="line-up-icons"><a href="#/"><i class="fab fa-facebook-square"></i></a></li>
-                    <li class="line-up-icons"><a href="#"><i class="fab fa-twitter-square"></i></a></li>
-                    <li class="line-up-icons"><a href="#"><i class="fab fa-youtube"></i></a></li>
-                    <li class="line-up-icons"><a href="#"><i class="fab fa-instagram"></i></a></li>
-                    <li class="line-up-icons"><a href="#"><i class="fab fa-google-plus"></i></a></li>
-                </ul>
-            </div>
-        </div> 
+<footer>
+    <div class="footer-component">
+        <img src="assets/logos/white.png" alt="" class="footer-img">
     </div>
-</div>
+    <div class="footer-component">
+        <p class="footer-sub-title">Bumi Mandiri</p>
+        <ul>
+            <li><a href="">Getting Start</a></li>
+            <li><a href="">Contact Us</a></li>
+            <li><a href="">FAQ</a></li>
+            <li><a href="">Feedback</a></li>
+        </ul>
+    </div>
+    <div class="footer-component">
+        <p class="footer-sub-title">External Links</p>
+        <ul>
+            <li><a href="">links</a></li>
+            <li><a href="">links</a></li>
+            <li><a href="">links</a></li>
+            <li><a href="">links</a></li>
+        </ul>
+    </div>
+    <div class="footer-component">
+        <p class="footer-sub-title">Follow us on:</p>
+    </div>
+</footer>
 <!-- --------------------------END grid footer--------------------------------------------- --> 
 
 <script src="<?php echo base_url()?>assets/js/jquery.min.js"></script>
 <script src="<?php echo base_url()?>assets/slick/slick.js"></script>
 <script src="<?php echo base_url()?>assets/js/main.js"></script>
+<script src="<?php echo base_url()?>live2d/js/live2d.js"></script>
+<script src="<?php echo base_url()?>live2d/js/message.js"></script>
+<script type="text/javascript">
+    var message_Path = '/live2d/'
+</script>
+<script type="text/javascript">
+    loadlive2d("live2d", "live2d/model/haru/haru.model.json");
+</script>
 </body>
 </html>

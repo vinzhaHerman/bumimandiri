@@ -14,6 +14,32 @@
 </head>
 
 
+<?php $userriwayat=$userriwayat->row_array() ?>
+<?php $userdata=$userdata->row_array() ?>
+
+
+
+
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#"><b>BUMI MANDIRI</b></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item dropdown pull-right">
+          <a class="nav-link" href="#pablo" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My Account</a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
+            <a class="dropdown-item" href="#">Profile</a>
+            <a class="dropdown-item" href="#">Settings</a>
+        </li>
+      </ul>
+    <a class="navbar-brand" href="#">Form Pemesanan</a>
+    </div>
+  </nav>
+
+
 
 
 <body>
@@ -22,20 +48,17 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-md-4">
-              <?php foreach ($userdata->result() as $post): ?>
               <div class="card card-profile">
                 <div class="card-body">
                 <div class="card-avatar">
                   <a href="#pablo">
-                    <img class="img" src="<?php echo base_url();?>/assets/img/faces/marc.jpg" />
+                    <img class="img" src="<?php echo base_url();?>/upload/user/profile_photos/<?php echo $userdata['foto_profil']  ?>" />" />
                   </a>
                 </div>
                   <h6 class="card-category text-gray">User Account</h6>
-                  <h4 class="card-title"><?php echo $post->nama_depan  ?></h4>
-                  <a href="#pablo" class="btn btn-primary btn-round">Ganti Foto</a>
+                  <h4 class="card-title"><?php echo $userdata['nama_depan']  ?> <?php echo $userdata['nama_belakang']  ?></h4>
                 </div>
               </div>
-              <?php endforeach; ?>
               <div class="card card-profile">
                 <div class="card-header card-header-primary">
                   <h4 class="card-title">NAVIGATION</h4>
@@ -52,13 +75,14 @@
             </div>
             <div class="col-md-8">
               <div class="jumbotron">
-                <h1 class="display-4">Hello, world!</h1>
-                <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-                <form action="<?php echo base_url();?>account/upload_file">
-                <input type="text" class="form-control" name="kode_reservasi" value="<?php foreach ($userriwayat->result() as $res): ?><?php echo $res->kode_reservasi  ?><?php endforeach; ?>" hidden>
-                <input type="file" name="fileupload" value="fileupload" id="fileupload"> <label for="fileupload"> Select a file to upload</label> 
+                <?php echo form_open_multipart('Account/do_upload');?>
+                <h1 class="display-4">Satu langkah lagi!</h1>
+                <label for="fileupload">untuk Reservasi</label> 
+                <input type="text" class="form-control-plaintext text-primary" name="kode" value="<?php echo $userriwayat['kode_reservasi'] ?>" style="font-size: 1.5rem;">
+                <p class="lead">Silahkan upload foto bukti transaksi anda disini. pesanan anda akan di konfirmasi oleh pihak kami paling lambat 1 x 24 jam.</p>
+                <input type="file" name="fileupload" id="fileupload">
                 <hr class="my-4">
-                <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+                <p>Pastikan data yang anda masukan benar.</p>
                 <p class="lead">
                   <button type="submit" class="btn btn-primary btn-lg" href="#" role="button">Upload</button>
                 </p>
@@ -70,7 +94,6 @@
         </div>
       </div>
 </div>
-<hr>
 
     <!-- JQuery  -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

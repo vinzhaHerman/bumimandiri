@@ -72,6 +72,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </div>
 
    <div class="clearfix">
-        <a href="http://localhost/PBumiMandiri/Web"><button type="button" class="negative-button">Kembali</button>
+        <a href="http://localhost/bumimandiri/Web"><button type="button" class="negative-button">Kembali</button>
       </div>
 </div>
