@@ -68,6 +68,45 @@ button{
 }
 
 
+.pro-pic{
+    width: 26px;
+    height: 26px;
+    background-color: #03a9f4;
+    border-radius: 30px;
+    margin: 0 6px;
+}
+.username{
+    font-size: 14pt;
+}
+
+.dropdown{
+    display: none;
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    min-width: 180px;
+    -webkit-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.2);
+    border-radius: 12px;
+  }
+  .nav-drop:hover .dropdown{
+      display: block;
+  }
+  
+  .dropdown li{
+    list-style-type: none;
+  }
+  .dropdown li a{
+    color: #03a9f4;
+    padding: 12px 16px 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  .dropdown li a:hover{
+    background-color: #eeeeee;
+  }
+
+
 
 
 #nav-panel{
