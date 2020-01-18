@@ -6,6 +6,7 @@ class Web extends CI_Controller {
 	function __construct(){
 		parent::__construct();
 		$this->load->helper('url');
+		$this->load->library('pagination');
 		$this->load->model('Pelanggan_model');
 		$this->load->model('Post_model');
 		$this->load->model('Testimoni_model');
@@ -68,15 +69,38 @@ class Web extends CI_Controller {
 
 	public function kegiatan()
 	{
-		$data=array(
-            'list'=>$this->Post_model->get_post()
-        );
+		$config['base_url'] = site_url('web/kegiatan');
+        $config['total_rows'] = $this->db->count_all('post');
+        $config['per_page'] = 10;
+		$config["uri_segment"] = 3;
+
+		$this->pagination->initialize($config);
+
+		$data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+		$data['data'] = $this->Post_model->get_post_paginate($config["per_page"], $data['page']);
+		$data['pagination'] = $this->pagination->create_links();
+		
+		// $data=array(
+        //     'list'=>$this->Post_model->get_post()
+        // );
 		$this->load->view('template/head');
 		$this->load->view('template/navbar2');
 		$this->load->view('template/sidebar2');
 		$this->load->view('pages/kegiatan', $data);
 		$this->load->view('template/footer');
 	}
+	public function read_post($id=""){
+		$data = array(
+			'post' => $this->Post_model->get_post_byid($id),
+			'list'=>$this->Post_model->get_post()
+		);
+		$this->load->view('template/head');
+		$this->load->view('template/navbar2');
+		$this->load->view('template/sidebar2');
+		$this->load->view('pages/post', $data);
+		$this->load->view('template/footer');
+	}
+
 	public function fasilitas()
 	{
 		$this->load->view('template/head');

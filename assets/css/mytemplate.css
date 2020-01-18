@@ -9,7 +9,7 @@ body{
     background: rgb(255, 255, 255);
 }
 
-.container{
+.mycontainer{
     margin: 5% 10%;
     max-width: 100vw;
     overflow: hidden;

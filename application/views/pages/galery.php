@@ -7,7 +7,7 @@
     <h4>Page: Gallery</h4>
 </div>
 
-<div class="container">
+<div class="mycontainer">
 	<h1 class="heading" style="text-align: center;">SEE OUR JOURNEY</h1>
 	<div class="mid-selector">
 		<a id="tb_1" class="bt-selector active" onClick="rudrSwitchTab('tb_1', 'content_1');">ALL</a>

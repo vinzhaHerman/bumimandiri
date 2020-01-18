@@ -8,6 +8,11 @@ class Post_model extends CI_Model {
         return $result;
 	}
 
+	function get_post_paginate($limit, $start){
+		$result = $this->db->get('post', $limit, $start);
+        return $result;
+	}
+
 	function get_post_limit3(){
 		$result=$this->db->query("SELECT * FROM post ORDER BY id DESC limit 3");
         return $result;

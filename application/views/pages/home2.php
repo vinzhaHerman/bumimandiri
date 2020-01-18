@@ -12,9 +12,9 @@
         </div>
     </div>
 
-    <div class="container">
+    <div class="mycontainer">
         <h1 class="heading" style="text-align: center;">DISARANKAN UNTUK ANDA</h1>
-        <div class="card-group">
+        <div class="card-grouping">
             <div class="cards">
                 <div class="card-hd">
                     <img src="assets/img/kids.jpg" alt="" class="card-img">
@@ -47,7 +47,7 @@
             </div>
         </div>
         <h1 class="heading" style="text-align: center;">DISARANKAN UNTUK ANDA</h1>
-        <div class="card-group">
+        <div class="card-grouping">
             <div class="cards">
                 <div class="card-hd">
                     <img src="assets/img/kids.jpg" alt="" class="card-img">

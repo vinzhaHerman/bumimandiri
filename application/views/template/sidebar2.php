@@ -11,7 +11,7 @@
             <i class="material-icons nav-ico"> search </i>
             <p class="nav-l-t nav-txt">Artikel & Promosi</p>
         </a>
-        <a href="<?php echo base_url(); ?>Web/fasilitas" class="nav-ls nav-links">
+        <a href="" class="nav-ls nav-links">
             <i class="material-icons nav-ico"> eco </i>
             <p class="nav-l-t nav-txt">Fasilitas</p>
         </a>

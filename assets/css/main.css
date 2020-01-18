@@ -213,7 +213,7 @@ button{
     background: rgb(242, 242, 242);
 }
 
-.card-group{
+.card-grouping{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -252,6 +252,34 @@ button{
 
 
 
+.list-box-container{
+    margin: 32px 0;
+    max-height: 400px;
+    display: flex;
+}
+.art-content{
+    width: 260px;
+    height: 180px;
+    overflow: hidden;
+}
+.thumbnails{
+    min-width: 100%;
+    min-height: 100%;
+}
+.art-title{
+    font-size: 18pt;
+    color: #03a9f4;
+}
+.art-desc{
+    margin: 12px 0 32px 0;
+}
+.list-box-content{
+    margin: 0 14px;
+}
+
+
+
+
 
 .gallery-grid{
     margin: 24px 0;
@@ -276,6 +304,14 @@ button{
     flex-shrink: 0;
     min-width: 100%;
     min-height: 100%
+}
+
+
+
+
+.eight-four{
+    display: flex;
+    justify-content: space-between;
 }
 
 
