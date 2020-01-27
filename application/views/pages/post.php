@@ -30,18 +30,17 @@
 
     <div class="list-container">
         <h5 class="art-title">Newest Posts:</h5>
-        <div class="list-row">
+        <div class="side-list-row">
             <?php
                 foreach(array_slice($list->result(), 0, 3) as $l ):
             ?>
-            <div class="list-box-container">
-                <!-- <div class="art-content">
+            <div class="list-box-container post-l-compact">
+                <div class="art-content">
                     <a href="<?php  echo base_url("web/read_post/").$l->id;?>"><img src="https://source.unsplash.com/random/?people,trip" alt="" class="thumbnails"></a>
-                </div> -->
-                <div class="list-box-content">
-                    <a href="<?php  echo base_url("web/read_post/").$l->id;?>"><h4 class="art-title"><?php echo $l->judul_post?></h4></a>
-                    <p class="art-desc"><?php echo word_limit($l->isi_post, 10);?></p>
-                    <div class="content-atr">By <span style="color: #3b5998;">Admin</span> | </div>
+                </div>
+                <div class="list-box-content post-t-compact">
+                    <a href="<?php  echo base_url("web/read_post/").$l->id;?>"><h4 class="art-title mn-tt"><?php echo $l->judul_post?></h4></a>
+                    <p class="art-desc mn-pp low-opa"><?php echo word_limit($l->isi_post, 10);?></p>
                 </div>
             </div>
         <?php endforeach; ?>

@@ -277,6 +277,25 @@ button{
     margin: 0 14px;
 }
 
+.post-l-compact{
+    flex-direction: column;
+    max-width: 400px;
+    font-size: 12pt;
+}
+.post-t-compact{
+    margin: 12px 0;
+}
+
+.mn-tt{
+    font-size: 14pt;
+}
+.mn-pp{
+    font-size: 12pt;
+}
+.low-opa{
+    color: #535353;
+}
+
 
 
 
@@ -408,7 +427,7 @@ footer{
         display: flex;
         flex-flow: column;
     }
-    .card-group{
+    .card-grouping{
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -423,6 +442,10 @@ footer{
         margin: 12px 0;
     }
 
+    .list-box-container{
+        flex-direction: column;
+    }
+
     footer{
         flex-direction: column;
         align-items: center;
@@ -431,5 +454,8 @@ footer{
         width: 100%;
         text-align: center;
         margin: 24px 0;
+    }
+    .eight-four{
+        flex-direction: column;
     }
   }

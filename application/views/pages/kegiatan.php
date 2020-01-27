@@ -55,7 +55,7 @@
                 </div>
                 <div class="list-box-content">
                     <a href="<?php  echo base_url("web/read_post/").$l->id;?>"><h4 class="art-title"><?php echo $l->judul_post?></h4></a>
-                    <p class="art-desc"><?php echo word_limit($l->isi_post, 10);?></p>
+                    <span class="art-desc"><?php echo word_limit($l->isi_post, 10);?></span>
                     <div class="content-atr">By <span style="color: #3b5998;">Admin</span> | </div>
                 </div>
             </div>
