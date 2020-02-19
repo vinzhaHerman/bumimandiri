@@ -47,7 +47,8 @@ class Register extends CI_Controller {
 				$namabelakang = $this->input->post('namabelakang');
 				$username = $this->input->post('username');
 				$password = $this->input->post('password');
-				// $this->Pelanggan_model->set_pelanggan($namadepan,$namabelakang,$email,$username,$password);
+				$pwhashed = password_hash($password, PASSWORD_BCRYPT);
+				$this->Pelanggan_model->set_pelanggan($namadepan,$namabelakang,$email,$username,$pwhashed);
 				$this->load->view('template/head_bootstrap');
 				$this->load->view('auth/login');
 				$this->load->view('template/foot_bootstrap');

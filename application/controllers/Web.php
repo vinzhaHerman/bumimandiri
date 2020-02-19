@@ -34,27 +34,27 @@ class Web extends CI_Controller {
 	function auth(){
         $username = $this->input->post('username');
         $password = $this->input->post('password');
-        $where = array(
-            'username' => $username,
-            'password' => $password
-            );
-        $cek = $this->Pelanggan_model->get_login($username,$password);
-        if($cek->num_rows() > 0){
- 			$res=$cek->result()[0];
-            $data_session = array(
-            	'id' => $res->id,
-                'nama_depan' => $res->nama_depan,
-                'email' => $res->email,
-                'status' => "login"
-                );
- 
-            $this->session->set_userdata($data_session);
- 
-            // echo $this->agent->referrer();
-            redirect(base_url());
-            // echo $data_session['id'];
- 
-        }else{
+		$cek = $this->Pelanggan_model->get_login($username,$password);
+		$user = $cek->row();
+		if (password_verify($password, $user->password)) {
+			if($cek->num_rows() > 0){
+				$res=$cek->result()[0];
+			   $data_session = array(
+				   'id' => $res->id,
+				   'nama_depan' => $res->nama_depan,
+				   'email' => $res->email,
+				   'status' => "login"
+				   );
+	
+			   $this->session->set_userdata($data_session);
+	
+			   // echo $this->agent->referrer();
+			   redirect(base_url());
+			   // echo $data_session['id'];
+	
+		   	}
+		}
+        else{
         	$this->session->set_flashdata('message', 'Nama pengguna atau kata sandi salah.');
             redirect(base_url('login'));
         }
