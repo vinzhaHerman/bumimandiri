@@ -119,7 +119,7 @@
                         </div>
                         <div class="row">
                           <div class='col-sm-10 col-md-10'>
-                            <label class="bmd-label-floating">Biaya denda: </label>
+                            <label class="bmd-label-floating">Biaya denda bila pembatalan: </label>
                             <input type="text" class="form-control-plaintext text-warning" name="pembayaran"  value="<?php echo $hasil_kembali ?>" style="font-size: 1.5rem;" readonly="true">
                           </div>
                         </div>
@@ -210,7 +210,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn" data-dismiss="modal">Kembali</button>
-              <a class="btn btn-warning" href="<?php echo base_url();?>admin/ubah_status_batal/<?php echo $res['kode_reservasi'] ?>" target="_blank">Batalkan</a>
+              <a class="btn btn-warning" href="<?php echo base_url();?>admin/ubah_status_batal/<?php echo $res['kode_reservasi'] ?>">Batalkan</a>
             </div>
           </div>
         </div>

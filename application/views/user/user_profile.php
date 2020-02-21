@@ -18,7 +18,7 @@
 <body>
 
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light bg-info">
     <a class="navbar-brand" href="<?php echo base_url();?>"><b>BUMI MANDIRI</b></a>
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav mr-auto">
@@ -39,7 +39,7 @@
           <?php $userdata=$userdata->row_array() ?>
           <?php $hariini = date('Y-m-d'); ?>
           <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-3">
               <div class="card card-profile">
                 <div class="card-body">
                 <div class="card-avatar">
@@ -49,7 +49,7 @@
                 </div>
                   <h6 class="card-category text-gray">User Account</h6>
                   <h4 class="card-title"><?php echo $userdata['nama_depan']  ?> <?php echo $userdata['nama_belakang']  ?></h4>
-                  <a href="#pablo" class="btn btn-primary btn-round" data-toggle="collapse" data-target="#collapsedContent1" aria-expanded="false" aria-controls="collapsedContent1">Ganti Foto</a>
+                  <a href="#pablo" class="btn btn-info btn-round" data-toggle="collapse" data-target="#collapsedContent1" aria-expanded="false" aria-controls="collapsedContent1">Ganti Foto</a>
                   <div class="collapse" id="collapsedContent1">
                     <?php echo form_open_multipart('Account/update_foto');?>
                     <input type="file" name="fileupload" id="fileupload">
@@ -59,7 +59,7 @@
                 </div>
               </div>
               <div class="card card-profile">
-                <div class="card-header card-header-primary">
+                <div class="card-header card-header-info">
                   <h4 class="card-title">NAVIGASI</h4>
                 </div>
                 <div class="card-body">
@@ -71,13 +71,12 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-8">
+            <div class="col-md-9">
               <div class="card">
-                <div class="card-header card-header-primary">
+                <div class="card-body">
                   <h4 class="card-title">View/Edit Profile</h4>
                   <p class="card-category">Complete your profile</p>
-                </div>
-                <div class="card-body">
+                  <hr>
                   <form action="<?php echo base_url('Account/update_profile'); ?>" method="post">
                     <div class="row">
                       <div class="col-md-6">
@@ -103,7 +102,7 @@
                       <div class="col-md-3">
                         <div class="form-group">
                           <label class="bmd-label-floating">No. Telp (HP)</label>
-                          <input type="text" class="form-control" name="username"  value="<?php echo $userdata['telp']  ?>">
+                          <input type="text" class="form-control" name="telp"  value="<?php echo $userdata['telp']  ?>">
                         </div>
                       </div>
                       <div class="col-md-6">

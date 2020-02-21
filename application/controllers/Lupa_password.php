@@ -95,7 +95,7 @@ class Lupa_password extends CI_Controller {
          $post = $this->input->post(NULL, TRUE);          
          $cleanPost = $this->security->xss_clean($post);          
          $pass = $cleanPost['password'];          
-         $cleanPost['password'] = $pass;  
+         $cleanPost['password'] = password_hash($pass, PASSWORD_BCRYPT);  
          $cleanPost['id'] = $user_info->id;  
          unset($cleanPost['passconf']);          
          if(!$this->Pass_model->updatePassword($cleanPost)){  

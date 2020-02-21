@@ -13,6 +13,18 @@
               <?php echo validation_errors(); ?>
           </div>
           <?php endif; ?>
+          <?php           
+            if($email=$this->session->flashdata('email')):
+          ?>
+            <div class="col-lg-12">
+              <div class="alert alert-danger">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <i class="material-icons">close</i>
+                </button>
+                  <?php echo $email ?>
+              </div>
+            </div>
+          <?php endif; ?>
         </div>
       </div>
       <div class="row align-item-center mx-auto">

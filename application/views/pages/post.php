@@ -40,7 +40,7 @@
                 </div>
                 <div class="list-box-content post-t-compact">
                     <a href="<?php  echo base_url("web/read_post/").$l->id;?>"><h4 class="art-title mn-tt"><?php echo $l->judul_post?></h4></a>
-                    <p class="art-desc mn-pp low-opa"><?php echo word_limit($l->isi_post, 10);?></p>
+                    <!-- <p class="art-desc mn-pp low-opa"><?php //echo strip_tags(word_limit($l->isi_post, 15));?></p> -->
                 </div>
             </div>
         <?php endforeach; ?>

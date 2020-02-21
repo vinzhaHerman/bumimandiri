@@ -18,6 +18,18 @@
           </div>
         </div>
         <?php endif; ?>
+        <?php           
+          if($message=$this->session->flashdata('daftar')):
+        ?>
+        <div class="col-lg-12">
+          <div class="alert alert-info">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <i class="material-icons">close</i>
+            </button>
+              <?php echo $message ?>
+          </div>
+        </div>
+        <?php endif; ?>
       <?php echo form_open('Web/auth'); ?>
       <div class="row">
         <div class="col-md-12">

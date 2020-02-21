@@ -39,7 +39,7 @@ class Web extends CI_Controller {
 		if (password_verify($password, $user->password)) {
 			if($cek->num_rows() > 0){
 				$res=$cek->result()[0];
-			   $data_session = array(
+			   	$data_session = array(
 				   'id' => $res->id,
 				   'nama_depan' => $res->nama_depan,
 				   'email' => $res->email,

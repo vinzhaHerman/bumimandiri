@@ -100,8 +100,9 @@
                         <div class="form-group">
                           <label class="bmd-label-floating">Termasuk Dalam Paket:*</label>
                           <select id="selectPaket" name="paket" class="form-control">
+                            <?php $selected = $res['paket_jenis_id']; ?>
                             <?php foreach ($respaket->result() as $paket):?>
-                            <option value="<?php echo $paket->id ?>"><?php echo $paket->nama_paket ?></option>
+                            <option value="<?php echo $paket->id ?>" <?php if($paket->id == $selected){echo "selected";}else{echo "";} ?>><?php echo $paket->nama_paket ?></option>
                             <?php endforeach; ?>
                           </select>
                         </div>

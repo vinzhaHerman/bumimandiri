@@ -128,7 +128,7 @@
                           <tr>
                             <td><?php echo $no++; ?></td>
                             <td><?php echo $prom->judul_post?></td>
-                            <td><?php echo $prom->isi_post?></td>
+                            <td><?php echo strip_tags(word_limit($prom->isi_post, 20))?></td>
                             <td class="td-actions text-right pull-right">
                               <a href="<?php echo base_url() ?>Admin/ubah_blog/<?php echo $prom->id?>" rel="tooltip" title="Edit" class="btn btn-primary btn-link btn-sm">
                                 <i class="material-icons">edit</i>
@@ -158,7 +158,7 @@
                           <tr>
                             <td><?php echo $no++; ?></td>
                             <td><?php echo $art->judul_post?></td>
-                            <td><?php echo $art->isi_post?></td>
+                            <td><?php echo strip_tags(word_limit($art->isi_post, 20))?></td>
                             <td class="td-actions text-right pull-right">
                               <a href="<?php echo base_url() ?>Admin/ubah_blog/<?php echo $art->id?>" rel="tooltip" title="Edit" class="btn btn-primary btn-link btn-sm">
                                 <i class="material-icons">edit</i>

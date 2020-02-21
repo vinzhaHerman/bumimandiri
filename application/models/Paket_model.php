@@ -35,8 +35,13 @@ class Paket_model extends CI_Model {
 	}
 
 	function get_program_by_paket($id){
-		$result=$this->db->query("SELECT * FROM paket_program WHERE paket_jenis_id='$id'");
-        return $result;
+		// $result=$this->db->query("SELECT * FROM paket_program WHERE paket_jenis_id='$id'");
+		
+		$this->db->where('paket_jenis_id', $id);
+		$this->db->where('status', 1);
+		$query = $this->db->get('paket_program');
+
+		return $query;
 	}
 
 	function get_paket_detailed(){

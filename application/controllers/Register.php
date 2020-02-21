@@ -37,10 +37,8 @@ class Register extends CI_Controller {
 			$email = $this->input->post('email');
 			$cek = $this->Pelanggan_model->check_email_dup($email);
 			if ($cek->num_rows() > 0) {
-				$this->load->view('template/head_bootstrap');
-				$this->load->view('auth/register');
-				$this->load->view('template/foot_bootstrap');
-				echo "email sudah terdaftar";
+				$this->session->set_flashdata('email', 'Email Sudah terdaftar!');
+				redirect(site_url('register'), 'refresh');
 			}
 			else{
 				$namadepan = $this->input->post('namadepan');
@@ -49,9 +47,8 @@ class Register extends CI_Controller {
 				$password = $this->input->post('password');
 				$pwhashed = password_hash($password, PASSWORD_BCRYPT);
 				$this->Pelanggan_model->set_pelanggan($namadepan,$namabelakang,$email,$username,$pwhashed);
-				$this->load->view('template/head_bootstrap');
-				$this->load->view('auth/login');
-				$this->load->view('template/foot_bootstrap');
+				$this->session->set_flashdata('daftar', 'Akun terdaftar! silahkan login');
+				redirect(site_url('login'));
 			}
 		}
 	}
